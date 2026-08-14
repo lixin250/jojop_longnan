@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "jojop-config": {
+      "command": "node",
+      "args": [
+        "${workspaceFolder}/tools/config-mcp/dist/index.js"
+      ]
+    }
+  }
+}

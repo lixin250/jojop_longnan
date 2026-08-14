@@ -1,0 +1,218 @@
+[
+  {
+    "id": "cohort_1997",
+    "anchor_year": 1997,
+    "sequence": 1,
+    "title": "97届兄弟出生年",
+    "history_summary": "这批兄弟大多出生于1997年前后。",
+    "gameplay_summary": "作为共同纪年原点，不严格限制技能获得年份。",
+    "chapter_id": "Primary",
+    "flexible_year": true,
+    "scope": 1,
+    "boost_tags": [],
+    "encounter_weight_mul": 1,
+    "event_ids": [],
+    "unlock_scene_id": "",
+    "opportunity_desc": "从同一座小城出发。",
+    "difficulty_desc": "个人月份与年份可能前后浮动。",
+    "source_kind": 4,
+    "source_name": "兄弟口述",
+    "source_url": "",
+    "verified": false
+  },
+  {
+    "id": "economy_zone_2013",
+    "anchor_year": 2013,
+    "sequence": 10,
+    "title": "龙南经开区升级",
+    "history_summary": "2013年3月，龙南经开区升格为国家级经济技术开发区。",
+    "gameplay_summary": "工业园订单、开发建设与就业机会同时增加。",
+    "chapter_id": "High",
+    "flexible_year": true,
+    "scope": 2,
+    "boost_tags": [
+      1,
+      10,
+      8,
+      6
+    ],
+    "encounter_weight_mul": 1.8,
+    "event_ids": [
+      "event_industrial_shift"
+    ],
+    "unlock_scene_id": "industrial_park",
+    "opportunity_desc": "机械、互联网、银行、创业类兄弟更容易出现。",
+    "difficulty_desc": "赶工、设备故障和经营风险同步增加。",
+    "source_kind": 1,
+    "source_name": "龙南市人民政府·市情简介",
+    "source_url": "http://www.jxln.gov.cn/lnzf/c103680/202308/f05e9c5bdbba43b1a65954a38ff99ac8.shtml",
+    "verified": true
+  },
+  {
+    "id": "cohort_2015",
+    "anchor_year": 2015,
+    "sequence": 20,
+    "title": "2015毕业与离乡",
+    "history_summary": "多数兄弟于2015年前后高中毕业，升学或复读。",
+    "gameplay_summary": "解锁大学、复读和提前就业的分流。",
+    "chapter_id": "High",
+    "flexible_year": true,
+    "scope": 5,
+    "boost_tags": [
+      4,
+      2,
+      10,
+      6
+    ],
+    "encounter_weight_mul": 1.7,
+    "event_ids": [
+      "event_leave_hometown"
+    ],
+    "unlock_scene_id": "station_home",
+    "opportunity_desc": "同学关系延伸到不同学校和行业。",
+    "difficulty_desc": "分隔异地，好感增长节奏变慢。",
+    "source_kind": 4,
+    "source_name": "兄弟口述",
+    "source_url": "",
+    "verified": false
+  },
+  {
+    "id": "hsr_build_2016",
+    "anchor_year": 2016,
+    "sequence": 30,
+    "title": "赣深高铁建设",
+    "history_summary": "2016年赣深高铁开工建设，龙南迎来高铁建设期。",
+    "gameplay_summary": "工地、运输和设备事件增多。",
+    "chapter_id": "University",
+    "flexible_year": true,
+    "scope": 3,
+    "boost_tags": [
+      2,
+      1
+    ],
+    "encounter_weight_mul": 2,
+    "event_ids": [
+      "event_hsr_construction"
+    ],
+    "unlock_scene_id": "longnan_east_site",
+    "opportunity_desc": "土木与机械兄弟相遇概率提高。",
+    "difficulty_desc": "施工期道路、噪声与赶工形成额外敌潮。",
+    "source_kind": 3,
+    "source_name": "龙南全域旅游与高铁建设报道",
+    "source_url": "http://www.tourjie.com/article/1855.html",
+    "verified": true
+  },
+  {
+    "id": "tourism_festival_2017",
+    "anchor_year": 2017,
+    "sequence": 40,
+    "title": "围美龙南旅游文化节",
+    "history_summary": "2017年起，龙南持续举办“围美龙南·客迎天下”旅游文化节。",
+    "gameplay_summary": "围屋游客潮、米酒摊和舞台事件进入奖励池。",
+    "chapter_id": "University",
+    "flexible_year": true,
+    "scope": 4,
+    "boost_tags": [
+      6,
+      11,
+      4
+    ],
+    "encounter_weight_mul": 1.7,
+    "event_ids": [
+      "event_tourism_festival"
+    ],
+    "unlock_scene_id": "guanxi_wei",
+    "opportunity_desc": "创业、烟草和学术类兄弟更易出现。",
+    "difficulty_desc": "人潮、临时摊位和舞台事故提升波次密度。",
+    "source_kind": 3,
+    "source_name": "中国江西网·围美龙南客迎天下",
+    "source_url": "https://jxgz.jxnews.com.cn/system/2020/01/08/018717283.shtml",
+    "verified": true
+  },
+  {
+    "id": "graduation_2019",
+    "anchor_year": 2019,
+    "sequence": 50,
+    "title": "大学毕业与世客会申办",
+    "history_summary": "多数兄弟于2019年前后毕业；同年龙南获得第32届世客会举办权。",
+    "gameplay_summary": "正式分流工作、考研、考公，并强化返乡联系。",
+    "chapter_id": "Society",
+    "flexible_year": true,
+    "scope": 5,
+    "boost_tags": [
+      4,
+      5,
+      8,
+      6,
+      10
+    ],
+    "encounter_weight_mul": 1.9,
+    "event_ids": [
+      "event_graduation_split"
+    ],
+    "unlock_scene_id": "station_home",
+    "opportunity_desc": "各行业兄弟开始带着就业技能回到队伍。",
+    "difficulty_desc": "考试延期与求职失败会推迟就业技。",
+    "source_kind": 3,
+    "source_name": "客家摇篮网·龙南获世客会承办权",
+    "source_url": "http://www.gnhakka.com/n489/c196658/content.html",
+    "verified": true
+  },
+  {
+    "id": "city_2020",
+    "anchor_year": 2020,
+    "sequence": 60,
+    "title": "龙南撤县设市",
+    "history_summary": "2020年6月，龙南撤县设市。",
+    "gameplay_summary": "城市开发、公共服务和商业机会并存。",
+    "chapter_id": "Society",
+    "flexible_year": true,
+    "scope": 6,
+    "boost_tags": [
+      5,
+      2,
+      8,
+      6
+    ],
+    "encounter_weight_mul": 1.8,
+    "event_ids": [
+      "event_county_to_city"
+    ],
+    "unlock_scene_id": "city_upgrade",
+    "opportunity_desc": "开发、公职、银行与创业兄弟更容易相遇。",
+    "difficulty_desc": "建设阵痛、岗位竞争和生活成本形成压力。",
+    "source_kind": 1,
+    "source_name": "龙南市人民政府·市情简介",
+    "source_url": "http://www.jxln.gov.cn/lnzf/c103680/202308/f05e9c5bdbba43b1a65954a38ff99ac8.shtml",
+    "verified": true
+  },
+  {
+    "id": "hsr_open_2021",
+    "anchor_year": 2021,
+    "sequence": 70,
+    "title": "龙南进入高铁时代",
+    "history_summary": "2021年12月10日赣深高铁开通，龙南东站正式运营。",
+    "gameplay_summary": "解锁龙南东站与返乡兄弟潮。",
+    "chapter_id": "Society",
+    "flexible_year": true,
+    "scope": 3,
+    "boost_tags": [
+      1,
+      2,
+      8,
+      6,
+      10
+    ],
+    "encounter_weight_mul": 2,
+    "event_ids": [
+      "event_return_home_tide"
+    ],
+    "unlock_scene_id": "longnan_east",
+    "opportunity_desc": "回乡过年和跨城工作的兄弟更容易重新集合。",
+    "difficulty_desc": "客流高峰、抢票和接站混乱形成新敌潮。",
+    "source_kind": 1,
+    "source_name": "龙南市人民政府·龙南东站正式运营",
+    "source_url": "http://www.jxln.gov.cn/lnzf/c110699/202202/d5abc40cf11740a492181c764a313435.shtml",
+    "verified": true
+  }
+]

@@ -1,0 +1,100 @@
+[
+  {
+    "role_id": "CS_ayun",
+    "min_chapter": "Primary",
+    "weight": 3,
+    "affinity_per_meet": 1,
+    "join_power_mul": 0.72
+  },
+  {
+    "role_id": "BZ_jihong",
+    "min_chapter": "Primary",
+    "weight": 3,
+    "affinity_per_meet": 1,
+    "join_power_mul": 0.72
+  },
+  {
+    "role_id": "GWY_wang",
+    "min_chapter": "Primary",
+    "weight": 3,
+    "affinity_per_meet": 1,
+    "join_power_mul": 0.72
+  },
+  {
+    "role_id": "YH_hangu",
+    "min_chapter": "Primary",
+    "weight": 3,
+    "affinity_per_meet": 1,
+    "join_power_mul": 0.72
+  },
+  {
+    "role_id": "TM_yugu",
+    "min_chapter": "Middle",
+    "weight": 3,
+    "affinity_per_meet": 1,
+    "join_power_mul": 0.72
+  },
+  {
+    "role_id": "TM_junjun",
+    "min_chapter": "Middle",
+    "weight": 9,
+    "affinity_per_meet": 1,
+    "join_power_mul": 0.78
+  },
+  {
+    "role_id": "TM_wantao",
+    "min_chapter": "Middle",
+    "weight": 3,
+    "affinity_per_meet": 1,
+    "join_power_mul": 0.72
+  },
+  {
+    "role_id": "Dr_chen",
+    "min_chapter": "Middle",
+    "weight": 3,
+    "affinity_per_meet": 1,
+    "join_power_mul": 0.72
+  },
+  {
+    "role_id": "Dr_xiao",
+    "min_chapter": "High",
+    "weight": 3,
+    "affinity_per_meet": 1,
+    "join_power_mul": 0.72
+  },
+  {
+    "role_id": "todo_shitbro",
+    "min_chapter": "High",
+    "weight": 3,
+    "affinity_per_meet": 1,
+    "join_power_mul": 0.72
+  },
+  {
+    "role_id": "Energy_uzi",
+    "min_chapter": "High",
+    "weight": 3,
+    "affinity_per_meet": 1,
+    "join_power_mul": 0.72
+  },
+  {
+    "role_id": "Energy_oban",
+    "min_chapter": "High",
+    "weight": 8,
+    "affinity_per_meet": 1,
+    "join_power_mul": 0.82
+  },
+  {
+    "role_id": "Bus_laizhen",
+    "min_chapter": "Society",
+    "weight": 6,
+    "affinity_per_meet": 1,
+    "join_power_mul": 0.75
+  },
+  {
+    "role_id": "Bus_longtou",
+    "min_chapter": "Society",
+    "weight": 6,
+    "affinity_per_meet": 1,
+    "join_power_mul": 0.78
+  }
+]

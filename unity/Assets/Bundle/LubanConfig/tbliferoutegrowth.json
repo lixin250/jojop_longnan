@@ -1,0 +1,62 @@
+[
+  {
+    "route": 0,
+    "wait_min_years": 0,
+    "wait_max_years": 0,
+    "wait_default_years": 0,
+    "shield_per_year": 0,
+    "favor_mul": 0,
+    "renown_mul": 0,
+    "comment": "无"
+  },
+  {
+    "route": 1,
+    "wait_min_years": 0,
+    "wait_max_years": 0,
+    "wait_default_years": 0,
+    "shield_per_year": 0,
+    "favor_mul": 1,
+    "renown_mul": 1,
+    "comment": "按学历毕业即就业"
+  },
+  {
+    "route": 2,
+    "wait_min_years": 0,
+    "wait_max_years": 0,
+    "wait_default_years": 0,
+    "shield_per_year": 6,
+    "favor_mul": 0.9,
+    "renown_mul": 1.25,
+    "comment": "年限由最终学历决定；等待期书本盾"
+  },
+  {
+    "route": 3,
+    "wait_min_years": 1,
+    "wait_max_years": 3,
+    "wait_default_years": 2,
+    "shield_per_year": 8,
+    "favor_mul": 1.35,
+    "renown_mul": 1.1,
+    "comment": "考公编：1～3年，默认2"
+  },
+  {
+    "route": 4,
+    "wait_min_years": 0,
+    "wait_max_years": 1,
+    "wait_default_years": 0,
+    "shield_per_year": 0,
+    "favor_mul": 1.2,
+    "renown_mul": 1,
+    "comment": "创业：风险收益"
+  },
+  {
+    "route": 5,
+    "wait_min_years": 0,
+    "wait_max_years": 0,
+    "wait_default_years": 0,
+    "shield_per_year": 0,
+    "favor_mul": 1.1,
+    "renown_mul": 0.9,
+    "comment": "灵活就业"
+  }
+]

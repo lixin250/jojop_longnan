@@ -1,0 +1,23 @@
+{
+    "name": "JojoP.Editor",
+    "rootNamespace": "JojoP.EditorTools",
+    "references": [
+        "JojoP.AOT",
+        "JojoP.HotUpdate",
+        "JojoP.Config",
+        "Luban.Runtime",
+        "YooAsset.Editor",
+        "HybridCLR.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,18 @@
+{
+    "name": "JojoP.AOT",
+    "rootNamespace": "JojoP.AOT",
+    "references": [
+        "YooAsset",
+        "UniTask",
+        "UnityEngine.UI"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

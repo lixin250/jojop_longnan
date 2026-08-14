@@ -1,0 +1,452 @@
+[
+  {
+    "id": "CS_lixin",
+    "name": "猩哥",
+    "desc": "游戏民工，程序猿",
+    "camp": 1,
+    "education_level": 7,
+    "life_route": 1,
+    "career_sector": 3,
+    "faction_tags": [
+      10
+    ],
+    "avatar_loc": "role_player_avatar",
+    "battle_loc": "role_player_battle",
+    "base_hp": 110,
+    "base_atk": 14,
+    "base_move": 2.7,
+    "skill_ids": [
+      "campus_courage",
+      "cs_lixin_gamble",
+      "cs_lixin_crunch"
+    ],
+    "recruitable": false,
+    "sort": 0,
+    "base_defense": 0,
+    "crit_rate": 0,
+    "crit_damage": 1.5,
+    "attack_interval": 0.4
+  },
+  {
+    "id": "CS_ayun",
+    "name": "阿允",
+    "desc": "遇强则强，算法工程师，硕士",
+    "camp": 1,
+    "education_level": 8,
+    "life_route": 2,
+    "career_sector": 3,
+    "faction_tags": [
+      10
+    ],
+    "avatar_loc": "role_ayun_avatar",
+    "battle_loc": "role_ayun_battle",
+    "base_hp": 95,
+    "base_atk": 15,
+    "base_move": 2.6,
+    "skill_ids": [
+      "campus_courage",
+      "cs_ayun_overload",
+      "cs_ayun_gaoliao"
+    ],
+    "recruitable": true,
+    "sort": 5,
+    "base_defense": 0,
+    "crit_rate": 0,
+    "crit_damage": 1.5,
+    "attack_interval": 0.4
+  },
+  {
+    "id": "BZ_jihong",
+    "name": "红双喜",
+    "desc": "烟草财会，硕士",
+    "camp": 1,
+    "education_level": 8,
+    "life_route": 2,
+    "career_sector": 4,
+    "faction_tags": [
+      11
+    ],
+    "avatar_loc": "role_jihong_avatar",
+    "battle_loc": "role_jihong_battle",
+    "base_hp": 130,
+    "base_atk": 10,
+    "base_move": 2.2,
+    "skill_ids": [
+      "bz_jihong_cost",
+      "bz_jihong_bonus"
+    ],
+    "recruitable": true,
+    "sort": 15,
+    "base_defense": 0,
+    "crit_rate": 0,
+    "crit_damage": 1.5,
+    "attack_interval": 0.4
+  },
+  {
+    "id": "GWY_wang",
+    "name": "侯哥",
+    "desc": "侯局长，为民服务，民心所得",
+    "camp": 1,
+    "education_level": 7,
+    "life_route": 3,
+    "career_sector": 1,
+    "faction_tags": [
+      5
+    ],
+    "avatar_loc": "role_laowang_avatar",
+    "battle_loc": "role_laowang_battle",
+    "base_hp": 125,
+    "base_atk": 11,
+    "base_move": 2.2,
+    "skill_ids": [
+      "gwy_wang_aura"
+    ],
+    "recruitable": true,
+    "sort": 20,
+    "base_defense": 0,
+    "crit_rate": 0,
+    "crit_damage": 1.5,
+    "attack_interval": 0.4
+  },
+  {
+    "id": "YH_hangu",
+    "name": "含固",
+    "desc": "银行行长，融通资金",
+    "camp": 1,
+    "education_level": 7,
+    "life_route": 1,
+    "career_sector": 4,
+    "faction_tags": [
+      8
+    ],
+    "avatar_loc": "role_hangu_avatar",
+    "battle_loc": "role_hangu_battle",
+    "base_hp": 150,
+    "base_atk": 12,
+    "base_move": 2,
+    "skill_ids": [
+      "yh_hangu_flow",
+      "yh_hangu_extend"
+    ],
+    "recruitable": true,
+    "sort": 25,
+    "base_defense": 0,
+    "crit_rate": 0,
+    "crit_damage": 1.5,
+    "attack_interval": 0.4
+  },
+  {
+    "id": "TM_yugu",
+    "name": "鱼固",
+    "desc": "土木圣体，乙方工头，项目经理",
+    "camp": 1,
+    "education_level": 7,
+    "life_route": 1,
+    "career_sector": 3,
+    "faction_tags": [
+      2
+    ],
+    "avatar_loc": "role_dacheng_avatar",
+    "battle_loc": "role_dacheng_battle",
+    "base_hp": 150,
+    "base_atk": 13,
+    "base_move": 1.9,
+    "skill_ids": [
+      "tm_yugu_smash"
+    ],
+    "recruitable": true,
+    "sort": 40,
+    "base_defense": 0,
+    "crit_rate": 0,
+    "crit_damage": 1.5,
+    "attack_interval": 0.4
+  },
+  {
+    "id": "TM_junjun",
+    "name": "军军",
+    "desc": "土木圣体，综合治理，三方监理",
+    "camp": 1,
+    "education_level": 7,
+    "life_route": 1,
+    "career_sector": 3,
+    "faction_tags": [
+      2
+    ],
+    "avatar_loc": "role_junjun_avatar",
+    "battle_loc": "role_junjun_battle",
+    "base_hp": 142,
+    "base_atk": 11.5,
+    "base_move": 2.25,
+    "skill_ids": [
+      "tm_junjun_inspect"
+    ],
+    "recruitable": true,
+    "sort": 42,
+    "base_defense": 0,
+    "crit_rate": 0,
+    "crit_damage": 1.5,
+    "attack_interval": 0.4
+  },
+  {
+    "id": "TM_wantao",
+    "name": "万总",
+    "desc": "土木世家，甲方业主，项目审批",
+    "camp": 1,
+    "education_level": 7,
+    "life_route": 1,
+    "career_sector": 3,
+    "faction_tags": [
+      2
+    ],
+    "avatar_loc": "role_wantao_avatar",
+    "battle_loc": "role_wantao_battle",
+    "base_hp": 135,
+    "base_atk": 12,
+    "base_move": 2.35,
+    "skill_ids": [
+      "tm_wantao_approve"
+    ],
+    "recruitable": true,
+    "sort": 41,
+    "base_defense": 0,
+    "crit_rate": 0,
+    "crit_damage": 1.5,
+    "attack_interval": 0.4
+  },
+  {
+    "id": "Dr_chen",
+    "name": "陈大夫",
+    "desc": "医学世家，民心所得，全科快速定位治愈",
+    "camp": 1,
+    "education_level": 7,
+    "life_route": 1,
+    "career_sector": 1,
+    "faction_tags": [
+      3
+    ],
+    "avatar_loc": "role_xiaolin_avatar",
+    "battle_loc": "role_xiaolin_battle",
+    "base_hp": 100,
+    "base_atk": 12,
+    "base_move": 2.5,
+    "skill_ids": [
+      "dr_chen_heal"
+    ],
+    "recruitable": true,
+    "sort": 30,
+    "base_defense": 0,
+    "crit_rate": 0,
+    "crit_damage": 1.5,
+    "attack_interval": 0.4
+  },
+  {
+    "id": "Dr_xiao",
+    "name": "肖医师",
+    "desc": "医学奇才，德国骨科，专科迅速手术与康复",
+    "camp": 1,
+    "education_level": 7,
+    "life_route": 1,
+    "career_sector": 1,
+    "faction_tags": [
+      3
+    ],
+    "avatar_loc": "role_xiaogu_avatar",
+    "battle_loc": "role_xiaogu_battle",
+    "base_hp": 105,
+    "base_atk": 11,
+    "base_move": 2.45,
+    "skill_ids": [
+      "dr_xiao_ortho",
+      "dr_xiao_drunk"
+    ],
+    "recruitable": true,
+    "sort": 50,
+    "base_defense": 0,
+    "crit_rate": 0,
+    "crit_damage": 1.5,
+    "attack_interval": 0.4
+  },
+  {
+    "id": "todo_shitbro",
+    "name": "谢博",
+    "desc": "机械大拿，科研核心(机械)，博士",
+    "camp": 1,
+    "education_level": 9,
+    "life_route": 2,
+    "career_sector": 3,
+    "faction_tags": [
+      1,
+      4
+    ],
+    "avatar_loc": "role_xiebo_avatar",
+    "battle_loc": "role_xiebo_battle",
+    "base_hp": 95,
+    "base_atk": 16,
+    "base_move": 2.4,
+    "skill_ids": [
+      "xiebo_dismantle",
+      "xiebo_patch",
+      "xiebo_torque"
+    ],
+    "recruitable": true,
+    "sort": 10,
+    "base_defense": 0,
+    "crit_rate": 0,
+    "crit_damage": 1.5,
+    "attack_interval": 0.4
+  },
+  {
+    "id": "Energy_oban",
+    "name": "欧版",
+    "desc": "能源大拿，科研核心(产能）",
+    "camp": 1,
+    "education_level": 7,
+    "life_route": 1,
+    "career_sector": 3,
+    "faction_tags": [
+      9
+    ],
+    "avatar_loc": "role_oban_avatar",
+    "battle_loc": "role_oban_battle",
+    "base_hp": 145,
+    "base_atk": 10.5,
+    "base_move": 2.15,
+    "skill_ids": [
+      "energy_oban_ironhead",
+      "energy_oban_cherish"
+    ],
+    "recruitable": true,
+    "sort": 12,
+    "base_defense": 0,
+    "crit_rate": 0,
+    "crit_damage": 1.5,
+    "attack_interval": 0.4
+  },
+  {
+    "id": "Energy_uzi",
+    "name": "物资",
+    "desc": "能源大拿，科研核心(储能)，硕士",
+    "camp": 1,
+    "education_level": 8,
+    "life_route": 2,
+    "career_sector": 3,
+    "faction_tags": [
+      9
+    ],
+    "avatar_loc": "role_wuzi_avatar",
+    "battle_loc": "role_wuzi_battle",
+    "base_hp": 105,
+    "base_atk": 13,
+    "base_move": 2.45,
+    "skill_ids": [
+      "wuzi_boost",
+      "wuzi_grid"
+    ],
+    "recruitable": true,
+    "sort": 11,
+    "base_defense": 0,
+    "crit_rate": 0,
+    "crit_damage": 1.5,
+    "attack_interval": 0.4
+  },
+  {
+    "id": "Bus_laizhen",
+    "name": "赖镇",
+    "desc": "商业巨擘，创业能手",
+    "camp": 1,
+    "education_level": 7,
+    "life_route": 4,
+    "career_sector": 4,
+    "faction_tags": [
+      6
+    ],
+    "avatar_loc": "role_laizhen_avatar",
+    "battle_loc": "role_laizhen_battle",
+    "base_hp": 108,
+    "base_atk": 13,
+    "base_move": 2.6,
+    "skill_ids": [
+      "bus_laizhen_mobilize"
+    ],
+    "recruitable": true,
+    "sort": 60,
+    "base_defense": 0,
+    "crit_rate": 0,
+    "crit_damage": 1.5,
+    "attack_interval": 0.4
+  },
+  {
+    "id": "Bus_longtou",
+    "name": "龙头",
+    "desc": "商业巨擘，扭亏为盈厂二代",
+    "camp": 1,
+    "education_level": 7,
+    "life_route": 1,
+    "career_sector": 4,
+    "faction_tags": [
+      6
+    ],
+    "avatar_loc": "role_longtou_avatar",
+    "battle_loc": "role_longtou_battle",
+    "base_hp": 128,
+    "base_atk": 12,
+    "base_move": 2.35,
+    "skill_ids": [
+      "bus_longtou_turnaround"
+    ],
+    "recruitable": true,
+    "sort": 61,
+    "base_defense": 0,
+    "crit_rate": 0,
+    "crit_damage": 1.5,
+    "attack_interval": 0.4
+  },
+  {
+    "id": "eng_xie",
+    "name": "工程机械影",
+    "desc": "谢博召唤的临时割草单位",
+    "camp": 2,
+    "education_level": 0,
+    "life_route": 0,
+    "career_sector": 0,
+    "faction_tags": [],
+    "avatar_loc": "role_engshadow_avatar",
+    "battle_loc": "role_engshadow_battle",
+    "base_hp": 40,
+    "base_atk": 8,
+    "base_move": 2,
+    "skill_ids": [
+      "mow_eng_crush"
+    ],
+    "recruitable": false,
+    "sort": 1000,
+    "base_defense": 0,
+    "crit_rate": 0,
+    "crit_damage": 1.5,
+    "attack_interval": 0.45
+  },
+  {
+    "id": "temp_hire",
+    "name": "临时工",
+    "desc": "雇佣割草单位",
+    "camp": 2,
+    "education_level": 0,
+    "life_route": 0,
+    "career_sector": 0,
+    "faction_tags": [],
+    "avatar_loc": "role_temphire_avatar",
+    "battle_loc": "role_temphire_battle",
+    "base_hp": 35,
+    "base_atk": 6,
+    "base_move": 2.2,
+    "skill_ids": [
+      "mow_hire_smash"
+    ],
+    "recruitable": false,
+    "sort": 1001,
+    "base_defense": 0,
+    "crit_rate": 0,
+    "crit_damage": 1.5,
+    "attack_interval": 0.45
+  }
+]

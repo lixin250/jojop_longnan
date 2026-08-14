@@ -1,0 +1,52 @@
+[
+  {
+    "sector": 0,
+    "hp_mul": 1,
+    "atk_mul": 1,
+    "move_mul": 1,
+    "skill_cd_mul": 1,
+    "shield_mul": 1,
+    "resource_mul": 1,
+    "comment": "无"
+  },
+  {
+    "sector": 1,
+    "hp_mul": 0.98,
+    "atk_mul": 0.92,
+    "move_mul": 1,
+    "skill_cd_mul": 0.9,
+    "shield_mul": 1.12,
+    "resource_mul": 1.05,
+    "comment": "控制、治疗、光环、声望"
+  },
+  {
+    "sector": 2,
+    "hp_mul": 1.15,
+    "atk_mul": 0.95,
+    "move_mul": 0.95,
+    "skill_cd_mul": 1,
+    "shield_mul": 1.08,
+    "resource_mul": 1.25,
+    "comment": "续航、生产、补给、召唤"
+  },
+  {
+    "sector": 3,
+    "hp_mul": 1.12,
+    "atk_mul": 1.1,
+    "move_mul": 0.95,
+    "skill_cd_mul": 1,
+    "shield_mul": 1.15,
+    "resource_mul": 1,
+    "comment": "护甲、制造、范围、破甲"
+  },
+  {
+    "sector": 4,
+    "hp_mul": 0.95,
+    "atk_mul": 1.03,
+    "move_mul": 1.05,
+    "skill_cd_mul": 0.96,
+    "shield_mul": 0.95,
+    "resource_mul": 1.35,
+    "comment": "资源、投资、风险收益"
+  }
+]

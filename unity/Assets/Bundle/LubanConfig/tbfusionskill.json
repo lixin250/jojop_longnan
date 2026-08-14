@@ -1,0 +1,35 @@
+[
+  {
+    "id": "bond_overload",
+    "name": "重装过载",
+    "desc": "谢博机械×物资哥能源：同场解锁融合技",
+    "required_tags": [
+      1,
+      9
+    ],
+    "require_job_unlocked": true,
+    "grant_skill_id": "fusion_overload"
+  },
+  {
+    "id": "bond_joint_inspection",
+    "name": "联合验收",
+    "desc": "土木×公共治理：施工区控场并提供团队安全护具",
+    "required_tags": [
+      2,
+      5
+    ],
+    "require_job_unlocked": true,
+    "grant_skill_id": "fusion_joint_inspection"
+  },
+  {
+    "id": "bond_supply_chain",
+    "name": "产销一体",
+    "desc": "创业×能源：渠道接通产能，临时扩充生产队伍",
+    "required_tags": [
+      6,
+      9
+    ],
+    "require_job_unlocked": true,
+    "grant_skill_id": "fusion_supply_chain"
+  }
+]

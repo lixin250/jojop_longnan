@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8a9992f0ed6d8d43b61175dc5dc8785, type: 3}
+  m_Name: AdsConfig
+  m_EditorClassIdentifier: Assembly-CSharp::JojoP.Ads.AdsConfig
+  provider: 0
+  androidAppId: ca-app-pub-3940256099942544~3347511713
+  androidRewardedUnitId: ca-app-pub-3940256099942544/5224354917
+  androidInterstitialUnitId: ca-app-pub-3940256099942544/1033173712
+  defaultDailyRewardedCap: 8
+  mockRewardedDelaySeconds: 1.25
+  mockInterstitialDelaySeconds: 0.8

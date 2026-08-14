@@ -1,0 +1,509 @@
+[
+  {
+    "id": "campus_courage",
+    "owner_id": "campus",
+    "name": "壮胆",
+    "desc": "短时攻击提升（校园技，全员可学向）",
+    "show_tags": [
+      1,
+      4
+    ],
+    "effect_ids": [
+      "campus_courage_buff"
+    ],
+    "cd": 8,
+    "icon_loc": "skill_team_buff"
+  },
+  {
+    "id": "cs_lixin_gamble",
+    "owner_id": "CS_lixin",
+    "name": "搏一把",
+    "desc": "高风险暴击向普攻强化（游戏民工本色）",
+    "show_tags": [
+      1,
+      3
+    ],
+    "effect_ids": [
+      "cs_lixin_gamble_dmg"
+    ],
+    "cd": 0,
+    "icon_loc": "skill_startup_risk"
+  },
+  {
+    "id": "cs_lixin_crunch",
+    "owner_id": "CS_lixin",
+    "name": "肝帝冲刺",
+    "desc": "短时移速与攻速提升，透支后轻微自伤",
+    "show_tags": [
+      1,
+      3
+    ],
+    "effect_ids": [
+      "cs_lixin_crunch_buff",
+      "cs_lixin_crunch_selfhit"
+    ],
+    "cd": 12,
+    "icon_loc": "skill_startup_crunch"
+  },
+  {
+    "id": "cs_ayun_overload",
+    "owner_id": "CS_ayun",
+    "name": "算力过载",
+    "desc": "锁定一名精英：减速并提高对其伤害（硕就业技）",
+    "show_tags": [
+      1,
+      3
+    ],
+    "effect_ids": [
+      "cs_ayun_overload_slow",
+      "cs_ayun_overload_mark"
+    ],
+    "cd": 9,
+    "icon_loc": "skill_algo_overload"
+  },
+  {
+    "id": "xiebo_dismantle",
+    "owner_id": "todo_shitbro",
+    "name": "拆了重装",
+    "desc": "对精英高防巨伤，小怪概率解体（博就业技核心）",
+    "show_tags": [
+      1,
+      3
+    ],
+    "effect_ids": [
+      "xiebo_dismantle_dmg",
+      "xiebo_dismantle_break"
+    ],
+    "cd": 6,
+    "icon_loc": "skill_mech_dismantle"
+  },
+  {
+    "id": "xiebo_patch",
+    "owner_id": "todo_shitbro",
+    "name": "应急维修",
+    "desc": "友军铁皮盾",
+    "show_tags": [
+      1,
+      3
+    ],
+    "effect_ids": [
+      "xiebo_patch_shield"
+    ],
+    "cd": 10,
+    "icon_loc": "skill_mech_patch"
+  },
+  {
+    "id": "xiebo_torque",
+    "owner_id": "todo_shitbro",
+    "name": "扭矩全开",
+    "desc": "短时自身破甲加深，召唤工程机械影（博士强化位）",
+    "show_tags": [
+      1,
+      3
+    ],
+    "effect_ids": [
+      "xiebo_torque_buff",
+      "xiebo_torque_summon"
+    ],
+    "cd": 14,
+    "icon_loc": "skill_mech_torque"
+  },
+  {
+    "id": "gwy_wang_aura",
+    "owner_id": "GWY_wang",
+    "name": "体制光环",
+    "desc": "周围友军攻击提升",
+    "show_tags": [
+      2,
+      3
+    ],
+    "effect_ids": [
+      "gwy_wang_aura_buff"
+    ],
+    "cd": 0,
+    "icon_loc": "skill_civil_aura"
+  },
+  {
+    "id": "dr_chen_heal",
+    "owner_id": "Dr_chen",
+    "name": "民心急救",
+    "desc": "治疗友军",
+    "show_tags": [
+      1,
+      3
+    ],
+    "effect_ids": [
+      "dr_chen_heal_hp"
+    ],
+    "cd": 7,
+    "icon_loc": "skill_clinic_heal"
+  },
+  {
+    "id": "dr_xiao_drunk",
+    "owner_id": "Dr_xiao",
+    "name": "摔杯为号",
+    "desc": "状态喝满后不再劝酒：摔杯震慑近敌，并把附近兄弟聚成反击阵势",
+    "show_tags": [
+      1,
+      3
+    ],
+    "effect_ids": [
+      "dr_xiao_drunk_fear",
+      "dr_xiao_drunk_max",
+      "dr_xiao_drunk_rally"
+    ],
+    "cd": 14,
+    "icon_loc": "skill_cup_signal"
+  },
+  {
+    "id": "dr_xiao_ortho",
+    "owner_id": "Dr_xiao",
+    "name": "骨科复位",
+    "desc": "短时回血并护盾",
+    "show_tags": [
+      1,
+      3
+    ],
+    "effect_ids": [
+      "dr_xiao_ortho_heal",
+      "dr_xiao_ortho_shield"
+    ],
+    "cd": 9,
+    "icon_loc": "skill_ortho"
+  },
+  {
+    "id": "tm_yugu_smash",
+    "owner_id": "TM_yugu",
+    "name": "工地砸",
+    "desc": "范围伤害，叼一些粪桶样（项目经理一线视察）",
+    "show_tags": [
+      1,
+      3
+    ],
+    "effect_ids": [
+      "tm_yugu_smash_aoe"
+    ],
+    "cd": 5,
+    "icon_loc": "skill_civil_smash"
+  },
+  {
+    "id": "tm_wantao_approve",
+    "owner_id": "TM_wantao",
+    "name": "项目审批",
+    "desc": "点名减速精英，制造困难，并使其易伤（甲方特色）",
+    "show_tags": [
+      1,
+      3
+    ],
+    "effect_ids": [
+      "tm_wantao_approve_slow",
+      "tm_wantao_approve_vuln"
+    ],
+    "cd": 8,
+    "icon_loc": "skill_civil_approve"
+  },
+  {
+    "id": "bz_jihong_cost",
+    "owner_id": "BZ_jihong",
+    "name": "成本核算",
+    "desc": "友军短时减伤（财会盾）",
+    "show_tags": [
+      1,
+      3
+    ],
+    "effect_ids": [
+      "bz_jihong_cost_shield"
+    ],
+    "cd": 10,
+    "icon_loc": "skill_finance_cost"
+  },
+  {
+    "id": "bz_jihong_bonus",
+    "owner_id": "BZ_jihong",
+    "name": "散烟时刻",
+    "desc": "给兄弟们分发大量香烟，提振士气（局内用攻击加成模拟）",
+    "show_tags": [
+      2,
+      3
+    ],
+    "effect_ids": [
+      "bz_jihong_bonus_atk"
+    ],
+    "cd": 0,
+    "icon_loc": "skill_finance_bonus"
+  },
+  {
+    "id": "yh_hangu_flow",
+    "owner_id": "YH_hangu",
+    "name": "审核加速",
+    "desc": "全队短时攻击速度提升，技能CD缩减",
+    "show_tags": [
+      1,
+      3
+    ],
+    "effect_ids": [
+      "yh_hangu_flow_buff"
+    ],
+    "cd": 11,
+    "icon_loc": "skill_bank_flow"
+  },
+  {
+    "id": "yh_hangu_extend",
+    "owner_id": "YH_hangu",
+    "name": "信贷办理",
+    "desc": "可以为章节选择和购进时候，进行贷款透支操作",
+    "show_tags": [
+      1,
+      3
+    ],
+    "effect_ids": [
+      "yh_hangu_extend_shield"
+    ],
+    "cd": 13,
+    "icon_loc": "skill_bank_extend"
+  },
+  {
+    "id": "wuzi_boost",
+    "owner_id": "Energy_uzi",
+    "name": "能源增幅",
+    "desc": "强化场上机械派系友军攻击与技能倍率",
+    "show_tags": [
+      1,
+      3
+    ],
+    "effect_ids": [
+      "wuzi_boost_buff"
+    ],
+    "cd": 10,
+    "icon_loc": "skill_energy_boost"
+  },
+  {
+    "id": "wuzi_grid",
+    "owner_id": "Energy_uzi",
+    "name": "应急供电",
+    "desc": "友军范围护盾，机械单位额外一层",
+    "show_tags": [
+      1,
+      3
+    ],
+    "effect_ids": [
+      "wuzi_grid_shield",
+      "wuzi_grid_extra"
+    ],
+    "cd": 12,
+    "icon_loc": "skill_energy_grid"
+  },
+  {
+    "id": "mow_eng_crush",
+    "owner_id": "eng_xie",
+    "name": "碾压",
+    "desc": "工程影普攻",
+    "show_tags": [
+      1
+    ],
+    "effect_ids": [
+      "mow_eng_crush_dmg"
+    ],
+    "cd": 0,
+    "icon_loc": "skill_crush"
+  },
+  {
+    "id": "mow_hire_smash",
+    "owner_id": "temp_hire",
+    "name": "苦力砸",
+    "desc": "临时工普攻",
+    "show_tags": [
+      1
+    ],
+    "effect_ids": [
+      "mow_hire_smash_dmg"
+    ],
+    "cd": 0,
+    "icon_loc": "skill_labor"
+  },
+  {
+    "id": "fusion_overload",
+    "owner_id": "fusion",
+    "name": "重装过载",
+    "desc": "机械×能源羁绊：短时破甲与供电半径同时提升",
+    "show_tags": [
+      1,
+      5
+    ],
+    "effect_ids": [
+      "fusion_overload_buff"
+    ],
+    "cd": 18,
+    "icon_loc": "skill_fusion_overload"
+  },
+  {
+    "id": "loot_stone_throw",
+    "owner_id": "loot",
+    "name": "飞石",
+    "desc": "捡起石块砸向最近敌人",
+    "show_tags": [
+      1
+    ],
+    "effect_ids": [
+      "loot_stone_throw_damage"
+    ],
+    "cd": 4,
+    "icon_loc": ""
+  },
+  {
+    "id": "loot_group_cheer",
+    "owner_id": "loot",
+    "name": "组队壮胆",
+    "desc": "短时间提高附近兄弟攻击",
+    "show_tags": [
+      1
+    ],
+    "effect_ids": [
+      "loot_group_cheer_buff"
+    ],
+    "cd": 8,
+    "icon_loc": ""
+  },
+  {
+    "id": "loot_first_aid",
+    "owner_id": "loot",
+    "name": "临时急救",
+    "desc": "治疗附近受伤兄弟",
+    "show_tags": [
+      1
+    ],
+    "effect_ids": [
+      "loot_first_aid_heal"
+    ],
+    "cd": 9,
+    "icon_loc": ""
+  },
+  {
+    "id": "energy_oban_ironhead",
+    "owner_id": "Energy_oban",
+    "name": "铁头敲盆",
+    "desc": "铁头敲盆震开近敌并给自己加厚护盾，高考毕业后较早成型",
+    "show_tags": [
+      1,
+      3
+    ],
+    "effect_ids": [
+      "energy_oban_ironhead_wave",
+      "energy_oban_ironhead_shield"
+    ],
+    "cd": 8,
+    "icon_loc": "skill_energy_ironhead"
+  },
+  {
+    "id": "energy_oban_cherish",
+    "owner_id": "Energy_oban",
+    "name": "醉后惜缘",
+    "desc": "酒后认真劝大家珍惜眼前人，为附近兄弟提供护盾和士气",
+    "show_tags": [
+      1,
+      3
+    ],
+    "effect_ids": [
+      "energy_oban_cherish_shield",
+      "energy_oban_cherish_buff"
+    ],
+    "cd": 13,
+    "icon_loc": "skill_energy_cherish"
+  },
+  {
+    "id": "cs_ayun_gaoliao",
+    "owner_id": "CS_ayun",
+    "name": "告料",
+    "desc": "听从队友点名冲向一个敌人狠狠干，残血目标更容易被带走",
+    "show_tags": [
+      1,
+      3
+    ],
+    "effect_ids": [
+      "cs_ayun_gaoliao_hit",
+      "cs_ayun_gaoliao_rush"
+    ],
+    "cd": 10,
+    "icon_loc": "skill_gaoliao"
+  },
+  {
+    "id": "tm_junjun_inspect",
+    "owner_id": "TM_junjun",
+    "name": "三方巡检",
+    "desc": "圈出施工隐患区，减速范围敌人并给附近兄弟发放整改护具",
+    "show_tags": [
+      1,
+      3
+    ],
+    "effect_ids": [
+      "tm_junjun_inspect_slow",
+      "tm_junjun_inspect_shield"
+    ],
+    "cd": 9,
+    "icon_loc": "skill_civil_inspect"
+  },
+  {
+    "id": "bus_laizhen_mobilize",
+    "owner_id": "Bus_laizhen",
+    "name": "拉人开工",
+    "desc": "创业能手迅速拉起临时班底，并提升附近兄弟的开工士气",
+    "show_tags": [
+      1,
+      3
+    ],
+    "effect_ids": [
+      "bus_laizhen_mobilize_hire",
+      "bus_laizhen_mobilize_buff"
+    ],
+    "cd": 13,
+    "icon_loc": "skill_business_mobilize"
+  },
+  {
+    "id": "bus_longtou_turnaround",
+    "owner_id": "Bus_longtou",
+    "name": "扭亏为盈",
+    "desc": "重启厂线并兜住现金流，为附近兄弟同时提供护盾与反攻增益",
+    "show_tags": [
+      1,
+      3
+    ],
+    "effect_ids": [
+      "bus_longtou_turnaround_shield",
+      "bus_longtou_turnaround_buff"
+    ],
+    "cd": 12,
+    "icon_loc": "skill_factory_turnaround"
+  },
+  {
+    "id": "fusion_joint_inspection",
+    "owner_id": "fusion",
+    "name": "联合验收",
+    "desc": "土木与公共治理联合验收：敌方施工区减速，兄弟获得安全护具",
+    "show_tags": [
+      1,
+      5
+    ],
+    "effect_ids": [
+      "fusion_joint_inspection_slow",
+      "fusion_joint_inspection_shield"
+    ],
+    "cd": 17,
+    "icon_loc": "skill_fusion_inspection"
+  },
+  {
+    "id": "fusion_supply_chain",
+    "owner_id": "fusion",
+    "name": "产销一体",
+    "desc": "创业渠道连接能源产能：全队提速开工，并临时补充一名生产人员",
+    "show_tags": [
+      1,
+      5
+    ],
+    "effect_ids": [
+      "fusion_supply_chain_buff",
+      "fusion_supply_chain_hire"
+    ],
+    "cd": 19,
+    "icon_loc": "skill_fusion_supply_chain"
+  }
+]

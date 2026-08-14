@@ -1,0 +1,22 @@
+{
+    "name": "JojoP.HotUpdate",
+    "rootNamespace": "JojoP",
+    "references": [
+        "JojoP.AOT",
+        "JojoP.Config",
+        "UnityEngine.UI",
+        "Unity.TextMeshPro",
+        "YooAsset",
+        "UniTask",
+        "Luban.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

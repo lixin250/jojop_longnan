@@ -1,0 +1,46 @@
+[
+  {
+    "id": "equip_normal",
+    "name": "顺手家伙",
+    "desc": "普通近战，伤害稳定",
+    "attack_form": 0,
+    "damage_mul": 1,
+    "secondary_mul": 0,
+    "max_targets": 1,
+    "radius": 0,
+    "vfx_key": "hit_normal"
+  },
+  {
+    "id": "equip_pierce",
+    "name": "竹竿一捅",
+    "desc": "直线贯穿，第二个目标承受较低伤害",
+    "attack_form": 1,
+    "damage_mul": 0.88,
+    "secondary_mul": 0.62,
+    "max_targets": 3,
+    "radius": 3.2,
+    "vfx_key": "hit_pierce"
+  },
+  {
+    "id": "equip_chain",
+    "name": "电线乱搭",
+    "desc": "攻击在邻近敌人之间弹跳",
+    "attack_form": 2,
+    "damage_mul": 0.82,
+    "secondary_mul": 0.58,
+    "max_targets": 3,
+    "radius": 2.4,
+    "vfx_key": "hit_chain"
+  },
+  {
+    "id": "equip_splash",
+    "name": "工地抡锤",
+    "desc": "命中位置产生范围溅射",
+    "attack_form": 3,
+    "damage_mul": 0.9,
+    "secondary_mul": 0.52,
+    "max_targets": 6,
+    "radius": 1.35,
+    "vfx_key": "hit_splash"
+  }
+]

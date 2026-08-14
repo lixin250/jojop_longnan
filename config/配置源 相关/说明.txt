@@ -1,0 +1,6 @@
+---------------- config
+|——luban_examples-main.zip	下载：https://github.com/focus-creative-games/luban_examples
+|——Luban.7z		下载： 2026.8.7 使用了tag为  v4.10.2的版本。
+
+---------------- Unity
+|——com.code-philosophy.luban下载:在 Unity Package Manager 中安装 Runtime 包

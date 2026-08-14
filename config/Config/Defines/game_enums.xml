@@ -1,0 +1,7 @@
+<module name="">
+    <bean name="GrowthMul" valueType="1" sep=":" comment="三维成长倍率（兼容旧数据）">
+        <var name="hp" type="float"/>
+        <var name="atk" type="float"/>
+        <var name="move" type="float"/>
+    </bean>
+</module>

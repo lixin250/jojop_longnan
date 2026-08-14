@@ -1,0 +1,57 @@
+[
+  {
+    "chapter_id": "Primary",
+    "base_active_slots": 3,
+    "ad_extra_slot_limit": 2,
+    "affinity_needed": 3,
+    "rewarded_reroll_limit": 1,
+    "extra_member_enemy_mul": 0.45,
+    "extra_member_spawn_mul": 0.12,
+    "extra_member_elite_bonus": 0.02,
+    "comment": "小学先控三人，广告最多扩到五人"
+  },
+  {
+    "chapter_id": "Middle",
+    "base_active_slots": 4,
+    "ad_extra_slot_limit": 2,
+    "affinity_needed": 3,
+    "rewarded_reroll_limit": 1,
+    "extra_member_enemy_mul": 0.45,
+    "extra_member_spawn_mul": 0.12,
+    "extra_member_elite_bonus": 0.025,
+    "comment": "初中基础四人"
+  },
+  {
+    "chapter_id": "High",
+    "base_active_slots": 5,
+    "ad_extra_slot_limit": 2,
+    "affinity_needed": 3,
+    "rewarded_reroll_limit": 1,
+    "extra_member_enemy_mul": 0.42,
+    "extra_member_spawn_mul": 0.1,
+    "extra_member_elite_bonus": 0.03,
+    "comment": "高中组合技逐步成型"
+  },
+  {
+    "chapter_id": "University",
+    "base_active_slots": 6,
+    "ad_extra_slot_limit": 2,
+    "affinity_needed": 3,
+    "rewarded_reroll_limit": 1,
+    "extra_member_enemy_mul": 0.4,
+    "extra_member_spawn_mul": 0.1,
+    "extra_member_elite_bonus": 0.035,
+    "comment": "大学允许更大队伍"
+  },
+  {
+    "chapter_id": "Society",
+    "base_active_slots": -1,
+    "ad_extra_slot_limit": 0,
+    "affinity_needed": 3,
+    "rewarded_reroll_limit": 1,
+    "extra_member_enemy_mul": 0.35,
+    "extra_member_spawn_mul": 0.08,
+    "extra_member_elite_bonus": 0.04,
+    "comment": "社会章默认不限制全员集合"
+  }
+]

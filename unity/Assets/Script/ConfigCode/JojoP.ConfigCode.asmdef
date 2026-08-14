@@ -1,0 +1,16 @@
+{
+    "name": "JojoP.ConfigCode",
+    "rootNamespace": "JojoP.Cfg",
+    "references": [
+        "Luban.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
