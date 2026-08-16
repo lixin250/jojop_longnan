@@ -66,6 +66,7 @@ namespace JojoP.Gameplay.Brothers
             _matSummon = CreateMat(new Color(0.55f, 0.85f, 0.45f));
             _skills = new SkillCastSystem(_brothers, _enemies, SpawnSummonAlly);
             _attackForms = new AttackFormSystem(_enemies);
+            EnsureArenaVisual();
             EnsureLights();
         }
 
@@ -283,7 +284,7 @@ namespace JojoP.Gameplay.Brothers
                 var go = GameObject.CreatePrimitive(PrimitiveType.Capsule);
                 go.name = "Brother_" + br.DisplayName;
                 go.transform.SetParent(transform, false);
-                go.transform.position = new Vector3(-2.2f + slot * 0.7f, -1.6f, 0f);
+                go.transform.position = BattleField.SquadSlot(slot, CountFighting(run));
                 var col = go.GetComponent<Collider>();
                 if (col != null) Destroy(col);
 
@@ -322,6 +323,14 @@ namespace JojoP.Gameplay.Brothers
             }
         }
 
+        static int CountFighting(RunState run)
+        {
+            int n = 0;
+            foreach (var br in run.Squad)
+                if (br.CanFight) n++;
+            return Mathf.Max(1, n);
+        }
+
         static bool HasFaction(BrotherRuntime br, BrotherTag tag)
         {
             if (br.Tags == null) return false;
@@ -338,9 +347,7 @@ namespace JojoP.Gameplay.Brothers
             var go = GameObject.CreatePrimitive(PrimitiveType.Cube);
             go.name = "Enemy_" + theme.DisplayName;
             go.transform.SetParent(transform, false);
-            float x = UnityEngine.Random.Range(-2.8f, 2.8f);
-            float y = UnityEngine.Random.Range(1.4f, 3.2f);
-            go.transform.position = new Vector3(x, y, 0f);
+            go.transform.position = BattleField.EnemySpawnOnRing();
             var col = go.GetComponent<Collider>();
             if (col != null) Destroy(col);
 
@@ -381,7 +388,7 @@ namespace JojoP.Gameplay.Brothers
             var go = GameObject.CreatePrimitive(PrimitiveType.Cube);
             go.name = "Summon_" + (role?.Name ?? roleId);
             go.transform.SetParent(transform, false);
-            go.transform.position = pos;
+            go.transform.position = BattleField.ClampToArena(pos);
             var col = go.GetComponent<Collider>();
             if (col != null) Destroy(col);
 
@@ -434,6 +441,21 @@ namespace JojoP.Gameplay.Brothers
                 if (u != null) Destroy(u.gameObject);
             _brothers.Clear();
             _enemies.Clear();
+        }
+
+        void EnsureArenaVisual()
+        {
+            if (transform.Find("ArenaFloor") != null) return;
+            var go = GameObject.CreatePrimitive(PrimitiveType.Quad);
+            go.name = "ArenaFloor";
+            go.transform.SetParent(transform, false);
+            go.transform.position = new Vector3(0f, 0f, 1f);
+            float size = BattleField.SpawnRadius * 2.15f;
+            go.transform.localScale = new Vector3(size, size, 1f);
+            var col = go.GetComponent<Collider>();
+            if (col != null) Destroy(col);
+            var r = go.GetComponent<Renderer>();
+            if (r != null) r.sharedMaterial = CreateMat(new Color(0.12f, 0.16f, 0.14f));
         }
 
         static void EnsureLights()

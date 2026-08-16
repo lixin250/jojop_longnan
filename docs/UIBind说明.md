@@ -25,12 +25,11 @@
 ## 与简易 UIBinder 的关系
 
 - **UIBind 工具链**（Tag 生成 partial）：适合正式 Prefab 面板
-- **UIBinder**（key→组件）：主界面 / GameHud 等运行时搭的 UI 在用，两者可并存
+- **UIBinder**（key→组件）：主界面 / 兄弟团运行时搭的 UI 在用，两者可并存
 
 已定运行时 key：
 
 | 面板 | key |
 |------|-----|
-| 主界面 | `txt_best` / `btn_start` / `btn_settings` |
+| 主界面 | `txt_title` / `btn_brothers` / `btn_settings` |
 | 设置 | `btn_privacy` / `btn_close` |
-| 局内 HUD | `txt_score` / `txt_hint` / `btn_revive` / `btn_double` / `btn_retry` / `btn_home` |

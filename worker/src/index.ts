@@ -8,9 +8,6 @@ const DEFAULT_CONFIG = {
   rewardedEnabled: true,
   interstitialEnabled: true,
   dailyRewardedCap: 8,
-  blockSpeed: 2.4,
-  speedRampPerScore: 0.04,
-  minOverlapRatio: 0.18,
   interstitialEveryNRetries: 2,
 };
 

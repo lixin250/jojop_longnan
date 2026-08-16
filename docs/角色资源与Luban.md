@@ -12,7 +12,7 @@
 | **档案 / 结算 / 招募卡** | **大头贴 Sprite**（主） | 已有 `Bundle/Role/大头贴`；UI 直接挂 Image |
 | **以后单人展示** | Spine **可选**，不进战场 | 仅「看角色」界面；与战场 Prefab 分离 |
 
-竖切不做战场 Spine。战场 Prefab：`SpriteRenderer`（或 URP Unlit Quad）+ 逻辑挂 `BattleUnit`。
+竖切不做战场 Spine。战场逻辑：`BattleField` 管镜头/阵位/刷怪环；单位先用色块，再换成 `SpriteRenderer` + `BattleUnit`。
 
 ---
 

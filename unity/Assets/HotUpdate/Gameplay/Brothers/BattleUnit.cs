@@ -56,7 +56,8 @@ namespace JojoP.Gameplay.Brothers
             if (dist > AttackRange)
             {
                 if (dist > 0.01f)
-                    transform.position += to.normalized * (Move * MoveMul * dt);
+                    transform.position = BattleField.ClampToArena(
+                        transform.position + to.normalized * (Move * MoveMul * dt));
                 return;
             }
 

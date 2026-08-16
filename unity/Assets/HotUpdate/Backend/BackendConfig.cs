@@ -11,9 +11,6 @@ namespace JojoP.Backend
         public bool rewardedEnabled = true;
         public bool interstitialEnabled = true;
         public int dailyRewardedCap = 8;
-        public float blockSpeed = 2.4f;
-        public float speedRampPerScore = 0.04f;
-        public float minOverlapRatio = 0.18f;
         public int interstitialEveryNRetries = 2;
     }
 

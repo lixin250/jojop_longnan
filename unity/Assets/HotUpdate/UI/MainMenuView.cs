@@ -5,19 +5,15 @@ using UnityEngine.UI;
 namespace JojoP.UI
 {
     /// <summary>
-    /// 主界面：最高分、开始游戏、右上角设置。
+    /// 主界面：进兄弟团、右上角设置。
     /// </summary>
     public sealed class MainMenuView : MonoBehaviour
     {
-        public const string KeyBest = "txt_best";
         public const string KeyTitle = "txt_title";
-        public const string KeyBtnStart = "btn_start";
         public const string KeyBtnBrothers = "btn_brothers";
         public const string KeyBtnSettings = "btn_settings";
 
         UIBinder _binder;
-        Text _bestText;
-        Action _onStart;
         Action _onBrothers;
         Action _onSettings;
 
@@ -36,15 +32,6 @@ namespace JojoP.UI
         {
             _binder = GetComponent<UIBinder>() ?? gameObject.AddComponent<UIBinder>();
             _binder.Rebuild();
-
-            _bestText = _binder.Get<Text>(KeyBest);
-
-            var btnStart = _binder.Get<Button>(KeyBtnStart);
-            if (btnStart != null)
-            {
-                btnStart.onClick.RemoveAllListeners();
-                btnStart.onClick.AddListener(() => _onStart?.Invoke());
-            }
 
             var btnBrothers = _binder.Get<Button>(KeyBtnBrothers);
             if (btnBrothers != null)
@@ -65,18 +52,12 @@ namespace JojoP.UI
         {
             _binder = GetComponent<UIBinder>() ?? gameObject.AddComponent<UIBinder>();
 
-            var title = MakeText(transform, KeyTitle, "JojoP · 龙南", 64, new Vector2(0, 320), new Vector2(900, 100), TextAnchor.MiddleCenter);
+            var title = MakeText(transform, KeyTitle, "JojoP · 龙南", 64, new Vector2(0, 280), new Vector2(900, 100), TextAnchor.MiddleCenter);
             _binder.Set(KeyTitle, title);
 
-            var best = MakeText(transform, KeyBest, "最高分 0", 36, new Vector2(0, 200), new Vector2(700, 60), TextAnchor.MiddleCenter);
-            _binder.Set(KeyBest, best);
-
-            var brothers = MakeButton(transform, KeyBtnBrothers, "我和我的龙兄南弟", new Vector2(0, 40), new Vector2(520, 110));
+            var brothers = MakeButton(transform, KeyBtnBrothers, "我和我的龙兄南弟", new Vector2(0, 20), new Vector2(560, 120));
             brothers.GetComponent<Image>().color = new Color(0.2f, 0.7f, 0.45f, 1f);
             _binder.Set(KeyBtnBrothers, brothers);
-
-            var start = MakeButton(transform, KeyBtnStart, "叠叠乐", new Vector2(0, -100), new Vector2(520, 90));
-            _binder.Set(KeyBtnStart, start);
 
             var settings = MakeButton(transform, KeyBtnSettings, "设置", new Vector2(-40, -40), new Vector2(160, 70));
             var srt = settings.GetComponent<RectTransform>();
@@ -86,22 +67,14 @@ namespace JojoP.UI
             _binder.Set(KeyBtnSettings, settings);
         }
 
-        public void Show(int bestScore, Action onStart, Action onSettings, Action onBrothers = null)
+        public void Show(Action onSettings, Action onBrothers)
         {
-            _onStart = onStart;
             _onSettings = onSettings;
             _onBrothers = onBrothers;
-            SetBest(bestScore);
             gameObject.SetActive(true);
         }
 
         public void Hide() => gameObject.SetActive(false);
-
-        public void SetBest(int bestScore)
-        {
-            if (_bestText != null)
-                _bestText.text = $"最高分 {bestScore}";
-        }
 
         static Text MakeText(Transform parent, string name, string value, int size, Vector2 anchored, Vector2 sizeDelta, TextAnchor anchor)
         {

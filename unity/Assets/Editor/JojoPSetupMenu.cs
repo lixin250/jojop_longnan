@@ -39,7 +39,7 @@ namespace JojoP.EditorTools
 
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
-            Debug.Log("[JojoP] Bootstrap + Main 已生成。Play Bootstrap → 进主界面 → 开始叠叠乐。");
+            Debug.Log("[JojoP] Bootstrap + Main 已生成。Play Bootstrap → 进主界面 → 我和我的龙兄南弟。");
         }
 
         [MenuItem("JojoP/打开验收清单")]

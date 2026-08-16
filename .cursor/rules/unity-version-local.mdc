@@ -1,0 +1,31 @@
+---
+description: 家里电脑 Unity 版本与仓库不同，提交时必须甄别版本噪音，禁止上传
+alwaysApply: true
+---
+
+# Unity 版本差：只提交业务，不提交版本噪音
+
+仓库基准编辑器是 **6000.4.0f1**。本机可能是 **6000.3.x** 或其他小版本。
+`ProjectVersion.txt` 已对本机设 `skip-worktree`，本地改成 6.3 不会进 `git status`。
+
+## 禁止提交（版本/本机噪音）
+
+- `unity/ProjectSettings/ProjectVersion.txt`
+- Unity 因降级/升级自动改写的 `ProjectSettings.asset`、`EditorBuildSettings.asset`、`GraphicsSettings.asset`、`QualitySettings.asset`、`TagManager.asset`（除非用户明确要改产品设置）
+- `unity/Packages/packages-lock.json`、`manifest.json` 里被编辑器改掉的内置包版本
+- `unity/Library/`、`Logs/`、`UserSettings/`、`Temp/`、`obj/`（已在 `.gitignore`）
+- 场景/Prefab 仅 `serializedVersion` / 编辑器版本字段变化、无业务改动
+- HybridCLR 本机 Installer 拉下来的 `HybridCLRData/` 增量（除非用户明确要同步工具链）
+
+## 可以提交（业务迭代）
+
+- `Assets/HotUpdate`、`Assets/AOT`、`Assets/Editor` 的 C# / 玩法 / UI
+- `config/Config/Data` 表、Luban 生成的 `LubanCode` / `Bundle/LubanConfig`
+- 明确的 YooAsset 收集规则、资源、文档
+- 用户点名要进仓库的功能改动
+
+## 提交前自检
+
+1. `git diff` 每一份 `ProjectSettings` / `Packages` / `.unity` / `.prefab`：是玩法改了，还是编辑器重写了？
+2. 拿不准就先不 `git add`，问用户。
+3. 不要为了「工作区干净」把 `ProjectVersion.txt` 加回去。
