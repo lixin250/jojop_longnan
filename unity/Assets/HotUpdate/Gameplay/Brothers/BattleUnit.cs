@@ -33,6 +33,7 @@ namespace JojoP.Gameplay.Brothers
 
         float _cd;
         Renderer _renderer;
+        SpriteRenderer _sprite;
         Color _baseColor;
 
         public bool IsAlive => Hp > 0f && gameObject.activeInHierarchy;
@@ -41,9 +42,28 @@ namespace JojoP.Gameplay.Brothers
         {
             transform.localScale = Vector3.one * scale;
             _renderer = GetComponent<Renderer>();
+            _sprite = GetComponent<SpriteRenderer>();
             _baseColor = color;
-            if (_renderer != null)
-                ApplyColor(color);
+            ApplyColor(color);
+        }
+
+        /// <summary>挂战斗立绘（可选）；失败则保持色块。</summary>
+        public void TryApplyBattleSprite(Sprite sprite)
+        {
+            if (sprite == null) return;
+            var mesh = GetComponent<MeshRenderer>();
+            if (mesh != null) mesh.enabled = false;
+            _sprite = GetComponent<SpriteRenderer>();
+            if (_sprite == null) _sprite = gameObject.AddComponent<SpriteRenderer>();
+            _sprite.sprite = sprite;
+            _sprite.sortingOrder = Side == UnitSide.Brother ? 20 : 10;
+            float h = sprite.bounds.size.y;
+            float target = Side == UnitSide.Brother ? 1.15f : 0.85f;
+            float s = h > 0.01f ? target / h : 1f;
+            transform.localScale = Vector3.one * s;
+            _renderer = _sprite;
+            _baseColor = Color.white;
+            ApplyColor(Color.white);
         }
 
         public void TickCombat(float dt, BattleUnit target, System.Action<BattleUnit, BattleUnit, float> onHit)
@@ -74,7 +94,7 @@ namespace JojoP.Gameplay.Brothers
             onHit?.Invoke(this, target, dmg);
         }
 
-        public void ApplyDamage(float raw)
+        public float ApplyDamage(float raw, bool showFloater = true)
         {
             float defenseMul = 100f / (100f + Mathf.Max(0f, Defense));
             float dmg = raw * defenseMul * DamageTakenMul;
@@ -88,16 +108,22 @@ namespace JojoP.Gameplay.Brothers
             Hp -= dmg;
             if (Hp < 0f) Hp = 0f;
             Flash();
+            if (showFloater && dmg > 0.05f)
+                BattleFeedback.Damage(this, dmg);
+            return dmg;
         }
 
-        public void Heal(float amount)
+        public void Heal(float amount, bool showFloater = true)
         {
+            float before = Hp;
             Hp = Mathf.Min(MaxHp, Hp + amount);
+            float gained = Hp - before;
+            if (showFloater && gained > 0.05f)
+                BattleFeedback.Heal(this, gained);
         }
 
         void Flash()
         {
-            if (_renderer == null) return;
             ApplyColor(Color.white);
             CancelInvoke(nameof(RestoreColor));
             Invoke(nameof(RestoreColor), 0.08f);
@@ -107,6 +133,12 @@ namespace JojoP.Gameplay.Brothers
 
         void ApplyColor(Color c)
         {
+            if (_sprite != null)
+            {
+                _sprite.color = c;
+                return;
+            }
+
             if (_renderer == null) return;
             if (_renderer.material.HasProperty("_Color"))
                 _renderer.material.color = c;

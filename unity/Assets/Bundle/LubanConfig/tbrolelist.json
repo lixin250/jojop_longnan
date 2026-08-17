@@ -10,8 +10,8 @@
     "faction_tags": [
       10
     ],
-    "avatar_loc": "role_player_avatar",
-    "battle_loc": "role_player_battle",
+    "avatar_loc": "role_lixin_avatar",
+    "battle_loc": "role_lixin_battle",
     "base_hp": 110,
     "base_atk": 14,
     "base_move": 2.7,

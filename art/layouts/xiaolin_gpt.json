@@ -1,0 +1,108 @@
+{
+  "role_id": "xiaolin",
+  "source": "概念图/GPT-老陈.png",
+  "source_size": [1448, 1086],
+  "notes": "仁心老陈（Dr_chen）→ 表字段 role_xiaolin_*。",
+  "crops": [
+    {
+      "key": "avatar",
+      "box": [50, 790, 185, 925],
+      "matte": "none",
+      "resize": [256, 256],
+      "unity_name": "role_xiaolin_avatar.png",
+      "unity_subdir": "Role/大头贴"
+    },
+    {
+      "key": "avatar_smile",
+      "box": [205, 790, 340, 925],
+      "matte": "none",
+      "resize": [256, 256],
+      "unity_name": "role_xiaolin_avatar_smile.png",
+      "unity_subdir": "Role/halfbody"
+    },
+    {
+      "key": "half_fan",
+      "box": [40, 880, 175, 1035],
+      "matte": "none",
+      "resize": [256, 256],
+      "unity_name": "role_xiaolin_half.png",
+      "unity_subdir": "Role/halfbody"
+    },
+    {
+      "key": "half_plant",
+      "box": [195, 880, 330, 1035],
+      "matte": "none",
+      "resize": [256, 256],
+      "unity_name": "role_xiaolin_half_plant.png",
+      "unity_subdir": "Role/halfbody"
+    },
+    {
+      "key": "half_bag",
+      "box": [350, 880, 485, 1035],
+      "matte": "none",
+      "resize": [256, 256],
+      "unity_name": "role_xiaolin_half_bag.png",
+      "unity_subdir": "Role/halfbody"
+    },
+    {
+      "key": "battle",
+      "box": [400, 55, 560, 400],
+      "matte": "parchment",
+      "unity_name": "role_xiaolin_battle.png",
+      "unity_subdir": "Role/battle"
+    },
+    {
+      "key": "battle_idle",
+      "box": [770, 45, 920, 290],
+      "matte": "parchment",
+      "unity_name": "role_xiaolin_battle_idle.png",
+      "unity_subdir": "Role/battle"
+    },
+    {
+      "key": "skill_minxin",
+      "box": [505, 545, 655, 695],
+      "matte": "none",
+      "resize": [256, 256],
+      "unity_name": "skill_xiaolin_minxin.png",
+      "unity_subdir": "Skill/icon"
+    },
+    {
+      "key": "skill_heal",
+      "box": [725, 545, 875, 695],
+      "matte": "none",
+      "resize": [256, 256],
+      "unity_name": "skill_xiaolin_heal.png",
+      "unity_subdir": "Skill/icon"
+    },
+    {
+      "key": "item_fan",
+      "box": [40, 470, 160, 600],
+      "matte": "parchment",
+      "resize": [128, 128],
+      "unity_name": "item_xiaolin_fan.png",
+      "unity_subdir": "Item/icon"
+    },
+    {
+      "key": "item_bag",
+      "box": [180, 470, 300, 600],
+      "matte": "parchment",
+      "resize": [128, 128],
+      "unity_name": "item_xiaolin_bag.png",
+      "unity_subdir": "Item/icon"
+    },
+    {
+      "key": "poster_v",
+      "box": [600, 780, 760, 1060],
+      "matte": "none",
+      "unity_name": "role_xiaolin_poster.png",
+      "unity_subdir": "Role/poster"
+    },
+    {
+      "key": "banner",
+      "box": [960, 780, 1420, 1060],
+      "matte": "none",
+      "unity_name": "role_xiaolin_banner.png",
+      "unity_subdir": "Role/poster"
+    }
+  ]
+}

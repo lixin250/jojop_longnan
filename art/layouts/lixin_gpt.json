@@ -1,0 +1,108 @@
+{
+  "role_id": "lixin",
+  "source": "概念图/GPT-利欣.png",
+  "source_size": [1254, 1254],
+  "notes": "利欣（CS_lixin）标准角色设定板。avatar 覆盖 role_lixin_avatar，并同步一份 role_player_avatar（表里曾指向 player）。",
+  "crops": [
+    {
+      "key": "avatar",
+      "box": [55, 870, 195, 1015],
+      "matte": "none",
+      "resize": [256, 256],
+      "unity_name": "role_lixin_avatar.png",
+      "unity_subdir": "Role/大头贴"
+    },
+    {
+      "key": "avatar_player_alias",
+      "box": [55, 870, 195, 1015],
+      "matte": "none",
+      "resize": [256, 256],
+      "unity_name": "role_player_avatar.png",
+      "unity_subdir": "Role/大头贴"
+    },
+    {
+      "key": "avatar_alt",
+      "box": [210, 870, 350, 1015],
+      "matte": "none",
+      "resize": [256, 256],
+      "unity_name": "role_lixin_avatar_laugh.png",
+      "unity_subdir": "Role/halfbody"
+    },
+    {
+      "key": "half_a",
+      "box": [55, 1040, 195, 1185],
+      "matte": "none",
+      "resize": [256, 256],
+      "unity_name": "role_lixin_half.png",
+      "unity_subdir": "Role/halfbody"
+    },
+    {
+      "key": "half_b",
+      "box": [210, 1040, 350, 1185],
+      "matte": "none",
+      "resize": [256, 256],
+      "unity_name": "role_lixin_half_mug.png",
+      "unity_subdir": "Role/halfbody"
+    },
+    {
+      "key": "battle",
+      "box": [880, 55, 1000, 300],
+      "matte": "parchment",
+      "unity_name": "role_lixin_battle.png",
+      "unity_subdir": "Role/battle"
+    },
+    {
+      "key": "battle_idle",
+      "box": [650, 55, 800, 300],
+      "matte": "parchment",
+      "unity_name": "role_lixin_battle_idle.png",
+      "unity_subdir": "Role/battle"
+    },
+    {
+      "key": "skill_mosaic",
+      "box": [475, 665, 605, 795],
+      "matte": "none",
+      "resize": [256, 256],
+      "unity_name": "skill_lixin_mosaic.png",
+      "unity_subdir": "Skill/icon"
+    },
+    {
+      "key": "skill_void",
+      "box": [685, 665, 815, 795],
+      "matte": "none",
+      "resize": [256, 256],
+      "unity_name": "skill_lixin_void.png",
+      "unity_subdir": "Skill/icon"
+    },
+    {
+      "key": "item_keyboard",
+      "box": [40, 640, 160, 760],
+      "matte": "parchment",
+      "resize": [128, 128],
+      "unity_name": "item_lixin_keyboard.png",
+      "unity_subdir": "Item/icon"
+    },
+    {
+      "key": "item_laptop",
+      "box": [170, 640, 300, 760],
+      "matte": "parchment",
+      "resize": [128, 128],
+      "unity_name": "item_lixin_laptop.png",
+      "unity_subdir": "Item/icon"
+    },
+    {
+      "key": "poster_v",
+      "box": [430, 920, 580, 1200],
+      "matte": "none",
+      "unity_name": "role_lixin_poster.png",
+      "unity_subdir": "Role/poster"
+    },
+    {
+      "key": "banner",
+      "box": [760, 920, 1220, 1180],
+      "matte": "none",
+      "unity_name": "role_lixin_banner.png",
+      "unity_subdir": "Role/poster"
+    }
+  ]
+}

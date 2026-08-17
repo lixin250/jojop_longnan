@@ -34,13 +34,17 @@ Assets/Bundle/
   Item/icon/
 ```
 
-## 欧版一键
+## 批量裁切（利欣 / 欧版 / 老陈）
 
 ```powershell
 cd e:\Project\JojoP
-python art/tools/crop_concept_sheet.py
+python art/tools/crop_concept_sheet.py --all
 ```
 
 Unity 菜单：`JojoP/Art/从 art/_final 覆盖导入 Bundle`
 
-同名覆盖保留 `.meta` GUID，表字段 `avatar_loc` 不用改。
+| 概念图 | role_id | 主头像 | 战场图 |
+|--------|---------|--------|--------|
+| GPT-利欣 | lixin | `role_lixin_avatar`（兼 `role_player_avatar`） | `role_lixin_battle` |
+| GPT-欧版 | oban | `role_oban_avatar` | `role_oban_battle` |
+| GPT-老陈 | xiaolin | `role_xiaolin_avatar` | `role_xiaolin_battle` |

@@ -1,0 +1,137 @@
+{
+  "role_id": "lixin",
+  "source": "概念图/GPT-利欣.png",
+  "layout": "art/layouts/lixin_gpt.json",
+  "items": [
+    {
+      "key": "avatar",
+      "file": "role_lixin_avatar.png",
+      "unity_subdir": "Role/大头贴",
+      "matte": "none",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "key": "avatar_player_alias",
+      "file": "role_player_avatar.png",
+      "unity_subdir": "Role/大头贴",
+      "matte": "none",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "key": "avatar_alt",
+      "file": "role_lixin_avatar_laugh.png",
+      "unity_subdir": "Role/halfbody",
+      "matte": "none",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "key": "half_a",
+      "file": "role_lixin_half.png",
+      "unity_subdir": "Role/halfbody",
+      "matte": "none",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "key": "half_b",
+      "file": "role_lixin_half_mug.png",
+      "unity_subdir": "Role/halfbody",
+      "matte": "none",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "key": "battle",
+      "file": "role_lixin_battle.png",
+      "unity_subdir": "Role/battle",
+      "matte": "parchment",
+      "size": [
+        120,
+        245
+      ]
+    },
+    {
+      "key": "battle_idle",
+      "file": "role_lixin_battle_idle.png",
+      "unity_subdir": "Role/battle",
+      "matte": "parchment",
+      "size": [
+        150,
+        245
+      ]
+    },
+    {
+      "key": "skill_mosaic",
+      "file": "skill_lixin_mosaic.png",
+      "unity_subdir": "Skill/icon",
+      "matte": "none",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "key": "skill_void",
+      "file": "skill_lixin_void.png",
+      "unity_subdir": "Skill/icon",
+      "matte": "none",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "key": "item_keyboard",
+      "file": "item_lixin_keyboard.png",
+      "unity_subdir": "Item/icon",
+      "matte": "parchment",
+      "size": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "item_laptop",
+      "file": "item_lixin_laptop.png",
+      "unity_subdir": "Item/icon",
+      "matte": "parchment",
+      "size": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "poster_v",
+      "file": "role_lixin_poster.png",
+      "unity_subdir": "Role/poster",
+      "matte": "none",
+      "size": [
+        150,
+        280
+      ]
+    },
+    {
+      "key": "banner",
+      "file": "role_lixin_banner.png",
+      "unity_subdir": "Role/poster",
+      "matte": "none",
+      "size": [
+        460,
+        260
+      ]
+    }
+  ]
+}

@@ -15,14 +15,21 @@ namespace JojoP.UI
         GameObject _hub;
         GameObject _battleHud;
         GameObject _overlay;
+        GameObject _archivePanel;
+        GameObject _trainPanel;
         Text _metaText;
         Text _chapterText;
         Text _battleInfo;
         Text _overlayTitle;
         Text _overlayBody;
         Text _overlayShare;
+        Text _archiveHint;
         readonly Button[] _rogueBtns = new Button[3];
         readonly Text[] _rogueLabels = new Text[3];
+        readonly Image[] _partyPortraits = new Image[5];
+        readonly Image[] _partyHpFills = new Image[5];
+        readonly Text[] _partyNames = new Text[5];
+        readonly float _partyHpWidth = 160f;
         Button _btnConfirm;
         Button _btnRetry;
         Button _btnHome;
@@ -82,64 +89,107 @@ namespace JojoP.UI
             _hub.transform.SetParent(transform, false);
             BrothersUiUtil.Stretch(_hub.GetComponent<RectTransform>());
 
-            BrothersUiUtil.MakeText(_hub.transform, "Title", "我和我的龙兄南弟", 56, new Vector2(0, 700), new Vector2(900, 80));
-            _metaText = BrothersUiUtil.MakeText(_hub.transform, "Meta", "", 28, new Vector2(0, 580), new Vector2(980, 120));
-            _chapterText = BrothersUiUtil.MakeText(_hub.transform, "Chapter", "章节：小学", 30, new Vector2(0, 450), new Vector2(900, 50));
+            BrothersUiUtil.MakePanel(_hub.transform, "HubBg", new Vector2(1080, 1920), Vector2.zero,
+                new Color(0.12f, 0.11f, 0.09f, 0.55f));
 
-            float y = 300f;
+            var title = BrothersUiUtil.MakeText(_hub.transform, "Title", "我和我的龙兄南弟", 56, new Vector2(0, 820), new Vector2(960, 80));
+            title.color = BrothersUiUtil.Parchment;
+
+            _trainPanel = BrothersUiUtil.MakePanel(_hub.transform, "TrainCard", new Vector2(980, 200), new Vector2(0, 640),
+                BrothersUiUtil.PanelDark).gameObject;
+            _metaText = BrothersUiUtil.MakeText(_trainPanel.transform, "Meta", "", 26, Vector2.zero, new Vector2(920, 170));
+            _metaText.alignment = TextAnchor.MiddleLeft;
+            _metaText.color = BrothersUiUtil.Parchment;
+
+            _chapterText = BrothersUiUtil.MakeText(_hub.transform, "Chapter", "章节：小学", 28, new Vector2(0, 500), new Vector2(900, 50));
+            _chapterText.color = new Color(0.9f, 0.85f, 0.7f);
+
+            // 图鉴条：展示已出概念图的兄弟头像
+            var archivePanel = BrothersUiUtil.MakePanel(_hub.transform, "Archive", new Vector2(980, 200), new Vector2(0, 340),
+                new Color(0.14f, 0.12f, 0.1f, 0.9f));
+            _archiveRoot = archivePanel.gameObject;
+            var archTitle = BrothersUiUtil.MakeText(_archiveRoot.transform, "ArchTitle", "兄弟图鉴", 26, new Vector2(0, 70), new Vector2(400, 40));
+            archTitle.color = BrothersUiUtil.Parchment;
+            _archiveHint = BrothersUiUtil.MakeText(_archiveRoot.transform, "ArchHint", "", 20, new Vector2(0, -70), new Vector2(900, 36));
+            _archiveHint.color = new Color(0.75f, 0.7f, 0.6f);
+            BuildArchivePortraits();
+
+            float y = 140f;
             foreach (var ch in GameTables.Chapters)
             {
                 var id = ch.Id;
-                var btn = BrothersUiUtil.MakeButton(_hub.transform, "Ch_" + id, ch.DisplayName, new Vector2(0, y), new Vector2(640, 72));
+                var btn = BrothersUiUtil.MakeButton(_hub.transform, "Ch_" + id, ch.DisplayName, new Vector2(0, y), new Vector2(640, 68),
+                    new Color(0.32f, 0.28f, 0.22f));
                 btn.onClick.AddListener(() =>
                 {
                     _selectedChapter = id;
                     RefreshHubTexts();
                 });
-                y -= 84f;
+                y -= 76f;
             }
 
-            var start = BrothersUiUtil.MakeButton(_hub.transform, "BtnStart", "出征（耗体力）", new Vector2(0, -420), new Vector2(520, 100),
-                new Color(0.2f, 0.7f, 0.45f));
+            var start = BrothersUiUtil.MakeButton(_hub.transform, "BtnStart", "出征（耗体力）", new Vector2(0, -380), new Vector2(520, 96),
+                BrothersUiUtil.AccentGreen);
             start.onClick.AddListener(OnStartRun);
 
-            var potHp = BrothersUiUtil.MakeButton(_hub.transform, "BtnPotHp", "潜力生命 3点", new Vector2(-220, -540), new Vector2(280, 70));
+            var potHp = BrothersUiUtil.MakeButton(_hub.transform, "BtnPotHp", "潜力生命 3点", new Vector2(-220, -500), new Vector2(280, 66),
+                new Color(0.28f, 0.45f, 0.55f));
             potHp.onClick.AddListener(() =>
             {
                 _session?.Meta.TryBuyPotentialHp();
                 RefreshHubTexts();
             });
-            var potAtk = BrothersUiUtil.MakeButton(_hub.transform, "BtnPotAtk", "潜力攻击 3点", new Vector2(220, -540), new Vector2(280, 70));
+            var potAtk = BrothersUiUtil.MakeButton(_hub.transform, "BtnPotAtk", "潜力攻击 3点", new Vector2(220, -500), new Vector2(280, 66),
+                new Color(0.55f, 0.32f, 0.28f));
             potAtk.onClick.AddListener(() =>
             {
                 _session?.Meta.TryBuyPotentialAtk();
                 RefreshHubTexts();
             });
-            var heal = BrothersUiUtil.MakeButton(_hub.transform, "BtnHeal", "养伤缩短 5点", new Vector2(0, -620), new Vector2(360, 70));
+            var heal = BrothersUiUtil.MakeButton(_hub.transform, "BtnHeal", "养伤缩短 5点", new Vector2(0, -580), new Vector2(360, 66),
+                new Color(0.35f, 0.5f, 0.35f));
             heal.onClick.AddListener(() =>
             {
                 _session?.Meta.TryBuyHealTier();
                 RefreshHubTexts();
             });
 
-            var adSta = BrothersUiUtil.MakeButton(_hub.transform, "BtnAdSta", "广告+体力", new Vector2(-220, -720), new Vector2(280, 70),
-                new Color(0.75f, 0.45f, 0.2f));
+            var adSta = BrothersUiUtil.MakeButton(_hub.transform, "BtnAdSta", "广告+体力", new Vector2(-220, -680), new Vector2(280, 66),
+                BrothersUiUtil.AccentOrange);
             adSta.onClick.AddListener(() => _onRewardedAd?.Invoke(() =>
             {
                 _session?.Meta.AddStamina(2);
                 RefreshHubTexts();
             }));
-            var adTrain = BrothersUiUtil.MakeButton(_hub.transform, "BtnAdTrain", "广告+培养点", new Vector2(220, -720), new Vector2(280, 70),
-                new Color(0.75f, 0.45f, 0.2f));
+            var adTrain = BrothersUiUtil.MakeButton(_hub.transform, "BtnAdTrain", "广告+培养点", new Vector2(220, -680), new Vector2(280, 66),
+                BrothersUiUtil.AccentOrange);
             adTrain.onClick.AddListener(() => _onRewardedAd?.Invoke(() =>
             {
                 _session?.Meta.AddTrain(3);
                 RefreshHubTexts();
             }));
 
-            var home = BrothersUiUtil.MakeButton(_hub.transform, "BtnBack", "返回主界面", new Vector2(0, -820), new Vector2(360, 70),
+            var home = BrothersUiUtil.MakeButton(_hub.transform, "BtnBack", "返回主界面", new Vector2(0, -780), new Vector2(360, 66),
                 new Color(0.35f, 0.35f, 0.4f));
             home.onClick.AddListener(() => _onHome?.Invoke());
+        }
+
+        void BuildArchivePortraits()
+        {
+            // 利欣 / 欧版 / 老陈 — 有概念图配套的三位
+            string[] locs = { "role_lixin_avatar", "role_oban_avatar", "role_xiaolin_avatar" };
+            string[] names = { "利欣", "欧版", "老陈" };
+            float startX = -280f;
+            for (int i = 0; i < locs.Length; i++)
+            {
+                var sp = JojoP.Gameplay.Brothers.RoleArtLoader.LoadPortrait(locs[i]);
+                BrothersUiUtil.MakePortrait(_archiveRoot.transform, "Arch" + i,
+                    new Vector2(startX + i * 280f, 0f), new Vector2(120, 120), sp,
+                    new Color(0.35f, 0.32f, 0.28f));
+                var n = BrothersUiUtil.MakeText(_archiveRoot.transform, "ArchN" + i, names[i], 22,
+                    new Vector2(startX + i * 280f, -85f), new Vector2(140, 30));
+                n.color = BrothersUiUtil.Parchment;
+            }
         }
 
         void BuildBattleHud()
@@ -148,22 +198,49 @@ namespace JojoP.UI
             _battleHud.transform.SetParent(transform, false);
             BrothersUiUtil.Stretch(_battleHud.GetComponent<RectTransform>());
 
-            _battleInfo = BrothersUiUtil.MakeText(_battleHud.transform, "Info", "", 28, new Vector2(0, 820), new Vector2(1000, 140));
-            var tip = BrothersUiUtil.MakeText(_battleHud.transform, "Tip", "自动割草中…", 24, new Vector2(0, 720), new Vector2(800, 40));
-            tip.color = new Color(0.85f, 0.85f, 0.85f);
+            BrothersUiUtil.MakePanel(_battleHud.transform, "TopBar", new Vector2(1040, 220), new Vector2(0, 820),
+                new Color(0.06f, 0.07f, 0.09f, 0.82f));
+            _battleInfo = BrothersUiUtil.MakeText(_battleHud.transform, "Info", "", 24, new Vector2(0, 860), new Vector2(980, 120));
+            _battleInfo.alignment = TextAnchor.UpperLeft;
+            _battleInfo.color = BrothersUiUtil.Parchment;
 
-            var quit = BrothersUiUtil.MakeButton(_battleHud.transform, "BtnQuit", "弃战回大厅", new Vector2(0, -860), new Vector2(320, 64),
-                new Color(0.4f, 0.25f, 0.25f));
+            var tip = BrothersUiUtil.MakeText(_battleHud.transform, "Tip", "自动割草中 · 头顶血条 / 飘字已开", 22,
+                new Vector2(0, 720), new Vector2(800, 36));
+            tip.color = new Color(0.85f, 0.8f, 0.65f);
+
+            // 底部小队卡片
+            BrothersUiUtil.MakePanel(_battleHud.transform, "PartyBar", new Vector2(1040, 200), new Vector2(0, -780),
+                new Color(0.06f, 0.07f, 0.09f, 0.88f));
+            float px = -380f;
+            for (int i = 0; i < _partyPortraits.Length; i++)
+            {
+                _partyPortraits[i] = BrothersUiUtil.MakePortrait(_battleHud.transform, "PPort" + i,
+                    new Vector2(px + i * 190f, -740), new Vector2(88, 88), null, new Color(0.25f, 0.28f, 0.32f));
+                _partyHpFills[i] = BrothersUiUtil.MakeHpFill(_battleHud.transform, "PHp" + i,
+                    new Vector2(px + i * 190f, -820), new Vector2(_partyHpWidth, 18), BrothersUiUtil.BrotherHp);
+                _partyNames[i] = BrothersUiUtil.MakeText(_battleHud.transform, "PName" + i, "", 18,
+                    new Vector2(px + i * 190f, -860), new Vector2(170, 28));
+                _partyNames[i].color = BrothersUiUtil.Parchment;
+                _partyPortraits[i].gameObject.SetActive(false);
+                _partyHpFills[i].gameObject.SetActive(false);
+                _partyNames[i].gameObject.SetActive(false);
+            }
+
+            var quit = BrothersUiUtil.MakeButton(_battleHud.transform, "BtnQuit", "弃战回大厅", new Vector2(400, -700), new Vector2(240, 56),
+                new Color(0.45f, 0.22f, 0.22f));
             quit.onClick.AddListener(() => _session?.ReturnToHub());
         }
 
         void BuildOverlay()
         {
-            var panel = BrothersUiUtil.MakePanel(transform, "Overlay", new Vector2(920, 1200), Vector2.zero, new Color(0.08f, 0.1f, 0.14f, 0.96f));
+            var panel = BrothersUiUtil.MakePanel(transform, "Overlay", new Vector2(920, 1200), Vector2.zero,
+                new Color(0.10f, 0.09f, 0.08f, 0.96f));
             _overlay = panel.gameObject;
 
             _overlayTitle = BrothersUiUtil.MakeText(_overlay.transform, "Title", "", 52, new Vector2(0, 480), new Vector2(860, 80));
-            _overlayBody = BrothersUiUtil.MakeText(_overlay.transform, "Body", "", 30, new Vector2(0, 280), new Vector2(840, 280));
+            _overlayTitle.color = BrothersUiUtil.Parchment;
+            _overlayBody = BrothersUiUtil.MakeText(_overlay.transform, "Body", "", 28, new Vector2(0, 280), new Vector2(840, 280));
+            _overlayBody.color = new Color(0.92f, 0.88f, 0.78f);
             _overlayShare = BrothersUiUtil.MakeText(_overlay.transform, "Share", "", 24, new Vector2(0, 80), new Vector2(840, 80));
             _overlayShare.color = new Color(0.75f, 0.85f, 1f);
 
@@ -297,13 +374,16 @@ namespace JojoP.UI
             if (_session?.Meta == null) return;
             var m = _session.Meta;
             _metaText.text =
-                $"体力 {m.Stamina}/{GameTables.DailyStaminaCap} · 培养点 {m.TrainPoints}\n" +
+                $"【培养】体力 {m.Stamina}/{GameTables.DailyStaminaCap}    培养点 {m.TrainPoints}\n" +
                 $"人情 {m.Favor} · 声望 {m.Renown}\n" +
                 $"潜力 生命+{m.PotentialHp} 攻击+{m.PotentialAtk} · 养伤档 {m.HealShortenTier}";
 
             var ch = GameTables.FindChapter(_selectedChapter);
             string lockText = _session.Meta.IsChapterUnlocked(_selectedChapter) ? "已解锁" : "未解锁";
-            _chapterText.text = $"选中：{ch.DisplayName}（{lockText}）\n集合地：{ch.HubPlace}";
+            _chapterText.text = $"选中：{ch.DisplayName}（{lockText}）· 集合地：{ch.HubPlace}";
+
+            if (_archiveHint != null)
+                _archiveHint.text = "概念图已入库：利欣 / 欧版 / 老陈 · 点出征上场可见立绘与血条";
         }
 
         void RefreshBattle()
@@ -321,14 +401,52 @@ namespace JojoP.UI
             string slots = run.HasUnlimitedSlots ? "不限" : run.ActiveSlotLimit.ToString();
             sb.Append($"兄弟 {battle?.AliveBrothers ?? 0}/{slots} · 敌人 {battle?.AliveEnemies ?? 0} · 击杀 {run.KillsThisWave}");
             sb.Append($"\n攻击核心：{run.EquipmentId}");
-            sb.Append("\n小队：");
+            _battleInfo.text = sb.ToString();
+
+            RefreshPartyCards(run);
+        }
+
+        void RefreshPartyCards(RunState run)
+        {
+            int slot = 0;
             foreach (var b in run.Squad)
             {
-                if (!b.Recruited) continue;
-                sb.Append(b.Injured ? $"{b.DisplayName}(伤) " : $"{b.DisplayName} ");
+                if (!b.Recruited || slot >= _partyPortraits.Length) continue;
+                _partyPortraits[slot].gameObject.SetActive(true);
+                _partyHpFills[slot].gameObject.SetActive(true);
+                _partyNames[slot].gameObject.SetActive(true);
+
+                var sp = JojoP.Gameplay.Brothers.RoleArtLoader.LoadPortrait(b.AvatarLoc);
+                if (sp != null)
+                {
+                    _partyPortraits[slot].sprite = sp;
+                    _partyPortraits[slot].color = Color.white;
+                    _partyPortraits[slot].preserveAspect = true;
+                }
+                else
+                {
+                    _partyPortraits[slot].sprite = null;
+                    _partyPortraits[slot].color = b.Injured
+                        ? new Color(0.35f, 0.2f, 0.2f)
+                        : new Color(0.3f, 0.45f, 0.55f);
+                }
+
+                float ratio = b.MaxHp > 0.01f ? b.Hp / b.MaxHp : 0f;
+                if (b.Injured) ratio = 0f;
+                BrothersUiUtil.SetHpFill(_partyHpFills[slot], ratio, _partyHpWidth);
+                _partyHpFills[slot].color = ratio < 0.35f
+                    ? BrothersUiUtil.AccentOrange
+                    : BrothersUiUtil.BrotherHp;
+                _partyNames[slot].text = b.Injured ? $"{b.DisplayName}·伤" : b.DisplayName;
+                slot++;
             }
 
-            _battleInfo.text = sb.ToString();
+            for (int i = slot; i < _partyPortraits.Length; i++)
+            {
+                _partyPortraits[i].gameObject.SetActive(false);
+                _partyHpFills[i].gameObject.SetActive(false);
+                _partyNames[i].gameObject.SetActive(false);
+            }
         }
 
         void ShowOnlyHub()

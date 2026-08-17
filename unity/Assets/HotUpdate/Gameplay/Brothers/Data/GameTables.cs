@@ -28,6 +28,8 @@ namespace JojoP.Gameplay.Brothers
         public float CareerSkillCdMul = 1f;
         public string JobSkillId;
         public string[] SkillIds;
+        public string AvatarLoc;
+        public string BattleLoc;
     }
 
     [Serializable]

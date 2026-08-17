@@ -35,6 +35,8 @@ namespace JojoP.Gameplay.Brothers
         public BrotherTag[] Tags = Array.Empty<BrotherTag>();
         public string JobSkillId;
         public string[] SkillIds = Array.Empty<string>();
+        public string AvatarLoc;
+        public string BattleLoc;
 
         public bool CanFight => Recruited && !Injured && Hp > 0f;
     }
@@ -146,7 +148,9 @@ namespace JojoP.Gameplay.Brothers
                 JoinPenaltyWaves = 0,
                 Tags = def.Tags ?? Array.Empty<BrotherTag>(),
                 JobSkillId = def.JobSkillId,
-                SkillIds = def.SkillIds ?? Array.Empty<string>()
+                SkillIds = def.SkillIds ?? Array.Empty<string>(),
+                AvatarLoc = def.AvatarLoc,
+                BattleLoc = def.BattleLoc
             };
         }
 

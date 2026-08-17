@@ -89,7 +89,9 @@ namespace JojoP.Gameplay.Brothers
                 CareerMoveMul = career?.MoveMul ?? 1f,
                 CareerSkillCdMul = career?.SkillCdMul ?? 1f,
                 JobSkillId = primaryJob,
-                SkillIds = skillIds
+                SkillIds = skillIds,
+                AvatarLoc = role.AvatarLoc,
+                BattleLoc = role.BattleLoc
             };
         }
 

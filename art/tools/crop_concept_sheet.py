@@ -30,12 +30,23 @@ def parchment_matte(im: Image.Image, sample_corners: bool = True, threshold: int
     """
     rgba = im.convert("RGBA")
     w, h = rgba.size
-    # Pillow 14 将移除 getdata；优先 get_flattened_data
-    if hasattr(rgba, "get_flattened_data"):
-        flat = rgba.get_flattened_data()
-        data = [tuple(flat[i : i + 4]) for i in range(0, len(flat), 4)]
-    else:
-        data = list(rgba.getdata())
+    # 本机 Pillow + 3.14：避免 load()；get_flattened_data 打包格式不稳定，固定用 getdata
+    raw = list(rgba.getdata())
+    data = []
+    for px in raw:
+        if isinstance(px, tuple) and len(px) >= 4:
+            data.append((int(px[0]), int(px[1]), int(px[2]), int(px[3])))
+        elif isinstance(px, (int, float)):
+            # 不应出现；兜底跳过
+            continue
+        else:
+            try:
+                data.append((int(px[0]), int(px[1]), int(px[2]), int(px[3]) if len(px) > 3 else 255))
+            except Exception:
+                continue
+    if len(data) != w * h:
+        # 回退：不抠图
+        return rgba
 
     def at(x: int, y: int):
         return data[y * w + x]
@@ -162,16 +173,32 @@ def main() -> None:
     ap.add_argument(
         "--layout",
         type=Path,
-        default=ART / "layouts" / "oban_gpt_eu.json",
-        help="layout JSON 路径",
+        default=None,
+        help="单个 layout JSON；省略且不加 --all 时默认欧版",
+    )
+    ap.add_argument(
+        "--all",
+        action="store_true",
+        help="处理 art/layouts 下全部 *.json",
     )
     ap.add_argument("--no-matte", action="store_true", help="关闭羊皮纸抠透明")
     ap.add_argument("--no-export", action="store_true", help="不写 _export 草稿")
     args = ap.parse_args()
 
-    layout = args.layout if args.layout.is_absolute() else ROOT / args.layout
-    print(f"layout: {layout}")
-    process_layout(layout, do_matte=not args.no_matte, write_export=not args.no_export)
+    layouts: list[Path]
+    if args.all:
+        layouts = sorted((ART / "layouts").glob("*.json"))
+    elif args.layout is not None:
+        layouts = [args.layout if args.layout.is_absolute() else ROOT / args.layout]
+    else:
+        layouts = [ART / "layouts" / "oban_gpt_eu.json"]
+
+    if not layouts:
+        raise SystemExit("没有找到 layout JSON")
+
+    for layout in layouts:
+        print(f"\n=== layout: {layout} ===")
+        process_layout(layout, do_matte=not args.no_matte, write_export=not args.no_export)
 
 
 if __name__ == "__main__":

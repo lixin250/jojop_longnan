@@ -316,6 +316,8 @@ namespace JojoP.Gameplay.Brothers
                 var r = go.GetComponent<Renderer>();
                 if (r != null) r.sharedMaterial = _matBrother;
                 unit.SetupVisual(new Color(0.35f, 0.75f, 0.95f), 0.55f);
+                unit.TryApplyBattleSprite(RoleArtLoader.LoadBattle(br.BattleLoc, br.AvatarLoc));
+                BattleFeedback.EnsureOn(unit);
 
                 _skills?.EquipFromRole(unit, br);
                 _brothers.Add(unit);
@@ -377,6 +379,7 @@ namespace JojoP.Gameplay.Brothers
             if (r != null) r.sharedMaterial = isElite ? _matElite : _matEnemy;
             unit.SetupVisual(isElite ? new Color(0.95f, 0.75f, 0.2f) : new Color(0.9f, 0.4f, 0.35f),
                 isElite ? 0.7f : 0.45f);
+            BattleFeedback.EnsureOn(unit);
 
             _enemies.Add(unit);
             HudDirty?.Invoke();

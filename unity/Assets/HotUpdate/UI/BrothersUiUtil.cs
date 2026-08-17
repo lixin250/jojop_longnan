@@ -5,6 +5,14 @@ namespace JojoP.UI
 {
     internal static class BrothersUiUtil
     {
+        public static readonly Color Parchment = new Color(0.93f, 0.86f, 0.72f, 0.96f);
+        public static readonly Color Ink = new Color(0.18f, 0.14f, 0.12f, 1f);
+        public static readonly Color PanelDark = new Color(0.10f, 0.11f, 0.14f, 0.92f);
+        public static readonly Color AccentGreen = new Color(0.25f, 0.72f, 0.48f, 1f);
+        public static readonly Color AccentOrange = new Color(0.85f, 0.48f, 0.22f, 1f);
+        public static readonly Color BrotherHp = new Color(0.35f, 0.85f, 0.55f, 1f);
+        public static readonly Color EnemyHp = new Color(0.92f, 0.35f, 0.32f, 1f);
+
         public static Font BuiltinFont()
         {
             var font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
@@ -67,6 +75,52 @@ namespace JojoP.UI
             var img = go.GetComponent<Image>();
             img.color = color;
             return img;
+        }
+
+        public static Image MakePortrait(Transform parent, string name, Vector2 pos, Vector2 size, Sprite sprite, Color fallback)
+        {
+            var go = new GameObject(name, typeof(RectTransform), typeof(Image));
+            go.transform.SetParent(parent, false);
+            var rt = go.GetComponent<RectTransform>();
+            rt.anchorMin = rt.anchorMax = new Vector2(0.5f, 0.5f);
+            rt.pivot = new Vector2(0.5f, 0.5f);
+            rt.sizeDelta = size;
+            rt.anchoredPosition = pos;
+            var img = go.GetComponent<Image>();
+            if (sprite != null)
+            {
+                img.sprite = sprite;
+                img.color = Color.white;
+                img.preserveAspect = true;
+            }
+            else
+            {
+                img.color = fallback;
+            }
+
+            return img;
+        }
+
+        public static Image MakeHpFill(Transform parent, string name, Vector2 pos, Vector2 size, Color fillColor)
+        {
+            MakePanel(parent, name + "Back", size, pos, new Color(0.08f, 0.08f, 0.1f, 0.9f));
+            var fillGo = new GameObject(name, typeof(RectTransform), typeof(Image));
+            fillGo.transform.SetParent(parent, false);
+            var frt = fillGo.GetComponent<RectTransform>();
+            frt.anchorMin = frt.anchorMax = new Vector2(0.5f, 0.5f);
+            frt.pivot = new Vector2(0f, 0.5f);
+            frt.sizeDelta = new Vector2(size.x - 8f, size.y - 6f);
+            frt.anchoredPosition = new Vector2(pos.x - size.x * 0.5f + 4f, pos.y);
+            var fill = fillGo.GetComponent<Image>();
+            fill.color = fillColor;
+            return fill;
+        }
+
+        public static void SetHpFill(Image fill, float ratio, float fullWidth)
+        {
+            if (fill == null) return;
+            ratio = Mathf.Clamp01(ratio);
+            fill.rectTransform.sizeDelta = new Vector2((fullWidth - 8f) * ratio, fill.rectTransform.sizeDelta.y);
         }
     }
 }
