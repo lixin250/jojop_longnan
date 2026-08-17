@@ -1,0 +1,124 @@
+{
+  "role_id": "oban",
+  "source": "概念图/GPT-欧版.png",
+  "source_size": [1254, 1254],
+  "notes": "欧版概念总图槽位。box 为 [left, top, right, bottom]。matte=parchment 去羊皮纸底；matte=none 保留框内底。",
+  "crops": [
+    {
+      "key": "mission_avatar",
+      "box": [970, 670, 1165, 875],
+      "matte": "none",
+      "resize": [256, 256],
+      "unity_name": "role_oban_avatar.png",
+      "unity_subdir": "Role/大头贴"
+    },
+    {
+      "key": "half_student",
+      "box": [55, 1030, 205, 1185],
+      "matte": "none",
+      "resize": [256, 256],
+      "unity_name": "role_oban_half_student.png",
+      "unity_subdir": "Role/halfbody"
+    },
+    {
+      "key": "half_grad",
+      "box": [250, 1030, 400, 1185],
+      "matte": "none",
+      "resize": [256, 256],
+      "unity_name": "role_oban_half_grad.png",
+      "unity_subdir": "Role/halfbody"
+    },
+    {
+      "key": "half_worker",
+      "box": [450, 1030, 600, 1185],
+      "matte": "none",
+      "resize": [256, 256],
+      "unity_name": "role_oban_half_worker.png",
+      "unity_subdir": "Role/halfbody"
+    },
+    {
+      "key": "battle_student",
+      "box": [25, 45, 265, 395],
+      "matte": "parchment",
+      "unity_name": "role_oban_battle_student.png",
+      "unity_subdir": "Role/battle"
+    },
+    {
+      "key": "battle_grad",
+      "box": [395, 45, 670, 405],
+      "matte": "parchment",
+      "unity_name": "role_oban_battle_grad.png",
+      "unity_subdir": "Role/battle"
+    },
+    {
+      "key": "battle_worker",
+      "box": [25, 435, 330, 815],
+      "matte": "parchment",
+      "unity_name": "role_oban_battle.png",
+      "unity_subdir": "Role/battle"
+    },
+    {
+      "key": "skill_pot",
+      "box": [505, 595, 725, 815],
+      "matte": "none",
+      "resize": [256, 256],
+      "unity_name": "skill_oban_pot_shock.png",
+      "unity_subdir": "Skill/icon"
+    },
+    {
+      "key": "skill_wind",
+      "box": [735, 595, 955, 815],
+      "matte": "none",
+      "resize": [256, 256],
+      "unity_name": "skill_oban_wind_spread.png",
+      "unity_subdir": "Skill/icon"
+    },
+    {
+      "key": "weapon_pot",
+      "box": [985, 50, 1100, 160],
+      "matte": "parchment",
+      "resize": [128, 128],
+      "unity_name": "item_oban_pot.png",
+      "unity_subdir": "Item/icon"
+    },
+    {
+      "key": "weapon_wind",
+      "box": [980, 155, 1110, 270],
+      "matte": "parchment",
+      "resize": [128, 128],
+      "unity_name": "item_oban_wind.png",
+      "unity_subdir": "Item/icon"
+    },
+    {
+      "key": "weapon_wrench",
+      "box": [990, 265, 1105, 375],
+      "matte": "parchment",
+      "resize": [128, 128],
+      "unity_name": "item_oban_wrench.png",
+      "unity_subdir": "Item/icon"
+    },
+    {
+      "key": "weapon_gloves",
+      "box": [985, 370, 1110, 485],
+      "matte": "parchment",
+      "resize": [128, 128],
+      "unity_name": "item_oban_gloves.png",
+      "unity_subdir": "Item/icon"
+    },
+    {
+      "key": "weapon_helmet",
+      "box": [985, 480, 1110, 595],
+      "matte": "parchment",
+      "resize": [128, 128],
+      "unity_name": "item_oban_helmet.png",
+      "unity_subdir": "Item/icon"
+    },
+    {
+      "key": "poster",
+      "box": [670, 920, 1230, 1210],
+      "matte": "none",
+      "unity_name": "role_oban_poster.png",
+      "unity_subdir": "Role/poster"
+    }
+  ]
+}
