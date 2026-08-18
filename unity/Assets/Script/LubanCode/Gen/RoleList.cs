@@ -37,6 +37,8 @@ public sealed partial class RoleList : Luban.BeanBase
         { if(!_buf["crit_rate"].IsNumber) { throw new SerializationException(); }  CritRate = _buf["crit_rate"]; }
         { if(!_buf["crit_damage"].IsNumber) { throw new SerializationException(); }  CritDamage = _buf["crit_damage"]; }
         { if(!_buf["attack_interval"].IsNumber) { throw new SerializationException(); }  AttackInterval = _buf["attack_interval"]; }
+        { if(!_buf["starter_selectable"].IsBoolean) { throw new SerializationException(); }  StarterSelectable = _buf["starter_selectable"]; }
+        { var __json0 = _buf["unlock_conditions"]; if(!__json0.IsArray) { throw new SerializationException(); } UnlockConditions = new System.Collections.Generic.List<UnlockCondition>(__json0.Count); foreach(JSONNode __e0 in __json0.Children) { UnlockCondition __v0;  { if(!__e0.IsObject) { throw new SerializationException(); }  __v0 = global::JojoP.Cfg.UnlockCondition.DeserializeUnlockCondition(__e0);  }  UnlockConditions.Add(__v0); }   }
     }
 
     public static RoleList DeserializeRoleList(JSONNode _buf)
@@ -124,6 +126,14 @@ public sealed partial class RoleList : Luban.BeanBase
     /// 普攻间隔秒；越低攻速越快
     /// </summary>
     public readonly float AttackInterval;
+    /// <summary>
+    /// 可作出征初始
+    /// </summary>
+    public readonly bool StarterSelectable;
+    /// <summary>
+    /// 解锁条件 AND；type:p1:p2
+    /// </summary>
+    public readonly System.Collections.Generic.List<UnlockCondition> UnlockConditions;
    
     public const int __ID__ = -202187180;
     public override int GetTypeId() => __ID__;
@@ -155,6 +165,8 @@ public sealed partial class RoleList : Luban.BeanBase
         + "critRate:" + CritRate + ","
         + "critDamage:" + CritDamage + ","
         + "attackInterval:" + AttackInterval + ","
+        + "starterSelectable:" + StarterSelectable + ","
+        + "unlockConditions:" + Luban.StringUtil.CollectionToString(UnlockConditions) + ","
         + "}";
     }
 }

@@ -105,10 +105,13 @@ namespace JojoP.Gameplay.Brothers
             ReadyToJoin.Clear();
             ApplyChapterRule();
 
-            var starter = GameTables.FindBrother(RoleCatalog.StarterId)
+            string starterId = meta != null ? meta.ResolveStarterId() : RoleCatalog.StarterId;
+            var starter = GameTables.FindBrother(starterId)
+                          ?? GameTables.FindBrother(RoleCatalog.StarterId)
                           ?? GameTables.FindBrother("player");
             var me = CreateFromDef(starter, meta, recruited: true);
             Squad.Add(me);
+            meta?.NoteKnownHero(starter.Id);
 
             CurrentSceneId = PickScene();
         }
@@ -243,6 +246,7 @@ namespace JojoP.Gameplay.Brothers
                     Squad[i].Recruited = true;
                     Squad[i].Injured = false;
                     Squad[i].Hp = Squad[i].MaxHp;
+                    meta?.NoteKnownHero(defId);
                     return true;
                 }
             }
@@ -255,6 +259,7 @@ namespace JojoP.Gameplay.Brothers
             joined.JoinPenaltyWaves = 1;
             Squad.Add(joined);
             ReadyToJoin.Remove(defId);
+            meta?.NoteKnownHero(defId);
             return true;
         }
 

@@ -4,4 +4,9 @@
         <var name="atk" type="float"/>
         <var name="move" type="float"/>
     </bean>
+    <bean name="UnlockCondition" valueType="1" sep=":" comment="英雄解锁条件；同英雄多条为 AND">
+        <var name="type" type="string"/>
+        <var name="p1" type="int"/>
+        <var name="p2" type="int"/>
+    </bean>
 </module>

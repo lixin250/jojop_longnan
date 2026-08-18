@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Text;
 using JojoP.Gameplay.Brothers;
 using UnityEngine;
@@ -40,7 +41,17 @@ namespace JojoP.UI
         Button _btnAdExpand;
         Action _onHome;
         Action<Action> _onRewardedAd;
+        readonly List<HeroPickSlot> _heroSlots = new List<HeroPickSlot>();
         ChapterId _selectedChapter = ChapterId.Primary;
+
+        sealed class HeroPickSlot
+        {
+            public string Id;
+            public Image Portrait;
+            public Image Frame;
+            public Text Name;
+            public Text Lock;
+        }
 
         public static BrothersModeView Create(Transform canvasRoot)
         {
@@ -95,26 +106,25 @@ namespace JojoP.UI
             var title = BrothersUiUtil.MakeText(_hub.transform, "Title", "我和我的龙兄南弟", 56, new Vector2(0, 820), new Vector2(960, 80));
             title.color = BrothersUiUtil.Parchment;
 
-            _trainPanel = BrothersUiUtil.MakePanel(_hub.transform, "TrainCard", new Vector2(980, 200), new Vector2(0, 640),
+            _trainPanel = BrothersUiUtil.MakePanel(_hub.transform, "TrainCard", new Vector2(980, 160), new Vector2(0, 700),
                 BrothersUiUtil.PanelDark).gameObject;
-            _metaText = BrothersUiUtil.MakeText(_trainPanel.transform, "Meta", "", 26, Vector2.zero, new Vector2(920, 170));
+            _metaText = BrothersUiUtil.MakeText(_trainPanel.transform, "Meta", "", 24, Vector2.zero, new Vector2(920, 140));
             _metaText.alignment = TextAnchor.MiddleLeft;
             _metaText.color = BrothersUiUtil.Parchment;
 
-            _chapterText = BrothersUiUtil.MakeText(_hub.transform, "Chapter", "章节：小学", 28, new Vector2(0, 500), new Vector2(900, 50));
+            _chapterText = BrothersUiUtil.MakeText(_hub.transform, "Chapter", "章节：小学", 26, new Vector2(0, 560), new Vector2(900, 44));
             _chapterText.color = new Color(0.9f, 0.85f, 0.7f);
 
-            // 图鉴条：展示已出概念图的兄弟头像
-            var archivePanel = BrothersUiUtil.MakePanel(_hub.transform, "Archive", new Vector2(980, 200), new Vector2(0, 340),
+            var archivePanel = BrothersUiUtil.MakePanel(_hub.transform, "HeroPick", new Vector2(980, 270), new Vector2(0, 360),
                 new Color(0.14f, 0.12f, 0.1f, 0.9f));
-            _archiveRoot = archivePanel.gameObject;
-            var archTitle = BrothersUiUtil.MakeText(_archiveRoot.transform, "ArchTitle", "兄弟图鉴", 26, new Vector2(0, 70), new Vector2(400, 40));
+            _archivePanel = archivePanel.gameObject;
+            var archTitle = BrothersUiUtil.MakeText(_archivePanel.transform, "ArchTitle", "初始英雄", 26, new Vector2(0, 108), new Vector2(400, 36));
             archTitle.color = BrothersUiUtil.Parchment;
-            _archiveHint = BrothersUiUtil.MakeText(_archiveRoot.transform, "ArchHint", "", 20, new Vector2(0, -70), new Vector2(900, 36));
+            _archiveHint = BrothersUiUtil.MakeText(_archivePanel.transform, "ArchHint", "", 20, new Vector2(0, -112), new Vector2(940, 36));
             _archiveHint.color = new Color(0.75f, 0.7f, 0.6f);
-            BuildArchivePortraits();
+            BuildHeroPicker();
 
-            float y = 140f;
+            float y = 120f;
             foreach (var ch in GameTables.Chapters)
             {
                 var id = ch.Id;
@@ -174,22 +184,89 @@ namespace JojoP.UI
             home.onClick.AddListener(() => _onHome?.Invoke());
         }
 
-        void BuildArchivePortraits()
+        void BuildHeroPicker()
         {
-            // 利欣 / 欧版 / 老陈 — 有概念图配套的三位
-            string[] locs = { "role_lixin_avatar", "role_oban_avatar", "role_xiaolin_avatar" };
-            string[] names = { "利欣", "欧版", "老陈" };
-            float startX = -280f;
-            for (int i = 0; i < locs.Length; i++)
+            var candidates = HeroUnlock.StarterCandidates();
+            const int cols = 7;
+            const float cell = 118f;
+            float startX = -((cols - 1) * cell) * 0.5f;
+            float startY = 32f;
+            for (int i = 0; i < candidates.Count; i++)
             {
-                var sp = JojoP.Gameplay.Brothers.RoleArtLoader.LoadPortrait(locs[i]);
-                BrothersUiUtil.MakePortrait(_archiveRoot.transform, "Arch" + i,
-                    new Vector2(startX + i * 280f, 0f), new Vector2(120, 120), sp,
-                    new Color(0.35f, 0.32f, 0.28f));
-                var n = BrothersUiUtil.MakeText(_archiveRoot.transform, "ArchN" + i, names[i], 22,
-                    new Vector2(startX + i * 280f, -85f), new Vector2(140, 30));
-                n.color = BrothersUiUtil.Parchment;
+                var role = candidates[i];
+                int col = i % cols;
+                int row = i / cols;
+                var pos = new Vector2(startX + col * cell, startY - row * 102f);
+                var frame = BrothersUiUtil.MakePanel(_archivePanel.transform, "HeroF" + i,
+                    new Vector2(78, 78), pos, new Color(0.28f, 0.26f, 0.22f, 0.95f));
+                var sp = RoleArtLoader.LoadPortrait(role.AvatarLoc);
+                var img = BrothersUiUtil.MakePortrait(_archivePanel.transform, "Hero" + i,
+                    pos, new Vector2(70, 70), sp, new Color(0.35f, 0.32f, 0.28f));
+                var btn = img.gameObject.AddComponent<Button>();
+                string id = role.Id;
+                btn.onClick.AddListener(() => OnPickHero(id));
+                var name = BrothersUiUtil.MakeText(_archivePanel.transform, "HeroN" + i, role.Name, 16,
+                    pos + new Vector2(0f, -48f), new Vector2(110, 24));
+                name.color = BrothersUiUtil.Parchment;
+                var lockTxt = BrothersUiUtil.MakeText(_archivePanel.transform, "HeroL" + i, "", 14,
+                    pos + new Vector2(0f, 0f), new Vector2(70, 70));
+                lockTxt.color = new Color(1f, 0.92f, 0.55f, 0.95f);
+                _heroSlots.Add(new HeroPickSlot
+                {
+                    Id = role.Id,
+                    Portrait = img,
+                    Frame = frame,
+                    Name = name,
+                    Lock = lockTxt
+                });
             }
+        }
+
+        void OnPickHero(string roleId)
+        {
+            if (_session?.Meta == null) return;
+            var role = RoleCatalog.FindRole(roleId);
+            if (role == null) return;
+            if (_session.Meta.TrySelectHero(roleId))
+            {
+                RefreshHeroPicker();
+                return;
+            }
+
+            if (_archiveHint != null)
+                _archiveHint.text = HeroUnlock.Hint(role, _session.Meta);
+        }
+
+        void RefreshHeroPicker()
+        {
+            if (_session?.Meta == null) return;
+            if (_heroSlots.Count == 0)
+                BuildHeroPicker();
+            var meta = _session.Meta;
+            string selected = meta.SelectedHeroId;
+            RoleList selectedRole = null;
+            foreach (var slot in _heroSlots)
+            {
+                var role = RoleCatalog.FindRole(slot.Id);
+                if (role == null) continue;
+                bool unlocked = HeroUnlock.IsUnlocked(role, meta);
+                bool isSelected = slot.Id == selected;
+                if (isSelected) selectedRole = role;
+                slot.Portrait.color = unlocked ? Color.white : new Color(0.28f, 0.28f, 0.3f, 0.85f);
+                slot.Frame.color = isSelected
+                    ? new Color(0.92f, 0.74f, 0.28f, 1f)
+                    : unlocked
+                        ? new Color(0.32f, 0.42f, 0.34f, 0.95f)
+                        : new Color(0.22f, 0.2f, 0.2f, 0.9f);
+                slot.Lock.text = unlocked ? "" : "锁";
+                slot.Name.color = isSelected ? new Color(1f, 0.86f, 0.4f) : BrothersUiUtil.Parchment;
+            }
+
+            if (_archiveHint == null) return;
+            if (selectedRole != null)
+                _archiveHint.text = $"{selectedRole.Name} · {HeroUnlock.Hint(selectedRole, meta)}";
+            else
+                _archiveHint.text = "点头像选择出征初始英雄；未解锁的会显示条件";
         }
 
         void BuildBattleHud()
@@ -383,7 +460,7 @@ namespace JojoP.UI
             _chapterText.text = $"选中：{ch.DisplayName}（{lockText}）· 集合地：{ch.HubPlace}";
 
             if (_archiveHint != null)
-                _archiveHint.text = "概念图已入库：利欣 / 欧版 / 老陈 · 点出征上场可见立绘与血条";
+                RefreshHeroPicker();
         }
 
         void RefreshBattle()

@@ -133,8 +133,8 @@ namespace JojoP.Gameplay.Brothers
                 if (target == null) return null;
                 option.TargetRoleId = target.DefId;
                 var skill = CfgTables.Tables.TbSkillIndex.GetOrDefault(reward.RefId);
-                string replace = string.IsNullOrEmpty(target.LootSkillId) ? "装上" : "替换";
-                option.Desc = $"{target.DisplayName}{replace}临时技能：{skill?.Name ?? reward.RefId}";
+                string replace = string.IsNullOrEmpty(target.LootSkillId) ? "捡到" : "扔掉旧的换上";
+                option.Desc = $"{target.DisplayName}{replace}{SkillFlavor.Loot}：{skill?.Name ?? reward.RefId}";
             }
             else if (reward.Kind == ERogueRewardKind.Event)
             {
@@ -174,9 +174,9 @@ namespace JojoP.Gameplay.Brothers
                 case ERogueRewardKind.CampusSkill:
                 {
                     var b = RandomRecruited(run);
-                    if (b == null) return "没有可学的人";
+                    if (b == null) return "操场上没人可教";
                     b.CampusSkillLv++;
-                    return $"{b.DisplayName} 校园技 Lv{b.CampusSkillLv}";
+                    return $"{b.DisplayName} {SkillFlavor.Campus} Lv{b.CampusSkillLv}";
                 }
                 case ERogueRewardKind.Recovery:
                     foreach (var b in run.Squad)
@@ -188,23 +188,23 @@ namespace JojoP.Gameplay.Brothers
                     return $"全体现役回复 {opt.Value * 100f:0}%";
                 case ERogueRewardKind.TeamBuff:
                     run.TeamBuffNextWave += opt.Value;
-                    return $"下一波全队攻击+{opt.Value * 100f:0}%";
+                    return $"下一波全队壮胆 +{opt.Value * 100f:0}%";
                 case ERogueRewardKind.JobSkill:
                 {
                     var b = RandomJobUnlocked(run);
-                    if (b == null) return "还没人毕业就业";
+                    if (b == null) return "工牌还没发下来";
                     b.JobSkillLv++;
-                    return $"{b.DisplayName} 就业技 Lv{b.JobSkillLv}";
+                    return $"{b.DisplayName} {SkillFlavor.Job} Lv{b.JobSkillLv}";
                 }
                 case ERogueRewardKind.Equipment:
                     run.EquipmentId = opt.RefId;
-                    return $"攻击核心替换为：{opt.Title}";
+                    return $"抄起新家伙：{opt.Title}";
                 case ERogueRewardKind.LootSkill:
                 {
                     var b = FindBrother(run, opt.TargetRoleId) ?? RandomRecruited(run);
                     if (b == null) return "没有可装技能的人";
                     b.LootSkillId = opt.RefId;
-                    return $"{b.DisplayName} 装上 {CfgTables.Tables.TbSkillIndex.GetOrDefault(opt.RefId)?.Name ?? opt.RefId}";
+                    return $"{b.DisplayName} 抄起 {CfgTables.Tables.TbSkillIndex.GetOrDefault(opt.RefId)?.Name ?? opt.RefId}";
                 }
                 case ERogueRewardKind.Event:
                     return ApplyEvent(opt.EventId, run, meta);
@@ -216,7 +216,7 @@ namespace JojoP.Gameplay.Brothers
         string ApplyEvent(string eventId, RunState run, MetaProgress meta)
         {
             var evt = CfgTables.Tables.TbRunEvent.GetOrDefault(eventId);
-            if (evt == null) return "事情过去了";
+            if (evt == null) return "这事黄了";
             bool success = HasFaction(run, evt.RequiredTag);
             var effect = success ? evt.SuccessEffect : evt.FailEffect;
             float value = success ? evt.SuccessValue : evt.FailValue;

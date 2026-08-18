@@ -2,8 +2,8 @@
   {
     "id": "campus_courage",
     "owner_id": "campus",
-    "name": "壮胆",
-    "desc": "短时攻击提升（校园技，全员可学向）",
+    "name": "课间壮胆",
+    "desc": "课间吹一波：短时攻击上升。全员都能学的课间绝活。",
     "show_tags": [
       1,
       4
@@ -17,8 +17,8 @@
   {
     "id": "cs_lixin_gamble",
     "owner_id": "CS_lixin",
-    "name": "搏一把",
-    "desc": "高风险暴击向普攻强化（游戏民工本色）",
+    "name": "今晚必红",
+    "desc": "游戏民工本色：赌一把高爆发，输赢都在这一刀。工牌绝活。",
     "show_tags": [
       1,
       3
@@ -32,8 +32,8 @@
   {
     "id": "cs_lixin_crunch",
     "owner_id": "CS_lixin",
-    "name": "肝帝冲刺",
-    "desc": "短时移速与攻速提升，透支后轻微自伤",
+    "name": "通宵肝穿",
+    "desc": "ddl 面前人会飞：短暂又快又疼，透支后自己挨一下。工牌绝活。",
     "show_tags": [
       1,
       3
@@ -48,8 +48,8 @@
   {
     "id": "cs_ayun_overload",
     "owner_id": "CS_ayun",
-    "name": "算力过载",
-    "desc": "锁定一名精英：减速并提高对其伤害（硕就业技）",
+    "name": "把服务器打满",
+    "desc": "硕才肯使的绝活：点名一个硬茬减速，并专打他。晚毕业更值钱。",
     "show_tags": [
       1,
       3
@@ -65,7 +65,7 @@
     "id": "xiebo_dismantle",
     "owner_id": "todo_shitbro",
     "name": "拆了重装",
-    "desc": "对精英高防巨伤，小怪概率解体（博就业技核心）",
+    "desc": "博士天花板：硬茬往死里拆，杂兵有机会直接解体。晚五年才给。",
     "show_tags": [
       1,
       3
@@ -80,8 +80,8 @@
   {
     "id": "xiebo_patch",
     "owner_id": "todo_shitbro",
-    "name": "应急维修",
-    "desc": "友军铁皮盾",
+    "name": "胶带先顶住",
+    "desc": "现场维修哲学：给兄弟糊一层铁皮盾。工牌绝活。",
     "show_tags": [
       1,
       3
@@ -95,8 +95,8 @@
   {
     "id": "xiebo_torque",
     "owner_id": "todo_shitbro",
-    "name": "扭矩全开",
-    "desc": "短时自身破甲加深，召唤工程机械影（博士强化位）",
+    "name": "油门踩穿",
+    "desc": "扭矩拉满再叫挖机：自己破甲加深，并召唤工程影。博士强化位。",
     "show_tags": [
       1,
       3
@@ -111,8 +111,8 @@
   {
     "id": "gwy_wang_aura",
     "owner_id": "GWY_wang",
-    "name": "体制光环",
-    "desc": "周围友军攻击提升",
+    "name": "公章一盖",
+    "desc": "往旁边一站就有编制气场：附近兄弟攻击悄悄上涨。挂机也有用。",
     "show_tags": [
       2,
       3
@@ -126,14 +126,15 @@
   {
     "id": "dr_chen_heal",
     "owner_id": "Dr_chen",
-    "name": "民心急救",
-    "desc": "治疗友军",
+    "name": "有事喊我",
+    "desc": "先把人救醒，再喊热心市民真上。工牌绝活。",
     "show_tags": [
       1,
       3
     ],
     "effect_ids": [
-      "dr_chen_heal_hp"
+      "dr_chen_heal_hp",
+      "dr_chen_heal_summon"
     ],
     "cd": 7,
     "icon_loc": "skill_clinic_heal"
@@ -142,7 +143,7 @@
     "id": "dr_xiao_drunk",
     "owner_id": "Dr_xiao",
     "name": "摔杯为号",
-    "desc": "状态喝满后不再劝酒：摔杯震慑近敌，并把附近兄弟聚成反击阵势",
+    "desc": "酒过三巡不再劝：杯子一摔，近敌发憷，兄弟聚成反击圈。",
     "show_tags": [
       1,
       3
@@ -158,8 +159,8 @@
   {
     "id": "dr_xiao_ortho",
     "owner_id": "Dr_xiao",
-    "name": "骨科复位",
-    "desc": "短时回血并护盾",
+    "name": "德国骨科到了",
+    "desc": "复位手法比解释快：短时回血并给自己一层护盾。",
     "show_tags": [
       1,
       3
@@ -174,8 +175,8 @@
   {
     "id": "tm_yugu_smash",
     "owner_id": "TM_yugu",
-    "name": "工地砸",
-    "desc": "范围伤害，叼一些粪桶样（项目经理一线视察）",
+    "name": "粪桶外交",
+    "desc": "工地讲话要响：抡范围砸，比好好说话有效。工牌绝活。",
     "show_tags": [
       1,
       3
@@ -189,8 +190,8 @@
   {
     "id": "tm_wantao_approve",
     "owner_id": "TM_wantao",
-    "name": "项目审批",
-    "desc": "点名减速精英，制造困难，并使其易伤（甲方特色）",
+    "name": "先卡着",
+    "desc": "甲方特长：点名一个让他慢下来，并变得更好打。工牌绝活。",
     "show_tags": [
       1,
       3
@@ -205,8 +206,8 @@
   {
     "id": "bz_jihong_cost",
     "owner_id": "BZ_jihong",
-    "name": "成本核算",
-    "desc": "友军短时减伤（财会盾）",
+    "name": "这钱不能花",
+    "desc": "核算比拳头快：给兄弟们短时减伤。硕士财会盾。",
     "show_tags": [
       1,
       3
@@ -221,7 +222,7 @@
     "id": "bz_jihong_bonus",
     "owner_id": "BZ_jihong",
     "name": "散烟时刻",
-    "desc": "给兄弟们分发大量香烟，提振士气（局内用攻击加成模拟）",
+    "desc": "烟一散，气势就来：挂着给全队加攻。工牌绝活。",
     "show_tags": [
       2,
       3
@@ -235,8 +236,8 @@
   {
     "id": "yh_hangu_flow",
     "owner_id": "YH_hangu",
-    "name": "审核加速",
-    "desc": "全队短时攻击速度提升，技能CD缩减",
+    "name": "绿色通道",
+    "desc": "审核过了手脚就快：全队短时出手更勤快。工牌绝活。",
     "show_tags": [
       1,
       3
@@ -250,8 +251,8 @@
   {
     "id": "yh_hangu_extend",
     "owner_id": "YH_hangu",
-    "name": "信贷办理",
-    "desc": "可以为章节选择和购进时候，进行贷款透支操作",
+    "name": "先贷后还",
+    "desc": "资金先顶上：给自己一层信贷盾，下一波再算账。工牌绝活。",
     "show_tags": [
       1,
       3
@@ -265,8 +266,8 @@
   {
     "id": "wuzi_boost",
     "owner_id": "Energy_uzi",
-    "name": "能源增幅",
-    "desc": "强化场上机械派系友军攻击与技能倍率",
+    "name": "给机械兄弟加特效",
+    "desc": "储能硕士晚开的绝活：场上机械派系攻击和技能都更猛。",
     "show_tags": [
       1,
       3
@@ -280,8 +281,8 @@
   {
     "id": "wuzi_grid",
     "owner_id": "Energy_uzi",
-    "name": "应急供电",
-    "desc": "友军范围护盾，机械单位额外一层",
+    "name": "电闸拉上",
+    "desc": "应急供电：附近兄弟有盾，机械单位再加一层。晚毕业更厚。",
     "show_tags": [
       1,
       3
@@ -296,8 +297,8 @@
   {
     "id": "mow_eng_crush",
     "owner_id": "eng_xie",
-    "name": "碾压",
-    "desc": "工程影普攻",
+    "name": "挖机碾过去",
+    "desc": "工程影普攻：体积就是伤害。",
     "show_tags": [
       1
     ],
@@ -310,8 +311,8 @@
   {
     "id": "mow_hire_smash",
     "owner_id": "temp_hire",
-    "name": "苦力砸",
-    "desc": "临时工普攻",
+    "name": "工钱先欠着",
+    "desc": "临时工普攻：先干活，钱回头再说。",
     "show_tags": [
       1
     ],
@@ -324,8 +325,8 @@
   {
     "id": "fusion_overload",
     "owner_id": "fusion",
-    "name": "重装过载",
-    "desc": "机械×能源羁绊：短时破甲与供电半径同时提升",
+    "name": "机油兑红牛",
+    "desc": "机械×能源同场连招：破甲和供电一起拉满。兄弟连招。",
     "show_tags": [
       1,
       5
@@ -339,8 +340,8 @@
   {
     "id": "loot_stone_throw",
     "owner_id": "loot",
-    "name": "飞石",
-    "desc": "捡起石块砸向最近敌人",
+    "name": "龙翔飞石",
+    "desc": "广场随手捡的：砸最近那个。地摊技，捡到算谁的。",
     "show_tags": [
       1
     ],
@@ -353,8 +354,8 @@
   {
     "id": "loot_group_cheer",
     "owner_id": "loot",
-    "name": "组队壮胆",
-    "desc": "短时间提高附近兄弟攻击",
+    "name": "兄弟们上啊",
+    "desc": "喊一声附近都来劲。地摊技。",
     "show_tags": [
       1
     ],
@@ -367,8 +368,8 @@
   {
     "id": "loot_first_aid",
     "owner_id": "loot",
-    "name": "临时急救",
-    "desc": "治疗附近受伤兄弟",
+    "name": "三块钱创口贴",
+    "desc": "药店最便宜那款：给附近受伤兄弟回一点。地摊技。",
     "show_tags": [
       1
     ],
@@ -382,7 +383,7 @@
     "id": "energy_oban_ironhead",
     "owner_id": "Energy_oban",
     "name": "铁头敲盆",
-    "desc": "铁头敲盆震开近敌并给自己加厚护盾，高考毕业后较早成型",
+    "desc": "高考毕业就能用：铁头一敲，近敌发懵，自己盆一样厚。来得早。",
     "show_tags": [
       1,
       3
@@ -398,7 +399,7 @@
     "id": "energy_oban_cherish",
     "owner_id": "Energy_oban",
     "name": "醉后惜缘",
-    "desc": "酒后认真劝大家珍惜眼前人，为附近兄弟提供护盾和士气",
+    "desc": "酒后认真劝人：给附近兄弟盾和士气。就业后才肯掏心窝。",
     "show_tags": [
       1,
       3
@@ -411,10 +412,26 @@
     "icon_loc": "skill_energy_cherish"
   },
   {
+    "id": "cs_ayun_dantiao",
+    "owner_id": "CS_ayun",
+    "name": "来单挑啊",
+    "desc": "遇强则强：自己进入 zone，点谁打谁，伤害再加一截。课间就能使。",
+    "show_tags": [
+      1,
+      4
+    ],
+    "effect_ids": [
+      "cs_ayun_dantiao_zone",
+      "cs_ayun_dantiao_hit"
+    ],
+    "cd": 8,
+    "icon_loc": "skill_ayun_dantiao"
+  },
+  {
     "id": "cs_ayun_gaoliao",
     "owner_id": "CS_ayun",
-    "name": "告料",
-    "desc": "听从队友点名冲向一个敌人狠狠干，残血目标更容易被带走",
+    "name": "告料冲锋",
+    "desc": "队友一指，他连吐带冲：专打被点名的那个，残血更好收。工牌绝活。",
     "show_tags": [
       1,
       3
@@ -429,8 +446,8 @@
   {
     "id": "tm_junjun_inspect",
     "owner_id": "TM_junjun",
-    "name": "三方巡检",
-    "desc": "圈出施工隐患区，减速范围敌人并给附近兄弟发放整改护具",
+    "name": "安全帽必须戴",
+    "desc": "三方一来先圈隐患：范围内敌人减速，兄弟发到整改护具。",
     "show_tags": [
       1,
       3
@@ -445,8 +462,8 @@
   {
     "id": "bus_laizhen_mobilize",
     "owner_id": "Bus_laizhen",
-    "name": "拉人开工",
-    "desc": "创业能手迅速拉起临时班底，并提升附近兄弟的开工士气",
+    "name": "群里@所有人",
+    "desc": "创业组织力：立刻拉一个临时工，并给附近兄弟开工士气。",
     "show_tags": [
       1,
       3
@@ -461,8 +478,8 @@
   {
     "id": "bus_longtou_turnaround",
     "owner_id": "Bus_longtou",
-    "name": "扭亏为盈",
-    "desc": "重启厂线并兜住现金流，为附近兄弟同时提供护盾与反攻增益",
+    "name": "账上先好看",
+    "desc": "厂二代扭亏：先盾后打，现金流顶住再反攻。",
     "show_tags": [
       1,
       3
@@ -477,8 +494,8 @@
   {
     "id": "fusion_joint_inspection",
     "owner_id": "fusion",
-    "name": "联合验收",
-    "desc": "土木与公共治理联合验收：敌方施工区减速，兄弟获得安全护具",
+    "name": "安全帽会议",
+    "desc": "土木×公职联合验收：施工区减速，兄弟发护具。兄弟连招。",
     "show_tags": [
       1,
       5
@@ -493,8 +510,8 @@
   {
     "id": "fusion_supply_chain",
     "owner_id": "fusion",
-    "name": "产销一体",
-    "desc": "创业渠道连接能源产能：全队提速开工，并临时补充一名生产人员",
+    "name": "货没出钱先响",
+    "desc": "创业×能源接通：全队开工加速，再临时补一个人。兄弟连招。",
     "show_tags": [
       1,
       5
@@ -505,5 +522,35 @@
     ],
     "cd": 19,
     "icon_loc": "skill_fusion_supply_chain"
+  },
+  {
+    "id": "tm_paopao_bargain",
+    "owner_id": "TM_PaoPao",
+    "name": "再便宜两块",
+    "desc": "商务先把订金捂在自己身上，再对锁定目标敲一笔成交。搞钱绝活。",
+    "show_tags": [
+      1,
+      3
+    ],
+    "effect_ids": [
+      "tm_paopao_bargain_shield",
+      "tm_paopao_bargain_hit"
+    ],
+    "cd": 8,
+    "icon_loc": "skill_paopao_bargain"
+  },
+  {
+    "id": "mow_old_help",
+    "owner_id": "temp_old",
+    "name": "真上",
+    "desc": "热心市民普攻：有事就是他们有事。",
+    "show_tags": [
+      1
+    ],
+    "effect_ids": [
+      "mow_old_help_dmg"
+    ],
+    "cd": 0,
+    "icon_loc": "skill_labor"
   }
 ]

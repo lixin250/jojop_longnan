@@ -25,7 +25,9 @@
     "base_defense": 0,
     "crit_rate": 0,
     "crit_damage": 1.5,
-    "attack_interval": 0.4
+    "attack_interval": 0.4,
+    "starter_selectable": true,
+    "unlock_conditions": []
   },
   {
     "id": "CS_ayun",
@@ -45,6 +47,7 @@
     "base_move": 2.6,
     "skill_ids": [
       "campus_courage",
+      "cs_ayun_dantiao",
       "cs_ayun_overload",
       "cs_ayun_gaoliao"
     ],
@@ -53,7 +56,15 @@
     "base_defense": 0,
     "crit_rate": 0,
     "crit_damage": 1.5,
-    "attack_interval": 0.4
+    "attack_interval": 0.4,
+    "starter_selectable": true,
+    "unlock_conditions": [
+      {
+        "type": "chapter",
+        "p1": 2,
+        "p2": 0
+      }
+    ]
   },
   {
     "id": "BZ_jihong",
@@ -80,7 +91,20 @@
     "base_defense": 0,
     "crit_rate": 0,
     "crit_damage": 1.5,
-    "attack_interval": 0.4
+    "attack_interval": 0.4,
+    "starter_selectable": true,
+    "unlock_conditions": [
+      {
+        "type": "chapter",
+        "p1": 3,
+        "p2": 0
+      },
+      {
+        "type": "favor",
+        "p1": 8,
+        "p2": 0
+      }
+    ]
   },
   {
     "id": "GWY_wang",
@@ -106,7 +130,20 @@
     "base_defense": 0,
     "crit_rate": 0,
     "crit_damage": 1.5,
-    "attack_interval": 0.4
+    "attack_interval": 0.4,
+    "starter_selectable": true,
+    "unlock_conditions": [
+      {
+        "type": "chapter",
+        "p1": 5,
+        "p2": 0
+      },
+      {
+        "type": "renown",
+        "p1": 10,
+        "p2": 0
+      }
+    ]
   },
   {
     "id": "YH_hangu",
@@ -133,7 +170,20 @@
     "base_defense": 0,
     "crit_rate": 0,
     "crit_damage": 1.5,
-    "attack_interval": 0.4
+    "attack_interval": 0.4,
+    "starter_selectable": true,
+    "unlock_conditions": [
+      {
+        "type": "grade",
+        "p1": 4,
+        "p2": 1
+      },
+      {
+        "type": "train",
+        "p1": 20,
+        "p2": 0
+      }
+    ]
   },
   {
     "id": "TM_yugu",
@@ -159,7 +209,15 @@
     "base_defense": 0,
     "crit_rate": 0,
     "crit_damage": 1.5,
-    "attack_interval": 0.4
+    "attack_interval": 0.4,
+    "starter_selectable": true,
+    "unlock_conditions": [
+      {
+        "type": "chapter",
+        "p1": 4,
+        "p2": 0
+      }
+    ]
   },
   {
     "id": "TM_junjun",
@@ -185,7 +243,54 @@
     "base_defense": 0,
     "crit_rate": 0,
     "crit_damage": 1.5,
-    "attack_interval": 0.4
+    "attack_interval": 0.4,
+    "starter_selectable": true,
+    "unlock_conditions": [
+      {
+        "type": "chapter",
+        "p1": 4,
+        "p2": 0
+      },
+      {
+        "type": "bond",
+        "p1": 2,
+        "p2": 1
+      }
+    ]
+  },
+  {
+    "id": "TM_PaoPao",
+    "name": "炮炮",
+    "desc": "土木圣体，搞钱大师，商务经理",
+    "camp": 1,
+    "education_level": 7,
+    "life_route": 1,
+    "career_sector": 3,
+    "faction_tags": [
+      2
+    ],
+    "avatar_loc": "role_paopao_avatar",
+    "battle_loc": "role_paopao_battle",
+    "base_hp": 128,
+    "base_atk": 12.5,
+    "base_move": 2.4,
+    "skill_ids": [
+      "tm_paopao_bargain"
+    ],
+    "recruitable": true,
+    "sort": 43,
+    "base_defense": 6,
+    "crit_rate": 0.05,
+    "crit_damage": 1.5,
+    "attack_interval": 0.4,
+    "starter_selectable": true,
+    "unlock_conditions": [
+      {
+        "type": "chapter",
+        "p1": 3,
+        "p2": 0
+      }
+    ]
   },
   {
     "id": "TM_wantao",
@@ -211,7 +316,20 @@
     "base_defense": 0,
     "crit_rate": 0,
     "crit_damage": 1.5,
-    "attack_interval": 0.4
+    "attack_interval": 0.4,
+    "starter_selectable": true,
+    "unlock_conditions": [
+      {
+        "type": "chapter",
+        "p1": 5,
+        "p2": 0
+      },
+      {
+        "type": "kill",
+        "p1": 200,
+        "p2": 0
+      }
+    ]
   },
   {
     "id": "Dr_chen",
@@ -237,7 +355,15 @@
     "base_defense": 0,
     "crit_rate": 0,
     "crit_damage": 1.5,
-    "attack_interval": 0.4
+    "attack_interval": 0.4,
+    "starter_selectable": true,
+    "unlock_conditions": [
+      {
+        "type": "archive",
+        "p1": 3,
+        "p2": 0
+      }
+    ]
   },
   {
     "id": "Dr_xiao",
@@ -264,7 +390,20 @@
     "base_defense": 0,
     "crit_rate": 0,
     "crit_damage": 1.5,
-    "attack_interval": 0.4
+    "attack_interval": 0.4,
+    "starter_selectable": true,
+    "unlock_conditions": [
+      {
+        "type": "chapter",
+        "p1": 4,
+        "p2": 0
+      },
+      {
+        "type": "favor",
+        "p1": 12,
+        "p2": 0
+      }
+    ]
   },
   {
     "id": "todo_shitbro",
@@ -293,7 +432,20 @@
     "base_defense": 0,
     "crit_rate": 0,
     "crit_damage": 1.5,
-    "attack_interval": 0.4
+    "attack_interval": 0.4,
+    "starter_selectable": true,
+    "unlock_conditions": [
+      {
+        "type": "grade",
+        "p1": 4,
+        "p2": 3
+      },
+      {
+        "type": "train",
+        "p1": 40,
+        "p2": 0
+      }
+    ]
   },
   {
     "id": "Energy_oban",
@@ -320,7 +472,15 @@
     "base_defense": 0,
     "crit_rate": 0,
     "crit_damage": 1.5,
-    "attack_interval": 0.4
+    "attack_interval": 0.4,
+    "starter_selectable": true,
+    "unlock_conditions": [
+      {
+        "type": "chapter",
+        "p1": 2,
+        "p2": 0
+      }
+    ]
   },
   {
     "id": "Energy_uzi",
@@ -347,7 +507,20 @@
     "base_defense": 0,
     "crit_rate": 0,
     "crit_damage": 1.5,
-    "attack_interval": 0.4
+    "attack_interval": 0.4,
+    "starter_selectable": true,
+    "unlock_conditions": [
+      {
+        "type": "chapter",
+        "p1": 5,
+        "p2": 0
+      },
+      {
+        "type": "bond",
+        "p1": 9,
+        "p2": 1
+      }
+    ]
   },
   {
     "id": "Bus_laizhen",
@@ -373,7 +546,20 @@
     "base_defense": 0,
     "crit_rate": 0,
     "crit_damage": 1.5,
-    "attack_interval": 0.4
+    "attack_interval": 0.4,
+    "starter_selectable": true,
+    "unlock_conditions": [
+      {
+        "type": "chapter",
+        "p1": 5,
+        "p2": 0
+      },
+      {
+        "type": "renown",
+        "p1": 15,
+        "p2": 0
+      }
+    ]
   },
   {
     "id": "Bus_longtou",
@@ -399,7 +585,25 @@
     "base_defense": 0,
     "crit_rate": 0,
     "crit_damage": 1.5,
-    "attack_interval": 0.4
+    "attack_interval": 0.4,
+    "starter_selectable": true,
+    "unlock_conditions": [
+      {
+        "type": "chapter",
+        "p1": 5,
+        "p2": 0
+      },
+      {
+        "type": "kill",
+        "p1": 300,
+        "p2": 0
+      },
+      {
+        "type": "train",
+        "p1": 50,
+        "p2": 0
+      }
+    ]
   },
   {
     "id": "eng_xie",
@@ -423,7 +627,35 @@
     "base_defense": 0,
     "crit_rate": 0,
     "crit_damage": 1.5,
-    "attack_interval": 0.45
+    "attack_interval": 0.45,
+    "starter_selectable": false,
+    "unlock_conditions": []
+  },
+  {
+    "id": "temp_old",
+    "name": "热心市民",
+    "desc": "仁心老陈有事，就是他们有事，真上。",
+    "camp": 2,
+    "education_level": 0,
+    "life_route": 0,
+    "career_sector": 0,
+    "faction_tags": [],
+    "avatar_loc": "role_tempcitizen_avatar",
+    "battle_loc": "role_tempcitizen_battle",
+    "base_hp": 42,
+    "base_atk": 5,
+    "base_move": 2,
+    "skill_ids": [
+      "mow_old_help"
+    ],
+    "recruitable": false,
+    "sort": 1002,
+    "base_defense": 0,
+    "crit_rate": 0,
+    "crit_damage": 1.5,
+    "attack_interval": 0.5,
+    "starter_selectable": false,
+    "unlock_conditions": []
   },
   {
     "id": "temp_hire",
@@ -447,6 +679,8 @@
     "base_defense": 0,
     "crit_rate": 0,
     "crit_damage": 1.5,
-    "attack_interval": 0.45
+    "attack_interval": 0.45,
+    "starter_selectable": false,
+    "unlock_conditions": []
   }
 ]

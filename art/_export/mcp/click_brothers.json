@@ -1,0 +1,6 @@
+{
+  "csharpCode": "var go = GameObject.Find(\"btn_brothers\"); if (go == null) { Debug.LogError(\"btn_brothers not found\"); return; } var btn = go.GetComponent<UnityEngine.UI.Button>(); if (btn == null) { Debug.LogError(\"no Button\"); return; } btn.onClick.Invoke(); Debug.Log(\"[MCP] clicked btn_brothers\");",
+  "isMethodBody": true,
+  "className": "McpClick",
+  "methodName": "Run"
+}

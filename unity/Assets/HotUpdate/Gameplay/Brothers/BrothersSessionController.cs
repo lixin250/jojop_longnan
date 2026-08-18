@@ -62,6 +62,7 @@ namespace JojoP.Gameplay.Brothers
                     if (Run == null) return;
                     Run.KillsThisWave += n;
                     Run.KillsThisRun += n;
+                    Meta?.AddKills(n);
                     BattleHudChanged?.Invoke();
                 };
                 _battle.WaveCleared += OnWaveCleared;

@@ -1,0 +1,8 @@
+
+-- UnityPackage
+https://github.com/IvanMurzak/Unity-MCP/blob/main/docs/README.zh-CN.md
+
+-- Unity6.4 - Windows - PackageManger - All Registries - AIGameDeveloper - MCP
+https://github.com/IvanMurzak/Unity-MCP/blob/main/README.md
+
+选择下面的装好不缺东西， 然后  打开GameDeveloper 页面

@@ -29,11 +29,11 @@ namespace JojoP.Cfg
         /// </summary>
         TeamBuff = 3,
         /// <summary>
-        /// 校园技升级
+        /// 课间绝活升级
         /// </summary>
         CampusSkill = 4,
         /// <summary>
-        /// 就业技升级
+        /// 工牌绝活升级
         /// </summary>
         JobSkill = 5,
         /// <summary>
@@ -45,11 +45,11 @@ namespace JojoP.Cfg
         /// </summary>
         Equipment = 7,
         /// <summary>
-        /// 临时掉落技能
+        /// 地摊技
         /// </summary>
         LootSkill = 8,
         /// <summary>
-        /// 龙南事件
+        /// 龙南糗事
         /// </summary>
         Event = 9,
     }

@@ -57,7 +57,7 @@ namespace JojoP.EditorTools
         {
             EditorGUILayout.HelpBox(
                 "派系按中文多选：互联网、创业、银行、烟草已拆开，保存仍是英文枚举。" +
-                "毕业技和校园/其他技能从 SkillIndex 勾选后回写 Excel。头像读取 Assets/Bundle/Role/大头贴。" +
+                "工牌绝活和课间/性格技从 SkillIndex 勾选后回写 Excel。头像读取 Assets/Bundle/Role/大头贴。" +
                 "每人强度和成长曲线在本窗口自己调，不给战斗定位建议。",
                 MessageType.Info);
 
@@ -113,8 +113,8 @@ namespace JojoP.EditorTools
                 Header("攻间", 55);
                 Header("预算", 100);
                 Header("毕业", 95);
-                Header("毕业技能", 210);
-                Header("校园/其他技能", 210);
+                Header("工牌绝活", 210);
+                Header("课间/性格技", 210);
             }
         }
 
@@ -155,10 +155,10 @@ namespace JojoP.EditorTools
                 EditorGUI.ProgressBar(scoreRect, Mathf.InverseLerp(70f, 130f, score), $"{score:0.0}");
                 GUILayout.Label($"+{row.JobDelayYears}年\n×{row.GraduationSkillMul:0.##}",
                     EditorStyles.miniLabel, GUILayout.Width(95), GUILayout.Height(36));
-                if (GUILayout.Button(SkillLabel(row.JobSkillIds, "未选择毕业技能"), EditorStyles.popup,
+                if (GUILayout.Button(SkillLabel(row.JobSkillIds, "还没领工牌绝活"), EditorStyles.popup,
                         GUILayout.Width(210), GUILayout.Height(38)))
                     OpenSkillMenu(row.JobSkillIds, _jobSkills);
-                if (GUILayout.Button(SkillLabel(row.OtherSkillIds, "未选择其他技能"), EditorStyles.popup,
+                if (GUILayout.Button(SkillLabel(row.OtherSkillIds, "还没课间绝活"), EditorStyles.popup,
                         GUILayout.Width(210), GUILayout.Height(38)))
                     OpenSkillMenu(row.OtherSkillIds, _otherSkills);
             }

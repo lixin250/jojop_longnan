@@ -1,18 +1,19 @@
+using System;
+using System.Reflection;
 using UnityEngine;
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
 
 namespace JojoP.Gameplay.Brothers
 {
     /// <summary>
-    /// 从 Bundle 路径加载角色战斗图 / 头像。Editor 与 PlayMode(Editor) 走 AssetDatabase；
-    /// 真机包体需走 Yoo 时再扩。
+    /// 从 Bundle 路径加载角色战斗图 / 头像。
+    /// Editor PlayMode 用反射调 AssetDatabase（热更程序集不引用 UnityEditor）。
     /// </summary>
     public static class RoleArtLoader
     {
         const string PortraitFolder = "Assets/Bundle/Role/大头贴";
         const string BattleFolder = "Assets/Bundle/Role/battle";
+
+        static MethodInfo _loadAsset;
 
         public static Sprite LoadPortrait(string avatarLoc)
         {
@@ -47,15 +48,34 @@ namespace JojoP.Gameplay.Brothers
 
         static Sprite LoadSprite(string assetPath)
         {
-#if UNITY_EDITOR
-            var sprite = AssetDatabase.LoadAssetAtPath<Sprite>(assetPath);
+            var method = EditorLoadAsset();
+            if (method == null) return null;
+
+            var sprite = method.MakeGenericMethod(typeof(Sprite)).Invoke(null, new object[] { assetPath }) as Sprite;
             if (sprite != null) return sprite;
-            var tex = AssetDatabase.LoadAssetAtPath<Texture2D>(assetPath);
+
+            var tex = method.MakeGenericMethod(typeof(Texture2D)).Invoke(null, new object[] { assetPath }) as Texture2D;
             if (tex == null) return null;
             return Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.15f), 100f);
-#else
-            return null;
-#endif
+        }
+
+        static MethodInfo EditorLoadAsset()
+        {
+            if (_loadAsset != null) return _loadAsset;
+            var t = Type.GetType("UnityEditor.AssetDatabase, UnityEditor");
+            if (t == null) return null;
+            foreach (var m in t.GetMethods(BindingFlags.Public | BindingFlags.Static))
+            {
+                if (m.Name != "LoadAssetAtPath" || !m.IsGenericMethodDefinition) continue;
+                var ps = m.GetParameters();
+                if (ps.Length == 1 && ps[0].ParameterType == typeof(string))
+                {
+                    _loadAsset = m;
+                    break;
+                }
+            }
+
+            return _loadAsset;
         }
     }
 }

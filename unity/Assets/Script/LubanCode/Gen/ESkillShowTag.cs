@@ -12,28 +12,28 @@
 namespace JojoP.Cfg
 { 
     /// <summary>
-    /// 技能展示标签
+    /// 技能分类口吻；Job/Campus/Fusion 仍是机制位
     /// </summary>
     public enum ESkillShowTag
     {
         /// <summary>
-        /// 主动
+        /// 主动出手
         /// </summary>
         Active = 1,
         /// <summary>
-        /// 被动
+        /// 挂着就有
         /// </summary>
         Passive = 2,
         /// <summary>
-        /// 就业技
+        /// 工牌绝活
         /// </summary>
         Job = 3,
         /// <summary>
-        /// 校园技
+        /// 课间绝活
         /// </summary>
         Campus = 4,
         /// <summary>
-        /// 融合技
+        /// 兄弟连招
         /// </summary>
         Fusion = 5,
     }

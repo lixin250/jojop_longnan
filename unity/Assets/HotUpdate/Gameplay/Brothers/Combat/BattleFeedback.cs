@@ -18,21 +18,26 @@ namespace JojoP.Gameplay.Brothers
         public static void Damage(BattleUnit target, float amount, bool crit = false)
         {
             if (target == null || amount <= 0.05f) return;
-            SpawnFloater(target.transform.position + Vector3.up * 0.55f,
+            SpawnFloater(FloaterPos(target),
                 Mathf.RoundToInt(amount).ToString(),
                 crit ? new Color(1f, 0.85f, 0.2f) : new Color(1f, 0.35f, 0.3f),
-                crit ? 0.55f : 0.42f);
+                crit ? 1.15f : 0.95f);
             target.GetComponent<UnitHpBar>()?.RefreshImmediate();
         }
 
         public static void Heal(BattleUnit target, float amount)
         {
             if (target == null || amount <= 0.05f) return;
-            SpawnFloater(target.transform.position + Vector3.up * 0.55f,
+            SpawnFloater(FloaterPos(target),
                 "+" + Mathf.RoundToInt(amount),
                 new Color(0.45f, 0.95f, 0.55f),
-                0.45f);
+                1.0f);
             target.GetComponent<UnitHpBar>()?.RefreshImmediate();
+        }
+
+        static Vector3 FloaterPos(BattleUnit target)
+        {
+            return new Vector3(target.transform.position.x, target.WorldTopY() + 0.22f, 0f);
         }
 
         static void SpawnFloater(Vector3 world, string text, Color color, float scale)
@@ -67,7 +72,7 @@ namespace JojoP.Gameplay.Brothers
             canvas.sortingOrder = 80;
             var rt = canvasGo.GetComponent<RectTransform>();
             rt.sizeDelta = new Vector2(160, 60);
-            canvasGo.transform.localScale = Vector3.one * (0.01f * scale);
+            canvasGo.transform.localScale = Vector3.one * (0.018f * scale);
 
             var textGo = new GameObject("T", typeof(RectTransform), typeof(Text), typeof(Outline));
             textGo.transform.SetParent(canvasGo.transform, false);
@@ -129,51 +134,67 @@ namespace JojoP.Gameplay.Brothers
             RefreshImmediate();
         }
 
+        const float BarWidth = 120f;
+        const float FillPad = 6f;
+
         void Build()
         {
             var root = new GameObject("HpBar", typeof(RectTransform), typeof(Canvas), typeof(CanvasScaler));
             root.transform.SetParent(transform, false);
-            root.transform.localPosition = new Vector3(0f, 0.85f, 0f);
-            root.transform.localScale = Vector3.one * 0.012f;
             _canvas = root.GetComponent<Canvas>();
             _canvas.renderMode = RenderMode.WorldSpace;
             _canvas.sortingOrder = 60;
             var rt = root.GetComponent<RectTransform>();
-            rt.sizeDelta = new Vector2(110, 14);
+            rt.sizeDelta = new Vector2(BarWidth, 16f);
+            rt.pivot = new Vector2(0.5f, 0.5f);
 
-            _back = MakeBar(root.transform, "Back", new Color(0.08f, 0.08f, 0.1f, 0.85f), Vector2.zero);
+            _back = MakeBar(root.transform, "Back", new Color(0.08f, 0.08f, 0.1f, 0.9f));
             _fill = MakeBar(root.transform, "Fill",
                 _unit != null && _unit.Side == UnitSide.Brother
                     ? new Color(0.35f, 0.85f, 0.55f, 1f)
-                    : new Color(0.95f, 0.35f, 0.32f, 1f),
-                Vector2.zero);
-            _fill.rectTransform.pivot = new Vector2(0f, 0.5f);
-            _fill.rectTransform.anchorMin = new Vector2(0f, 0.15f);
-            _fill.rectTransform.anchorMax = new Vector2(0f, 0.85f);
-            _fill.rectTransform.anchoredPosition = new Vector2(-50f, 0f);
-            _fill.rectTransform.sizeDelta = new Vector2(100f, 0f);
+                    : new Color(0.95f, 0.35f, 0.32f, 1f));
+            var frt = _fill.rectTransform;
+            frt.pivot = new Vector2(0f, 0.5f);
+            frt.anchorMin = new Vector2(0f, 0.18f);
+            frt.anchorMax = new Vector2(0f, 0.82f);
+            frt.anchoredPosition = new Vector2(FillPad, 0f);
+            frt.sizeDelta = new Vector2(BarWidth - FillPad * 2f, 0f);
+            PlaceAboveHead();
         }
 
-        static Image MakeBar(Transform parent, string name, Color color, Vector2 pos)
+        static Image MakeBar(Transform parent, string name, Color color)
         {
             var go = new GameObject(name, typeof(RectTransform), typeof(Image));
             go.transform.SetParent(parent, false);
             var rt = go.GetComponent<RectTransform>();
-            rt.anchorMin = new Vector2(0.05f, 0.15f);
-            rt.anchorMax = new Vector2(0.95f, 0.85f);
+            rt.anchorMin = Vector2.zero;
+            rt.anchorMax = Vector2.one;
             rt.offsetMin = Vector2.zero;
             rt.offsetMax = Vector2.zero;
-            rt.anchoredPosition = pos;
             var img = go.GetComponent<Image>();
             img.color = color;
             return img;
+        }
+
+        void PlaceAboveHead()
+        {
+            if (_canvas == null) return;
+            float sx = Mathf.Max(0.01f, transform.lossyScale.x);
+            float sy = Mathf.Max(0.01f, transform.lossyScale.y);
+            const float worldScale = 0.014f;
+            _canvas.transform.localScale = new Vector3(worldScale / sx, worldScale / sy, 1f);
+            float localTop = 0.7f;
+            if (_unit != null)
+                localTop = (_unit.WorldTopY() - transform.position.y) / sy + 0.18f;
+            _canvas.transform.localPosition = new Vector3(0f, localTop, 0f);
+            _canvas.transform.localRotation = Quaternion.identity;
         }
 
         public void RefreshImmediate()
         {
             if (_unit == null || _fill == null) return;
             float t = _unit.MaxHp > 0.01f ? Mathf.Clamp01(_unit.Hp / _unit.MaxHp) : 0f;
-            _fill.rectTransform.sizeDelta = new Vector2(100f * t, 0f);
+            _fill.rectTransform.sizeDelta = new Vector2((BarWidth - FillPad * 2f) * t, 0f);
             if (_unit.Side == UnitSide.Brother)
                 _fill.color = Color.Lerp(new Color(0.95f, 0.55f, 0.2f), new Color(0.35f, 0.85f, 0.55f), t);
             else
@@ -184,9 +205,7 @@ namespace JojoP.Gameplay.Brothers
         {
             if (_unit == null) return;
             RefreshImmediate();
-            var cam = Camera.main;
-            if (cam != null && _canvas != null)
-                _canvas.transform.rotation = cam.transform.rotation;
+            PlaceAboveHead();
         }
     }
 }

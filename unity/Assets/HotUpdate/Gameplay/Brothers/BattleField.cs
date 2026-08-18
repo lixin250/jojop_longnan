@@ -8,9 +8,9 @@ namespace JojoP.Gameplay.Brothers
     /// </summary>
     public static class BattleField
     {
-        public const float CameraSize = 5.4f;
-        public const float SquadRadius = 0.85f;
-        public const float SpawnRadius = 4.4f;
+        public const float CameraSize = 6.2f;
+        public const float SquadRadius = 1.45f;
+        public const float SpawnRadius = 5.0f;
         public const float PlaneZ = 0f;
 
         public static Vector3 SquadSlot(int index, int count)

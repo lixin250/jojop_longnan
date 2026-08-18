@@ -1,0 +1,6 @@
+{
+  "csharpCode": "var sb = new System.Text.StringBuilder();\nsb.Append(\"roots=\");\nforeach (var go in UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects())\n  sb.Append(go.name).Append(go.activeInHierarchy ? \"* \" : \" \");\nsb.Append(\" cams=\").Append(Camera.allCamerasCount);\nDebug.Log(\"[MCP roots] \" + sb);\n",
+  "isMethodBody": true,
+  "className": "McpRoots",
+  "methodName": "Run"
+}

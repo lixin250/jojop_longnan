@@ -7,7 +7,7 @@ namespace JojoP.Gameplay.Brothers
     /// <summary>扫场上派系 → 授予 FusionSkill.grant_skill_id。</summary>
     public static class FusionSystem
     {
-        public static void Refresh(List<BattleUnit> brothers, SkillCastSystem skills)
+        public static void Refresh(List<BattleUnit> brothers, SkillCastSystem skills, MetaProgress meta = null)
         {
             if (!CfgTables.Ready || brothers == null || skills == null) return;
 
@@ -48,6 +48,11 @@ namespace JojoP.Gameplay.Brothers
                     var role = RoleCatalog.FindRole(u.BoundBrother.DefId);
                     if (role?.FactionTags == null || !role.FactionTags.Contains(firstTag)) continue;
                     skills.GrantSkill(u, bond.GrantSkillId);
+                    if (meta != null && bond.RequiredTags != null)
+                    {
+                        foreach (var tag in bond.RequiredTags)
+                            meta.NoteBond((int)tag);
+                    }
                     granted++;
                     break;
                 }

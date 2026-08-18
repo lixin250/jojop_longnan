@@ -96,5 +96,12 @@
     "weight": 6,
     "affinity_per_meet": 1,
     "join_power_mul": 0.78
+  },
+  {
+    "role_id": "TM_PaoPao",
+    "min_chapter": "Middle",
+    "weight": 4,
+    "affinity_per_meet": 1,
+    "join_power_mul": 0.74
   }
 ]

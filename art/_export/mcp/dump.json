@@ -1,0 +1,6 @@
+{
+  "csharpCode": "var sb = new System.Text.StringBuilder();\nvar mm = GameObject.Find(\"MainMenu\");\nsb.Append(\"MainMenu=\").Append(mm == null ? \"null\" : mm.activeInHierarchy.ToString()).Append(';');\nvar bm = GameObject.Find(\"BrothersMode\");\nsb.Append(\" BrothersMode=\").Append(bm == null ? \"null\" : bm.activeInHierarchy.ToString()).Append(';');\nvar bs = GameObject.Find(\"BrothersSession\");\nsb.Append(\" Session=\").Append(bs == null ? \"null\" : \"ok\").Append(';');\nint n = 0, sprites = 0;\nforeach (var t in UnityEngine.Object.FindObjectsByType<Transform>(FindObjectsInactive.Exclude, FindObjectsSortMode.None))\n{\n  if (t.name.StartsWith(\"Brother_\") || t.name.StartsWith(\"Enemy_\")) n++;\n  if (t.name == \"BattleSprite\") sprites++;\n}\nsb.Append(\" units=\").Append(n).Append(\" sprites=\").Append(sprites);\nvar cam = Camera.main;\nsb.Append(cam == null ? \" cam=null\" : (\" cam=\" + cam.transform.position + \" size=\" + cam.orthographicSize));\nDebug.Log(\"[MCP dump] \" + sb);\n",
+  "isMethodBody": true,
+  "className": "McpDump",
+  "methodName": "Run"
+}

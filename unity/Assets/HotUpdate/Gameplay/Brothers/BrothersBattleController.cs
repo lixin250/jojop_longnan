@@ -93,7 +93,7 @@ namespace JojoP.Gameplay.Brothers
             _themePool = BuildThemePool(run, scene);
 
             SpawnBrothers(run, meta);
-            FusionSystem.Refresh(_brothers, _skills);
+            FusionSystem.Refresh(_brothers, _skills, meta);
             TrySanpangCheck(forceIfEmptyBrothers: true);
             HudDirty?.Invoke();
         }
@@ -281,12 +281,9 @@ namespace JojoP.Gameplay.Brothers
             foreach (var br in run.Squad)
             {
                 if (!br.CanFight) continue;
-                var go = GameObject.CreatePrimitive(PrimitiveType.Capsule);
-                go.name = "Brother_" + br.DisplayName;
+                var go = new GameObject("Brother_" + br.DisplayName);
                 go.transform.SetParent(transform, false);
                 go.transform.position = BattleField.SquadSlot(slot, CountFighting(run));
-                var col = go.GetComponent<Collider>();
-                if (col != null) Destroy(col);
 
                 var unit = go.AddComponent<BattleUnit>();
                 unit.Side = UnitSide.Brother;
@@ -298,7 +295,7 @@ namespace JojoP.Gameplay.Brothers
                 unit.Defense = br.Defense;
                 unit.CritRate = br.CritRate;
                 unit.CritDamage = br.CritDamage;
-                unit.AttackRange = 0.8f;
+                unit.AttackRange = 1.05f;
                 unit.AttackCooldown = br.AttackInterval;
                 unit.BoundBrother = br;
                 unit.BaseAtkMul = (1f + teamBuff) * (br.JoinPenaltyWaves > 0 ? br.JoinPowerMul : 1f);
@@ -370,7 +367,7 @@ namespace JojoP.Gameplay.Brothers
             unit.Hp = unit.MaxHp;
             unit.Atk = atkBase * theme.AtkMul * _difficulty;
             unit.Move = 1.15f * theme.MoveMul;
-            unit.AttackRange = 0.5f;
+            unit.AttackRange = 0.75f;
             unit.HighArmor = theme.HighArmor;
             unit.IsElite = isElite;
             unit.AttackCooldown = isElite ? 0.85f : 0.95f;
@@ -453,12 +450,13 @@ namespace JojoP.Gameplay.Brothers
             go.name = "ArenaFloor";
             go.transform.SetParent(transform, false);
             go.transform.position = new Vector3(0f, 0f, 1f);
+            go.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
             float size = BattleField.SpawnRadius * 2.15f;
             go.transform.localScale = new Vector3(size, size, 1f);
             var col = go.GetComponent<Collider>();
             if (col != null) Destroy(col);
             var r = go.GetComponent<Renderer>();
-            if (r != null) r.sharedMaterial = CreateMat(new Color(0.12f, 0.16f, 0.14f));
+            if (r != null) r.sharedMaterial = CreateMat(new Color(0.18f, 0.22f, 0.2f));
         }
 
         static void EnsureLights()

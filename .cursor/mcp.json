@@ -1,10 +1,15 @@
 {
   "mcpServers": {
     "jojop-config": {
-      "command": "node",
+      "command": "D:\\Program Files\\nodejs\\node.exe",
       "args": [
-        "${workspaceFolder}/tools/config-mcp/dist/index.js"
-      ]
+        "e:\\Project\\JojoP\\tools\\config-mcp\\dist\\index.js"
+      ],
+      "cwd": "e:\\Project\\JojoP\\tools\\config-mcp"
+    },
+    "ai-game-developer": {
+      "type": "http",
+      "url": "http://localhost:21852/p/0cff7463"
     }
   }
 }

@@ -2,7 +2,7 @@
   {
     "id": "equip_normal",
     "name": "顺手家伙",
-    "desc": "普通近战，伤害稳定",
+    "desc": "街上抄的普通近战，稳，但不酷。",
     "attack_form": 0,
     "damage_mul": 1,
     "secondary_mul": 0,
@@ -12,8 +12,8 @@
   },
   {
     "id": "equip_pierce",
-    "name": "竹竿一捅",
-    "desc": "直线贯穿，第二个目标承受较低伤害",
+    "name": "晾衣竿一捅",
+    "desc": "直线贯穿，第二个倒霉蛋少挨一点。",
     "attack_form": 1,
     "damage_mul": 0.88,
     "secondary_mul": 0.62,
@@ -23,8 +23,8 @@
   },
   {
     "id": "equip_chain",
-    "name": "电线乱搭",
-    "desc": "攻击在邻近敌人之间弹跳",
+    "name": "私拉电线",
+    "desc": "攻击在邻近敌人之间乱蹦。",
     "attack_form": 2,
     "damage_mul": 0.82,
     "secondary_mul": 0.58,
@@ -35,7 +35,7 @@
   {
     "id": "equip_splash",
     "name": "工地抡锤",
-    "desc": "命中位置产生范围溅射",
+    "desc": "砸哪儿溅哪儿，安全帽警告已经响了。",
     "attack_form": 3,
     "damage_mul": 0.9,
     "secondary_mul": 0.52,

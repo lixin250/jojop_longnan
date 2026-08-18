@@ -41,6 +41,8 @@ const ROLE_EDITABLE_FIELDS = new Set([
   "skill_ids",
   "recruitable",
   "sort",
+  "starter_selectable",
+  "unlock_conditions",
 ]);
 const RUN_CONTENT_KEYS = {
   RunChapterRule: "chapter_id",
