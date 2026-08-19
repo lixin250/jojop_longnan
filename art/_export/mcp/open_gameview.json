@@ -1,0 +1,4 @@
+{
+  "csharpCode": "var t = typeof(UnityEditor.Editor).Assembly.GetType(\"UnityEditor.GameView\");\nif (t == null) { Debug.LogError(\"no GameView type\"); return; }\nvar w = EditorWindow.GetWindow(t);\nw.Show();\nw.Focus();\nDebug.Log(\"[JojoP] Game View opened\");",
+  "isMethodBody": true
+}

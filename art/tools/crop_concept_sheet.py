@@ -80,6 +80,42 @@ def parchment_matte(im: Image.Image, sample_corners: bool = True, threshold: int
     return out
 
 
+def trim_alpha(im: Image.Image, pad: int = 6, alpha_min: int = 12) -> Image.Image:
+    """按不透明像素收紧边，避开 Image.load/getbbox（本机 Pillow+3.14 会崩）。"""
+    rgba = im.convert("RGBA")
+    w, h = rgba.size
+    data = list(rgba.getdata())
+    left, top, right, bottom = w, h, 0, 0
+    found = False
+    for y in range(h):
+        row = y * w
+        for x in range(w):
+            if data[row + x][3] <= alpha_min:
+                continue
+            found = True
+            if x < left:
+                left = x
+            if x > right:
+                right = x
+            if y < top:
+                top = y
+            if y > bottom:
+                bottom = y
+    if not found:
+        return rgba
+    left = max(0, left - pad)
+    top = max(0, top - pad)
+    right = min(w, right + 1 + pad)
+    bottom = min(h, bottom + 1 + pad)
+    cropped = []
+    for y in range(top, bottom):
+        row = y * w
+        cropped.extend(data[row + left : row + right])
+    out = Image.new("RGBA", (right - left, bottom - top))
+    out.putdata(cropped)
+    return out
+
+
 def fit_square(im: Image.Image, size: int) -> Image.Image:
     """等比放入 size×size，透明垫底居中。"""
     im = im.convert("RGBA")
@@ -125,6 +161,8 @@ def process_layout(layout_path: Path, do_matte: bool, write_export: bool) -> Pat
         matte_mode = crop.get("matte", "none") if do_matte else "none"
         if matte_mode == "parchment":
             piece = parchment_matte(piece)
+        if crop.get("trim"):
+            piece = trim_alpha(piece, pad=int(crop.get("trim_pad", 6)))
 
         if write_export:
             piece.save(export_dir / f"{key}.png")

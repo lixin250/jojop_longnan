@@ -1,0 +1,29 @@
+using System.IO;
+using UnityEngine;
+
+public static class CapturePlay
+{
+    public static string Run()
+    {
+        var cam = Camera.main;
+        if (cam == null) return "no camera";
+        int w = 540, h = 960;
+        var rt = new RenderTexture(w, h, 24);
+        var prev = cam.targetTexture;
+        cam.targetTexture = rt;
+        cam.Render();
+        RenderTexture.active = rt;
+        var tex = new Texture2D(w, h, TextureFormat.RGB24, false);
+        tex.ReadPixels(new Rect(0, 0, w, h), 0, 0);
+        tex.Apply();
+        cam.targetTexture = prev;
+        RenderTexture.active = null;
+        Object.DestroyImmediate(rt);
+        var dir = Path.GetFullPath(Path.Combine(Application.dataPath, "../../art/_export/mcp"));
+        Directory.CreateDirectory(dir);
+        var path = Path.Combine(dir, "play.png");
+        File.WriteAllBytes(path, tex.EncodeToPNG());
+        Object.DestroyImmediate(tex);
+        return path;
+    }
+}

@@ -34,9 +34,12 @@ namespace JojoP.Gameplay.Brothers
         float _cd;
         Renderer _renderer;
         SpriteRenderer _sprite;
+        BattlePoseDriver _pose;
         Color _baseColor;
 
         public bool IsAlive => Hp > 0f && gameObject.activeInHierarchy;
+        public bool IsMoving { get; private set; }
+        public Vector2 FaceDir { get; private set; } = Vector2.right;
 
         public void SetupVisual(Color color, float scale)
         {
@@ -62,6 +65,14 @@ namespace JojoP.Gameplay.Brothers
         /// <summary>挂战斗立绘（可选）；失败则保持色块。Sprite 挂子物体，避免和胶囊 MeshRenderer 互斥。</summary>
         public void TryApplyBattleSprite(Sprite sprite)
         {
+            var set = new BattlePoseSet { Fallback = sprite, Idle = sprite, Walk = sprite, Atk = sprite, Hurt = sprite, Dead = sprite };
+            TryApplyBattleArt(set);
+        }
+
+        public void TryApplyBattleArt(BattlePoseSet set)
+        {
+            if (!set.HasAny) return;
+            var sprite = set.Resolve(BattlePoseKind.Idle) ?? set.Fallback;
             if (sprite == null) return;
 
             var mesh = GetComponent<MeshRenderer>();
@@ -93,7 +104,6 @@ namespace JojoP.Gameplay.Brothers
 
             _sprite.sprite = sprite;
             _sprite.sortingOrder = Side == UnitSide.Brother ? 20 : 10;
-            // 缩放只打在立绘子物体上，血条不跟着被拉歪。
             transform.localScale = Vector3.one;
             float h = sprite.bounds.size.y;
             float target = Side == UnitSide.Brother ? 2.35f : 1.55f;
@@ -102,26 +112,40 @@ namespace JojoP.Gameplay.Brothers
             _renderer = _sprite;
             _baseColor = Color.white;
             ApplyColor(Color.white);
+
+            _pose = child.GetComponent<BattlePoseDriver>();
+            if (_pose == null) _pose = child.gameObject.AddComponent<BattlePoseDriver>();
+            _pose.Bind(this, _sprite, set);
         }
 
         public void TickCombat(float dt, BattleUnit target, System.Action<BattleUnit, BattleUnit, float> onHit)
         {
-            if (!IsAlive || target == null || !target.IsAlive) return;
+            if (!IsAlive || target == null || !target.IsAlive)
+            {
+                IsMoving = false;
+                return;
+            }
 
             Vector3 to = target.transform.position - transform.position;
             to.z = 0f;
             float dist = to.magnitude;
+            if (dist > 0.01f)
+                FaceDir = new Vector2(to.x, to.y).normalized;
+
             if (dist > AttackRange)
             {
-                if (dist > 0.01f)
+                IsMoving = dist > 0.01f;
+                if (IsMoving)
                     transform.position = BattleField.ClampToArena(
                         transform.position + to.normalized * (Move * MoveMul * dt));
                 return;
             }
 
+            IsMoving = false;
             _cd -= dt;
             if (_cd > 0f) return;
             _cd = AttackCooldown;
+            _pose?.NotifyAttack();
 
             float dmg = Atk * AtkMul;
             if (Side == UnitSide.Brother && CritRate > 0f && Random.value < CritRate)
@@ -145,6 +169,7 @@ namespace JojoP.Gameplay.Brothers
 
             Hp -= dmg;
             if (Hp < 0f) Hp = 0f;
+            _pose?.NotifyHurt();
             Flash();
             if (showFloater && dmg > 0.05f)
                 BattleFeedback.Damage(this, dmg);

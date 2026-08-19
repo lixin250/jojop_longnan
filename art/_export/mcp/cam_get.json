@@ -1,0 +1,1 @@
+{"gameObjectRef": {"instanceID": 31262}, "componentRef": {"instanceID": 31266, "index": 1, "typeName": "UnityEngine.Camera"}, "includeFields": false, "includeProperties": false, "paths": ["orthographic", "orthographicSize", "nearClipPlane", "farClipPlane", "clearFlags", "backgroundColor", "tag", "enabled"]}

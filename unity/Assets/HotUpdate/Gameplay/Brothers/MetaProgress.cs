@@ -8,7 +8,7 @@ namespace JojoP.Gameplay.Brothers
 {
     /// <summary>
     /// 局外养成：体力 / 培养点 / 人情 / 声望 / 编年史解锁 / 潜力 / 初始英雄。
-    /// 本地 PlayerPrefs；不进对战实时存档。
+    /// 主存 persistentDataPath/jojop/meta.json；PlayerPrefs 仅迁移。
     /// </summary>
     public sealed class MetaProgress
     {
@@ -31,6 +31,7 @@ namespace JojoP.Gameplay.Brothers
 
         readonly HashSet<string> _knownHeroes = new HashSet<string>();
         readonly Dictionary<int, int> _bondCounts = new Dictionary<int, int>();
+        int _staminaDay = -1;
 
         public int Stamina { get; private set; }
         public int TrainPoints { get; private set; }
@@ -48,30 +49,24 @@ namespace JojoP.Gameplay.Brothers
 
         public void Load()
         {
+            var file = LocalSaveStore.LoadOrNull();
+            if (file != null)
+                ApplyDto(file);
+            else
+                LoadFromPrefs();
+
             RefreshDailyStamina();
-            Stamina = PlayerPrefs.GetInt(KeyStamina, GameTables.DailyStaminaCap);
-            TrainPoints = PlayerPrefs.GetInt(KeyTrain, 0);
-            Favor = PlayerPrefs.GetInt(KeyFavor, 0);
-            Renown = PlayerPrefs.GetInt(KeyRenown, 0);
-            UnlockedChapter = Mathf.Clamp(PlayerPrefs.GetInt(KeyUnlocked, 1), 1, 5);
-            PotentialHp = PlayerPrefs.GetInt(KeyPotentialHp, 0);
-            PotentialAtk = PlayerPrefs.GetInt(KeyPotentialAtk, 0);
-            HealShortenTier = PlayerPrefs.GetInt(KeyHealTier, 0);
-            HighestGradeReached = PlayerPrefs.GetInt(KeyHighestGrade, 0);
-            TrainSpent = PlayerPrefs.GetInt(KeyTrainSpent, 0);
-            TotalKills = PlayerPrefs.GetInt(KeyKills, 0);
-            SelectedHeroId = PlayerPrefs.GetString(KeySelectedHero, RoleCatalog.StarterId);
-            ParseSet(_knownHeroes, PlayerPrefs.GetString(KeyArchive, RoleCatalog.StarterId));
-            ParseBonds(PlayerPrefs.GetString(KeyBonds, ""));
             _knownHeroes.Add(RoleCatalog.StarterId);
             if (CfgTables.Ready && !HeroUnlock.CanSelect(SelectedHeroId, this))
                 SelectedHeroId = RoleCatalog.StarterId;
+            Save();
         }
 
         public void Save()
         {
+            LocalSaveStore.Write(ToDto());
             PlayerPrefs.SetInt(KeyStamina, Stamina);
-            PlayerPrefs.SetInt(KeyStaminaDay, TodayKey());
+            PlayerPrefs.SetInt(KeyStaminaDay, _staminaDay);
             PlayerPrefs.SetInt(KeyTrain, TrainPoints);
             PlayerPrefs.SetInt(KeyFavor, Favor);
             PlayerPrefs.SetInt(KeyRenown, Renown);
@@ -88,15 +83,73 @@ namespace JojoP.Gameplay.Brothers
             PlayerPrefs.Save();
         }
 
+        void LoadFromPrefs()
+        {
+            Stamina = PlayerPrefs.GetInt(KeyStamina, GameTables.DailyStaminaCap);
+            _staminaDay = PlayerPrefs.GetInt(KeyStaminaDay, -1);
+            TrainPoints = PlayerPrefs.GetInt(KeyTrain, 0);
+            Favor = PlayerPrefs.GetInt(KeyFavor, 0);
+            Renown = PlayerPrefs.GetInt(KeyRenown, 0);
+            UnlockedChapter = Mathf.Clamp(PlayerPrefs.GetInt(KeyUnlocked, 1), 1, 5);
+            PotentialHp = PlayerPrefs.GetInt(KeyPotentialHp, 0);
+            PotentialAtk = PlayerPrefs.GetInt(KeyPotentialAtk, 0);
+            HealShortenTier = PlayerPrefs.GetInt(KeyHealTier, 0);
+            HighestGradeReached = PlayerPrefs.GetInt(KeyHighestGrade, 0);
+            TrainSpent = PlayerPrefs.GetInt(KeyTrainSpent, 0);
+            TotalKills = PlayerPrefs.GetInt(KeyKills, 0);
+            SelectedHeroId = PlayerPrefs.GetString(KeySelectedHero, RoleCatalog.StarterId);
+            ParseSet(_knownHeroes, PlayerPrefs.GetString(KeyArchive, RoleCatalog.StarterId));
+            ParseBonds(PlayerPrefs.GetString(KeyBonds, ""));
+        }
+
+        void ApplyDto(MetaSaveData d)
+        {
+            Stamina = d.stamina;
+            _staminaDay = d.staminaDay;
+            TrainPoints = d.train;
+            Favor = d.favor;
+            Renown = d.renown;
+            UnlockedChapter = Mathf.Clamp(d.unlockedChapter, 1, 5);
+            PotentialHp = d.potentialHp;
+            PotentialAtk = d.potentialAtk;
+            HealShortenTier = d.healTier;
+            HighestGradeReached = d.highestGrade;
+            TrainSpent = d.trainSpent;
+            TotalKills = d.kills;
+            SelectedHeroId = string.IsNullOrEmpty(d.selectedHero) ? RoleCatalog.StarterId : d.selectedHero;
+            ParseSet(_knownHeroes, string.IsNullOrEmpty(d.archive) ? RoleCatalog.StarterId : d.archive);
+            ParseBonds(d.bonds ?? "");
+        }
+
+        MetaSaveData ToDto()
+        {
+            return new MetaSaveData
+            {
+                stamina = Stamina,
+                staminaDay = _staminaDay,
+                train = TrainPoints,
+                favor = Favor,
+                renown = Renown,
+                unlockedChapter = UnlockedChapter,
+                potentialHp = PotentialHp,
+                potentialAtk = PotentialAtk,
+                healTier = HealShortenTier,
+                highestGrade = HighestGradeReached,
+                selectedHero = SelectedHeroId ?? RoleCatalog.StarterId,
+                trainSpent = TrainSpent,
+                kills = TotalKills,
+                archive = JoinSet(_knownHeroes),
+                bonds = JoinBonds(),
+                version = 1
+            };
+        }
+
         void RefreshDailyStamina()
         {
             int today = TodayKey();
-            int savedDay = PlayerPrefs.GetInt(KeyStaminaDay, -1);
-            if (savedDay == today) return;
-
-            PlayerPrefs.SetInt(KeyStamina, GameTables.DailyStaminaCap);
-            PlayerPrefs.SetInt(KeyStaminaDay, today);
-            PlayerPrefs.Save();
+            if (_staminaDay == today) return;
+            Stamina = GameTables.DailyStaminaCap;
+            _staminaDay = today;
         }
 
         static int TodayKey()

@@ -53,6 +53,7 @@ namespace JojoP.AOT
             ApplyGlobalDefaults();
             ChannelId.Init(channelOverride);
             EnsureEventSystem();
+            ConfigureLauncherCamera();
             BuildBootUi();
 
             try
@@ -79,9 +80,9 @@ namespace JojoP.AOT
                 ? defaultPackageName
                 : (boot?.defaultPackageName ?? "DefaultPackage");
             _mainScene = !string.IsNullOrEmpty(boot?.mainSceneName) ? boot.mainSceneName : MainSceneName;
-            _splashSeconds = splashSeconds > 0f
+            _splashSeconds = splashSeconds >= 0f
                 ? splashSeconds
-                : (boot != null ? boot.splashSeconds : 1.2f);
+                : (boot != null ? boot.splashSeconds : 0f);
         }
 
         void BuildBootUi()
@@ -104,8 +105,13 @@ namespace JojoP.AOT
         {
             _splash.gameObject.SetActive(true);
             _loading.Hide();
-            float t = Mathf.Max(0.3f, _splashSeconds);
-            await UniTask.Delay(TimeSpan.FromSeconds(t));
+            if (_splashSeconds <= 0.001f)
+            {
+                _splash.Hide();
+                return;
+            }
+
+            await UniTask.Delay(TimeSpan.FromSeconds(_splashSeconds));
             _splash.Hide();
         }
 
@@ -184,6 +190,29 @@ namespace JojoP.AOT
             var go = new GameObject("GameApp");
             gameApp = go.AddComponent(type) as MonoBehaviour;
             Debug.Log("[JojoP.AOT] 已在 Main 创建 GameApp（反射）");
+        }
+
+        static void ConfigureLauncherCamera()
+        {
+            var cam = Camera.main;
+            if (cam == null)
+                cam = FindAnyObjectByType<Camera>();
+            if (cam == null)
+            {
+                var go = new GameObject("Main Camera");
+                cam = go.AddComponent<Camera>();
+                go.AddComponent<AudioListener>();
+            }
+
+            cam.gameObject.name = "Main Camera";
+            cam.tag = "MainCamera";
+            cam.orthographic = true;
+            cam.orthographicSize = 5f;
+            cam.clearFlags = CameraClearFlags.SolidColor;
+            cam.backgroundColor = new Color(0.06f, 0.08f, 0.12f, 1f);
+            cam.nearClipPlane = 0.3f;
+            cam.farClipPlane = 100f;
+            cam.transform.SetPositionAndRotation(new Vector3(0f, 0f, -10f), Quaternion.identity);
         }
 
         static void EnsureEventSystem()

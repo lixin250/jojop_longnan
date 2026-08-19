@@ -15,7 +15,7 @@ MonoBehaviour:
   boot:
     defaultChannel: gp
     defaultPackageName: DefaultPackage
-    splashSeconds: 1.2
+    splashSeconds: 0
     mainSceneName: Main
   host:
     hostServerUrl: http://127.0.0.1:8081

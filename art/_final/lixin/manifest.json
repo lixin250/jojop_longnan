@@ -5,8 +5,8 @@
   "items": [
     {
       "key": "avatar",
-      "file": "role_lixin_avatar.png",
-      "unity_subdir": "Role/大头贴",
+      "file": "avatar.png",
+      "unity_subdir": "Role/lixin",
       "matte": "none",
       "size": [
         256,
@@ -35,8 +35,8 @@
     },
     {
       "key": "half_a",
-      "file": "role_lixin_half.png",
-      "unity_subdir": "Role/halfbody",
+      "file": "half.png",
+      "unity_subdir": "Role/lixin",
       "matte": "none",
       "size": [
         256,
@@ -55,22 +55,72 @@
     },
     {
       "key": "battle",
-      "file": "role_lixin_battle.png",
-      "unity_subdir": "Role/battle",
+      "file": "fallback.png",
+      "unity_subdir": "Role/lixin/battle",
       "matte": "parchment",
       "size": [
-        120,
-        245
+        134,
+        154
       ]
     },
     {
       "key": "battle_idle",
-      "file": "role_lixin_battle_idle.png",
-      "unity_subdir": "Role/battle",
+      "file": "idle.png",
+      "unity_subdir": "Role/lixin/battle",
       "matte": "parchment",
       "size": [
-        150,
-        245
+        118,
+        145
+      ]
+    },
+    {
+      "key": "battle_walk",
+      "file": "walk.png",
+      "unity_subdir": "Role/lixin/battle",
+      "matte": "parchment",
+      "size": [
+        134,
+        154
+      ]
+    },
+    {
+      "key": "battle_atk",
+      "file": "atk.png",
+      "unity_subdir": "Role/lixin/battle",
+      "matte": "parchment",
+      "size": [
+        144,
+        155
+      ]
+    },
+    {
+      "key": "battle_hurt",
+      "file": "hurt.png",
+      "unity_subdir": "Role/lixin/battle",
+      "matte": "parchment",
+      "size": [
+        137,
+        170
+      ]
+    },
+    {
+      "key": "battle_taunt",
+      "file": "taunt.png",
+      "unity_subdir": "Role/lixin/battle",
+      "matte": "parchment",
+      "size": [
+        137,
+        170
+      ]
+    },
+    {
+      "key": "battle_dead",
+      "file": "dead.png",
+      "unity_subdir": "Role/lixin/battle",
+      "matte": "parchment",
+      "size": [
+        152,
+        175
       ]
     },
     {
@@ -115,8 +165,8 @@
     },
     {
       "key": "poster_v",
-      "file": "role_lixin_poster.png",
-      "unity_subdir": "Role/poster",
+      "file": "poster.png",
+      "unity_subdir": "Role/lixin",
       "matte": "none",
       "size": [
         150,
@@ -125,8 +175,8 @@
     },
     {
       "key": "banner",
-      "file": "role_lixin_banner.png",
-      "unity_subdir": "Role/poster",
+      "file": "banner.png",
+      "unity_subdir": "Role/lixin",
       "matte": "none",
       "size": [
         460,

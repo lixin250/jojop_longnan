@@ -52,10 +52,10 @@ namespace JojoP.UI
         {
             _binder = GetComponent<UIBinder>() ?? gameObject.AddComponent<UIBinder>();
 
-            var title = MakeText(transform, KeyTitle, "JojoP · 龙南", 64, new Vector2(0, 280), new Vector2(900, 100), TextAnchor.MiddleCenter);
+            var title = MakeText(transform, KeyTitle, "JojoP", 72, new Vector2(0, 280), new Vector2(900, 100), TextAnchor.MiddleCenter);
             _binder.Set(KeyTitle, title);
 
-            var brothers = MakeButton(transform, KeyBtnBrothers, "我和我的龙兄南弟", new Vector2(0, 20), new Vector2(560, 120));
+            var brothers = MakeButton(transform, KeyBtnBrothers, "开始", new Vector2(0, 20), new Vector2(560, 120));
             brothers.GetComponent<Image>().color = new Color(0.2f, 0.7f, 0.45f, 1f);
             _binder.Set(KeyBtnBrothers, brothers);
 

@@ -27,6 +27,10 @@ namespace JojoP.Gameplay.Brothers
         bool _ended;
         float _spawnBudget;
         int _toSpawn;
+        float _waveLeft;
+        float _waveDur;
+        int _aliveCap;
+        bool _clockMode;
         string[] _themePool = Array.Empty<string>();
         float _difficulty = 1f;
         float _spawnInterval = 0.55f;
@@ -57,6 +61,8 @@ namespace JojoP.Gameplay.Brothers
         }
 
         public bool IsRunning => _running;
+        public float WaveLeft => Mathf.Max(0f, _waveLeft);
+        public float WaveDuration => _waveDur;
 
         public void Bootstrap()
         {
@@ -80,9 +86,15 @@ namespace JojoP.Gameplay.Brothers
             _difficulty = Mathf.Max(0.45f, difficulty);
             int extraMembers = Mathf.Max(0, run.RecruitedCount - 3);
             float enemyMul = 1f + extraMembers * run.ExtraMemberEnemyMul;
-            _toSpawn = Mathf.Max(2, Mathf.CeilToInt(enemyCount * enemyMul));
-            _spawnBudget = 0.35f;
-            _spawnInterval = run.Chapter == ChapterId.Primary && run.GradeYear <= 2 ? 0.7f : 0.5f;
+            _toSpawn = Mathf.Max(4, Mathf.CeilToInt(enemyCount * enemyMul));
+            _spawnBudget = 0.2f;
+            _waveDur = 22f + run.GradeYear * 3f + run.WaveInNode * 1.5f;
+            if (run.Chapter == ChapterId.Society)
+                _waveDur = 26f + run.SocietyYearIndex * 2f;
+            _waveLeft = _waveDur;
+            _aliveCap = Mathf.Clamp(6 + run.GradeYear + extraMembers, 6, 14);
+            _clockMode = true;
+            _spawnInterval = run.Chapter == ChapterId.Primary && run.GradeYear <= 2 ? 0.85f : 0.62f;
             _spawnInterval /= 1f + extraMembers * run.ExtraMemberSpawnMul;
             _eliteChanceBonus = Mathf.Clamp01(extraMembers * run.ExtraMemberEliteBonus);
             _equipment = CfgTables.Ready
@@ -95,6 +107,9 @@ namespace JojoP.Gameplay.Brothers
             SpawnBrothers(run, meta);
             FusionSystem.Refresh(_brothers, _skills, meta);
             TrySanpangCheck(forceIfEmptyBrothers: true);
+            var cam = BattleCamera.Ensure(Camera.main);
+            if (cam != null && _brothers.Count > 0)
+                cam.SetFollow(_brothers[0].transform);
             HudDirty?.Invoke();
         }
 
@@ -113,6 +128,7 @@ namespace JojoP.Gameplay.Brothers
         public void Stop()
         {
             _running = false;
+            BattleFeel.Reset();
             ClearField();
         }
 
@@ -120,15 +136,24 @@ namespace JojoP.Gameplay.Brothers
         {
             if (!_running || _ended) return;
 
+            BattleFeel.Tick();
             float dt = Time.deltaTime;
-            if (_toSpawn > 0)
+            _waveLeft -= Time.unscaledDeltaTime;
+
+            float t = _waveDur > 0.01f ? 1f - Mathf.Clamp01(_waveLeft / _waveDur) : 1f;
+            float interval = Mathf.Lerp(_spawnInterval, Mathf.Max(0.28f, _spawnInterval * 0.38f), t);
+
+            bool stillSpawning = _clockMode
+                ? _waveLeft > 0f && AliveEnemies < _aliveCap
+                : _toSpawn > 0;
+            if (stillSpawning)
             {
                 _spawnBudget -= dt;
                 if (_spawnBudget <= 0f)
                 {
                     SpawnOneEnemy();
-                    _toSpawn--;
-                    _spawnBudget = _spawnInterval;
+                    if (!_clockMode) _toSpawn--;
+                    _spawnBudget = interval;
                 }
             }
 
@@ -137,9 +162,16 @@ namespace JojoP.Gameplay.Brothers
             TickSummons(dt);
             CleanupDead();
 
-            if (AliveBrothers <= 0 && (AliveEnemies > 0 || _toSpawn > 0))
+            if (AliveBrothers <= 0 && (AliveEnemies > 0 || stillSpawning || _waveLeft > 0f))
             {
                 TrySanpangCheck(forceIfEmptyBrothers: true);
+                return;
+            }
+
+            if (_clockMode)
+            {
+                if (_waveLeft <= 0f && AliveBrothers > 0)
+                    EndWaveCleared();
                 return;
             }
 
@@ -177,12 +209,14 @@ namespace JojoP.Gameplay.Brothers
             if (attacker.Side == UnitSide.Brother && attacker.BoundBrother != null)
             {
                 _attackForms?.Apply(attacker, target, dmg, _equipment);
+                BattleFeel.Hit(target);
                 if (attacker.BoundBrother.CampusSkillLv > 0 && UnityEngine.Random.value < 0.08f)
                     attacker.Heal(2f + attacker.BoundBrother.CampusSkillLv);
                 return;
             }
 
             target.ApplyDamage(dmg);
+            BattleFeel.Hit(target);
         }
 
         void CleanupDead()
@@ -223,10 +257,11 @@ namespace JojoP.Gameplay.Brothers
             if (AliveBrothers > 0) return;
             if (!forceIfEmptyBrothers && AliveEnemies <= 0 && _toSpawn <= 0) return;
 
-            if (AliveEnemies > 0 || _toSpawn > 0 || forceIfEmptyBrothers)
+            if (AliveEnemies > 0 || _toSpawn > 0 || _waveLeft > 0f || forceIfEmptyBrothers)
             {
                 _ended = true;
                 _running = false;
+                BattleFeel.Reset();
                 SanpangTriggered?.Invoke();
             }
         }
@@ -236,6 +271,7 @@ namespace JojoP.Gameplay.Brothers
             if (_ended) return;
             _ended = true;
             _running = false;
+            BattleFeel.Reset();
             SyncBrotherHpBack();
             WaveCleared?.Invoke();
         }
@@ -313,7 +349,7 @@ namespace JojoP.Gameplay.Brothers
                 var r = go.GetComponent<Renderer>();
                 if (r != null) r.sharedMaterial = _matBrother;
                 unit.SetupVisual(new Color(0.35f, 0.75f, 0.95f), 0.55f);
-                unit.TryApplyBattleSprite(RoleArtLoader.LoadBattle(br.BattleLoc, br.AvatarLoc));
+                unit.TryApplyBattleArt(RoleArtLoader.LoadBattleSet(br.BattleLoc, br.AvatarLoc));
                 BattleFeedback.EnsureOn(unit);
 
                 _skills?.EquipFromRole(unit, br);
@@ -351,12 +387,12 @@ namespace JojoP.Gameplay.Brothers
             if (col != null) Destroy(col);
 
             bool isElite = theme.IsElite || (!theme.HighArmor && UnityEngine.Random.value < _eliteChanceBonus);
-            float hpBase = isElite ? 22f : 11f;
-            float atkBase = isElite ? 2.2f : 1.35f;
+            float hpBase = isElite ? 38f : 22f;
+            float atkBase = isElite ? 3.1f : 2.05f;
             if (_chapter == ChapterId.Primary && _gradeYear <= 2)
             {
-                hpBase *= 0.85f;
-                atkBase *= 0.75f;
+                hpBase *= 0.92f;
+                atkBase *= 0.9f;
             }
 
             var unit = go.AddComponent<BattleUnit>();

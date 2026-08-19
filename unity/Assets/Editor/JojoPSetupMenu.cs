@@ -57,6 +57,17 @@ namespace JojoP.EditorTools
             var scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
             var launcherGo = new GameObject("AppLauncher");
             launcherGo.AddComponent<AppLauncher>();
+
+            var camGo = new GameObject("Main Camera");
+            camGo.tag = "MainCamera";
+            var cam = camGo.AddComponent<Camera>();
+            camGo.AddComponent<AudioListener>();
+            cam.orthographic = true;
+            cam.orthographicSize = 5f;
+            cam.clearFlags = CameraClearFlags.SolidColor;
+            cam.backgroundColor = new Color(0.06f, 0.08f, 0.12f, 1f);
+            cam.transform.position = new Vector3(0f, 0f, -10f);
+
             EditorSceneManager.SaveScene(scene, BootstrapPath);
         }
 

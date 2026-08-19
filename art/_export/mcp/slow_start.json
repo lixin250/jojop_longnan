@@ -1,0 +1,6 @@
+{
+  "csharpCode": "using UnityEngine;\nusing UnityEngine.UI;\npublic static class SlowStart {\n  public static string Run() {\n    Time.timeScale = 0.12f;\n    foreach (var b in Object.FindObjectsByType<Button>(FindObjectsSortMode.None)) {\n      if (!b.gameObject.activeInHierarchy) continue;\n      if (b.name == \"BtnStart\") { b.onClick.Invoke(); return \"slow-start\"; }\n    }\n    return \"no BtnStart scale=\"+Time.timeScale;\n  }\n}",
+  "className": "SlowStart",
+  "methodName": "Run",
+  "isMethodBody": false
+}

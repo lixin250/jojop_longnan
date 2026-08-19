@@ -18,7 +18,7 @@ MonoBehaviour:
   Packages:
   - PackageName: DefaultPackage
     PackageDesc: 
-    EnableAddressable: 0
+    EnableAddressable: 1
     SupportExtensionless: 1
     LocationToLower: 0
     IncludeAssetGUID: 0
@@ -39,12 +39,28 @@ MonoBehaviour:
         AssetTags: 
         UserData: 
     - GroupName: Bundle
-      GroupDesc: 
+      GroupDesc: "Skill/Item\uFF0C\u4E0D\u518D\u6574\u5305 Assets/Bundle\uFF08\u907F\u514D\u4E0E Role \u91CD\u590D\u6536\u96C6\uFF09"
       AssetTags: 
       ActiveRuleName: EnableGroup
       Collectors:
-      - CollectPath: Assets/Bundle
-        CollectorGUID: b44fef906b6b8d04c8b8dc81f358756b
+      - CollectPath: Assets/Bundle/Skill
+        CollectorGUID: e9aa483f98c4ef043955c18dab8fb2cb
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+      - CollectPath: Assets/Bundle/Item
+        CollectorGUID: 68c393238ffc362409facc98065ec8e6
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+      - CollectPath: Assets/Bundle/ConfigData
+        CollectorGUID: 33e313fbcf9739f4d9b75c5e1c23dc06
         CollectorType: 0
         AddressRuleName: AddressByFileName
         PackRuleName: PackDirectory
@@ -80,19 +96,19 @@ MonoBehaviour:
         FilterRuleName: CollectAll
         AssetTags: 
         UserData: 
-    - GroupName: Image
-      GroupDesc: "\u8D44\u6E90"
-      AssetTags: 
+    - GroupName: Role
+      GroupDesc: "\u4E00\u4EBA\u4E00\u5305 PackTopDirectory\uFF1Blixin/avatar \u5BFB\u5740"
+      AssetTags: role
       ActiveRuleName: EnableGroup
       Collectors:
       - CollectPath: Assets/Bundle/Role
         CollectorGUID: 962a6a25e41449f478274a07350a9b03
         CollectorType: 0
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
+        AddressRuleName: AddressByRoleRelative
+        PackRuleName: PackTopDirectory
+        FilterRuleName: CollectRoleSprites
         AssetTags: 
-        UserData: 
+        UserData:  
     - GroupName: Dllbytes
       GroupDesc: "AOT\u4EE3\u7801"
       AssetTags: 

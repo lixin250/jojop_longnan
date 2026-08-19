@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b07817598d519554080ddf5cf7027a2e, type: 3}
   m_Name: BackendConfig
   m_EditorClassIdentifier: Assembly-CSharp::JojoP.Backend.BackendConfig
-  baseUrl: http://127.0.0.1:8787
+  baseUrl: 
   requestTimeoutSeconds: 8
-  fetchOnBoot: 1
+  fetchOnBoot: 0

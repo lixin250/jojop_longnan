@@ -158,6 +158,21 @@ namespace JojoP.EditorTools
                 dirty = true;
             }
 
+            bool battle = assetPath.Replace('\\', '/').Contains("/battle/");
+            if (battle)
+            {
+                var settings = new TextureImporterSettings();
+                importer.ReadTextureSettings(settings);
+                var pivot = new Vector2(0.5f, 0.12f);
+                if (settings.spriteAlignment != (int)SpriteAlignment.Custom || settings.spritePivot != pivot)
+                {
+                    settings.spriteAlignment = (int)SpriteAlignment.Custom;
+                    settings.spritePivot = pivot;
+                    importer.SetTextureSettings(settings);
+                    dirty = true;
+                }
+            }
+
             if (dirty)
                 importer.SaveAndReimport();
         }

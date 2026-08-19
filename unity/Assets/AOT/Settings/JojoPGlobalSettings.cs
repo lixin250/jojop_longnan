@@ -14,8 +14,8 @@ namespace JojoP.AOT.Settings
         [Tooltip("YooAsset 默认包名")]
         public string defaultPackageName = "DefaultPackage";
 
-        [Tooltip("闪屏秒数")]
-        public float splashSeconds = 1.2f;
+        [Tooltip("闪屏秒数。0=跳过，预留公司 logo")]
+        public float splashSeconds = 0f;
 
         [Tooltip("主场景名")]
         public string mainSceneName = "Main";

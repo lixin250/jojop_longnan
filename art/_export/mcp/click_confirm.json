@@ -1,0 +1,6 @@
+{
+  "csharpCode": "using UnityEngine;\nusing UnityEngine.UI;\npublic static class ClickNamed {\n  public static string Run() {\n    foreach (var b in Object.FindObjectsByType<Button>(FindObjectsSortMode.None)) {\n      if (!b.gameObject.activeInHierarchy) continue;\n      if (b.name == \"Confirm\") { b.onClick.Invoke(); return \"clicked Confirm\"; }\n    }\n    return \"Confirm not found\";\n  }\n}",
+  "className": "ClickNamed",
+  "methodName": "Run",
+  "isMethodBody": false
+}

@@ -2,7 +2,6 @@ using System;
 using JojoP.Ads;
 using JojoP.Backend;
 using JojoP.Gameplay.Brothers;
-using JojoP.Privacy;
 using JojoP.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -62,12 +61,7 @@ namespace JojoP.HotUpdate
             _api = new CloudflareApiClient(backendConfig);
             _rewardedCap = new RewardedCapTracker(adsConfig.defaultDailyRewardedCap);
 
-            if (!PrivacyConsent.HasAccepted)
-            {
-                PrivacyConsentView.Show(_canvas.transform, privacyPolicyUrl, () => _ = AfterConsentAsync());
-                return;
-            }
-
+            // 真渠道 SDK 再接隐私弹窗；当前直接进主流程。
             await AfterConsentAsync();
         }
 
@@ -197,8 +191,30 @@ namespace JojoP.HotUpdate
         async System.Threading.Tasks.Task SyncCloudSaveAsync()
         {
             if (_api == null || !_api.HasBaseUrl) return;
-            string payload = $"{{\"device\":\"{_deviceId}\"}}";
-            await _api.PutSaveAsync(_deviceId, payload);
+
+            try
+            {
+                string remote = await _api.GetSaveAsync(_deviceId);
+                var local = LocalSaveStore.LoadOrNull();
+                if (local == null && !string.IsNullOrWhiteSpace(remote) && remote.IndexOf("stamina", StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    var parsed = JsonUtility.FromJson<MetaSaveData>(remote);
+                    if (parsed != null)
+                    {
+                        LocalSaveStore.Write(parsed);
+                        Debug.Log("[JojoP] 已从云端写入本地存档");
+                    }
+                }
+
+                if (!System.IO.File.Exists(LocalSaveStore.FilePath)) return;
+                string json = System.IO.File.ReadAllText(LocalSaveStore.FilePath);
+                if (string.IsNullOrWhiteSpace(json)) return;
+                await _api.PutSaveAsync(_deviceId, json);
+            }
+            catch (Exception e)
+            {
+                Debug.LogWarning("[JojoP] 云存档同步跳过: " + e.Message);
+            }
         }
 
         Canvas CreateCanvas()

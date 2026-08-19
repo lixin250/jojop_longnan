@@ -52,6 +52,7 @@ namespace JojoP.Gameplay.Brothers
             cam.backgroundColor = new Color(0.08f, 0.1f, 0.14f);
             cam.clearFlags = CameraClearFlags.SolidColor;
             cam.transform.position = new Vector3(0f, 0f, -10f);
+            BattleCamera.Ensure(cam);
         }
     }
 }

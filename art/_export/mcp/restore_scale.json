@@ -1,0 +1,6 @@
+{
+  "csharpCode": "using UnityEngine;\npublic static class RestoreScale {\n  public static string Run() { Time.timeScale = 1f; return \"scale=1\"; }\n}",
+  "className": "RestoreScale",
+  "methodName": "Run",
+  "isMethodBody": false
+}

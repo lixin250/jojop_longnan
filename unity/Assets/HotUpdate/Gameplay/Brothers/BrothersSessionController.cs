@@ -127,9 +127,9 @@ namespace JojoP.Gameplay.Brothers
             if (Run.Chapter == ChapterId.Society)
                 diff = 1.0f + Run.SocietyYearIndex * 0.12f;
 
-            int enemies = 5 + Run.GradeYear + Run.WaveInNode;
+            int enemies = 8 + Run.GradeYear * 2 + Run.WaveInNode;
             if (Run.Chapter == ChapterId.Primary && Run.GradeYear <= 2)
-                enemies = 3 + Run.WaveInNode; // 小1 第一波 4 只
+                enemies = 6 + Run.WaveInNode;
 
             SetFlow(BrothersFlow.Battling);
             _battle.StartWave(Run, Meta, enemies, diff);

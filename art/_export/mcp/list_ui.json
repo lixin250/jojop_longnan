@@ -1,0 +1,3 @@
+{"csharpCode": "var names = new System.Text.StringBuilder();\nforeach (var b in UnityEngine.Object.FindObjectsByType<UnityEngine.UI.Button>(UnityEngine.FindObjectsSortMode.None))\n{\n    names.Append(b.name).Append(\" active=\").Append(b.gameObject.activeInHierarchy).Append(\" | \");\n}\nDebug.Log(\"[JojoP] buttons: \" + names);\nvar canvases = UnityEngine.Object.FindObjectsByType<UnityEngine.Canvas>(UnityEngine.FindObjectsSortMode.None);\nDebug.Log(\"[JojoP] canvases=\" + canvases.Length + \" scene=\" + UnityEngine.SceneManagement.SceneManager.GetActiveScene().name + \" cam=\" + (Camera.main != null ? Camera.main.name + \" ortho=\" + Camera.main.orthographic + \" size=\" + Camera.main.orthographicSize : \"null\"));",
+  "isMethodBody": true
+}

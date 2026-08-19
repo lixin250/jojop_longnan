@@ -1,0 +1,6 @@
+{
+  "csharpCode": "using System.Text;\nusing UnityEngine;\nusing UnityEngine.UI;\nusing UnityEngine.SceneManagement;\npublic static class InspectUi {\n  public static string Run() {\n    var sb = new StringBuilder();\n    sb.Append(\"scene=\").Append(SceneManager.GetActiveScene().name);\n    var cam = Camera.main;\n    sb.Append(\" cam=\").Append(cam==null?\"null\":cam.name+\" ortho=\"+cam.orthographic+\" size=\"+cam.orthographicSize);\n    sb.Append(\" btns=\");\n    foreach (var b in Object.FindObjectsByType<Button>(FindObjectsSortMode.None)) {\n      if (!b.gameObject.activeInHierarchy) continue;\n      var t = b.GetComponentInChildren<Text>();\n      sb.Append(b.name).Append('[').Append(t!=null?t.text:\"\").Append(\"] \");\n    }\n    return sb.ToString();\n  }\n}",
+  "className": "InspectUi",
+  "methodName": "Run",
+  "isMethodBody": false
+}
