@@ -1,0 +1,1 @@
+{"isMethodBody": true, "csharpCode": "var setting = YooAsset.Editor.BundleCollectorSettingData.Setting;\nvar result = setting.BeginCollect(\"DefaultPackage\", true, false);\nUnityEngine.Debug.Log(\"[JojoP] collect ok count=\" + result.CollectAssets.Count);\n"}

@@ -23,7 +23,7 @@ MonoBehaviour:
     LocationToLower: 0
     IncludeAssetGUID: 0
     AutoCollectShaders: 1
-    IgnoreRuleName: NormalIgnoreRule
+    IgnoreRuleName: JojoPIgnoreRule
     Groups:
     - GroupName: Scenes
       GroupDesc: 
@@ -39,7 +39,8 @@ MonoBehaviour:
         AssetTags: 
         UserData: 
     - GroupName: Bundle
-      GroupDesc: "Skill/Item\uFF0C\u4E0D\u518D\u6574\u5305 Assets/Bundle\uFF08\u907F\u514D\u4E0E Role \u91CD\u590D\u6536\u96C6\uFF09"
+      GroupDesc: "Skill/Item\uFF0C\u4E0D\u518D\u6574\u5305 Assets/Bundle\uFF08\u907F\u514D\u4E0E
+        Role \u91CD\u590D\u6536\u96C6\uFF09"
       AssetTags: 
       ActiveRuleName: EnableGroup
       Collectors:
@@ -105,10 +106,10 @@ MonoBehaviour:
         CollectorGUID: 962a6a25e41449f478274a07350a9b03
         CollectorType: 0
         AddressRuleName: AddressByRoleRelative
-        PackRuleName: PackTopDirectory
+        PackRuleName: PackSeparately
         FilterRuleName: CollectRoleSprites
         AssetTags: 
-        UserData:  
+        UserData: 
     - GroupName: Dllbytes
       GroupDesc: "AOT\u4EE3\u7801"
       AssetTags: 
