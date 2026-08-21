@@ -1,0 +1,6 @@
+{
+  "className": "CountTex",
+  "methodName": "Run",
+  "isMethodBody": false,
+  "csharpCode": "using UnityEditor;\npublic static class CountTex {\n  public static string Run() {\n    var guids = AssetDatabase.FindAssets(\"t:Texture2D\", new[] { \"Assets/Bundle/Role\" });\n    int sprite = 0, other = 0;\n    string sample = \"\";\n    foreach (var g in guids) {\n      string p = AssetDatabase.GUIDToAssetPath(g);\n      var imp = AssetImporter.GetAtPath(p) as TextureImporter;\n      if (imp == null) { other++; continue; }\n      if (imp.textureType == TextureImporterType.Sprite) sprite++; else { other++; if (sample.Length < 200) sample += p + \":\" + imp.textureType + \"; \"; }\n    }\n    return \"n=\" + guids.Length + \" sprite=\" + sprite + \" other=\" + other + \" \" + sample;\n  }\n}"
+}

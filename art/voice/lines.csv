@@ -1,0 +1,8 @@
+id,who,module,meaning,text_zh,langPath,langPath_ln,emotion
+lixin_battle_spawn,lixin,battle,spawn,来了来了，开机干活。,lixin/voice/lixin_battle_spawn,,neutral
+lixin_battle_skill,lixin,battle,skill,搞快点，这单今晚要交。,lixin/voice/lixin_battle_skill,,happy
+lixin_battle_hurt,lixin,battle,hurt,慢点打键盘！,lixin/voice/lixin_battle_hurt,,angry
+lixin_battle_win,lixin,battle,win,过了。先去吃碗拌粉。,lixin/voice/lixin_battle_win,,happy
+lixin_profile_show,lixin,profile,show,游戏民工，开机就干活。,lixin/voice/lixin_profile_show,,neutral
+xiebo_battle_skill,xiebo,battle,skill,拆了重装，比你那套稳。,xiebo/voice/xiebo_battle_skill,,neutral
+oban_battle_skill,oban,battle,skill,电不要乱扯。,oban/voice/oban_battle_skill,,neutral

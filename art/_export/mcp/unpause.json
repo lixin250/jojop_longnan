@@ -1,0 +1,4 @@
+{
+  "isMethodBody": true,
+  "csharpCode": "Time.timeScale = 1f;\nUnityEditor.EditorApplication.isPaused = false;\nDebug.Log(\"[MCP] timescale 1 unpaused\");"
+}

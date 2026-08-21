@@ -77,6 +77,49 @@ namespace JojoP.UI
             return img;
         }
 
+        public static ScrollRect MakeHScroll(Transform parent, string name, Vector2 pos, Vector2 size)
+        {
+            var root = new GameObject(name, typeof(RectTransform), typeof(Image), typeof(Mask), typeof(ScrollRect));
+            root.transform.SetParent(parent, false);
+            var rt = root.GetComponent<RectTransform>();
+            rt.anchorMin = rt.anchorMax = new Vector2(0.5f, 0.5f);
+            rt.pivot = new Vector2(0.5f, 0.5f);
+            rt.sizeDelta = size;
+            rt.anchoredPosition = pos;
+            var bg = root.GetComponent<Image>();
+            bg.color = new Color(0.08f, 0.07f, 0.06f, 0.72f);
+            root.GetComponent<Mask>().showMaskGraphic = true;
+
+            var content = new GameObject("Content", typeof(RectTransform), typeof(HorizontalLayoutGroup), typeof(ContentSizeFitter));
+            content.transform.SetParent(root.transform, false);
+            var crt = content.GetComponent<RectTransform>();
+            crt.anchorMin = new Vector2(0f, 0f);
+            crt.anchorMax = new Vector2(0f, 1f);
+            crt.pivot = new Vector2(0f, 0.5f);
+            crt.sizeDelta = new Vector2(size.x, 0f);
+            crt.anchoredPosition = Vector2.zero;
+            var layout = content.GetComponent<HorizontalLayoutGroup>();
+            layout.spacing = 14f;
+            layout.padding = new RectOffset(16, 16, 10, 10);
+            layout.childAlignment = TextAnchor.MiddleLeft;
+            layout.childControlWidth = false;
+            layout.childControlHeight = true;
+            layout.childForceExpandWidth = false;
+            layout.childForceExpandHeight = true;
+            var fitter = content.GetComponent<ContentSizeFitter>();
+            fitter.horizontalFit = ContentSizeFitter.FitMode.PreferredSize;
+            fitter.verticalFit = ContentSizeFitter.FitMode.Unconstrained;
+
+            var scroll = root.GetComponent<ScrollRect>();
+            scroll.horizontal = true;
+            scroll.vertical = false;
+            scroll.movementType = ScrollRect.MovementType.Elastic;
+            scroll.scrollSensitivity = 24f;
+            scroll.content = crt;
+            scroll.viewport = rt;
+            return scroll;
+        }
+
         public static Image MakePortrait(Transform parent, string name, Vector2 pos, Vector2 size, Sprite sprite, Color fallback)
         {
             var go = new GameObject(name, typeof(RectTransform), typeof(Image));

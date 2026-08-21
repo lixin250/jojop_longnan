@@ -1,6 +1,1 @@
-{
-  "csharpCode": "using UnityEngine;\nusing UnityEngine.UI;\npublic static class ClickNamed {\n  public static string Run() {\n    foreach (var b in Object.FindObjectsByType<Button>(FindObjectsSortMode.None)) {\n      if (!b.gameObject.activeInHierarchy) continue;\n      if (b.name == \"BtnStart\") { b.onClick.Invoke(); return \"clicked \"+b.name; }\n    }\n    return \"BtnStart not found\";\n  }\n}",
-  "className": "ClickNamed",
-  "methodName": "Run",
-  "isMethodBody": false
-}
+{"className": "McpStart", "methodName": "Run", "isMethodBody": false, "csharpCode": "\nusing UnityEngine;\nusing UnityEngine.UI;\npublic static class McpStart {\n  public static string Run() {\n    foreach (var b in Object.FindObjectsByType<Button>(FindObjectsSortMode.None)) {\n      if (!b.gameObject.activeInHierarchy) continue;\n      if (b.name == \"BtnStart\") { b.onClick.Invoke(); return \"clicked BtnStart\"; }\n    }\n    return \"BtnStart missing\";\n  }\n}\n"}

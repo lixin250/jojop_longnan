@@ -1,0 +1,6 @@
+{
+  "className": "McpBattleInfo",
+  "methodName": "Run",
+  "isMethodBody": false,
+  "csharpCode": "using UnityEngine;\nusing UnityEngine.UI;\nusing JojoP.Gameplay.Brothers;\npublic static class McpBattleInfo {\n  public static string Run() {\n    var s = Object.FindFirstObjectByType<BrothersSessionController>();\n    var b = s != null ? s.Battle : null;\n    string flow = s != null ? s.Flow.ToString() : \"no session\";\n    if (b == null) return flow + \" no battle\";\n    return flow + \" waveLeft=\" + b.WaveLeft.ToString(\"0.0\") + \" bros=\" + b.AliveBrothers + \" enemies=\" + b.AliveEnemies + \" running=\" + b.IsRunning;\n  }\n}"
+}

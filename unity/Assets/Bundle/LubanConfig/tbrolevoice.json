@@ -1,0 +1,72 @@
+[
+  {
+    "id": "lixin_battle_spawn",
+    "who": "lixin",
+    "module": "battle",
+    "meaning": "spawn",
+    "text_zh": "来了来了，开机干活。",
+    "langPath": "lixin/voice/lixin_battle_spawn",
+    "langPath_ln": "",
+    "emotion": "neutral"
+  },
+  {
+    "id": "lixin_battle_skill",
+    "who": "lixin",
+    "module": "battle",
+    "meaning": "skill",
+    "text_zh": "搞快点，这单今晚要交。",
+    "langPath": "lixin/voice/lixin_battle_skill",
+    "langPath_ln": "",
+    "emotion": "happy"
+  },
+  {
+    "id": "lixin_battle_hurt",
+    "who": "lixin",
+    "module": "battle",
+    "meaning": "hurt",
+    "text_zh": "慢点打键盘！",
+    "langPath": "lixin/voice/lixin_battle_hurt",
+    "langPath_ln": "",
+    "emotion": "angry"
+  },
+  {
+    "id": "lixin_battle_win",
+    "who": "lixin",
+    "module": "battle",
+    "meaning": "win",
+    "text_zh": "过了。先去吃碗拌粉。",
+    "langPath": "lixin/voice/lixin_battle_win",
+    "langPath_ln": "",
+    "emotion": "happy"
+  },
+  {
+    "id": "lixin_profile_show",
+    "who": "lixin",
+    "module": "profile",
+    "meaning": "show",
+    "text_zh": "游戏民工，开机就干活。",
+    "langPath": "lixin/voice/lixin_profile_show",
+    "langPath_ln": "",
+    "emotion": "neutral"
+  },
+  {
+    "id": "xiebo_battle_skill",
+    "who": "xiebo",
+    "module": "battle",
+    "meaning": "skill",
+    "text_zh": "拆了重装，比你那套稳。",
+    "langPath": "xiebo/voice/xiebo_battle_skill",
+    "langPath_ln": "",
+    "emotion": "neutral"
+  },
+  {
+    "id": "oban_battle_skill",
+    "who": "oban",
+    "module": "battle",
+    "meaning": "skill",
+    "text_zh": "电不要乱扯。",
+    "langPath": "oban/voice/oban_battle_skill",
+    "langPath_ln": "",
+    "emotion": "neutral"
+  }
+]

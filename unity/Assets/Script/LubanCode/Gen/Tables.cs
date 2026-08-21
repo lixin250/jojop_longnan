@@ -66,6 +66,10 @@ public partial class Tables
     /// 龙南大事件与97届兄弟纪年
     /// </summary>
     public TbTimelineEvent TbTimelineEvent {get; }
+    /// <summary>
+    /// 人声文案
+    /// </summary>
+    public TbRoleVoice TbRoleVoice {get; }
 
     public Tables(System.Func<string, JSONNode> loader)
     {
@@ -82,6 +86,7 @@ public partial class Tables
         TbCharacterEncounter = new TbCharacterEncounter(loader("tbcharacterencounter"));
         TbRunEvent = new TbRunEvent(loader("tbrunevent"));
         TbTimelineEvent = new TbTimelineEvent(loader("tbtimelineevent"));
+        TbRoleVoice = new TbRoleVoice(loader("tbrolevoice"));
         ResolveRef();
     }
     
@@ -100,6 +105,7 @@ public partial class Tables
         TbCharacterEncounter.ResolveRef(this);
         TbRunEvent.ResolveRef(this);
         TbTimelineEvent.ResolveRef(this);
+        TbRoleVoice.ResolveRef(this);
     }
 }
 

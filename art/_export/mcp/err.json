@@ -1,1 +1,1 @@
-{"maxEntries":80,"logTypeFilter":"Error","includeStackTrace":true,"lastMinutes":120}
+{"maxEntries": 40, "logTypeFilter": "Error", "includeStackTrace": false, "lastMinutes": 15}

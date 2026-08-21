@@ -1,0 +1,6 @@
+{
+  "className": "McpRogue",
+  "methodName": "Run",
+  "isMethodBody": false,
+  "csharpCode": "using UnityEngine;\nusing UnityEngine.UI;\npublic static class McpRogue {\n  public static string Run() {\n    foreach (var b in Object.FindObjectsByType<Button>(FindObjectsSortMode.None)) {\n      if (!b.gameObject.activeInHierarchy) continue;\n      if (b.name == \"Rogue0\") { b.onClick.Invoke(); return \"clicked Rogue0\"; }\n    }\n    return \"Rogue0 missing\";\n  }\n}"
+}

@@ -1,0 +1,1 @@
+{"isMethodBody": true, "csharpCode": "UnityEngine.Canvas.ForceUpdateCanvases();\nvar t = typeof(UnityEditor.Editor).Assembly.GetType(\"UnityEditor.GameView\");\nif (t != null) { var w = UnityEditor.EditorWindow.GetWindow(t); w.Repaint(); }\nUnityEditor.SceneView.RepaintAll();\n"}

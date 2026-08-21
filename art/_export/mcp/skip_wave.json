@@ -1,0 +1,6 @@
+{
+  "className": "McpSkipWave",
+  "methodName": "Run",
+  "isMethodBody": false,
+  "csharpCode": "using System.Reflection;\nusing UnityEngine;\nusing JojoP.Gameplay.Brothers;\npublic static class McpSkipWave {\n  public static string Run() {\n    Time.timeScale = 1f;\n    var s = Object.FindFirstObjectByType<BrothersSessionController>();\n    if (s == null) return \"no session\";\n    var b = s.Battle;\n    if (b == null) return \"flow=\" + s.Flow + \" no battle\";\n    var f = typeof(BrothersBattleController).GetField(\"_waveLeft\", BindingFlags.NonPublic | BindingFlags.Instance);\n    f?.SetValue(b, 0f);\n    var end = typeof(BrothersBattleController).GetMethod(\"EndWaveCleared\", BindingFlags.NonPublic | BindingFlags.Instance);\n    end?.Invoke(b, null);\n    return \"flow=\" + s.Flow + \" left=\" + b.WaveLeft;\n  }\n}"
+}

@@ -1,0 +1,85 @@
+JojoP 人声文案
+换电脑：把整个 art/voice 拷走。secrets.env 被 git 忽略，要单独带。
+录音放 samples/{who}.mp3 ，口播用下面两段；游戏内台词用「游戏文案」。
+
+════════════════════════════════
+一、口播稿（克隆用，普通话，全员同一套字）
+════════════════════════════════
+
+怎么录
+- 手机离嘴约 25～30cm，安静，不要 BGM、不要空调风
+- 正常说话，不要喊、不要气音、不要新闻联播腔
+- 一次过；文件名 lixin.mp3 / xiebo.mp3 / oban.mp3
+- 总长 15～25 秒（最短 10 秒）
+
+稿 A · 锁音色（必录，约 15 秒）→ samples/{who}.mp3
+
+今天天气还行，我们先把这单做完，再去吃碗粉。
+你慢一点，别砸键盘。
+一是一，二是二，三四五六七八九十。
+行不行？行。那就这样，稳一点更好。
+
+
+稿 B · 锁语气（必录，少于 8 秒）→ samples/{who}_prompt.mp3
+字必须一模一样，只用口气区分人。
+
+先听我说完。这单今晚要交，搞快点也要稳。
+
+口气：
+- 利欣：赶工、有点不耐烦
+- 谢博：稳、像在拆东西
+- 欧版：短、冲、别废话
+
+不要录：唱歌、耳语、大笑、多人、方言、英语、广告腔。
+龙南话不要进 samples。有人要录方言，直接做游戏里的 {id}_ln.ogg。
+
+
+════════════════════════════════
+二、游戏文案（TTS 只读 text_zh）
+id = who_module_meaning
+════════════════════════════════
+
+【利欣 lixin】
+
+lixin_battle_spawn
+来了来了，开机干活。
+
+lixin_battle_skill
+搞快点，这单今晚要交。
+
+lixin_battle_hurt
+慢点打键盘！
+
+lixin_battle_win
+过了。先去吃碗拌粉。
+
+lixin_profile_show
+游戏民工，开机就干活。
+
+
+【谢博 xiebo】
+
+xiebo_battle_skill
+拆了重装，比你那套稳。
+
+
+【欧版 oban】
+
+oban_battle_skill
+电不要乱扯。
+
+
+龙南话：不写在这里。录好后填 lines.csv 的 langPath_ln，
+例如 lixin/voice/lixin_battle_skill_ln
+
+
+════════════════════════════════
+三、换电脑跑生成
+════════════════════════════════
+
+1. 拷 art/voice（含 secrets.env、samples 里的 mp3）
+2. 装 Python + requests、ffmpeg
+3. python art/tools/minimax_voice.py clone
+4. python art/tools/minimax_voice.py synth
+5. python art/tools/minimax_voice.py import
+6. python art/tools/minimax_voice.py sync

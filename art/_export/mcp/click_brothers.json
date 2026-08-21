@@ -1,6 +1,1 @@
-{
-  "csharpCode": "var go = GameObject.Find(\"btn_brothers\"); if (go == null) { Debug.LogError(\"btn_brothers not found\"); return; } var btn = go.GetComponent<UnityEngine.UI.Button>(); if (btn == null) { Debug.LogError(\"no Button\"); return; } btn.onClick.Invoke(); Debug.Log(\"[MCP] clicked btn_brothers\");",
-  "isMethodBody": true,
-  "className": "McpClick",
-  "methodName": "Run"
-}
+{"className": "McpClick", "methodName": "Run", "isMethodBody": false, "csharpCode": "\nusing UnityEngine;\nusing UnityEngine.UI;\npublic static class McpClick {\n  public static string Run() {\n    foreach (var b in Object.FindObjectsByType<Button>(FindObjectsSortMode.None)) {\n      if (!b.gameObject.activeInHierarchy) continue;\n      if (b.name == \"btn_brothers\") { b.onClick.Invoke(); return \"clicked btn_brothers\"; }\n    }\n    return \"btn_brothers missing\";\n  }\n}\n"}

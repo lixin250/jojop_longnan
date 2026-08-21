@@ -36,6 +36,8 @@ namespace JojoP.Gameplay.Brothers
                 $"{RoleRoot}/{id}/avatar.png",
                 $"{RoleRoot}/{id}/avatar.jpg",
                 $"{RoleRoot}/{id}/{stem}.png",
+                $"{RoleRoot}/oldAvatar/{stem}.png",
+                $"{RoleRoot}/oldAvatar/{stem}.jpg",
                 $"{PortraitFolder}/{stem}.png",
                 $"{PortraitFolder}/{stem}.jpg");
         }
@@ -64,6 +66,22 @@ namespace JojoP.Gameplay.Brothers
                        $"{RoleRoot}/{id}/poster.png",
                        $"{PosterFolder}/role_{id}_poster.png")
                    ?? LoadHalf(loc);
+        }
+
+        public static Sprite LoadRogueIcon(string kindKey, string portraitLoc = null)
+        {
+            if (!string.IsNullOrWhiteSpace(portraitLoc))
+            {
+                var portrait = LoadPortrait(portraitLoc);
+                if (portrait != null) return portrait;
+            }
+
+            string key = (kindKey ?? "").Trim().ToLowerInvariant();
+            if (string.IsNullOrEmpty(key)) key = "stat";
+            return LoadFirst(
+                $"Assets/Bundle/Item/icon/rogue_{key}.png",
+                $"{RoleRoot}/ui/rogue_{key}.png",
+                Addr("ui", "rogue_" + key));
         }
 
         public static Sprite LoadBattle(string battleLoc, string avatarLocFallback = null)

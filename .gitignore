@@ -47,3 +47,7 @@ Thumbs.db
 .idea/
 *.log
 unity-create.log
+
+# MiniMax voice pipeline
+art/voice/secrets.env
+art/voice/.cache/

@@ -29,15 +29,25 @@ namespace JojoP.UI
         Text _archiveHint;
         GameObject _pageHero;
         GameObject _pageStage;
-        GameObject _detail;
         Text _detailName;
         Text _detailHint;
-        Image _detailPortrait;
         Button _detailSelect;
         string _detailRoleId;
+        Image _poseImage;
+        HeroPosePreview _posePreview;
         Image _overlayPortrait;
-        readonly Button[] _rogueBtns = new Button[3];
-        readonly Text[] _rogueLabels = new Text[3];
+        sealed class RogueCardUi
+        {
+            public GameObject Root;
+            public Button Button;
+            public Image Frame;
+            public Image Art;
+            public Text Title;
+            public Text Kind;
+            public Text Desc;
+        }
+
+        readonly RogueCardUi[] _rogueCards = new RogueCardUi[3];
         readonly Image[] _partyPortraits = new Image[5];
         readonly Image[] _partyHpFills = new Image[5];
         readonly Text[] _partyNames = new Text[5];
@@ -114,10 +124,8 @@ namespace JojoP.UI
             BrothersUiUtil.MakePanel(_hub.transform, "HubBg", new Vector2(1080, 1920), Vector2.zero,
                 new Color(0.12f, 0.11f, 0.09f, 0.55f));
 
-            var title = BrothersUiUtil.MakeText(_hub.transform, "Title", "JojoP", 64, new Vector2(0, 840), new Vector2(960, 88));
+            var title = BrothersUiUtil.MakeText(_hub.transform, "Title", "JojoP", 56, new Vector2(0, 880), new Vector2(960, 72));
             title.color = BrothersUiUtil.Parchment;
-            var logoHint = BrothersUiUtil.MakeText(_hub.transform, "LogoHint", "大图标后续替换", 20, new Vector2(0, 780), new Vector2(600, 32));
-            logoHint.color = new Color(0.7f, 0.65f, 0.55f, 0.8f);
 
             _pageHero = new GameObject("PageHero", typeof(RectTransform));
             _pageHero.transform.SetParent(_hub.transform, false);
@@ -128,14 +136,33 @@ namespace JojoP.UI
             FitPage(_pageStage.GetComponent<RectTransform>());
             _pageStage.SetActive(false);
 
-            var archivePanel = BrothersUiUtil.MakePanel(_pageHero.transform, "HeroPick", new Vector2(980, 980), new Vector2(0, 40),
-                new Color(0.14f, 0.12f, 0.1f, 0.9f));
-            _archivePanel = archivePanel.gameObject;
-            var archTitle = BrothersUiUtil.MakeText(_archivePanel.transform, "ArchTitle", "选择英雄", 28, new Vector2(0, 440), new Vector2(400, 40));
-            archTitle.color = BrothersUiUtil.Parchment;
-            _archiveHint = BrothersUiUtil.MakeText(_archivePanel.transform, "ArchHint", "点头像看详情；未解锁也会显示条件", 20,
-                new Vector2(0, -450), new Vector2(940, 40));
-            _archiveHint.color = new Color(0.75f, 0.7f, 0.6f);
+            var strip = BrothersUiUtil.MakeHScroll(_pageHero.transform, "HeroStrip", new Vector2(0, 730), new Vector2(1040, 170));
+            _archivePanel = strip.gameObject;
+            _archiveHint = BrothersUiUtil.MakeText(_pageHero.transform, "StripHint", "左右滑选人", 20,
+                new Vector2(0, 620), new Vector2(900, 32));
+            _archiveHint.color = new Color(0.72f, 0.68f, 0.58f);
+
+            var posePanel = BrothersUiUtil.MakePanel(_pageHero.transform, "PoseStage", new Vector2(460, 620),
+                new Vector2(-250, 40), new Color(0.08f, 0.07f, 0.06f, 0.94f));
+            _poseImage = BrothersUiUtil.MakePortrait(posePanel.transform, "Pose", new Vector2(0, 10), new Vector2(420, 560),
+                null, new Color(0.18f, 0.16f, 0.14f));
+            _posePreview = posePanel.gameObject.AddComponent<HeroPosePreview>();
+            _posePreview.Bind(_poseImage);
+            var poseTip = BrothersUiUtil.MakeText(posePanel.transform, "PoseTip", "idle / atk", 18, new Vector2(0, -280), new Vector2(400, 28));
+            poseTip.color = new Color(0.65f, 0.6f, 0.5f);
+
+            var infoPanel = BrothersUiUtil.MakePanel(_pageHero.transform, "HeroInfo", new Vector2(500, 620),
+                new Vector2(270, 40), new Color(0.10f, 0.09f, 0.08f, 0.94f));
+            _detailName = BrothersUiUtil.MakeText(infoPanel.transform, "Name", "", 36, new Vector2(0, 270), new Vector2(460, 48));
+            _detailName.color = BrothersUiUtil.Parchment;
+            _detailHint = BrothersUiUtil.MakeText(infoPanel.transform, "Body", "", 22, new Vector2(0, -30), new Vector2(460, 520));
+            _detailHint.alignment = TextAnchor.UpperLeft;
+            _detailHint.color = new Color(0.9f, 0.85f, 0.72f);
+
+            _detailSelect = BrothersUiUtil.MakeButton(_pageHero.transform, "Select", "以此出征", new Vector2(0, -360), new Vector2(480, 96),
+                BrothersUiUtil.AccentGreen);
+            _detailSelect.onClick.AddListener(OnConfirmHero);
+
             BuildHeroPicker();
 
             _trainPanel = BrothersUiUtil.MakePanel(_pageStage.transform, "TrainCard", new Vector2(980, 160), new Vector2(0, 620),
@@ -199,63 +226,36 @@ namespace JojoP.UI
                 new Color(0.35f, 0.35f, 0.4f));
             home.onClick.AddListener(() => _onHome?.Invoke());
 
-            var homeHero = BrothersUiUtil.MakeButton(_pageHero.transform, "BtnBackMenu", "返回主界面", new Vector2(0, -820), new Vector2(360, 66),
+            var homeHero = BrothersUiUtil.MakeButton(_pageHero.transform, "BtnBackMenu", "返回主界面", new Vector2(0, -480), new Vector2(360, 66),
                 new Color(0.35f, 0.35f, 0.4f));
             homeHero.onClick.AddListener(() => _onHome?.Invoke());
-
-            BuildHeroDetail();
-        }
-
-        void BuildHeroDetail()
-        {
-            var panel = BrothersUiUtil.MakePanel(_hub.transform, "HeroDetail", new Vector2(860, 1080), Vector2.zero,
-                new Color(0.09f, 0.08f, 0.07f, 0.97f));
-            _detail = panel.gameObject;
-            _detail.SetActive(false);
-
-            _detailPortrait = BrothersUiUtil.MakePortrait(_detail.transform, "Port", new Vector2(0, 280), new Vector2(280, 360),
-                null, new Color(0.2f, 0.18f, 0.16f));
-            _detailName = BrothersUiUtil.MakeText(_detail.transform, "Name", "", 40, new Vector2(0, 40), new Vector2(760, 56));
-            _detailName.color = BrothersUiUtil.Parchment;
-            _detailHint = BrothersUiUtil.MakeText(_detail.transform, "Hint", "", 26, new Vector2(0, -120), new Vector2(760, 220));
-            _detailHint.color = new Color(0.9f, 0.85f, 0.72f);
-
-            _detailSelect = BrothersUiUtil.MakeButton(_detail.transform, "Select", "以此出征", new Vector2(0, -360), new Vector2(420, 90),
-                BrothersUiUtil.AccentGreen);
-            _detailSelect.onClick.AddListener(OnConfirmHero);
-
-            var close = BrothersUiUtil.MakeButton(_detail.transform, "Close", "关闭", new Vector2(0, -470), new Vector2(280, 70),
-                new Color(0.35f, 0.35f, 0.4f));
-            close.onClick.AddListener(() => _detail.SetActive(false));
         }
 
         void BuildHeroPicker()
         {
+            Transform content = _archivePanel != null ? _archivePanel.transform.Find("Content") : null;
+            if (content == null) content = _archivePanel != null ? _archivePanel.transform : transform;
             var candidates = HeroUnlock.StarterCandidates();
-            const int cols = 5;
-            const float cell = 168f;
-            float startX = -((cols - 1) * cell) * 0.5f;
-            float startY = 280f;
             for (int i = 0; i < candidates.Count; i++)
             {
                 var role = candidates[i];
-                int col = i % cols;
-                int row = i / cols;
-                var pos = new Vector2(startX + col * cell, startY - row * 150f);
-                var frame = BrothersUiUtil.MakePanel(_archivePanel.transform, "HeroF" + i,
-                    new Vector2(110, 110), pos, new Color(0.28f, 0.26f, 0.22f, 0.95f));
+                var cell = new GameObject("Hero" + i, typeof(RectTransform), typeof(LayoutElement), typeof(Image), typeof(Button));
+                cell.transform.SetParent(content, false);
+                var le = cell.GetComponent<LayoutElement>();
+                le.preferredWidth = 118f;
+                le.minWidth = 118f;
+                le.preferredHeight = 148f;
+                var frame = cell.GetComponent<Image>();
+                frame.color = new Color(0.28f, 0.26f, 0.22f, 0.95f);
                 var sp = RoleArtLoader.LoadPortrait(role.AvatarLoc);
-                var img = BrothersUiUtil.MakePortrait(_archivePanel.transform, "Hero" + i,
-                    pos, new Vector2(98, 98), sp, new Color(0.35f, 0.32f, 0.28f));
-                var btn = img.gameObject.AddComponent<Button>();
-                string id = role.Id;
-                btn.onClick.AddListener(() => OnPickHero(id));
-                var name = BrothersUiUtil.MakeText(_archivePanel.transform, "HeroN" + i, role.Name, 20,
-                    pos + new Vector2(0f, -72f), new Vector2(150, 28));
+                var img = BrothersUiUtil.MakePortrait(cell.transform, "Port", new Vector2(0, 14), new Vector2(96, 96),
+                    sp, new Color(0.35f, 0.32f, 0.28f));
+                var name = BrothersUiUtil.MakeText(cell.transform, "Name", role.Name, 20, new Vector2(0, -58), new Vector2(114, 28));
                 name.color = BrothersUiUtil.Parchment;
-                var lockTxt = BrothersUiUtil.MakeText(_archivePanel.transform, "HeroL" + i, "", 18,
-                    pos + new Vector2(0f, 0f), new Vector2(98, 98));
+                var lockTxt = BrothersUiUtil.MakeText(cell.transform, "Lock", "", 22, new Vector2(0, 14), new Vector2(96, 96));
                 lockTxt.color = new Color(1f, 0.92f, 0.55f, 0.95f);
+                string id = role.Id;
+                cell.GetComponent<Button>().onClick.AddListener(() => OnPickHero(id));
                 _heroSlots.Add(new HeroPickSlot
                 {
                     Id = role.Id,
@@ -267,34 +267,36 @@ namespace JojoP.UI
             }
         }
 
-        void OnPickHero(string roleId)
-        {
-            OpenHeroDetail(roleId);
-        }
+        void OnPickHero(string roleId) => FocusHero(roleId);
 
-        void OpenHeroDetail(string roleId)
+        void FocusHero(string roleId)
         {
-            if (_session?.Meta == null || _detail == null) return;
+            if (_session?.Meta == null) return;
             var role = RoleCatalog.FindRole(roleId);
             if (role == null) return;
             _detailRoleId = roleId;
-            _detail.SetActive(true);
-            _detailName.text = role.Name;
-            _detailHint.text = HeroUnlock.Hint(role, _session.Meta);
-            var sp = RoleArtLoader.LoadPoster(role.AvatarLoc) ?? RoleArtLoader.LoadPortrait(role.AvatarLoc);
-            _detailPortrait.sprite = sp;
-            _detailPortrait.color = sp != null ? Color.white : new Color(0.3f, 0.28f, 0.24f);
-            _detailPortrait.preserveAspect = true;
+            if (_detailName != null) _detailName.text = role.Name;
+            if (_detailHint != null) _detailHint.text = HeroDossier.Body(role, _session.Meta);
             bool can = HeroUnlock.CanSelect(roleId, _session.Meta);
-            _detailSelect.gameObject.SetActive(can);
-            _detailSelect.GetComponentInChildren<Text>().text = can ? "以此出征" : "未解锁";
+            if (_detailSelect != null)
+            {
+                _detailSelect.gameObject.SetActive(true);
+                _detailSelect.interactable = can;
+                var label = _detailSelect.GetComponentInChildren<Text>();
+                if (label != null) label.text = can ? "以此出征" : "未解锁";
+                _detailSelect.GetComponent<Image>().color = can
+                    ? BrothersUiUtil.AccentGreen
+                    : new Color(0.35f, 0.33f, 0.3f, 1f);
+            }
+
+            _posePreview?.Show(RoleArtLoader.LoadBattleSet(role.BattleLoc, role.AvatarLoc), !can);
+            RefreshHeroPicker();
         }
 
         void OnConfirmHero()
         {
             if (_session?.Meta == null || string.IsNullOrEmpty(_detailRoleId)) return;
             if (!_session.Meta.TrySelectHero(_detailRoleId)) return;
-            _detail.SetActive(false);
             RefreshHeroPicker();
             ShowHubPage(stage: true, animate: true);
         }
@@ -305,30 +307,36 @@ namespace JojoP.UI
             if (_heroSlots.Count == 0)
                 BuildHeroPicker();
             var meta = _session.Meta;
-            string selected = meta.SelectedHeroId;
-            RoleList selectedRole = null;
+            string focused = string.IsNullOrEmpty(_detailRoleId) ? meta.SelectedHeroId : _detailRoleId;
+            RoleList focusedRole = null;
             foreach (var slot in _heroSlots)
             {
                 var role = RoleCatalog.FindRole(slot.Id);
                 if (role == null) continue;
                 bool unlocked = HeroUnlock.IsUnlocked(role, meta);
-                bool isSelected = slot.Id == selected;
-                if (isSelected) selectedRole = role;
-                slot.Portrait.color = unlocked ? Color.white : new Color(0.28f, 0.28f, 0.3f, 0.85f);
-                slot.Frame.color = isSelected
+                bool isFocused = slot.Id == focused;
+                if (isFocused) focusedRole = role;
+                slot.Portrait.color = unlocked ? Color.white : new Color(0.45f, 0.45f, 0.48f, 0.9f);
+                slot.Frame.color = isFocused
                     ? new Color(0.92f, 0.74f, 0.28f, 1f)
                     : unlocked
                         ? new Color(0.32f, 0.42f, 0.34f, 0.95f)
                         : new Color(0.22f, 0.2f, 0.2f, 0.9f);
                 slot.Lock.text = unlocked ? "" : "锁";
-                slot.Name.color = isSelected ? new Color(1f, 0.86f, 0.4f) : BrothersUiUtil.Parchment;
+                slot.Name.color = isFocused ? new Color(1f, 0.86f, 0.4f) : BrothersUiUtil.Parchment;
             }
 
-            if (_archiveHint == null) return;
-            if (selectedRole != null)
-                _archiveHint.text = $"当前：{selectedRole.Name} · 点头像看详情";
-            else
-                _archiveHint.text = "点头像看详情；未解锁也会显示条件";
+            if (_archiveHint != null)
+            {
+                _archiveHint.text = focusedRole != null
+                    ? (HeroUnlock.IsUnlocked(focusedRole, meta)
+                        ? $"当前：{focusedRole.Name} · idle / atk 轮播"
+                        : $"未解锁：{focusedRole.Name}")
+                    : "左右滑选人 · 未解锁也能看条件和动作";
+            }
+
+            if (string.IsNullOrEmpty(_detailRoleId) && focusedRole != null)
+                FocusHero(focusedRole.Id);
         }
 
         void BuildBattleHud()
@@ -379,25 +387,47 @@ namespace JojoP.UI
 
         void BuildOverlay()
         {
-            var panel = BrothersUiUtil.MakePanel(transform, "Overlay", new Vector2(920, 1200), Vector2.zero,
-                new Color(0.10f, 0.09f, 0.08f, 0.96f));
+            var panel = BrothersUiUtil.MakePanel(transform, "Overlay", new Vector2(1080, 1920), Vector2.zero,
+                new Color(0.08f, 0.07f, 0.06f, 0.96f));
             _overlay = panel.gameObject;
 
-            _overlayTitle = BrothersUiUtil.MakeText(_overlay.transform, "Title", "", 52, new Vector2(0, 480), new Vector2(860, 80));
+            _overlayTitle = BrothersUiUtil.MakeText(_overlay.transform, "Title", "", 52, new Vector2(0, 820), new Vector2(960, 80));
             _overlayTitle.color = BrothersUiUtil.Parchment;
-            _overlayPortrait = BrothersUiUtil.MakePortrait(_overlay.transform, "WinPort", new Vector2(0, 300), new Vector2(220, 280),
+            _overlayPortrait = BrothersUiUtil.MakePortrait(_overlay.transform, "WinPort", new Vector2(0, 560), new Vector2(220, 280),
                 null, new Color(0.16f, 0.14f, 0.12f));
-            _overlayBody = BrothersUiUtil.MakeText(_overlay.transform, "Body", "", 28, new Vector2(0, 40), new Vector2(840, 200));
+            _overlayBody = BrothersUiUtil.MakeText(_overlay.transform, "Body", "", 26, new Vector2(0, 320), new Vector2(920, 180));
             _overlayBody.color = new Color(0.92f, 0.88f, 0.78f);
-            _overlayShare = BrothersUiUtil.MakeText(_overlay.transform, "Share", "", 24, new Vector2(0, -150), new Vector2(840, 80));
+            _overlayShare = BrothersUiUtil.MakeText(_overlay.transform, "Share", "", 24, new Vector2(0, 180), new Vector2(900, 80));
             _overlayShare.color = new Color(0.75f, 0.85f, 1f);
 
             for (int i = 0; i < 3; i++)
             {
                 int idx = i;
-                _rogueBtns[i] = BrothersUiUtil.MakeButton(_overlay.transform, "Rogue" + i, "选项", new Vector2(0, -40 - i * 100), new Vector2(780, 88));
-                _rogueLabels[i] = _rogueBtns[i].GetComponentInChildren<Text>();
-                _rogueBtns[i].onClick.AddListener(() => _session?.PickRogue(idx));
+                float x = (i - 1) * 330f;
+                var frame = BrothersUiUtil.MakePanel(_overlay.transform, "Rogue" + i, new Vector2(300, 760), new Vector2(x, -40),
+                    new Color(0.16f, 0.14f, 0.12f, 1f));
+                var art = BrothersUiUtil.MakePortrait(frame.transform, "Art", new Vector2(0, 170), new Vector2(260, 340),
+                    null, new Color(0.28f, 0.24f, 0.18f));
+                var kind = BrothersUiUtil.MakeText(frame.transform, "Kind", "", 20, new Vector2(0, -20), new Vector2(260, 32));
+                kind.color = new Color(0.95f, 0.78f, 0.4f);
+                var title = BrothersUiUtil.MakeText(frame.transform, "Title", "", 26, new Vector2(0, -70), new Vector2(270, 70));
+                title.color = BrothersUiUtil.Parchment;
+                var desc = BrothersUiUtil.MakeText(frame.transform, "Desc", "", 20, new Vector2(0, -230), new Vector2(270, 220));
+                desc.alignment = TextAnchor.UpperCenter;
+                desc.color = new Color(0.9f, 0.84f, 0.72f);
+                var btn = frame.gameObject.AddComponent<Button>();
+                btn.targetGraphic = frame;
+                btn.onClick.AddListener(() => _session?.PickRogue(idx));
+                _rogueCards[i] = new RogueCardUi
+                {
+                    Root = frame.gameObject,
+                    Button = btn,
+                    Frame = frame,
+                    Art = art,
+                    Kind = kind,
+                    Title = title,
+                    Desc = desc
+                };
             }
 
             _btnConfirm = BrothersUiUtil.MakeButton(_overlay.transform, "Confirm", "继续", new Vector2(0, -400), new Vector2(420, 90),
@@ -428,7 +458,7 @@ namespace JojoP.UI
             }));
 
             _btnAdReroll = BrothersUiUtil.MakeButton(_overlay.transform, "RogueReroll", "看广告刷新一次",
-                new Vector2(-205, -390), new Vector2(380, 72), new Color(0.72f, 0.42f, 0.18f));
+                new Vector2(-205, -720), new Vector2(380, 72), new Color(0.72f, 0.42f, 0.18f));
             _btnAdReroll.onClick.AddListener(() =>
             {
                 if (_session == null || !_session.CanRewardedReroll) return;
@@ -440,7 +470,7 @@ namespace JojoP.UI
             });
 
             _btnAdExpand = BrothersUiUtil.MakeButton(_overlay.transform, "RogueExpand", "看广告扩编 +1",
-                new Vector2(205, -390), new Vector2(380, 72), new Color(0.72f, 0.42f, 0.18f));
+                new Vector2(205, -720), new Vector2(380, 72), new Color(0.72f, 0.42f, 0.18f));
             _btnAdExpand.onClick.AddListener(() =>
             {
                 if (_session == null || !_session.CanRewardedExpand) return;
@@ -602,7 +632,6 @@ namespace JojoP.UI
             _hub.SetActive(true);
             _battleHud.SetActive(false);
             _overlay.SetActive(false);
-            if (_detail != null) _detail.SetActive(false);
             ShowHubPage(stage: false, animate: false);
         }
 
@@ -721,41 +750,86 @@ namespace JojoP.UI
             _btnShare.gameObject.SetActive(false);
             _btnBreakContinue.gameObject.SetActive(false);
             _btnAdTrain.gameObject.SetActive(false);
-            _overlayTitle.text = "波间选择";
+            _overlayTitle.text = "三选一";
             if (_overlayPortrait != null) _overlayPortrait.gameObject.SetActive(false);
             if (_session.Run != null)
             {
                 var run = _session.Run;
                 string slots = run.HasUnlimitedSlots ? "不限人数" : $"{run.RecruitedCount}/{run.ActiveSlotLimit}人";
                 var timeline = TimelineCatalog.Current(run);
-                string eventLine = timeline == null
-                    ? ""
-                    : $"\n{timeline.AnchorYear} · {timeline.Title}\n机遇：{timeline.OpportunityDesc}\n困难：{timeline.DifficultyDesc}";
-                _overlayBody.text =
-                    $"{run.PhaseLabel()} · {slots}\n攻击核心：{run.EquipmentId}{eventLine}\n三选一；技能/装备满槽会替换";
+                string eventLine = timeline == null ? "" : $" · {timeline.Title}";
+                _overlayBody.text = $"{run.PhaseLabel()} · {slots}{eventLine}";
             }
             else
             {
                 _overlayBody.text = "";
             }
             _overlayShare.text = "";
+            _overlayBody.rectTransform.anchoredPosition = new Vector2(0f, 700f);
+            _overlayBody.rectTransform.sizeDelta = new Vector2(960f, 70f);
             _btnAdReroll.gameObject.SetActive(_session.CanRewardedReroll);
             _btnAdExpand.gameObject.SetActive(_session.CanRewardedExpand);
 
             var opts = _session.CurrentRogue;
             for (int i = 0; i < 3; i++)
             {
+                var card = _rogueCards[i];
+                if (card?.Root == null) continue;
                 if (i < opts.Count)
                 {
-                    _rogueBtns[i].gameObject.SetActive(true);
-                    _rogueLabels[i].text = $"{opts[i].Title}\n{opts[i].Desc}";
-                    _rogueLabels[i].fontSize = 24;
+                    var opt = opts[i];
+                    card.Root.SetActive(true);
+                    card.Kind.text = RogueKindLabel(opt.Kind);
+                    card.Title.text = opt.Title;
+                    card.Desc.text = opt.Desc;
+                    card.Frame.color = RogueKindColor(opt.Kind);
+                    string portraitLoc = null;
+                    if (!string.IsNullOrEmpty(opt.TargetRoleId))
+                        portraitLoc = RoleCatalog.FindRole(opt.TargetRoleId)?.AvatarLoc;
+                    var art = RoleArtLoader.LoadRogueIcon(opt.Kind.ToString(), portraitLoc);
+                    card.Art.sprite = art;
+                    card.Art.preserveAspect = false;
+                    card.Art.color = art != null ? Color.white : RogueKindColor(opt.Kind);
                 }
                 else
                 {
-                    _rogueBtns[i].gameObject.SetActive(false);
+                    card.Root.SetActive(false);
                 }
             }
+        }
+
+        static string RogueKindLabel(ERogueRewardKind kind)
+        {
+            return kind switch
+            {
+                ERogueRewardKind.Stat => "属性",
+                ERogueRewardKind.Recovery => "回复",
+                ERogueRewardKind.TeamBuff => "下一波",
+                ERogueRewardKind.CampusSkill => "课间绝活",
+                ERogueRewardKind.JobSkill => "工牌绝活",
+                ERogueRewardKind.Encounter => "相遇",
+                ERogueRewardKind.Equipment => "攻击核心",
+                ERogueRewardKind.LootSkill => "地摊技",
+                ERogueRewardKind.Event => "糗事",
+                _ => kind.ToString()
+            };
+        }
+
+        static Color RogueKindColor(ERogueRewardKind kind)
+        {
+            return kind switch
+            {
+                ERogueRewardKind.Stat => new Color(0.42f, 0.28f, 0.16f, 1f),
+                ERogueRewardKind.Recovery => new Color(0.18f, 0.36f, 0.24f, 1f),
+                ERogueRewardKind.TeamBuff => new Color(0.42f, 0.2f, 0.2f, 1f),
+                ERogueRewardKind.CampusSkill => new Color(0.18f, 0.28f, 0.42f, 1f),
+                ERogueRewardKind.JobSkill => new Color(0.4f, 0.34f, 0.14f, 1f),
+                ERogueRewardKind.Encounter => new Color(0.34f, 0.2f, 0.38f, 1f),
+                ERogueRewardKind.Equipment => new Color(0.2f, 0.24f, 0.36f, 1f),
+                ERogueRewardKind.LootSkill => new Color(0.36f, 0.26f, 0.16f, 1f),
+                ERogueRewardKind.Event => new Color(0.4f, 0.18f, 0.22f, 1f),
+                _ => new Color(0.16f, 0.14f, 0.12f, 1f)
+            };
         }
 
         void ShowBreak()
@@ -779,7 +853,16 @@ namespace JojoP.UI
         void SetRogueVisible(bool on)
         {
             for (int i = 0; i < 3; i++)
-                _rogueBtns[i].gameObject.SetActive(on);
+            {
+                if (_rogueCards[i]?.Root != null)
+                    _rogueCards[i].Root.SetActive(on);
+            }
+
+            if (!on && _overlayBody != null)
+            {
+                _overlayBody.rectTransform.anchoredPosition = new Vector2(0f, 320f);
+                _overlayBody.rectTransform.sizeDelta = new Vector2(920f, 180f);
+            }
         }
     }
 }

@@ -1,6 +1,6 @@
 {
-  "csharpCode": "using UnityEngine;\nusing UnityEngine.UI;\npublic static class ClickNamed {\n  public static string Run() {\n    foreach (var b in Object.FindObjectsByType<Button>(FindObjectsSortMode.None)) {\n      if (!b.gameObject.activeInHierarchy) continue;\n      if (b.name == \"Confirm\") { b.onClick.Invoke(); return \"clicked Confirm\"; }\n    }\n    return \"Confirm not found\";\n  }\n}",
-  "className": "ClickNamed",
+  "className": "McpConfirm",
   "methodName": "Run",
-  "isMethodBody": false
+  "isMethodBody": false,
+  "csharpCode": "using UnityEngine;\nusing UnityEngine.UI;\npublic static class McpConfirm {\n  public static string Run() {\n    foreach (var b in Object.FindObjectsByType<Button>(FindObjectsSortMode.None)) {\n      if (!b.gameObject.activeInHierarchy) continue;\n      if (b.name == \"Confirm\") { b.onClick.Invoke(); return \"clicked Confirm\"; }\n    }\n    return \"Confirm missing\";\n  }\n}"
 }

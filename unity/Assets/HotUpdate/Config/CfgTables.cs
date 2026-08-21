@@ -34,7 +34,7 @@ namespace JojoP.Config
                 EnsureLoader();
                 Tables = new Tables(LoadJson);
                 Debug.Log(
-                    $"[JojoP] CfgTables OK roles={Tables.TbRoleList.DataList.Count} skills={Tables.TbSkillIndex.DataList.Count} via={LastLoaderHint}");
+                    $"[JojoP] CfgTables OK roles={Tables.TbRoleList.DataList.Count} skills={Tables.TbSkillIndex.DataList.Count} voices={Tables.TbRoleVoice.DataList.Count} via={LastLoaderHint}");
                 return true;
             }
             catch (Exception e)
