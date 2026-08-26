@@ -1,25 +1,33 @@
 # jojop-api
 
-JojoP 轻量 Cloudflare Worker：
+JojoP **游戏后端**（Cloudflare Worker），不是热更 CDN。
 
 - `GET /health`
-- `GET /config` — 远程开关（KV：`config`）
-- `GET|PUT /save/:deviceId` — 轻量存档（KV：`save:<id>`，180 天 TTL）
+- `GET /config` — 远程开关（KV：`JOJOP_KV`）
+- `GET|PUT /save/:deviceId` — 轻量存档（180 天 TTL）
 
-## 本地
+Yoo 热更文件直接上 R2 桶 `jojop-cdn`，客户端从公开 URL 拉：
 
-```bash
-npm install
-npm run dev
+```text
+https://pub-781168dca86c49c3826ace7d12450b5a.r2.dev/{channel}/{platform}/
 ```
 
-Unity `BackendConfig.baseUrl` → `http://127.0.0.1:8787`
+## 本地跑游戏接口
+
+PowerShell 不要直接敲 `npx`，用 `.cmd`：
+
+```bat
+npx.cmd wrangler login
+npm.cmd run dev
+```
+
+`http://127.0.0.1:8787` 只给 `/config` `/save`。Unity 热更不依赖这个进程。
 
 ## 上线
 
-```bash
-npx wrangler login
-npm run kv:create
-# 把真实 KV id 填进 wrangler.jsonc（替换占位）
-npm run deploy
+```bat
+npx.cmd wrangler login
+npm.cmd run deploy
 ```
+
+Worker URL 填进 `JojoPGlobalSettings.workerBaseUrl`（业务接口）。

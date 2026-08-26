@@ -1,0 +1,6 @@
+{
+  "className": "Imp",
+  "methodName": "Run",
+  "isMethodBody": false,
+  "csharpCode": "using UnityEditor;\npublic static class Imp {\n  public static string Run() {\n    AssetDatabase.ImportAsset(\"Assets/Editor/Build/JojoPOneShotApkBuild.cs\", ImportAssetOptions.ForceUpdate | ImportAssetOptions.ForceSynchronousImport);\n    AssetDatabase.Refresh();\n    return \"imported\";\n  }\n}\n"
+}

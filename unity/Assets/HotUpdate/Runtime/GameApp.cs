@@ -21,7 +21,7 @@ namespace JojoP.HotUpdate
             Brothers
         }
 
-        [Header("配置（可空，空则运行时造默认）")]
+        [Header("配置（Main 场景里拖好）")]
         [SerializeField] AdsConfig adsConfig;
         [SerializeField] BackendConfig backendConfig;
         [SerializeField] string privacyPolicyUrl = "https://example.com/privacy";
@@ -46,16 +46,10 @@ namespace JojoP.HotUpdate
             EnsureEventSystem();
             _canvas = CreateCanvas();
 
-            if (adsConfig == null)
+            if (adsConfig == null || backendConfig == null)
             {
-                adsConfig = ScriptableObject.CreateInstance<AdsConfig>();
-                adsConfig.provider = AdProvider.Mock;
-            }
-
-            if (backendConfig == null)
-            {
-                backendConfig = ScriptableObject.CreateInstance<BackendConfig>();
-                backendConfig.fetchOnBoot = true;
+                Debug.LogError("[JojoP] Main 上的 GameApp 没绑 AdsConfig / BackendConfig");
+                return;
             }
 
             _api = new CloudflareApiClient(backendConfig);

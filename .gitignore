@@ -52,3 +52,5 @@ unity-create.log
 art/voice/secrets.env
 art/voice/.cache/
 art/pose/.cache/
+unity/.utmp/
+unity/HybridCLRData/

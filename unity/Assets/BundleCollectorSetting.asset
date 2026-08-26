@@ -26,7 +26,7 @@ MonoBehaviour:
     IgnoreRuleName: JojoPIgnoreRule
     Groups:
     - GroupName: Scenes
-      GroupDesc: 
+      GroupDesc: "\u70ED\u66F4\u573A\u666F\uFF0C\u4E0D\u542B Bootstrap"
       AssetTags: 
       ActiveRuleName: EnableGroup
       Collectors:
@@ -34,8 +34,8 @@ MonoBehaviour:
         CollectorGUID: 4cce32147e25aeb48850950ed596654d
         CollectorType: 0
         AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
+        PackRuleName: PackSeparately
+        FilterRuleName: CollectHotScenes
         AssetTags: 
         UserData: 
     - GroupName: Bundle

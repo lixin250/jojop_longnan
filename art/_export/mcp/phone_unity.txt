@@ -1,0 +1,203 @@
+﻿--------- beginning of main
+08-26 18:26:55.126 16482 16482 I Unity   : applyWindowUIChanges fullScreen = true, renderOutsideSafeArea = true
+08-26 18:26:55.182 16482 16565 I Unity   : UnityApplication::CreateInstance
+08-26 18:26:55.182 16482 16565 I Unity   : GameActivity Package Version '3.0.5'
+08-26 18:26:55.183 16482 16565 I Unity   : Starting Game Loop
+08-26 18:26:55.195 16482 16565 I Unity   : Handle cmd APP_CMD_START(11)
+08-26 18:26:55.196 16482 16482 I Unity   : onResume
+08-26 18:26:55.211 16482 16565 I Unity   : Handle cmd APP_CMD_RESUME(12)
+08-26 18:26:55.248 16482 16565 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-26 18:26:55.270 16482 16565 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-26 18:26:55.272 16482 16565 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-26 18:26:55.272 16482 16565 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-26 18:26:55.272 16482 16565 I Unity   : Handle cmd APP_CMD_CONTENT_RECT_CHANGED(5)
+08-26 18:26:55.277 16482 16565 I Unity   : Handle cmd APP_CMD_INIT_WINDOW(1)
+08-26 18:26:55.285 16482 16565 I Unity   : MemoryManager: Using 'Dynamic Heap' Allocator.
+08-26 18:26:55.332 16482 16482 I Unity   : windowFocusChanged: true
+08-26 18:26:55.332 16482 16482 I Unity   : resumeUnity
+08-26 18:26:55.362 16482 16565 I Unity   : SetGameState: isLoading: true, mode: UNKNOWN, label: -2, quality: -1
+08-26 18:26:55.384 16482 16565 I Unity   : SystemInfo CPU = ARM64 FP ASIMD AES, Cores = 8, Memory = 11190mb
+08-26 18:26:55.384 16482 16565 I Unity   : SystemInfo ARM big.LITTLE configuration: 5 big (mask: 0xf8), 3 little (mask: 0x7)
+08-26 18:26:55.384 16482 16565 I Unity   : ApplicationInfo 'com.jojop.stack', Version '0.1.0', Min API Level '25', Target API Level '36'
+08-26 18:26:55.384 16482 16565 I Unity   : Built from '6000.4/staging' branch, Version '6000.4.0f1 (8cf496087c8f)', Build type 'Development', Scripting Backend 'il2cpp', CPU 'arm64-v8a', Stripping 'Enabled'
+08-26 18:26:55.384 16482 16565 I Unity   : Device Model 'Xiaomi 2211133C', OS 'Android OS 16 (API 36)'
+08-26 18:26:55.386 16482 16482 I Unity   : applyWindowUIChanges fullScreen = true, renderOutsideSafeArea = true
+08-26 18:26:56.201 16482 16565 I Unity   : Company Name: JojoP
+08-26 18:26:56.201 16482 16565 I Unity   : Product Name: JojoP Stack
+08-26 18:26:56.216 16482 16482 I Unity   : applyWindowUIChanges fullScreen = true, renderOutsideSafeArea = true
+08-26 18:26:56.485 16482 16565 I Unity   : SetGameState: isLoading: false, mode: UNKNOWN, label: -1, quality: 2
+08-26 18:26:56.485 16482 16565 I Unity   :     HasWindow = 1, HasFocus = 0
+08-26 18:26:56.485 16482 16565 I Unity   : Handle cmd APP_CMD_WINDOW_RESIZED(3)
+08-26 18:26:56.485 16482 16565 I Unity   : Handle cmd APP_CMD_WINDOW_REDRAW_NEEDED(4)
+08-26 18:26:56.485 16482 16565 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-26 18:26:56.486 16482 16565 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-26 18:26:56.486 16482 16565 I Unity   : Handle cmd APP_CMD_GAINED_FOCUS(7)
+08-26 18:26:56.486 16482 16565 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-26 18:26:56.486 16482 16565 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-26 18:26:56.486 16482 16565 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-26 18:26:56.486 16482 16565 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-26 18:26:56.486 16482 16565 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-26 18:26:56.536 16482 16565 I Unity   : SetGameState: isLoading: true, mode: UNKNOWN, label: 0, quality: 2
+08-26 18:26:56.678 16482 16565 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-26 18:26:56.678 16482 16565 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-26 18:26:58.605 16482 16565 I Unity   : SetGameState: isLoading: false, mode: UNKNOWN, label: 0, quality: 2
+08-26 18:26:58.628 16482 16565 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-26 18:26:58.628 16482 16565 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-26 18:26:58.740 16482 16565 I Unity   : Package 'DefaultPackage' created file system: 'YooAsset.SandboxFileSystem'.
+08-26 18:26:58.740 16482 16565 I Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+08-26 18:26:58.740 16482 16565 I Unity   : UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+08-26 18:26:58.740 16482 16565 I Unity   : UnityEngine.Logger:Log(LogType, Object)
+08-26 18:26:58.740 16482 16565 I Unity   : UnityEngine.Debug:Log(Object)
+08-26 18:26:58.740 16482 16565 I Unity   : YooAsset.YooLogger:Log(String) (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\Utility\YooLogger.cs:53)
+08-26 18:26:58.740 16482 16565 I Unity   : YooAsset.FileSystemParameters:CreateFileSystem(String) (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\FileSystem\FileSystemParameters.cs:64)
+08-26 18:26:58.740 16482 16565 I Unity   : YooAsset.InitializeFileSystemOperation:InternalUpdate() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\ResourcePackage\Operations\Internal\InitializeFileSystemOperation.cs:77)
+08-26 18:26:58.740 16482 16565 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\AsyncOperation\AsyncOperationBase.cs:238)
+08-26 18:26:58.740 16482 16565 I Unity   : YooAsset.InitializePackageOperation:InternalUpdate() (at .\Library\PackageCa
+08-26 18:26:58.741 16482 16565 I Unity   : YooAssetSettings not found, using default configuration.
+08-26 18:26:58.741 16482 16565 I Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+08-26 18:26:58.741 16482 16565 I Unity   : UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+08-26 18:26:58.741 16482 16565 I Unity   : UnityEngine.Logger:Log(LogType, Object)
+08-26 18:26:58.741 16482 16565 I Unity   : UnityEngine.Debug:Log(Object)
+08-26 18:26:58.741 16482 16565 I Unity   : YooAsset.YooLogger:Log(String) (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\Utility\YooLogger.cs:53)
+08-26 18:26:58.741 16482 16565 I Unity   : YooAsset.YooAssetConfiguration:GetSettings() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\Settings\YooAssetConfiguration.cs:39)
+08-26 18:26:58.741 16482 16565 I Unity   : YooAsset.YooAssetConfiguration:GetMobileCacheRoot() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\Settings\YooAssetConfiguration.cs:203)
+08-26 18:26:58.741 16482 16565 I Unity   : YooAsset.YooAssetConfiguration:GetDefaultCacheRoot() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\Settings\YooAssetConfiguration.cs:225)
+08-26 18:26:58.741 16482 16565 I Unity   : YooAsset.YooAssetConfiguration:GetDefaultCacheRoot(String) (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\Settings\Y
+08-26 18:26:58.769 16482 16565 I Unity   : Cache file search completed in 0.0 seconds. Found 216 cache files.
+08-26 18:26:58.769 16482 16565 I Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+08-26 18:26:58.769 16482 16565 I Unity   : UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+08-26 18:26:58.769 16482 16565 I Unity   : UnityEngine.Logger:Log(LogType, Object)
+08-26 18:26:58.769 16482 16565 I Unity   : UnityEngine.Debug:Log(Object)
+08-26 18:26:58.769 16482 16565 I Unity   : YooAsset.YooLogger:Log(String) (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\Utility\YooLogger.cs:53)
+08-26 18:26:58.769 16482 16565 I Unity   : YooAsset.SearchCacheFilesOperation:InternalUpdate() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\BundleCache\Services\SandboxBundleCache\Operations\Internal\SearchCacheFilesOperation.cs:75)
+08-26 18:26:58.769 16482 16565 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\AsyncOperation\AsyncOperationBase.cs:238)
+08-26 18:26:58.769 16482 16565 I Unity   : YooAsset.SBCInitializeOperation:InternalUpdate() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\BundleCache\Services\SandboxBundleCache\Operations\SBCInitializeOperation.cs:48)
+08-26 18:26:58.769 16482 16565 I Unity   : YooAsset.AsyncOperationBase:Updat
+08-26 18:26:58.769 16482 16565 I Unity   : Maximum verify concurrency is 8.
+08-26 18:26:58.769 16482 16565 I Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+08-26 18:26:58.769 16482 16565 I Unity   : UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+08-26 18:26:58.769 16482 16565 I Unity   : UnityEngine.Logger:Log(LogType, Object)
+08-26 18:26:58.769 16482 16565 I Unity   : UnityEngine.Debug:Log(Object)
+08-26 18:26:58.769 16482 16565 I Unity   : YooAsset.YooLogger:Log(String) (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\Utility\YooLogger.cs:53)
+08-26 18:26:58.769 16482 16565 I Unity   : YooAsset.VerifyCacheFilesOperation:InternalUpdate() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\BundleCache\Services\SandboxBundleCache\Operations\Internal\VerifyCacheFilesOperation.cs:64)
+08-26 18:26:58.769 16482 16565 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\AsyncOperation\AsyncOperationBase.cs:238)
+08-26 18:26:58.769 16482 16565 I Unity   : YooAsset.SBCInitializeOperation:InternalUpdate() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\BundleCache\Services\SandboxBundleCache\Operations\SBCInitializeOperation.cs:73)
+08-26 18:26:58.769 16482 16565 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation() (at .\Library\Package
+08-26 18:26:59.243 16482 16565 I Unity   : Cache file verification completed in 0.5 seconds.
+08-26 18:26:59.243 16482 16565 I Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+08-26 18:26:59.243 16482 16565 I Unity   : UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+08-26 18:26:59.243 16482 16565 I Unity   : UnityEngine.Logger:Log(LogType, Object)
+08-26 18:26:59.243 16482 16565 I Unity   : UnityEngine.Debug:Log(Object)
+08-26 18:26:59.243 16482 16565 I Unity   : YooAsset.YooLogger:Log(String) (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\Utility\YooLogger.cs:53)
+08-26 18:26:59.243 16482 16565 I Unity   : YooAsset.VerifyCacheFilesOperation:InternalUpdate() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\BundleCache\Services\SandboxBundleCache\Operations\Internal\VerifyCacheFilesOperation.cs:102)
+08-26 18:26:59.243 16482 16565 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\AsyncOperation\AsyncOperationBase.cs:238)
+08-26 18:26:59.243 16482 16565 I Unity   : YooAsset.SBCInitializeOperation:InternalUpdate() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\BundleCache\Services\SandboxBundleCache\Operations\SBCInitializeOperation.cs:73)
+08-26 18:26:59.243 16482 16565 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation() (at
+08-26 18:26:59.278 16482 16565 I Unity   : SetGameState: isLoading: true, mode: UNKNOWN, label: -4, quality: 2
+08-26 18:27:00.200 16482 16565 I Unity   : SetGameState: isLoading: false, mode: UNKNOWN, label: 0, quality: 2
+08-26 18:27:00.234 16482 16565 I Unity   : No tags specified, downloading all required bundles.
+08-26 18:27:00.234 16482 16565 I Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+08-26 18:27:00.234 16482 16565 I Unity   : UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+08-26 18:27:00.234 16482 16565 I Unity   : UnityEngine.Logger:Log(LogType, Object)
+08-26 18:27:00.234 16482 16565 I Unity   : UnityEngine.Debug:Log(Object)
+08-26 18:27:00.234 16482 16565 I Unity   : YooAsset.YooLogger:Log(String) (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\Utility\YooLogger.cs:53)
+08-26 18:27:00.234 16482 16565 I Unity   : YooAsset.FileSystemHost:CreateResourceDownloader(PackageManifest, ResourceDownloaderOptions) (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\ResourcePackage\FileSystemHost.cs:288)
+08-26 18:27:00.234 16482 16565 I Unity   : YooAsset.FileSystemHost:CreateResourceDownloader(ResourceDownloaderOptions) (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\ResourcePackage\FileSystemHost.cs:274)
+08-26 18:27:00.234 16482 16565 I Unity   : YooAsset.ResourcePackage:CreateResourceDownloader(ResourceDownloaderOptions) (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\ResourcePackage\ResourcePackage.cs:928)
+08-26 18:27:00.234 16482 16565 I Unity   : JojoP.AOT.Boot.<DownloadDiffAsync>d__15:MoveNe
+08-26 18:27:00.531 16482 16565 I Unity   : SetGameState: isLoading: true, mode: UNKNOWN, label: 1, quality: 2
+08-26 18:27:00.533 16482 16672 W Unity   : The referenced script (JojoP.Ads.AdsConfig) on this Behaviour is missing!
+08-26 18:27:00.533 16482 16672 W Unity   : The referenced script on this Behaviour (Game Object '<null>') is missing!
+08-26 18:27:00.533 16482 16672 E Unity   : A scripted object (probably JojoP.Ads.AdsConfig?) has a different serialization layout when loading. (Read 44 bytes but expected 192 bytes)
+08-26 18:27:00.533 16482 16672 E Unity   : Did you #if UNITY_EDITOR a section of your serialized properties in any of your scripts?
+08-26 18:27:00.533 16482 16672 W Unity   : The referenced script (JojoP.Backend.BackendConfig) on this Behaviour is missing!
+08-26 18:27:00.533 16482 16672 W Unity   : The referenced script on this Behaviour (Game Object '<null>') is missing!
+08-26 18:27:00.533 16482 16672 E Unity   : A scripted object (probably JojoP.Backend.BackendConfig?) has a different serialization layout when loading. (Read 48 bytes but expected 60 bytes)
+08-26 18:27:00.533 16482 16672 E Unity   : Did you #if UNITY_EDITOR a section of your serialized properties in any of your scripts?
+08-26 18:27:00.533 16482 16672 W Unity   : The referenced script (JojoP.HotUpdate.GameApp) on this Behaviour is missing!
+08-26 18:27:00.533 16482 16672 W Unity   : The referenced script on this Behaviour (Game Object 'GameApp') is missing!
+08-26 18:27:00.534 16482 16672 E Unity   : A scripted object (probably JojoP.HotUpdate.GameApp?) has a different serialization layout when loading. (Read 32 bytes but expected 88 bytes)
+08-26 18:27:00.534 16482 16672 E Unity   : Did you #if UNITY_EDITOR a section of your serialized properties in any of your scripts?
+08-26 18:27:00.691 16482 16565 I Unity   : SetGameState: isLoading: false, mode: UNKNOWN, label: 1, quality: 2
+08-26 18:27:00.693 16482 16565 I Unity   : [JojoP.AOT] 宸插湪 Main 鍒涘缓 GameApp锛堝弽灏勶級
+08-26 18:27:00.693 16482 16565 I Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+08-26 18:27:00.693 16482 16565 I Unity   : UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+08-26 18:27:00.693 16482 16565 I Unity   : UnityEngine.Logger:Log(LogType, Object)
+08-26 18:27:00.693 16482 16565 I Unity   : UnityEngine.Debug:Log(Object)
+08-26 18:27:00.693 16482 16565 I Unity   : JojoP.AOT.AppLauncher:EnsureGameApp() (at E:\Project\JojoP\unity\Assets\AOT\AppLauncher.cs:206)
+08-26 18:27:00.693 16482 16565 I Unity   : JojoP.AOT.<EnterMainAsync>d__20:MoveNext() (at E:\Project\JojoP\unity\Assets\AOT\AppLauncher.cs:182)
+08-26 18:27:00.693 16482 16565 I Unity   : Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask`1:Run() (at .\Library\PackageCache\com.cysharp.unitask@dc216dc4183d\Runtime\CompilerServices\StateMachineRunner.cs:189)
+08-26 18:27:00.693 16482 16565 I Unity   : Cysharp.Threading.Tasks.Internal.ContinuationQueue:RunCore() (at .\Library\PackageCache\com.cysharp.unitask@dc216dc4183d\Runtime\Internal\ContinuationQueue.cs:194)
+08-26 18:27:00.693 16482 16565 I Unity   : Cysharp.Threading.Tasks.Internal.ContinuationQueue:Update() (at .\Library\PackageCache\com.cysharp.unitask@dc216dc4183d\Runtime\Internal\ContinuationQueue.cs:159)
+08-26 18:27:00.693 16482 16565 I Unity   : Cysharp.Threading.Tasks.Internal.ContinuationQueue:Run
+08-26 18:27:00.694 16482 16565 I Unity   : [JojoP.AOT] 宸茶繘鍏?Main锛坈hannel=test锛?
+08-26 18:27:00.694 16482 16565 I Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+08-26 18:27:00.694 16482 16565 I Unity   : UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+08-26 18:27:00.694 16482 16565 I Unity   : UnityEngine.Logger:Log(LogType, Object)
+08-26 18:27:00.694 16482 16565 I Unity   : UnityEngine.Debug:Log(Object)
+08-26 18:27:00.694 16482 16565 I Unity   : JojoP.AOT.<EnterMainAsync>d__20:MoveNext() (at E:\Project\JojoP\unity\Assets\AOT\AppLauncher.cs:183)
+08-26 18:27:00.694 16482 16565 I Unity   : Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask`1:Run() (at .\Library\PackageCache\com.cysharp.unitask@dc216dc4183d\Runtime\CompilerServices\StateMachineRunner.cs:189)
+08-26 18:27:00.694 16482 16565 I Unity   : Cysharp.Threading.Tasks.Internal.ContinuationQueue:RunCore() (at .\Library\PackageCache\com.cysharp.unitask@dc216dc4183d\Runtime\Internal\ContinuationQueue.cs:194)
+08-26 18:27:00.694 16482 16565 I Unity   : Cysharp.Threading.Tasks.Internal.ContinuationQueue:Update() (at .\Library\PackageCache\com.cysharp.unitask@dc216dc4183d\Runtime\Internal\ContinuationQueue.cs:159)
+08-26 18:27:00.694 16482 16565 I Unity   : Cysharp.Threading.Tasks.Internal.ContinuationQueue:Run() (at .\Library\PackageCache\com.cysharp.unitask@dc216dc4183d\Runtime\Internal\ContinuationQueue.cs:1
+08-26 18:27:00.700 16482 16565 I Unity   : SetGameState: isLoading: true, mode: UNKNOWN, label: -4, quality: 2
+08-26 18:27:00.702 16482 16565 I Unity   : SetGameState: isLoading: false, mode: UNKNOWN, label: 1, quality: 2
+08-26 18:27:00.708 16482 16565 W Unity   : [JojoP.Backend] GET /config 澶辫触: Cannot connect to destination host
+08-26 18:27:00.708 16482 16565 W Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+08-26 18:27:00.708 16482 16565 W Unity   : UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+08-26 18:27:00.708 16482 16565 W Unity   : UnityEngine.Logger:Log(LogType, Object)
+08-26 18:27:00.708 16482 16565 W Unity   : UnityEngine.Debug:LogWarning(Object)
+08-26 18:27:00.708 16482 16565 W Unity   : System.Runtime.CompilerServices.MoveNextRunner:InvokeMoveNext(Object)
+08-26 18:27:00.708 16482 16565 W Unity   : System.Threading.ExecutionContext:RunInternal(ExecutionContext, ContextCallback, Object, Boolean)
+08-26 18:27:00.708 16482 16565 W Unity   : System.Threading.ExecutionContext:Run(ExecutionContext, ContextCallback, Object, Boolean)
+08-26 18:27:00.708 16482 16565 W Unity   : System.Runtime.CompilerServices.MoveNextRunner:Run()
+08-26 18:27:00.708 16482 16565 W Unity   : System.Runtime.CompilerServices.YieldAwaiter:RunAction(Object)
+08-26 18:27:00.708 16482 16565 W Unity   : UnityEngine.WorkRequest:Invoke() (at \home\bokken\build\output\unity\unity\Runtime\Export\Scripting\UnitySynchronizationContext.cs:156)
+08-26 18:27:00.708 16482 16565 W Unity   : UnityEngine.UnitySynchronizationContext:Exec() (at \home\bokken\build\output\unity\unity\Runtime\Export\Scripting\UnitySynchronizationContext.cs:84)
+08-26 18:27:00.708 16482 16565 W Unity   : UnityEngine.UnitySynchronizationContext:ExecuteTasks() (at \home\b
+08-26 18:27:00.709 16482 16565 I Unity   : [JojoP.Ads] Mock 骞垮憡宸插垵濮嬪寲
+08-26 18:27:00.709 16482 16565 I Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+08-26 18:27:00.709 16482 16565 I Unity   : UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+08-26 18:27:00.709 16482 16565 I Unity   : UnityEngine.Logger:Log(LogType, Object)
+08-26 18:27:00.709 16482 16565 I Unity   : UnityEngine.Debug:Log(Object)
+08-26 18:27:00.709 16482 16565 I Unity   : System.Runtime.CompilerServices.MoveNextRunner:InvokeMoveNext(Object)
+08-26 18:27:00.709 16482 16565 I Unity   : System.Threading.ExecutionContext:RunInternal(ExecutionContext, ContextCallback, Object, Boolean)
+08-26 18:27:00.709 16482 16565 I Unity   : System.Threading.ExecutionContext:Run(ExecutionContext, ContextCallback, Object, Boolean)
+08-26 18:27:00.709 16482 16565 I Unity   : System.Runtime.CompilerServices.MoveNextRunner:Run()
+08-26 18:27:00.709 16482 16565 I Unity   : System.Threading.Tasks.AwaitTaskContinuation:InvokeAction(Object)
+08-26 18:27:00.709 16482 16565 I Unity   : System.Threading.Tasks.AwaitTaskContinuation:RunCallback(ContextCallback, Object, Task&)
+08-26 18:27:00.709 16482 16565 I Unity   : System.Threading.Tasks.SynchronizationContextAwaitTaskContinuation:Run(Task, Boolean)
+08-26 18:27:00.709 16482 16565 I Unity   : System.Threading.Tasks.Task:FinishContinuations()
+08-26 18:27:00.709 16482 16565 I Unity   : System.Threading.Tasks.Task:FinishStageThree()
+08-26 18:27:00.709 16482 16565 I Unity   : System.Threading.Tasks.Task`1:TrySetResult(RemoteGameConfig)
+08-26 18:27:00.709 16482 16565 I Unity   : System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1:
+08-26 18:27:00.718 16482 16565 I Unity   : SetGameState: isLoading: true, mode: UNKNOWN, label: -4, quality: 2
+08-26 18:27:00.721 16482 16565 I Unity   : SetGameState: isLoading: false, mode: UNKNOWN, label: 1, quality: 2
+08-26 18:27:00.722 16482 16565 W Unity   : [JojoP.Backend] GET /save 澶辫触: Cannot connect to destination host
+08-26 18:27:00.722 16482 16565 W Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+08-26 18:27:00.722 16482 16565 W Unity   : UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+08-26 18:27:00.722 16482 16565 W Unity   : UnityEngine.Logger:Log(LogType, Object)
+08-26 18:27:00.722 16482 16565 W Unity   : UnityEngine.Debug:LogWarning(Object)
+08-26 18:27:00.722 16482 16565 W Unity   : System.Runtime.CompilerServices.MoveNextRunner:InvokeMoveNext(Object)
+08-26 18:27:00.722 16482 16565 W Unity   : System.Threading.ExecutionContext:RunInternal(ExecutionContext, ContextCallback, Object, Boolean)
+08-26 18:27:00.722 16482 16565 W Unity   : System.Threading.ExecutionContext:Run(ExecutionContext, ContextCallback, Object, Boolean)
+08-26 18:27:00.722 16482 16565 W Unity   : System.Runtime.CompilerServices.MoveNextRunner:Run()
+08-26 18:27:00.722 16482 16565 W Unity   : System.Runtime.CompilerServices.YieldAwaiter:RunAction(Object)
+08-26 18:27:00.722 16482 16565 W Unity   : UnityEngine.WorkRequest:Invoke() (at \home\bokken\build\output\unity\unity\Runtime\Export\Scripting\UnitySynchronizationContext.cs:156)
+08-26 18:27:00.722 16482 16565 W Unity   : UnityEngine.UnitySynchronizationContext:Exec() (at \home\bokken\build\output\unity\unity\Runtime\Export\Scripting\UnitySynchronizationContext.cs:84)
+08-26 18:27:00.722 16482 16565 W Unity   : UnityEngine.UnitySynchronizationContext:ExecuteTasks() (at \home\bok
+08-26 18:27:00.724 16482 16565 I Unity   : SetGameState: isLoading: true, mode: UNKNOWN, label: -4, quality: 2
+08-26 18:27:00.728 16482 16565 I Unity   : SetGameState: isLoading: false, mode: UNKNOWN, label: 1, quality: 2
+08-26 18:27:00.729 16482 16565 W Unity   : [JojoP.Backend] PUT /save 澶辫触: Cannot connect to destination host
+08-26 18:27:00.729 16482 16565 W Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+08-26 18:27:00.729 16482 16565 W Unity   : UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+08-26 18:27:00.729 16482 16565 W Unity   : UnityEngine.Logger:Log(LogType, Object)
+08-26 18:27:00.729 16482 16565 W Unity   : UnityEngine.Debug:LogWarning(Object)
+08-26 18:27:00.729 16482 16565 W Unity   : System.Runtime.CompilerServices.MoveNextRunner:InvokeMoveNext(Object)
+08-26 18:27:00.729 16482 16565 W Unity   : System.Threading.ExecutionContext:RunInternal(ExecutionContext, ContextCallback, Object, Boolean)
+08-26 18:27:00.729 16482 16565 W Unity   : System.Threading.ExecutionContext:Run(ExecutionContext, ContextCallback, Object, Boolean)
+08-26 18:27:00.729 16482 16565 W Unity   : System.Runtime.CompilerServices.MoveNextRunner:Run()
+08-26 18:27:00.729 16482 16565 W Unity   : System.Runtime.CompilerServices.YieldAwaiter:RunAction(Object)
+08-26 18:27:00.729 16482 16565 W Unity   : UnityEngine.WorkRequest:Invoke() (at \home\bokken\build\output\unity\unity\Runtime\Export\Scripting\UnitySynchronizationContext.cs:156)
+08-26 18:27:00.729 16482 16565 W Unity   : UnityEngine.UnitySynchronizationContext:Exec() (at \home\bokken\build\output\unity\unity\Runtime\Export\Scripting\UnitySynchronizationContext.cs:84)
+08-26 18:27:00.729 16482 16565 W Unity   : UnityEngine.UnitySynchronizationContext:ExecuteTasks() (at \home\bok

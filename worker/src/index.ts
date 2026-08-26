@@ -11,17 +11,17 @@ const DEFAULT_CONFIG = {
   interstitialEveryNRetries: 2,
 };
 
-const CORS: HeadersInit = {
+const JSON_CORS: HeadersInit = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "GET, PUT, OPTIONS",
-  "Access-Control-Allow-Headers": "Content-Type",
+  "Access-Control-Allow-Headers": "Content-Type, Authorization",
   "Content-Type": "application/json; charset=utf-8",
 };
 
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     if (request.method === "OPTIONS") {
-      return new Response(null, { status: 204, headers: CORS });
+      return new Response(null, { status: 204, headers: JSON_CORS });
     }
 
     const url = new URL(request.url);
@@ -33,7 +33,10 @@ export default {
       }
 
       if (path === "/health" && request.method === "GET") {
-        return json({ ok: true, env: env.ENVIRONMENT ?? "unknown" });
+        return json({
+          ok: true,
+          env: env.ENVIRONMENT ?? "unknown",
+        });
       }
 
       const saveMatch = path.match(/^\/save\/([^/]+)$/);
@@ -54,7 +57,7 @@ export default {
 
       return json({ error: "not found" }, 404);
     } catch (err) {
-      const message = err instanceof Error ? err.message : "unknown error";
+      const message = err instanceof Error ? err.message : "unknown";
       return json({ error: message }, 500);
     }
   },
@@ -80,7 +83,7 @@ async function handleGetSave(env: Env, deviceId: string): Promise<Response> {
   if (!raw) {
     return json({ error: "not found" }, 404);
   }
-  return new Response(raw, { status: 200, headers: CORS });
+  return new Response(raw, { status: 200, headers: JSON_CORS });
 }
 
 async function handlePutSave(env: Env, deviceId: string, request: Request): Promise<Response> {
@@ -108,5 +111,5 @@ function isSafeDeviceId(id: string): boolean {
 }
 
 function json(data: unknown, status = 200): Response {
-  return new Response(JSON.stringify(data), { status, headers: CORS });
+  return new Response(JSON.stringify(data), { status, headers: JSON_CORS });
 }
