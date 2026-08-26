@@ -81,7 +81,7 @@ namespace JojoP.EditorTools
             var high = new RunState();
             high.Bootstrap(ChapterId.High, meta);
             Require(TimelineCatalog.Current(high)?.Id == "economy_zone_2013",
-                "High school should begin at the 2013 development-zone milestone");
+                "High school should begin at the 2013 internet-cafe milestone");
             Require(TimelineCatalog.EncounterWeightMultiplier("todo_shitbro", high) > 1f,
                 "2013 industry milestone should boost mechanical encounters");
 

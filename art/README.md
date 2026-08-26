@@ -10,7 +10,44 @@
 | 战场动作 | 总图里「游戏内动作」**按姿势单独裁**，去掉中文标签 | `SpriteRenderer` 切帧 |
 
 **不要**把带「待机/移动/攻击」字样的整块动作区丢进 `battle_loc`。  
-**不要**用 AI 视频当战斗循环。Idle 最多做轻微上下浮动；Mesh deform 以后只考虑待机；Spine 只给图鉴。
+**不要**用 AI 视频当战斗循环。有 `idle_1..n` 就播序列；只有一帧时待机才轻微上下浮动。Spine 只给图鉴。
+
+## 三视图 → 战斗帧（默认 MiniMax）
+
+OpenAI `gpt-image-2` 免费档不能出图，战斗帧先走 **MiniMax image-01** 把目录、切帧、导入跑通。画风会和 GPT 大底有差，额度够了再把 `POSE_PROVIDER=openai`。
+
+落地锁 **512×512**，脚在 `ground_frac=0.12`。MiniMax **不补间**：永远拿 `lock_ref` 当 `subject_reference`，prompt 只写动作，一次出 3 张候选人审，每动作只留 `_1.png`。不要拿生成图再生成。
+
+```powershell
+python art/tools/minimax_pose.py gen --who lixin --poses idle
+# 看 art/pose/.cache/lixin/_cand_idle_1.png … 选一张
+python art/tools/minimax_pose.py pack --who lixin --poses idle --cand 2
+python art/tools/minimax_pose.py import --who lixin
+```
+
+### 你要填什么
+
+`art/voice/secrets.env`（已 gitignore）：
+
+```
+MINIMAX_API_KEY=...
+MINIMAX_GROUP_ID=...
+POSE_PROVIDER=minimax
+```
+
+```powershell
+python art/tools/minimax_pose.py lock --who lixin
+python art/tools/minimax_pose.py gen --who lixin --poses idle
+python art/tools/minimax_pose.py import --who lixin
+```
+
+缓存：`art/pose/.cache/lixin/_key_idle.png`、`_raw_idle_1.png` … 再铺成 `idle_1.png`。缩放以 **key 帧** 为准，脚踩同一条地平线。
+
+已有 raw 可只重铺：
+
+```powershell
+python art/tools/minimax_pose.py pack --who lixin --poses idle
+```
 
 ## 战场 2D 文件约定
 
@@ -19,12 +56,15 @@
 ```text
 Assets/Bundle/Role/{id}/
   avatar.png  half.png  poster.png  banner.png
-  battle/idle.png  walk.png  atk.png  hurt.png  dead.png  fallback.png
+  battle/idle_1.png idle_2.png idle_3.png
+         walk_1.png walk_2.png walk_3.png
+         atk_1.png atk_2.png atk_3.png
+         skill_1.png hurt_1.png dead_1.png fallback.png
 ```
 
-旧路径 `Role/大头贴/`、`Role/battle/role_*_battle_*.png` 仍作回落。
+仍识别旧的单帧 `idle.png` / `walk.png`（总图裁切那套）。`RoleArtLoader` 先找 `clip_1..8`，没有再回落单帧。
 
-运行时 `RoleArtLoader.LoadBattleSet` 读新目录再读旧后缀，`BattlePoseDriver` 按走/打/受击换图。
+旧路径 `Role/大头贴/`、`Role/battle/role_*_battle_*.png` 仍作回落。
 
 ## 你要不要装别的 AI / ffmpeg？
 

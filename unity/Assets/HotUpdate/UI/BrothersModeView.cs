@@ -21,6 +21,27 @@ namespace JojoP.UI
         GameObject _archivePanel;
         GameObject _trainPanel;
         Text _metaText;
+        Text _trainHint;
+        StatRadarGraphic _radar;
+        RectTransform _radarRoot;
+        Image _radarDimmer;
+        GameObject _radarLayer;
+        bool _radarExpanded;
+        Coroutine _slideCo;
+        Coroutine _radarCo;
+        Text _statLine;
+        readonly float[] _radarInner = new float[HeroStatPreview.Axes];
+        readonly float[] _radarOuter = new float[HeroStatPreview.Axes];
+        Button _btnPotHp;
+        Button _btnPotAtk;
+        Button _btnPotDef;
+        Button _btnHeal;
+        Button _heroPotHp;
+        Button _heroPotAtk;
+        Button _heroPotDef;
+        Button _btnHubBack;
+        Button _btnBattleBack;
+        Button _btnOverlayBack;
         Text _chapterText;
         Text _battleInfo;
         Text _overlayTitle;
@@ -124,7 +145,7 @@ namespace JojoP.UI
             BrothersUiUtil.MakePanel(_hub.transform, "HubBg", new Vector2(1080, 1920), Vector2.zero,
                 new Color(0.12f, 0.11f, 0.09f, 0.55f));
 
-            var title = BrothersUiUtil.MakeText(_hub.transform, "Title", "JojoP", 56, new Vector2(0, 880), new Vector2(960, 72));
+            var title = BrothersUiUtil.MakeText(_hub.transform, "Title", "JojoP", 48, new Vector2(0, 900), new Vector2(960, 56));
             title.color = BrothersUiUtil.Parchment;
 
             _pageHero = new GameObject("PageHero", typeof(RectTransform));
@@ -136,99 +157,266 @@ namespace JojoP.UI
             FitPage(_pageStage.GetComponent<RectTransform>());
             _pageStage.SetActive(false);
 
-            var strip = BrothersUiUtil.MakeHScroll(_pageHero.transform, "HeroStrip", new Vector2(0, 730), new Vector2(1040, 170));
+            var strip = BrothersUiUtil.MakeHScroll(_pageHero.transform, "HeroStrip", new Vector2(0, 660), new Vector2(1040, 160));
             _archivePanel = strip.gameObject;
-            _archiveHint = BrothersUiUtil.MakeText(_pageHero.transform, "StripHint", "左右滑选人", 20,
-                new Vector2(0, 620), new Vector2(900, 32));
+            _archiveHint = BrothersUiUtil.MakeText(_pageHero.transform, "StripHint", "左右滑选人 · 蓝=初始 绿=培养", 20,
+                new Vector2(0, 555), new Vector2(900, 32));
             _archiveHint.color = new Color(0.72f, 0.68f, 0.58f);
 
-            var posePanel = BrothersUiUtil.MakePanel(_pageHero.transform, "PoseStage", new Vector2(460, 620),
-                new Vector2(-250, 40), new Color(0.08f, 0.07f, 0.06f, 0.94f));
-            _poseImage = BrothersUiUtil.MakePortrait(posePanel.transform, "Pose", new Vector2(0, 10), new Vector2(420, 560),
+            var posePanel = BrothersUiUtil.MakePanel(_pageHero.transform, "PoseStage", new Vector2(460, 560),
+                new Vector2(-250, 50), new Color(0.08f, 0.07f, 0.06f, 0.94f));
+            _poseImage = BrothersUiUtil.MakePortrait(posePanel.transform, "Pose", new Vector2(0, 16), new Vector2(420, 500),
                 null, new Color(0.18f, 0.16f, 0.14f));
             _posePreview = posePanel.gameObject.AddComponent<HeroPosePreview>();
             _posePreview.Bind(_poseImage);
-            var poseTip = BrothersUiUtil.MakeText(posePanel.transform, "PoseTip", "idle / atk", 18, new Vector2(0, -280), new Vector2(400, 28));
+            var poseTip = BrothersUiUtil.MakeText(posePanel.transform, "PoseTip", "idle / atk", 18, new Vector2(0, -252), new Vector2(400, 28));
             poseTip.color = new Color(0.65f, 0.6f, 0.5f);
 
-            var infoPanel = BrothersUiUtil.MakePanel(_pageHero.transform, "HeroInfo", new Vector2(500, 620),
-                new Vector2(270, 40), new Color(0.10f, 0.09f, 0.08f, 0.94f));
-            _detailName = BrothersUiUtil.MakeText(infoPanel.transform, "Name", "", 36, new Vector2(0, 270), new Vector2(460, 48));
+            var infoPanel = BrothersUiUtil.MakePanel(_pageHero.transform, "HeroInfo", new Vector2(500, 560),
+                new Vector2(270, 50), new Color(0.10f, 0.09f, 0.08f, 0.94f));
+            infoPanel.gameObject.AddComponent<RectMask2D>();
+            _detailName = BrothersUiUtil.MakeText(infoPanel.transform, "Name", "", 32, new Vector2(0, 248), new Vector2(460, 40));
+            _detailName.alignment = TextAnchor.MiddleCenter;
             _detailName.color = BrothersUiUtil.Parchment;
-            _detailHint = BrothersUiUtil.MakeText(infoPanel.transform, "Body", "", 22, new Vector2(0, -30), new Vector2(460, 520));
+
+            _detailHint = BrothersUiUtil.MakeText(infoPanel.transform, "Body", "", 20, new Vector2(0, -20), new Vector2(460, 460));
             _detailHint.alignment = TextAnchor.UpperLeft;
+            _detailHint.horizontalOverflow = HorizontalWrapMode.Wrap;
+            _detailHint.verticalOverflow = VerticalWrapMode.Truncate;
             _detailHint.color = new Color(0.9f, 0.85f, 0.72f);
 
-            _detailSelect = BrothersUiUtil.MakeButton(_pageHero.transform, "Select", "以此出征", new Vector2(0, -360), new Vector2(480, 96),
+            _detailSelect = BrothersUiUtil.MakeButton(_pageHero.transform, "Select", "以此出征", new Vector2(0, -500), new Vector2(480, 88),
                 BrothersUiUtil.AccentGreen);
             _detailSelect.onClick.AddListener(OnConfirmHero);
 
             BuildHeroPicker();
 
-            _trainPanel = BrothersUiUtil.MakePanel(_pageStage.transform, "TrainCard", new Vector2(980, 160), new Vector2(0, 620),
-                BrothersUiUtil.PanelDark).gameObject;
-            _metaText = BrothersUiUtil.MakeText(_trainPanel.transform, "Meta", "", 24, Vector2.zero, new Vector2(920, 140));
+            var chrome = BrothersUiUtil.MakePanel(_hub.transform, "HubChrome", new Vector2(1040, 88), new Vector2(0, 818),
+                new Color(0.08f, 0.08f, 0.1f, 0.92f));
+            _btnHubBack = BrothersUiUtil.MakeButton(chrome.transform, "Back", "返回", new Vector2(-430, 0), new Vector2(140, 64),
+                new Color(0.32f, 0.32f, 0.36f));
+            _btnHubBack.onClick.AddListener(OnHubBack);
+            _metaText = BrothersUiUtil.MakeText(chrome.transform, "Meta", "", 22, new Vector2(80, 0), new Vector2(820, 80));
             _metaText.alignment = TextAnchor.MiddleLeft;
             _metaText.color = BrothersUiUtil.Parchment;
+            chrome.transform.SetAsLastSibling();
+            BuildRadarOverlay();
 
-            _chapterText = BrothersUiUtil.MakeText(_pageStage.transform, "Node", "小学 · 小1 · 上学期", 30, new Vector2(0, 430), new Vector2(900, 90));
+            _trainPanel = BrothersUiUtil.MakePanel(_pageStage.transform, "TrainCard", new Vector2(980, 110), new Vector2(0, 620),
+                BrothersUiUtil.PanelDark).gameObject;
+            _trainHint = BrothersUiUtil.MakeText(_trainPanel.transform, "TrainHint", "", 24, Vector2.zero, new Vector2(920, 90));
+            _trainHint.alignment = TextAnchor.MiddleLeft;
+            _trainHint.color = BrothersUiUtil.Parchment;
+
+            _chapterText = BrothersUiUtil.MakeText(_pageStage.transform, "Node", "小学 · 小1 · 上学期", 30, new Vector2(0, 480), new Vector2(900, 90));
             _chapterText.color = new Color(0.9f, 0.85f, 0.7f);
             var stageLock = BrothersUiUtil.MakeText(_pageStage.transform, "StageLock",
-                "关卡随波次自动推进，当前不可手选", 22, new Vector2(0, 360), new Vector2(880, 40));
+                "关卡随波次自动推进，当前不可手选", 22, new Vector2(0, 410), new Vector2(880, 40));
             stageLock.color = new Color(0.72f, 0.68f, 0.58f);
 
-            var start = BrothersUiUtil.MakeButton(_pageStage.transform, "BtnStart", "开始", new Vector2(0, 220), new Vector2(520, 110),
+            var start = BrothersUiUtil.MakeButton(_pageStage.transform, "BtnStart", "开始", new Vector2(0, 270), new Vector2(520, 110),
                 BrothersUiUtil.AccentGreen);
             start.onClick.AddListener(OnStartRun);
 
-            var potHp = BrothersUiUtil.MakeButton(_pageStage.transform, "BtnPotHp", "潜力生命 3点", new Vector2(-220, 80), new Vector2(280, 66),
+            _btnPotHp = BrothersUiUtil.MakeButton(_pageStage.transform, "BtnPotHp", "潜力生命 3点", new Vector2(-280, 130), new Vector2(260, 66),
                 new Color(0.28f, 0.45f, 0.55f));
-            potHp.onClick.AddListener(() =>
-            {
-                _session?.Meta.TryBuyPotentialHp();
-                RefreshHubTexts();
-            });
-            var potAtk = BrothersUiUtil.MakeButton(_pageStage.transform, "BtnPotAtk", "潜力攻击 3点", new Vector2(220, 80), new Vector2(280, 66),
+            _btnPotHp.onClick.AddListener(() => SpendPotential(m => m.TryBuyPotentialHp()));
+            _btnPotAtk = BrothersUiUtil.MakeButton(_pageStage.transform, "BtnPotAtk", "潜力攻击 3点", new Vector2(0, 130), new Vector2(260, 66),
                 new Color(0.55f, 0.32f, 0.28f));
-            potAtk.onClick.AddListener(() =>
-            {
-                _session?.Meta.TryBuyPotentialAtk();
-                RefreshHubTexts();
-            });
-            var heal = BrothersUiUtil.MakeButton(_pageStage.transform, "BtnHeal", "养伤缩短 5点", new Vector2(0, -10), new Vector2(360, 66),
+            _btnPotAtk.onClick.AddListener(() => SpendPotential(m => m.TryBuyPotentialAtk()));
+            _btnPotDef = BrothersUiUtil.MakeButton(_pageStage.transform, "BtnPotDef", "潜力防御 3点", new Vector2(280, 130), new Vector2(260, 66),
+                new Color(0.32f, 0.4f, 0.52f));
+            _btnPotDef.onClick.AddListener(() => SpendPotential(m => m.TryBuyPotentialDef()));
+            _btnHeal = BrothersUiUtil.MakeButton(_pageStage.transform, "BtnHeal", "养伤缩短 5点", new Vector2(0, 40), new Vector2(360, 66),
                 new Color(0.35f, 0.5f, 0.35f));
-            heal.onClick.AddListener(() =>
-            {
-                _session?.Meta.TryBuyHealTier();
-                RefreshHubTexts();
-            });
+            _btnHeal.onClick.AddListener(() => SpendPotential(m => m.TryBuyHealTier()));
 
-            var adSta = BrothersUiUtil.MakeButton(_pageStage.transform, "BtnAdSta", "广告+体力", new Vector2(-220, -110), new Vector2(280, 66),
+            var adSta = BrothersUiUtil.MakeButton(_pageStage.transform, "BtnAdSta", "广告+体力", new Vector2(-220, -50), new Vector2(280, 66),
                 BrothersUiUtil.AccentOrange);
             adSta.onClick.AddListener(() => _onRewardedAd?.Invoke(() =>
             {
                 _session?.Meta.AddStamina(2);
                 RefreshHubTexts();
             }));
-            var adTrain = BrothersUiUtil.MakeButton(_pageStage.transform, "BtnAdTrain", "广告+培养点", new Vector2(220, -110), new Vector2(280, 66),
+            var adTrain = BrothersUiUtil.MakeButton(_pageStage.transform, "BtnAdTrain", "广告+培养点", new Vector2(220, -50), new Vector2(280, 66),
                 BrothersUiUtil.AccentOrange);
             adTrain.onClick.AddListener(() => _onRewardedAd?.Invoke(() =>
             {
                 _session?.Meta.AddTrain(3);
                 RefreshHubTexts();
             }));
+        }
 
-            var backHero = BrothersUiUtil.MakeButton(_pageStage.transform, "BtnBackHero", "重选英雄", new Vector2(0, -220), new Vector2(360, 66),
-                new Color(0.32f, 0.3f, 0.28f));
-            backHero.onClick.AddListener(() => ShowHubPage(stage: false, animate: true));
+        void BuildRadarOverlay()
+        {
+            _radarLayer = new GameObject("RadarLayer", typeof(RectTransform));
+            _radarLayer.transform.SetParent(_hub.transform, false);
+            BrothersUiUtil.Stretch(_radarLayer.GetComponent<RectTransform>());
 
-            var home = BrothersUiUtil.MakeButton(_pageStage.transform, "BtnBack", "返回主界面", new Vector2(0, -320), new Vector2(360, 66),
-                new Color(0.35f, 0.35f, 0.4f));
-            home.onClick.AddListener(() => _onHome?.Invoke());
+            var dimmerGo = new GameObject("RadarDimmer", typeof(RectTransform), typeof(Image), typeof(Button));
+            dimmerGo.transform.SetParent(_radarLayer.transform, false);
+            BrothersUiUtil.Stretch(dimmerGo.GetComponent<RectTransform>());
+            _radarDimmer = dimmerGo.GetComponent<Image>();
+            _radarDimmer.color = new Color(0f, 0f, 0f, 0.82f);
+            _radarDimmer.raycastTarget = true;
+            var dimBtn = dimmerGo.GetComponent<Button>();
+            dimBtn.transition = Selectable.Transition.None;
+            dimBtn.navigation = new Navigation { mode = Navigation.Mode.None };
+            dimBtn.onClick.AddListener(() => SetRadarExpanded(false));
+            dimmerGo.SetActive(false);
 
-            var homeHero = BrothersUiUtil.MakeButton(_pageHero.transform, "BtnBackMenu", "返回主界面", new Vector2(0, -480), new Vector2(360, 66),
-                new Color(0.35f, 0.35f, 0.4f));
-            homeHero.onClick.AddListener(() => _onHome?.Invoke());
+            var radarHost = new GameObject("RadarHost", typeof(RectTransform));
+            radarHost.transform.SetParent(_radarLayer.transform, false);
+            _radarRoot = radarHost.GetComponent<RectTransform>();
+            _radarRoot.anchorMin = _radarRoot.anchorMax = new Vector2(0.5f, 0.5f);
+            _radarRoot.pivot = new Vector2(0.5f, 0.5f);
+            ApplyRadarCollapsed(instant: true);
+
+            var radarGo = new GameObject("Radar", typeof(RectTransform), typeof(CanvasRenderer), typeof(StatRadarGraphic), typeof(Button));
+            radarGo.transform.SetParent(radarHost.transform, false);
+            var radarRt = radarGo.GetComponent<RectTransform>();
+            radarRt.anchorMin = radarRt.anchorMax = new Vector2(0.5f, 0.5f);
+            radarRt.pivot = new Vector2(0.5f, 0.5f);
+            BrothersUiUtil.Stretch(radarRt);
+            _radar = radarGo.GetComponent<StatRadarGraphic>();
+            _radar.color = Color.white;
+            _radar.raycastTarget = true;
+            _radar.EnsureLabels(HeroStatPreview.AxisNames);
+            var radarBtn = radarGo.GetComponent<Button>();
+            radarBtn.transition = Selectable.Transition.None;
+            radarBtn.navigation = new Navigation { mode = Navigation.Mode.None };
+            radarBtn.onClick.AddListener(OnRadarClicked);
+
+            _heroPotHp = BrothersUiUtil.MakePlus(radarHost.transform, "PlusHp", BrothersUiUtil.PlusOrange);
+            _heroPotHp.onClick.AddListener(() => SpendPotential(m => m.TryBuyPotentialHp()));
+            _heroPotAtk = BrothersUiUtil.MakePlus(radarHost.transform, "PlusAtk", BrothersUiUtil.PlusOrange);
+            _heroPotAtk.onClick.AddListener(() => SpendPotential(m => m.TryBuyPotentialAtk()));
+            _heroPotDef = BrothersUiUtil.MakePlus(radarHost.transform, "PlusDef", BrothersUiUtil.PlusOrange);
+            _heroPotDef.onClick.AddListener(() => SpendPotential(m => m.TryBuyPotentialDef()));
+
+            _statLine = BrothersUiUtil.MakeText(radarHost.transform, "Stats", "", 22, new Vector2(0, -230), new Vector2(420, 140));
+            _statLine.alignment = TextAnchor.UpperCenter;
+            _statLine.supportRichText = true;
+            _statLine.raycastTarget = false;
+            _statLine.color = new Color(0.92f, 0.88f, 0.76f);
+            _statLine.gameObject.SetActive(false);
+
+            LayoutRadarPluses();
+            SetRadarPlusesVisible(false);
+            _radarLayer.transform.SetAsLastSibling();
+        }
+
+        void SpendPotential(Func<MetaProgress, bool> buy)
+        {
+            if (_session?.Meta == null || buy == null) return;
+            buy(_session.Meta);
+            RefreshHubTexts();
+        }
+
+        void OnHubBack()
+        {
+            if (_pageStage != null && _pageStage.activeSelf)
+            {
+                SetRadarExpanded(false, instant: true);
+                ShowHubPage(stage: false, animate: true);
+                return;
+            }
+
+            _onHome?.Invoke();
+        }
+
+        static readonly Vector2 RadarCollapsedPos = new Vector2(430, 250);
+        static readonly Vector2 RadarCollapsedSize = new Vector2(180, 180);
+        static readonly Vector2 RadarExpandedPos = new Vector2(0, 40);
+        static readonly Vector2 RadarExpandedSize = new Vector2(420, 560);
+
+        void OnRadarClicked()
+        {
+            SetRadarExpanded(!_radarExpanded);
+        }
+
+        void SetRadarExpanded(bool on, bool instant = false)
+        {
+            _radarExpanded = on;
+            if (_radarDimmer != null)
+                _radarDimmer.gameObject.SetActive(on);
+            if (_statLine != null)
+                _statLine.gameObject.SetActive(on);
+            SetRadarPlusesVisible(on);
+            if (_radarLayer != null)
+                _radarLayer.transform.SetAsLastSibling();
+            if (_radarRoot != null)
+                _radarRoot.SetAsLastSibling();
+
+            if (_radarCo != null)
+            {
+                StopCoroutine(_radarCo);
+                _radarCo = null;
+            }
+
+            if (instant || !isActiveAndEnabled)
+            {
+                ApplyRadarPose(on);
+                return;
+            }
+
+            _radarCo = StartCoroutine(AnimateRadar(on));
+        }
+
+        void ApplyRadarCollapsed(bool instant) => SetRadarExpanded(false, instant);
+
+        void ApplyRadarPose(bool expanded)
+        {
+            if (_radarRoot == null) return;
+            _radarRoot.sizeDelta = expanded ? RadarExpandedSize : RadarCollapsedSize;
+            _radarRoot.anchoredPosition = expanded ? RadarExpandedPos : RadarCollapsedPos;
+            LayoutRadarPluses();
+        }
+
+        IEnumerator AnimateRadar(bool expanded)
+        {
+            if (_radarRoot == null) yield break;
+            Vector2 fromPos = _radarRoot.anchoredPosition;
+            Vector2 fromSize = _radarRoot.sizeDelta;
+            Vector2 toPos = expanded ? RadarExpandedPos : RadarCollapsedPos;
+            Vector2 toSize = expanded ? RadarExpandedSize : RadarCollapsedSize;
+            const float dur = 0.22f;
+            float t = 0f;
+            while (t < dur)
+            {
+                t += Time.unscaledDeltaTime;
+                float k = Mathf.SmoothStep(0f, 1f, t / dur);
+                _radarRoot.anchoredPosition = Vector2.Lerp(fromPos, toPos, k);
+                _radarRoot.sizeDelta = Vector2.Lerp(fromSize, toSize, k);
+                LayoutRadarPluses();
+                yield return null;
+            }
+
+            ApplyRadarPose(expanded);
+            _radarCo = null;
+        }
+
+        void LayoutRadarPluses()
+        {
+            PlacePlus(_heroPotHp, 0);
+            PlacePlus(_heroPotAtk, 1);
+            PlacePlus(_heroPotDef, 2);
+        }
+
+        void PlacePlus(Button btn, int axis)
+        {
+            if (btn == null || _radar == null) return;
+            Vector2 radial = StatRadarGraphic.AxisDir(axis);
+            Vector2 tangent = new Vector2(-radial.y, radial.x);
+            btn.GetComponent<RectTransform>().anchoredPosition =
+                _radar.VertexLocal(axis, 82f) + tangent * 18f;
+        }
+
+        void SetRadarPlusesVisible(bool on)
+        {
+            if (_heroPotHp != null) _heroPotHp.gameObject.SetActive(on);
+            if (_heroPotAtk != null) _heroPotAtk.gameObject.SetActive(on);
+            if (_heroPotDef != null) _heroPotDef.gameObject.SetActive(on);
         }
 
         void BuildHeroPicker()
@@ -267,7 +455,11 @@ namespace JojoP.UI
             }
         }
 
-        void OnPickHero(string roleId) => FocusHero(roleId);
+        void OnPickHero(string roleId)
+        {
+            SetRadarExpanded(false);
+            FocusHero(roleId);
+        }
 
         void FocusHero(string roleId)
         {
@@ -275,8 +467,7 @@ namespace JojoP.UI
             var role = RoleCatalog.FindRole(roleId);
             if (role == null) return;
             _detailRoleId = roleId;
-            if (_detailName != null) _detailName.text = role.Name;
-            if (_detailHint != null) _detailHint.text = HeroDossier.Body(role, _session.Meta);
+            ApplyHeroDetail(role);
             bool can = HeroUnlock.CanSelect(roleId, _session.Meta);
             if (_detailSelect != null)
             {
@@ -293,10 +484,30 @@ namespace JojoP.UI
             RefreshHeroPicker();
         }
 
+        void ApplyHeroDetail(RoleList role)
+        {
+            if (role == null || _session?.Meta == null) return;
+            if (_detailName != null) _detailName.text = role.Name;
+            if (_statLine != null)
+            {
+                _statLine.supportRichText = true;
+                _statLine.text = HeroStatPreview.StatLines(role, _session.Meta);
+            }
+
+            if (_radar != null)
+            {
+                HeroStatPreview.FillRadar(role, _session.Meta, _radarInner, _radarOuter);
+                _radar.SetValues(_radarInner, _radarOuter);
+            }
+
+            if (_detailHint != null) _detailHint.text = HeroDossier.Body(role, _session.Meta);
+        }
+
         void OnConfirmHero()
         {
             if (_session?.Meta == null || string.IsNullOrEmpty(_detailRoleId)) return;
             if (!_session.Meta.TrySelectHero(_detailRoleId)) return;
+            SetRadarExpanded(false, instant: true);
             RefreshHeroPicker();
             ShowHubPage(stage: true, animate: true);
         }
@@ -330,13 +541,15 @@ namespace JojoP.UI
             {
                 _archiveHint.text = focusedRole != null
                     ? (HeroUnlock.IsUnlocked(focusedRole, meta)
-                        ? $"当前：{focusedRole.Name} · idle / atk 轮播"
-                        : $"未解锁：{focusedRole.Name}")
-                    : "左右滑选人 · 未解锁也能看条件和动作";
+                        ? $"当前：{focusedRole.Name} · 蓝初始 / 绿培养"
+                        : $"未解锁：{focusedRole.Name} · 蓝初始 / 绿培养")
+                    : "左右滑选人 · 蓝=初始 绿=培养";
             }
 
             if (string.IsNullOrEmpty(_detailRoleId) && focusedRole != null)
                 FocusHero(focusedRole.Id);
+            else if (focusedRole != null)
+                ApplyHeroDetail(focusedRole);
         }
 
         void BuildBattleHud()
@@ -380,8 +593,9 @@ namespace JojoP.UI
                 _partyNames[i].gameObject.SetActive(false);
             }
 
-            var quit = BrothersUiUtil.MakeButton(_battleHud.transform, "BtnQuit", "弃战回大厅", new Vector2(400, -700), new Vector2(240, 56),
+            var quit = BrothersUiUtil.MakeButton(_battleHud.transform, "BtnQuit", "返回", new Vector2(-430, 860), new Vector2(160, 64),
                 new Color(0.45f, 0.22f, 0.22f));
+            _btnBattleBack = quit;
             quit.onClick.AddListener(() => _session?.ReturnToHub());
         }
 
@@ -393,6 +607,9 @@ namespace JojoP.UI
 
             _overlayTitle = BrothersUiUtil.MakeText(_overlay.transform, "Title", "", 52, new Vector2(0, 820), new Vector2(960, 80));
             _overlayTitle.color = BrothersUiUtil.Parchment;
+            _btnOverlayBack = BrothersUiUtil.MakeButton(_overlay.transform, "Back", "返回", new Vector2(-430, 860), new Vector2(160, 64),
+                new Color(0.32f, 0.32f, 0.36f));
+            _btnOverlayBack.onClick.AddListener(() => _session?.ReturnToHub());
             _overlayPortrait = BrothersUiUtil.MakePortrait(_overlay.transform, "WinPort", new Vector2(0, 560), new Vector2(220, 280),
                 null, new Color(0.16f, 0.14f, 0.12f));
             _overlayBody = BrothersUiUtil.MakeText(_overlay.transform, "Body", "", 26, new Vector2(0, 320), new Vector2(920, 180));
@@ -546,14 +763,37 @@ namespace JojoP.UI
         {
             if (_session?.Meta == null) return;
             var m = _session.Meta;
-            _metaText.text =
-                $"【培养】体力 {m.Stamina}/{GameTables.DailyStaminaCap}    培养点 {m.TrainPoints}\n" +
-                $"人情 {m.Favor} · 声望 {m.Renown}\n" +
-                $"潜力 生命+{m.PotentialHp} 攻击+{m.PotentialAtk} · 养伤档 {m.HealShortenTier}";
+            if (_metaText != null)
+            {
+                _metaText.text =
+                    $"体力 {m.Stamina}/{GameTables.DailyStaminaCap}    培养点 {m.TrainPoints}    人情 {m.Favor}    声望 {m.Renown}";
+            }
+
+            if (_trainHint != null)
+            {
+                _trainHint.text =
+                    $"潜力 生命+{m.PotentialHp} 攻击+{m.PotentialAtk} 防御+{m.PotentialDef} · 养伤档 {m.HealShortenTier}\n" +
+                    "蓝=人物初始 · 绿=培养增幅 · 开局带入战斗";
+            }
+
+            bool can3 = m.TrainPoints >= 3;
+            bool can5 = m.TrainPoints >= 5 && m.HealShortenTier < 3;
+            var hpCol = new Color(0.28f, 0.45f, 0.55f);
+            var atkCol = new Color(0.55f, 0.32f, 0.28f);
+            var defCol = new Color(0.32f, 0.4f, 0.52f);
+            var healCol = new Color(0.35f, 0.5f, 0.35f);
+            BrothersUiUtil.SetAffordable(_btnPotHp, can3, hpCol);
+            BrothersUiUtil.SetAffordable(_btnPotAtk, can3, atkCol);
+            BrothersUiUtil.SetAffordable(_btnPotDef, can3, defCol);
+            BrothersUiUtil.SetAffordable(_btnHeal, can5, healCol);
+            BrothersUiUtil.SetAffordable(_heroPotHp, can3, BrothersUiUtil.PlusOrange);
+            BrothersUiUtil.SetAffordable(_heroPotAtk, can3, BrothersUiUtil.PlusOrange);
+            BrothersUiUtil.SetAffordable(_heroPotDef, can3, BrothersUiUtil.PlusOrange);
 
             var ch = GameTables.FindChapter(ChapterId.Primary);
             var hero = RoleCatalog.FindRole(_session.Meta.SelectedHeroId);
-            _chapterText.text = $"{ch.DisplayName} · 小1 · 上学期\n出征：{hero?.Name ?? "猩哥"}";
+            if (_chapterText != null)
+                _chapterText.text = $"{ch.DisplayName} · 小1 · 上学期\n出征：{hero?.Name ?? "猩哥"}";
 
             if (_archiveHint != null)
                 RefreshHeroPicker();
@@ -637,7 +877,16 @@ namespace JojoP.UI
 
         void ShowHubPage(bool stage, bool animate)
         {
-            StopAllCoroutines();
+            if (stage)
+                SetRadarExpanded(false, instant: true);
+            if (_radarRoot != null)
+                _radarRoot.gameObject.SetActive(!stage);
+            if (_slideCo != null)
+            {
+                StopCoroutine(_slideCo);
+                _slideCo = null;
+            }
+
             if (!animate || _pageHero == null || _pageStage == null)
             {
                 _pageHero.SetActive(!stage);
@@ -645,7 +894,7 @@ namespace JojoP.UI
                 return;
             }
 
-            StartCoroutine(SlideHub(stage));
+            _slideCo = StartCoroutine(SlideHub(stage));
         }
 
         static void FitPage(RectTransform rt)
@@ -679,6 +928,9 @@ namespace JojoP.UI
             to.anchoredPosition = Vector2.zero;
             _pageHero.SetActive(!toStage);
             _pageStage.SetActive(toStage);
+            if (_radarRoot != null)
+                _radarRoot.gameObject.SetActive(!toStage);
+            _slideCo = null;
         }
 
         void Update()
@@ -706,6 +958,7 @@ namespace JojoP.UI
             _btnShare.gameObject.SetActive(true);
             _btnBreakContinue.gameObject.SetActive(false);
             _btnAdTrain.gameObject.SetActive(false);
+            SetOverlayBack(false);
             _overlayTitle.text = "得胜";
             var lead = _session.Run?.Squad != null && _session.Run.Squad.Count > 0 ? _session.Run.Squad[0] : null;
             var winSp = lead != null ? RoleArtLoader.LoadPoster(lead.AvatarLoc) ?? RoleArtLoader.LoadHalf(lead.AvatarLoc) : null;
@@ -732,6 +985,7 @@ namespace JojoP.UI
             _btnShare.gameObject.SetActive(true);
             _btnBreakContinue.gameObject.SetActive(false);
             _btnAdTrain.gameObject.SetActive(false);
+            SetOverlayBack(false);
             _overlayTitle.text = "散旁";
             if (_overlayPortrait != null) _overlayPortrait.gameObject.SetActive(false);
             _overlayBody.text = $"{_session.LastSettleDetail}\n{_session.NextNodeHint}\n培养点安慰奖 +1（已入账）";
@@ -750,6 +1004,7 @@ namespace JojoP.UI
             _btnShare.gameObject.SetActive(false);
             _btnBreakContinue.gameObject.SetActive(false);
             _btnAdTrain.gameObject.SetActive(false);
+            SetOverlayBack(true);
             _overlayTitle.text = "三选一";
             if (_overlayPortrait != null) _overlayPortrait.gameObject.SetActive(false);
             if (_session.Run != null)
@@ -840,14 +1095,21 @@ namespace JojoP.UI
             SetRogueVisible(false);
             _btnConfirm.gameObject.SetActive(false);
             _btnRetry.gameObject.SetActive(false);
-            _btnHome.gameObject.SetActive(true);
+            _btnHome.gameObject.SetActive(false);
             _btnShare.gameObject.SetActive(false);
             _btnBreakContinue.gameObject.SetActive(true);
             _btnAdTrain.gameObject.SetActive(true);
+            SetOverlayBack(true);
             _overlayTitle.text = "假期休整";
             if (_overlayPortrait != null) _overlayPortrait.gameObject.SetActive(false);
             _overlayBody.text = $"{_session.LastSettleDetail}\n{_session.NextNodeHint}\n\n{_session.Run?.PhaseLabel()}";
             _overlayShare.text = "";
+        }
+
+        void SetOverlayBack(bool on)
+        {
+            if (_btnOverlayBack != null)
+                _btnOverlayBack.gameObject.SetActive(on);
         }
 
         void SetRogueVisible(bool on)

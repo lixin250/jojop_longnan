@@ -21,6 +21,7 @@ namespace JojoP.Gameplay.Brothers
         const string KeyUnlocked = PrefPrefix + "unlockedChapter";
         const string KeyPotentialHp = PrefPrefix + "pot.hp";
         const string KeyPotentialAtk = PrefPrefix + "pot.atk";
+        const string KeyPotentialDef = PrefPrefix + "pot.def";
         const string KeyHealTier = PrefPrefix + "healTier";
         const string KeyHighestGrade = PrefPrefix + "highest.grade";
         const string KeySelectedHero = PrefPrefix + "selectedHero";
@@ -40,6 +41,7 @@ namespace JojoP.Gameplay.Brothers
         public int UnlockedChapter { get; private set; } = 1;
         public int PotentialHp { get; private set; }
         public int PotentialAtk { get; private set; }
+        public int PotentialDef { get; private set; }
         public int HealShortenTier { get; private set; }
         public int HighestGradeReached { get; private set; }
         public string SelectedHeroId { get; private set; } = RoleCatalog.StarterId;
@@ -49,6 +51,7 @@ namespace JojoP.Gameplay.Brothers
 
         public void Load()
         {
+            LocalSaveStore.Dump("个人数据第一次拉取");
             var file = LocalSaveStore.LoadOrNull();
             if (file != null)
                 ApplyDto(file);
@@ -73,6 +76,7 @@ namespace JojoP.Gameplay.Brothers
             PlayerPrefs.SetInt(KeyUnlocked, UnlockedChapter);
             PlayerPrefs.SetInt(KeyPotentialHp, PotentialHp);
             PlayerPrefs.SetInt(KeyPotentialAtk, PotentialAtk);
+            PlayerPrefs.SetInt(KeyPotentialDef, PotentialDef);
             PlayerPrefs.SetInt(KeyHealTier, HealShortenTier);
             PlayerPrefs.SetInt(KeyHighestGrade, HighestGradeReached);
             PlayerPrefs.SetInt(KeyTrainSpent, TrainSpent);
@@ -93,6 +97,7 @@ namespace JojoP.Gameplay.Brothers
             UnlockedChapter = Mathf.Clamp(PlayerPrefs.GetInt(KeyUnlocked, 1), 1, 5);
             PotentialHp = PlayerPrefs.GetInt(KeyPotentialHp, 0);
             PotentialAtk = PlayerPrefs.GetInt(KeyPotentialAtk, 0);
+            PotentialDef = PlayerPrefs.GetInt(KeyPotentialDef, 0);
             HealShortenTier = PlayerPrefs.GetInt(KeyHealTier, 0);
             HighestGradeReached = PlayerPrefs.GetInt(KeyHighestGrade, 0);
             TrainSpent = PlayerPrefs.GetInt(KeyTrainSpent, 0);
@@ -112,6 +117,7 @@ namespace JojoP.Gameplay.Brothers
             UnlockedChapter = Mathf.Clamp(d.unlockedChapter, 1, 5);
             PotentialHp = d.potentialHp;
             PotentialAtk = d.potentialAtk;
+            PotentialDef = d.potentialDef;
             HealShortenTier = d.healTier;
             HighestGradeReached = d.highestGrade;
             TrainSpent = d.trainSpent;
@@ -133,6 +139,7 @@ namespace JojoP.Gameplay.Brothers
                 unlockedChapter = UnlockedChapter,
                 potentialHp = PotentialHp,
                 potentialAtk = PotentialAtk,
+                potentialDef = PotentialDef,
                 healTier = HealShortenTier,
                 highestGrade = HighestGradeReached,
                 selectedHero = SelectedHeroId ?? RoleCatalog.StarterId,
@@ -259,6 +266,16 @@ namespace JojoP.Gameplay.Brothers
             return true;
         }
 
+        public bool TryBuyPotentialDef(int cost = 3)
+        {
+            if (TrainPoints < cost) return false;
+            TrainPoints -= cost;
+            TrainSpent += cost;
+            PotentialDef++;
+            Save();
+            return true;
+        }
+
         public bool TryBuyHealTier(int cost = 5)
         {
             if (TrainPoints < cost || HealShortenTier >= 3) return false;
@@ -288,6 +305,8 @@ namespace JojoP.Gameplay.Brothers
 
         public float HpMul => 1f + PotentialHp * 0.08f;
         public float AtkMul => 1f + PotentialAtk * 0.08f;
+        /// <summary>防御按点加绝对值：许多人底板防御为 0，百分比会加空。</summary>
+        public float DefBonus => PotentialDef * 8f;
 
         /// <summary>养伤回合：假期结束后的 Injured 清除加速档。</summary>
         public int InjuredBreaksNeeded => Mathf.Max(1, 2 - HealShortenTier);

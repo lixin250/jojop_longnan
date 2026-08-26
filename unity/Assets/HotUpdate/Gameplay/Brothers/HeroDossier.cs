@@ -12,11 +12,9 @@ namespace JojoP.Gameplay.Brothers
             var sb = new StringBuilder();
             sb.AppendLine(role.Desc);
             sb.AppendLine();
-            sb.Append("生命 ").Append(role.BaseHp.ToString("0"))
-                .Append("  攻击 ").Append(role.BaseAtk.ToString("0.#"))
-                .Append("  间隔 ").Append(role.AttackInterval.ToString("0.##")).Append("s");
-            sb.AppendLine();
-            sb.AppendLine(PathLine(role));
+            string path = PathLine(role);
+            if (!string.IsNullOrEmpty(path))
+                sb.AppendLine(path);
             if (role.FactionTags != null && role.FactionTags.Count > 0)
             {
                 sb.Append("派系 ");

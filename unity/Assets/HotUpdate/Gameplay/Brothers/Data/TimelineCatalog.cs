@@ -6,7 +6,7 @@ using JojoP.Config;
 namespace JojoP.Gameplay.Brothers
 {
     /// <summary>
-    /// 大事件按章节顺序触发，年份仅作史实锚点；允许同一批兄弟跨年代发挥已解锁的行业能力。
+    /// 波间城市/游戏时间点：按章节顺序触发，年份只是玩笑锚点。
     /// </summary>
     public static class TimelineCatalog
     {

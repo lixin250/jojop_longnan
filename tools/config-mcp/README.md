@@ -43,7 +43,7 @@ MCP 只负责结构化操作；性格到机制的推理仍由 Cursor AI 完成�
 - `run_luban`
 
 局内内容位于 `局内成长.xlsx`：`RunChapterRule / RogueReward / Equipment /
-CharacterEncounter / RunEvent / TimelineEvent`。`TimelineEvent.anchor_year` 只作史实锚点，
+CharacterEncounter / RunEvent / TimelineEvent`。`TimelineEvent.anchor_year` 只是玩笑锚点，
 实际按 `chapter_id + sequence` 推进；`boost_tags` 提高对应行业兄弟的相遇权重。
 `Official/Gazetteer/Media` 的核验记录必须有来源链接，`Oral/Creative` 不得标成已核验。
 临时技能仍复用 `技能.xlsx`，`owner_id=loot`。

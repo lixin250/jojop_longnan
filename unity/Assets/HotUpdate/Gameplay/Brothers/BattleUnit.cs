@@ -65,8 +65,7 @@ namespace JojoP.Gameplay.Brothers
         /// <summary>挂战斗立绘（可选）；失败则保持色块。Sprite 挂子物体，避免和胶囊 MeshRenderer 互斥。</summary>
         public void TryApplyBattleSprite(Sprite sprite)
         {
-            var set = new BattlePoseSet { Fallback = sprite, Idle = sprite, Walk = sprite, Atk = sprite, Hurt = sprite, Dead = sprite };
-            TryApplyBattleArt(set);
+            TryApplyBattleArt(BattlePoseSet.FromSingle(sprite));
         }
 
         public void TryApplyBattleArt(BattlePoseSet set)
@@ -184,6 +183,8 @@ namespace JojoP.Gameplay.Brothers
             if (showFloater && gained > 0.05f)
                 BattleFeedback.Heal(this, gained);
         }
+
+        public void NotifySkill() => _pose?.NotifySkill();
 
         void Flash()
         {

@@ -9,7 +9,9 @@ namespace JojoP.UI
         public static readonly Color Ink = new Color(0.18f, 0.14f, 0.12f, 1f);
         public static readonly Color PanelDark = new Color(0.10f, 0.11f, 0.14f, 0.92f);
         public static readonly Color AccentGreen = new Color(0.25f, 0.72f, 0.48f, 1f);
+        public static readonly Color AccentBlue = new Color(0.36f, 0.62f, 0.88f, 1f);
         public static readonly Color AccentOrange = new Color(0.85f, 0.48f, 0.22f, 1f);
+        public static readonly Color PlusOrange = new Color(1f, 0.55f, 0.1f, 1f);
         public static readonly Color BrotherHp = new Color(0.35f, 0.85f, 0.55f, 1f);
         public static readonly Color EnemyHp = new Color(0.92f, 0.35f, 0.32f, 1f);
 
@@ -164,6 +166,33 @@ namespace JojoP.UI
             if (fill == null) return;
             ratio = Mathf.Clamp01(ratio);
             fill.rectTransform.sizeDelta = new Vector2((fullWidth - 8f) * ratio, fill.rectTransform.sizeDelta.y);
+        }
+
+        public static void SetAffordable(Button btn, bool ok, Color ready)
+        {
+            if (btn == null) return;
+            btn.interactable = ok;
+            var img = btn.GetComponent<Image>();
+            if (img != null)
+                img.color = ok ? ready : new Color(0.32f, 0.32f, 0.34f, 0.85f);
+            var t = btn.GetComponentInChildren<Text>();
+            if (t != null)
+                t.color = ok ? Color.white : new Color(0.62f, 0.62f, 0.64f);
+        }
+
+        public static Button MakePlus(Transform parent, string name, Color color)
+        {
+            var btn = MakeButton(parent, name, "+", Vector2.zero, new Vector2(68, 68), color);
+            var label = btn.GetComponentInChildren<Text>();
+            if (label != null)
+            {
+                label.fontSize = 44;
+                label.fontStyle = FontStyle.Bold;
+                label.color = Color.white;
+                label.alignment = TextAnchor.MiddleCenter;
+            }
+
+            return btn;
         }
     }
 }

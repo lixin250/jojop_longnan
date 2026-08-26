@@ -1,0 +1,102 @@
+{
+  "comment": "MiniMax：永远用 lock_ref，短 prompt 只写动作，每动作一张 key，出 candidates 张人选。不要拿生成图再生成。OpenAI 有额度后改 provider。",
+  "provider": "minimax",
+  "model": "image-01",
+  "openai_model": "gpt-image-2",
+  "size": "1024x1024",
+  "quality": "medium",
+  "background": "transparent",
+  "aspect_ratio": "1:1",
+  "candidates": 3,
+  "frame_size": [512, 512],
+  "ground_frac": 0.12,
+  "style_lock": "概念图/风格锁.txt",
+  "minimax_prompt": "全身战斗立绘，四分之三朝右，纯色背景，只要这一个人，不要背包，不要胸前黄便签，不要文字，不要三视图",
+  "lock_prompt": "same character as the lock photo, full body with feet, 3/4 facing right, one ground line, TRANSPARENT background, character only, no parchment, no floor, no logo, no backpack, BUG? note only on the BACK",
+  "poses": {
+    "idle": {
+      "unity_subdir": "Role/{who}/battle",
+      "fps": 4,
+      "loop": true,
+      "key": 1,
+      "prompt": "双手插卫衣口袋，原地站着，疲惫",
+      "frames": [
+        { "file": "idle_1.png" }
+      ]
+    },
+    "walk": {
+      "unity_subdir": "Role/{who}/battle",
+      "fps": 8,
+      "loop": true,
+      "key": 1,
+      "prompt": "朝右走路，双手捧着打开的笔记本电脑",
+      "frames": [
+        { "file": "walk_1.png" }
+      ]
+    },
+    "atk": {
+      "unity_subdir": "Role/{who}/battle",
+      "fps": 10,
+      "loop": false,
+      "key": 1,
+      "prompt": "攻击，笔记本电脑向右打出紫色马赛克方块，右侧留空",
+      "frames": [
+        { "file": "atk_1.png" }
+      ]
+    },
+    "skill": {
+      "unity_subdir": "Role/{who}/battle",
+      "fps": 8,
+      "loop": false,
+      "key": 1,
+      "prompt": "施放技能，身前打开紫色像素传送门",
+      "frames": [
+        { "file": "skill_1.png" }
+      ]
+    },
+    "hurt": {
+      "unity_subdir": "Role/{who}/battle",
+      "fps": 8,
+      "loop": false,
+      "key": 1,
+      "prompt": "被击中后仰，人还站着",
+      "frames": [
+        { "file": "hurt_1.png" }
+      ]
+    },
+    "dead": {
+      "unity_subdir": "Role/{who}/battle",
+      "fps": 1,
+      "loop": false,
+      "key": 1,
+      "prompt": "面朝下倒下，一小团紫色像素灵魂，不要血腥",
+      "frames": [
+        { "file": "dead_1.png" }
+      ]
+    },
+    "taunt": {
+      "unity_subdir": "Role/{who}/battle",
+      "fps": 6,
+      "loop": false,
+      "key": 1,
+      "prompt": "全身站着嘲笑",
+      "frames": [
+        { "file": "taunt_1.png" }
+      ]
+    }
+  },
+  "characters": [
+    {
+      "who": "lixin",
+      "source": "概念图/GPT-利欣.png",
+      "turnaround": [318, 5, 712, 448],
+      "front": [328, 108, 452, 448],
+      "side": [452, 108, 578, 448],
+      "back": [578, 108, 710, 448],
+      "lock": "pose/locks/lixin.png",
+      "lock_ref": "pose/locks/lixin_ref.png",
+      "seed": 114514,
+      "who_prompt": "messy spiky black hair, tired droopy eyes, dark oversized patched hoodie, yellow BUG? sticky note ONLY on the BACK, ripped dark pants, sandals, optional stickered laptop, no sneakers, no BUG on chest, no backpack"
+    }
+  ]
+}

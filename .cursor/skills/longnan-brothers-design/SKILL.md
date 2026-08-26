@@ -49,10 +49,12 @@ description: >-
   就业成长查 `CareerGrowth`。
 - 局内奖励/装备/人物相遇/事件查 `局内成长.xlsx`：
   `RunChapterRule / RogueReward / Equipment / CharacterEncounter / RunEvent / TimelineEvent`。
-- 大事件年份是史实锚点，局内按 `chapter_id + sequence` 推进，可允许年代错位；
-  `boost_tags` 只提高对应行业兄弟相遇权重，不凭空把未毕业技能提前解锁。
-- `Official/Gazetteer/Media` 核验记录必须留来源链接；兄弟经历、真人逸事写
-  `Oral/Creative` 且 `verified=false`，不得冒充县志史实。
+- 大事件是捏造的城市/游戏时间点，年份只是玩笑锚点；局内按
+  `chapter_id + sequence` 推进。`boost_tags` 只提高对应行业兄弟相遇权重，
+  不凭空把未毕业技能提前解锁。
+- Timeline 一律 `Oral/Creative` 且 `verified=false`，不得冒充县志史实。
+  若以后再写 `Official/Gazetteer/Media`，必须留来源链接。
+- 兄弟经历、真人逸事同样写 `Oral/Creative` 且 `verified=false`。
 - 人物按个人好感多次相遇后集合；不得恢复“一次三选一直接掉整个人”。
 - 上阵位按章节配置，`-1` 不限；广告只做本局扩编与奖励刷新，基础 3 人必须能组成核心双 Tag 羁绊。
 - 团队攻击核心互相替换；每人最多 1 个 `loot_*` 临时技能槽，不能覆盖固有校园技/就业技。

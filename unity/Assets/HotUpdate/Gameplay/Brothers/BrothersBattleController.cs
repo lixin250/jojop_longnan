@@ -78,6 +78,7 @@ namespace JojoP.Gameplay.Brothers
 
         public void StartWave(RunState run, MetaProgress meta, int enemyCount, float difficulty)
         {
+            BattleAssetHub.Ensure(transform);
             ClearField();
             _ended = false;
             _running = true;
@@ -130,6 +131,7 @@ namespace JojoP.Gameplay.Brothers
             _running = false;
             BattleFeel.Reset();
             ClearField();
+            BattleAssetHub.Release();
         }
 
         void Update()

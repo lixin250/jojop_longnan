@@ -161,12 +161,27 @@ namespace JojoP.Gameplay.Brothers
                 lvMul = caster.BoundBrother.GraduationSkillMul *
                         (1f + 0.12f * caster.BoundBrother.JobSkillLv);
 
+            caster.NotifySkill();
             foreach (var eid in sk.EffectIds)
             {
                 var fx = CfgTables.Tables.TbSkillEffect.GetOrDefault(eid);
                 if (fx == null) continue;
+                PlayVfx(caster, focus, fx);
                 ApplyEffect(caster, focus, fx, lvMul);
             }
+        }
+
+        static void PlayVfx(BattleUnit caster, BattleUnit focus, SkillEffect fx)
+        {
+            if (caster == null || string.IsNullOrEmpty(fx.VfxKey)) return;
+            Vector3 from = caster.transform.position + Vector3.up * 0.55f;
+            BattleUnit look = fx.Target == EEffectTarget.Self || focus == null || !focus.IsAlive
+                ? caster
+                : focus;
+            Vector3 to = look.transform.position + Vector3.up * 0.4f;
+            bool follow = fx.Kind == ESkillEffectKind.AddBuff;
+            float life = follow ? Mathf.Max(0.9f, fx.Duration + 0.15f) : 0.65f;
+            SkillVfx.Play(fx.VfxKey, from, to, follow ? caster.transform : null, life);
         }
 
         void ApplyEffect(BattleUnit caster, BattleUnit focus, SkillEffect fx, float lvMul)

@@ -17,7 +17,7 @@
 | text_zh | 搞快点，这单今晚要交。 | 只这一列进 TTS |
 | langPath | `lixin/voice/lixin_battle_skill` | 默认加载 |
 | langPath_ln | 空 或 `lixin/voice/lixin_battle_skill_ln` | 有文件则优先 |
-| emotion | happy / angry / neutral | 仅合成用 |
+| emotion | `calm` / `happy` / `angry` | MiniMax 原值，仅合成用。不要中文描述列、不要跳表 |
 
 运行时：`RoleVoiceLoader.Play("lixin_battle_skill")`  
 优先 `langPath_ln`（文件存在），否则 `langPath`。
@@ -47,3 +47,28 @@ python art/tools/minimax_voice.py import
 ```
 
 `secrets.env` 已 gitignore。克隆后 7 天内至少 synth 一次才会留住 `voice_id`。
+
+## emotion（写 API 原值）
+
+`speech-2.8-hd` 直接填下面字符串，空则模型按文案自选。官方没有 `neutral`，中性用 `calm`。
+
+| 值 | 含义 | 2.8-hd |
+|----|------|--------|
+| `happy` | 高兴 | 可用 |
+| `sad` | 悲伤 | 可用 |
+| `angry` | 愤怒 | 可用 |
+| `fearful` | 害怕 | 可用 |
+| `disgusted` | 厌恶 | 可用 |
+| `surprised` | 惊讶 | 可用 |
+| `calm` | 中性 | 可用 |
+| `fluent` | 生动 | 仅 2.6 |
+| `whisper` | 低语 | 仅 2.6；2.8 不支持 |
+
+## 可选项（以后要再加列，现在不要）
+
+文案里就能写、不必加列：停顿 `<#0.3#>`、注音 `(he2)平`、语气词 `(laughs)` `(sighs)` `(breath)`。
+
+按行（以后可进 `lines.csv`）：`speed` 0.5～2.0。  
+按角色（以后可进 `voices.json`）：`vol` (0,10]、`pitch` -12～12、`voice_modify`（pitch/intensity/timbre -100～100）。
+
+脚本里目前写死 `speed=1` `vol=1` `pitch=0`。采样率/音效/混合音色不开放。

@@ -6,7 +6,7 @@ using YooAsset;
 namespace JojoP.Gameplay.Brothers
 {
     /// <summary>
-    /// 角色图加载。Yoo 寻址：{id}/avatar、{id}/battle/idle。
+        /// 角色图加载。Yoo 寻址：{id}/avatar、{id}/battle/idle_1。
     /// Editor 未打清单时回落 AssetDatabase 全路径。
     /// </summary>
     public static class RoleArtLoader
@@ -97,34 +97,37 @@ namespace JojoP.Gameplay.Brothers
 
             if (!string.IsNullOrEmpty(id))
             {
-                set.Idle = LoadFirst(Addr(id, "battle/idle"), $"{RoleRoot}/{id}/battle/idle.png");
-                set.Walk = LoadFirst(Addr(id, "battle/walk"), $"{RoleRoot}/{id}/battle/walk.png");
-                set.Atk = LoadFirst(Addr(id, "battle/atk"), $"{RoleRoot}/{id}/battle/atk.png");
-                set.Hurt = LoadFirst(Addr(id, "battle/hurt"), $"{RoleRoot}/{id}/battle/hurt.png");
-                set.Dead = LoadFirst(Addr(id, "battle/dead"), $"{RoleRoot}/{id}/battle/dead.png");
+                set.Idle = LoadClip(id, "idle", 4f);
+                set.Walk = LoadClip(id, "walk", 8f);
+                set.Atk = LoadClip(id, "atk", 10f);
+                set.Skill = LoadClip(id, "skill", 8f);
+                set.Hurt = LoadClip(id, "hurt", 8f);
+                set.Dead = LoadClip(id, "dead", 1f);
                 set.Fallback = LoadFirst(Addr(id, "battle/fallback"), $"{RoleRoot}/{id}/battle/fallback.png")
-                               ?? set.Idle
-                               ?? set.Walk;
+                               ?? set.Idle.First
+                               ?? set.Walk.First;
             }
 
             if (!string.IsNullOrWhiteSpace(stem))
             {
                 if (set.Fallback == null) set.Fallback = LoadSprite($"{BattleFolder}/{stem}.png");
-                if (set.Idle == null) set.Idle = LoadSprite($"{BattleFolder}/{stem}_idle.png");
-                if (set.Walk == null) set.Walk = LoadSprite($"{BattleFolder}/{stem}_walk.png");
-                if (set.Atk == null) set.Atk = LoadSprite($"{BattleFolder}/{stem}_atk.png");
-                if (set.Hurt == null) set.Hurt = LoadSprite($"{BattleFolder}/{stem}_hurt.png");
-                if (set.Dead == null) set.Dead = LoadSprite($"{BattleFolder}/{stem}_dead.png");
+                if (set.Idle.Count == 0) set.Idle = BattleClip.Of(LoadSprite($"{BattleFolder}/{stem}_idle.png"), 4f);
+                if (set.Walk.Count == 0) set.Walk = BattleClip.Of(LoadSprite($"{BattleFolder}/{stem}_walk.png"), 8f);
+                if (set.Atk.Count == 0) set.Atk = BattleClip.Of(LoadSprite($"{BattleFolder}/{stem}_atk.png"), 10f);
+                if (set.Skill.Count == 0) set.Skill = BattleClip.Of(LoadSprite($"{BattleFolder}/{stem}_skill.png"), 8f);
+                if (set.Hurt.Count == 0) set.Hurt = BattleClip.Of(LoadSprite($"{BattleFolder}/{stem}_hurt.png"), 8f);
+                if (set.Dead.Count == 0) set.Dead = BattleClip.Of(LoadSprite($"{BattleFolder}/{stem}_dead.png"), 1f);
             }
 
             if (set.Fallback == null && !string.IsNullOrWhiteSpace(avatarLocFallback))
                 set.Fallback = LoadPortrait(avatarLocFallback);
 
-            if (set.Walk == null) set.Walk = set.Fallback;
-            if (set.Idle == null) set.Idle = set.Fallback;
-            if (set.Atk == null) set.Atk = set.Walk ?? set.Fallback;
-            if (set.Hurt == null) set.Hurt = set.Idle ?? set.Fallback;
-            if (set.Dead == null) set.Dead = set.Hurt ?? set.Fallback;
+            if (set.Walk.Count == 0) set.Walk = BattleClip.Of(set.Fallback, 8f);
+            if (set.Idle.Count == 0) set.Idle = BattleClip.Of(set.Fallback, 4f);
+            if (set.Atk.Count == 0) set.Atk = set.Walk.Count > 0 ? set.Walk : BattleClip.Of(set.Fallback, 10f);
+            if (set.Skill.Count == 0) set.Skill = set.Atk;
+            if (set.Hurt.Count == 0) set.Hurt = set.Idle.Count > 0 ? set.Idle : BattleClip.Of(set.Fallback, 8f);
+            if (set.Dead.Count == 0) set.Dead = set.Hurt.Count > 0 ? set.Hurt : BattleClip.Of(set.Fallback, 1f);
             return set;
         }
 
@@ -149,6 +152,27 @@ namespace JojoP.Gameplay.Brothers
             return dot > 0 ? loc.Substring(0, dot) : loc;
         }
 
+        static BattleClip LoadClip(string id, string clip, float fps)
+        {
+            var frames = new System.Collections.Generic.List<Sprite>(4);
+            for (int i = 1; i <= 8; i++)
+            {
+                var sp = LoadFirst(
+                    Addr(id, $"battle/{clip}_{i}"),
+                    $"{RoleRoot}/{id}/battle/{clip}_{i}.png");
+                if (sp == null) break;
+                frames.Add(sp);
+            }
+
+            if (frames.Count == 0)
+            {
+                var one = LoadFirst(Addr(id, $"battle/{clip}"), $"{RoleRoot}/{id}/battle/{clip}.png");
+                if (one != null) frames.Add(one);
+            }
+
+            return frames.Count == 0 ? default : new BattleClip(frames.ToArray(), fps);
+        }
+
         static Sprite LoadFirst(params string[] keys)
         {
             foreach (var k in keys)
@@ -170,6 +194,9 @@ namespace JojoP.Gameplay.Brothers
 
         static Sprite LoadYooSprite(string location)
         {
+            if (BattleAssetHub.Current != null)
+                return BattleAssetHub.Current.Sprite(location);
+
             if (!YooAssets.IsInitialized) return null;
             if (!YooAssets.TryGetPackage(DefaultPackage, out var pkg) || pkg == null) return null;
             if (pkg.InitializeStatus != EOperationStatus.Succeeded) return null;

@@ -25,7 +25,7 @@ namespace JojoP.UI
         {
             _set = set;
             _locked = locked;
-            Apply(false);
+            Apply(false, 0f);
         }
 
         void LateUpdate()
@@ -38,7 +38,7 @@ namespace JojoP.UI
             }
 
             bool atk = Mathf.Repeat(Time.unscaledTime, Cycle * 2f) >= Cycle;
-            Apply(atk);
+            Apply(atk, Time.unscaledTime);
 
             var rt = _image.rectTransform;
             var p = rt.anchoredPosition;
@@ -46,10 +46,11 @@ namespace JojoP.UI
             rt.anchoredPosition = p;
         }
 
-        void Apply(bool atk)
+        void Apply(bool atk, float t)
         {
             if (_image == null) return;
-            var sp = atk ? _set.Atk : _set.Idle;
+            var clip = atk ? _set.Atk : _set.Idle;
+            var sp = clip.Sample(t, true);
             if (sp == null) sp = _set.Fallback;
             if (sp != null)
             {
