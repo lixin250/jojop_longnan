@@ -1,0 +1,20 @@
+﻿--------- beginning of main
+08-27 11:56:23.012  5177  5390 W Unity   : No action required on overwrite installation.
+08-27 11:56:23.012  5177  5390 W Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+08-27 11:56:23.012  5177  5390 W Unity   : UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+08-27 11:56:23.012  5177  5390 W Unity   : UnityEngine.Logger:Log(LogType, Object)
+08-27 11:56:23.012  5177  5390 W Unity   : UnityEngine.Debug:LogWarning(Object)
+08-27 11:56:23.012  5177  5390 W Unity   : YooAsset.YooLogger:LogWarning(String) (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\Utility\YooLogger.cs:68)
+08-27 11:56:23.012  5177  5390 W Unity   : YooAsset.SFSInitializeOperation:InternalUpdate() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\FileSystem\Services\SandboxFileSystem\Operations\SFSInitializeOperation.cs:71)
+08-27 11:56:23.012  5177  5390 W Unity   : YooAsset.AsyncOperationBase:UpdateOperation() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\AsyncOperation\AsyncOperationBase.cs:238)
+08-27 11:56:23.012  5177  5390 W Unity   : YooAsset.InitializeFileSystemOperation:InternalUpdate() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\ResourcePackage\Operations\Internal\InitializeFileSystemOperation.cs:95)
+08-27 11:56:23.012  5177  5390 W Unity   : YooAsset.AsyncOperationBase:UpdateOperation() (at .\Librar
+08-27 11:56:33.903  5177  5390 E Unity   : ArgumentNullException: Value cannot be null.
+08-27 11:56:33.903  5177  5390 E Unity   : Parameter name: shader
+08-27 11:56:33.903  5177  5390 E Unity   :   at UnityEngine.Bindings.ThrowHelper.ThrowArgumentNullException (System.Object obj, System.String parameterName) [0x00012] in \home\bokken\build\output\unity\unity\Runtime\Export\Scripting\BindingsHelpers.cs:54 
+08-27 11:56:33.903  5177  5390 E Unity   :   at UnityEngine.Material.CreateWithShader (UnityEngine.Material self, UnityEngine.Shader shader) [0x00000] in <00000000000000000000000000000000>:0 
+08-27 11:56:33.903  5177  5390 E Unity   :   at UnityEngine.Material..ctor (UnityEngine.Shader shader) [0x00008] in \home\bokken\build\output\unity\unity\Runtime\Export\Shaders\Material.bindings.cs:17 
+08-27 11:56:33.903  5177  5390 E Unity   :   at UnityEngine.Events.InvokableCall.Invoke () [0x00013] in \home\bokken\build\output\unity\unity\Runtime\Export\UnityEvent\UnityEvent.cs:178 
+08-27 11:56:33.903  5177  5390 E Unity   :   at UnityEngine.Events.UnityEvent.Invoke () [0x0001c] in \home\bokken\build\output\unity\unity\artifacts\generated\UnityEvent\UnityEvent_0.cs:57 
+08-27 11:56:33.903  5177  5390 E Unity   :   at UnityEngine.UI.Button.Press () [0x0002d] in .\Library\PackageCache\com.unity.ugui@3dd2fbd8c1f1\Runtime\UGUI\UI\Core\Button.cs:71 
+08-27 11:56:33.903  5177  5390 E Unity   :   at Uni

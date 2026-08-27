@@ -2,8 +2,6 @@
 using System;
 using System.IO;
 using System.Linq;
-using HybridCLR.Editor;
-using HybridCLR.Editor.Commands;
 using JojoP.AOT;
 using JojoP.AOT.Settings;
 using JojoP.EditorTools;
@@ -43,12 +41,13 @@ namespace JojoP.EditorTools.Build
         string[] _versions = Array.Empty<string>();
         int _versionIndex;
         bool _clearDevDirectPlay;
+        Vector2 _scroll;
 
         [MenuItem("JojoP/构建与热更")]
         public static void Open()
         {
             var win = GetWindow<JojoPBuildWindow>("构建与热更");
-            win.minSize = new Vector2(480, 640);
+            win.minSize = new Vector2(500, 720);
             win.Show();
         }
 
@@ -98,134 +97,195 @@ namespace JojoP.EditorTools.Build
             var settings = JojoPGlobalSettings.Load();
             var host = settings != null ? settings.Host : null;
 
-            EditorGUILayout.LabelField("渠道 / 平台", EditorStyles.boldLabel);
-            _channel = EditorGUILayout.TextField("渠道 (gp / test)", _channel);
-            _yooTarget = (BuildTarget)EditorGUILayout.EnumPopup("Yoo 构建平台", _yooTarget);
+            _scroll = EditorGUILayout.BeginScrollView(_scroll);
 
-            EditorGUILayout.Space(6);
-            EditorGUILayout.LabelField("拉取来源", EditorStyles.boldLabel);
-            var newSource = (JojoPCdnSource)EditorGUILayout.EnumPopup("客户端 CDN", _cdnSource);
-            if (newSource != _cdnSource)
+            DrawSharedSettings(host);
+            EditorGUILayout.Space(10);
+            DrawHotUpdateSection();
+            EditorGUILayout.Space(10);
+            DrawPlayerBuildSection();
+
+            EditorGUILayout.EndScrollView();
+        }
+
+        void DrawSharedSettings(JojoPHostSettings host)
+        {
+            EditorGUILayout.LabelField("共用", EditorStyles.boldLabel);
+            using (new EditorGUILayout.VerticalScope(EditorStyles.helpBox))
             {
-                _cdnSource = newSource;
-                WriteCdnSource(_cdnSource);
+                _channel = EditorGUILayout.TextField("渠道 (gp / test)", _channel);
+                _yooTarget = (BuildTarget)EditorGUILayout.EnumPopup("Yoo 构建平台", _yooTarget);
+
+                var newSource = (JojoPCdnSource)EditorGUILayout.EnumPopup("客户端 CDN", _cdnSource);
+                if (newSource != _cdnSource)
+                {
+                    _cdnSource = newSource;
+                    WriteCdnSource(_cdnSource);
+                }
+
+                if (host != null)
+                {
+                    EditorGUI.BeginChangeCheck();
+                    string publicUrl = EditorGUILayout.TextField("R2 公开 URL", host.hostServerUrl);
+                    if (EditorGUI.EndChangeCheck())
+                        WriteHostUrl(publicUrl);
+                }
+
+                EditorGUI.BeginDisabledGroup(true);
+                EditorGUILayout.TextField("上传前缀", CdnPrefix());
+                EditorGUILayout.TextField("完整 Host URL", FullHostUrl(host));
+                EditorGUI.EndDisabledGroup();
+
+                _accountId = EditorGUILayout.TextField("R2 Account ID", _accountId);
+                _accessKey = EditorGUILayout.TextField("R2 Access Key", _accessKey);
+                _secret = EditorGUILayout.PasswordField("R2 Secret", _secret);
+                _bucket = EditorGUILayout.TextField("Bucket", _bucket);
+
+                EditorGUILayout.HelpBox(
+                    "Local：Loading 只用 StreamingAssets。CloudflareR2：去公开 URL 拉差量。\n" +
+                    "上传走 S3 API。凭证不要进 git。",
+                    MessageType.Info);
+
+                if (_yooTarget == BuildTarget.Android &&
+                    EditorUserBuildSettings.activeBuildTarget != BuildTarget.Android)
+                {
+                    EditorGUILayout.HelpBox(
+                        "当前编辑器不是 Android。测编辑器热更请把平台改成 StandaloneWindows64；出 APK 再改回 Android。",
+                        MessageType.Warning);
+                }
+
+                using (new EditorGUILayout.HorizontalScope())
+                {
+                    if (GUILayout.Button("探测远端版本", GUILayout.Height(22)))
+                        ProbeRemote();
+                    if (GUILayout.Button("下载 version 对照", GUILayout.Height(22)))
+                        DownloadRemoteVersion();
+                }
+
+                using (new EditorGUILayout.HorizontalScope())
+                {
+                    if (_versions.Length == 0)
+                        EditorGUILayout.Popup("本地版本", 0, new[] { "（暂无，请先构建）" });
+                    else
+                        _versionIndex = EditorGUILayout.Popup("本地版本", _versionIndex, _versions);
+                    if (GUILayout.Button("刷新", GUILayout.Width(48)))
+                        RefreshVersions();
+                }
+
+                _copyToStreaming = EditorGUILayout.Toggle("Yoo 同时写入 StreamingAssets（首包内置）", _copyToStreaming);
+                EditorGUI.BeginDisabledGroup(true);
+                EditorGUILayout.TextField("输出目录", SelectedOutputDir() ?? "");
+                EditorGUI.EndDisabledGroup();
+
+                var dir = SelectedOutputDir();
+                if (!string.IsNullOrEmpty(dir) && GUILayout.Button("打开选中版本目录", GUILayout.Height(22)))
+                {
+                    if (Directory.Exists(dir))
+                        EditorUtility.RevealInFinder(dir);
+                }
             }
+        }
 
-            EditorGUILayout.Space(6);
-            EditorGUILayout.LabelField("Cloudflare R2（直传桶，不走 Worker）", EditorStyles.boldLabel);
-            if (host != null)
-            {
-                EditorGUI.BeginChangeCheck();
-                string publicUrl = EditorGUILayout.TextField("R2 公开 URL", host.hostServerUrl);
-                if (EditorGUI.EndChangeCheck())
-                    WriteHostUrl(publicUrl);
-            }
-
-            EditorGUI.BeginDisabledGroup(true);
-            EditorGUILayout.TextField("上传前缀", CdnPrefix());
-            EditorGUILayout.TextField("完整 Host URL", FullHostUrl(host));
-            EditorGUI.EndDisabledGroup();
-
-            _accountId = EditorGUILayout.TextField("R2 Account ID", _accountId);
-            _accessKey = EditorGUILayout.TextField("R2 Access Key", _accessKey);
-            _secret = EditorGUILayout.PasswordField("R2 Secret", _secret);
-            _bucket = EditorGUILayout.TextField("Bucket", _bucket);
-            EditorGUILayout.HelpBox(
-                "Local：Loading 只用 StreamingAssets。CloudflareR2：去公开 URL 拉差量。\n" +
-                "上传走 S3 API。凭证：Dashboard → R2 → Manage R2 API Tokens。不要进 git。",
-                MessageType.Info);
-
-            if (_yooTarget == BuildTarget.Android &&
-                EditorUserBuildSettings.activeBuildTarget != BuildTarget.Android)
+        void DrawHotUpdateSection()
+        {
+            EditorGUILayout.LabelField("热更（不出新 APK）", EditorStyles.boldLabel);
+            using (new EditorGUILayout.VerticalScope(EditorStyles.helpBox))
             {
                 EditorGUILayout.HelpBox(
-                    "当前编辑器不是 Android。Play 时 Loading 会请求 StandaloneWindows64。测编辑器热更请把「Yoo 构建平台」改成 StandaloneWindows64；出 APK 再改回 Android。",
+                    "只换 Config / HotUpdate。AOT .bytes 不要动，跟用户手里的 APK 绑定。",
+                    MessageType.Info);
+
+                if (GUILayout.Button("1. 编译热更 DLL → Bundle/Dll", GUILayout.Height(28)))
+                    CompileHotUpdateDlls();
+                if (GUILayout.Button("2. 构建 YooAsset", GUILayout.Height(28)))
+                    BuildYooAsset();
+                using (new EditorGUILayout.HorizontalScope())
+                {
+                    if (GUILayout.Button("3. 增量上传 R2", GUILayout.Height(28)))
+                        Upload(false);
+                    if (GUILayout.Button("全量覆盖 R2", GUILayout.Height(28)))
+                        Upload(true);
+                }
+
+                EditorGUILayout.Space(4);
+                if (GUILayout.Button("一键 1→3（编 DLL + Yoo + 增量上传）", GUILayout.Height(26)))
+                    RunHotUpdate123();
+            }
+        }
+
+        void DrawPlayerBuildSection()
+        {
+            EditorGUILayout.LabelField("出包（新 APK）", EditorStyles.boldLabel);
+            using (new EditorGUILayout.VerticalScope(EditorStyles.helpBox))
+            {
+                EditorGUILayout.HelpBox(
+                    "il2cpp 变了才走这里。顺序：打 APK → 拷这次裁剪 AOT → Yoo → 上传。",
                     MessageType.Warning);
-            }
 
-            using (new EditorGUILayout.HorizontalScope())
-            {
-                if (GUILayout.Button("探测远端版本", GUILayout.Height(24)))
-                    ProbeRemote();
-                if (GUILayout.Button("下载 version 对照", GUILayout.Height(24)))
-                    DownloadRemoteVersion();
-            }
+                _clearDevDirectPlay = EditorGUILayout.Toggle("出包前关闭 Bootstrap 开发直开", _clearDevDirectPlay);
+                if (GUILayout.Button("准备：关直开 + 切 CloudflareR2", GUILayout.Height(22)))
+                    SwitchToR2Play();
 
-            EditorGUILayout.Space(6);
-            EditorGUILayout.LabelField("YooAsset", EditorStyles.boldLabel);
-            using (new EditorGUILayout.HorizontalScope())
-            {
-                if (_versions.Length == 0)
-                    EditorGUILayout.Popup("本地版本", 0, new[] { "（暂无，请先构建）" });
-                else
-                    _versionIndex = EditorGUILayout.Popup("本地版本", _versionIndex, _versions);
-                if (GUILayout.Button("刷新", GUILayout.Width(48)))
-                    RefreshVersions();
-            }
+                using (new EditorGUILayout.HorizontalScope())
+                {
+                    if (GUILayout.Button("1. 打 Android APK", GUILayout.Height(28)))
+                    {
+                        SavePrefs();
+                        ApplyBootForPlayerBuild();
+                        JojoPAndroidBuildMenu.BuildDevelopmentApk();
+                    }
 
-            _copyToStreaming = EditorGUILayout.Toggle("同时写入 StreamingAssets（首包内置）", _copyToStreaming);
-            EditorGUI.BeginDisabledGroup(true);
-            EditorGUILayout.TextField("输出目录", SelectedOutputDir() ?? "");
-            EditorGUI.EndDisabledGroup();
+                    if (GUILayout.Button("1b. Windows 冒烟", GUILayout.Height(28)))
+                    {
+                        SavePrefs();
+                        ApplyBootForPlayerBuild();
+                        JojoPAndroidBuildMenu.BuildWindowsSmoke();
+                    }
+                }
 
-            if (GUILayout.Button("1. 编译热更 DLL → Bundle/Dll", GUILayout.Height(26)))
-                CompileHotUpdateDlls();
-
-            if (GUILayout.Button("2. 构建 YooAsset", GUILayout.Height(28)))
-                BuildYooAsset();
-
-            using (new EditorGUILayout.HorizontalScope())
-            {
-                if (GUILayout.Button("3. 增量上传 R2", GUILayout.Height(28)))
+                if (GUILayout.Button("2. 拷这次 APK 的 AOT 元数据", GUILayout.Height(28)))
+                    CopyAotMetaAfterApk();
+                if (GUILayout.Button("3. 构建 YooAsset", GUILayout.Height(28)))
+                    BuildYooAsset();
+                if (GUILayout.Button("4. 增量上传 R2", GUILayout.Height(28)))
                     Upload(false);
-                if (GUILayout.Button("全量覆盖 R2", GUILayout.Height(28)))
-                    Upload(true);
-            }
 
-            if (GUILayout.Button("构建 Yoo 并增量上传", GUILayout.Height(28)))
+                EditorGUILayout.Space(4);
+                if (GUILayout.Button("一键 1→4（GenerateAll + APK + AOT + Yoo + R2）", GUILayout.Height(26)))
+                {
+                    SavePrefs();
+                    ApplyBootForPlayerBuild();
+                    JojoPOneShotApkBuild.QueueFromMenu();
+                }
+            }
+        }
+
+        void RunHotUpdate123()
+        {
+            try
             {
+                JojoPDllBytesCopy.CopyHotUpdateDlls(_yooTarget);
                 if (BuildYooAsset())
                     Upload(false);
             }
-
-            var dir = SelectedOutputDir();
-            if (!string.IsNullOrEmpty(dir) && GUILayout.Button("打开选中版本目录"))
+            catch (Exception e)
             {
-                if (Directory.Exists(dir))
-                    EditorUtility.RevealInFinder(dir);
+                EditorUtility.DisplayDialog("热更 1→3 失败", e.Message, "确定");
+                Debug.LogError(e);
             }
+        }
 
-            EditorGUILayout.Space(8);
-            EditorGUILayout.LabelField("客户端", EditorStyles.boldLabel);
-            _clearDevDirectPlay = EditorGUILayout.Toggle("出包前关闭 Bootstrap 开发直开", _clearDevDirectPlay);
-            if (GUILayout.Button("关直开 + 切 CloudflareR2（Editor Play 测下载）", GUILayout.Height(24)))
-            {
-                _cdnSource = JojoPCdnSource.CloudflareR2;
-                WriteCdnSource(_cdnSource);
-                ApplyBootForPlayerBuild();
-                EditorUtility.DisplayDialog(
-                    "已切到 R2 拉取",
-                    "已关掉 AppLauncher.devDirectPlay，客户端 CDN=CloudflareR2。\n" +
-                    "Editor Play 走 HostPlayMode，不用 EditorSimulate。\n" +
-                    "请先把 Yoo 平台设为 StandaloneWindows64 并上传 R2。",
-                    "确定");
-            }
-            using (new EditorGUILayout.HorizontalScope())
-            {
-                if (GUILayout.Button("打 Windows 冒烟包", GUILayout.Height(28)))
-                {
-                    SavePrefs();
-                    ApplyBootForPlayerBuild();
-                    JojoPAndroidBuildMenu.BuildWindowsSmoke();
-                }
-
-                if (GUILayout.Button("打 Android APK", GUILayout.Height(28)))
-                {
-                    SavePrefs();
-                    ApplyBootForPlayerBuild();
-                    JojoPAndroidBuildMenu.BuildDevelopmentApk();
-                }
-            }
+        void SwitchToR2Play()
+        {
+            _cdnSource = JojoPCdnSource.CloudflareR2;
+            WriteCdnSource(_cdnSource);
+            ApplyBootForPlayerBuild();
+            EditorUtility.DisplayDialog(
+                "已切到 R2 拉取",
+                "已关掉 AppLauncher.devDirectPlay，客户端 CDN=CloudflareR2。\n" +
+                "Editor Play 走 HostPlayMode，不用 EditorSimulate。\n" +
+                "请先把 Yoo 平台设为 StandaloneWindows64 并上传 R2。",
+                "确定");
         }
 
         string CdnPrefix() => $"{_channel}/{_yooTarget}";
@@ -375,31 +435,32 @@ namespace JojoP.EditorTools.Build
         {
             try
             {
-                CompileDllCommand.CompileDll(_yooTarget);
-                string src = SettingsUtil.GetHotUpdateDllsOutputDirByTarget(_yooTarget);
-                string dest = Path.Combine(Application.dataPath, "Bundle", "Dll");
-                Directory.CreateDirectory(dest);
-                string[] names = { "JojoP.Config.dll", "JojoP.HotUpdate.dll" };
-                int n = 0;
-                foreach (var name in names)
-                {
-                    string from = Path.Combine(src, name);
-                    if (!File.Exists(from))
-                    {
-                        Debug.LogWarning($"[JojoP] 未找到 {from}");
-                        continue;
-                    }
-
-                    File.Copy(from, Path.Combine(dest, name + ".bytes"), true);
-                    n++;
-                }
-
-                AssetDatabase.Refresh();
-                EditorUtility.DisplayDialog("热更 DLL", $"已拷 {n} 个到 Assets/Bundle/Dll\n源: {src}", "确定");
+                int n = JojoPDllBytesCopy.CopyHotUpdateDlls(_yooTarget);
+                EditorUtility.DisplayDialog(
+                    "热更 DLL",
+                    $"已拷 {n} 个到 Assets/Bundle/Dll\nAOT 元数据未改，仍跟当前 APK 绑定",
+                    "确定");
             }
             catch (Exception e)
             {
                 EditorUtility.DisplayDialog("编译 DLL 失败", e.Message, "确定");
+                Debug.LogError(e);
+            }
+        }
+
+        void CopyAotMetaAfterApk()
+        {
+            try
+            {
+                int n = JojoPDllBytesCopy.CopyAotMetaDlls(_yooTarget);
+                EditorUtility.DisplayDialog(
+                    "AOT 元数据",
+                    $"已拷 {n} 个。再点「构建 Yoo 并增量上传」，让 CDN 跟这只 APK 对齐。",
+                    "确定");
+            }
+            catch (Exception e)
+            {
+                EditorUtility.DisplayDialog("拷 AOT 失败", e.Message, "确定");
                 Debug.LogError(e);
             }
         }

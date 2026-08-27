@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using Cysharp.Threading.Tasks;
 using HybridCLR;
@@ -245,20 +246,20 @@ namespace JojoP.AOT.Boot
 
             var settings = JojoPGlobalSettings.Load();
             var hybrid = settings != null ? settings.HybridClr : null;
+            var aotDlls = ResolveAotMetaAssemblies(hybrid);
+            if (aotDlls.Count == 0)
+                throw new Exception(
+                    "没有 AOT 补充元数据列表。Generate 的 AOTGenericReferences.PatchedAOTAssemblyList 为空，GlobalSettings.hybridClr.aotMetaAssemblies 也是空的");
 
-            if (hybrid != null)
+            for (int i = 0; i < aotDlls.Count; i++)
             {
-                foreach (var raw in hybrid.aotMetaAssemblies)
-                {
-                    string loc = DllLocation(raw);
-                    if (!package.IsLocationValid(loc))
-                        continue;
-                    Report(0.88f, "补充 AOT 元数据", loc);
-                    byte[] meta = await LoadTextAssetBytes(package, loc);
-                    var code = RuntimeApi.LoadMetadataForAOTAssembly(meta, HomologousImageMode.SuperSet);
-                    if (code != LoadImageErrorCode.OK)
-                        Debug.LogWarning($"[JojoP.AOT] AOT 元数据 {loc}: {code}");
-                }
+                string loc = DllLocation(aotDlls[i]);
+                Report(0.86f + 0.02f * i / Math.Max(1, aotDlls.Count), "补充 AOT 元数据", loc);
+                byte[] meta = await LoadTextAssetBytes(package, loc);
+                var code = RuntimeApi.LoadMetadataForAOTAssembly(meta, HomologousImageMode.SuperSet);
+                Debug.Log($"[JojoP.AOT] LoadMetadataForAOTAssembly:{loc} ret:{code}");
+                if (code != LoadImageErrorCode.OK)
+                    throw new Exception($"AOT 补充元数据失败 {loc}: {code}");
             }
 
             string[] hotDlls = hybrid != null && hybrid.hotUpdateAssemblies != null && hybrid.hotUpdateAssemblies.Count > 0
@@ -280,6 +281,39 @@ namespace JojoP.AOT.Boot
                 throw new Exception("Assembly.Load 之后仍找不到 JojoP.HotUpdate.GameApp");
 
             Report(0.94f, "热更运行时就绪", "Config + HotUpdate 已加载");
+        }
+
+        /// <summary>
+        /// 权威源是 HybridCLR Generate 的 PatchedAOTAssemblyList（进 APK 的 AOTGenericReferences）。
+        /// 见 https://www.hybridclr.cn/docs/basic/aotgeneric
+        /// </summary>
+        static List<string> ResolveAotMetaAssemblies(JojoPHybridClrMirrorSettings hybrid)
+        {
+            var names = new List<string>();
+            var t = FindType("AOTGenericReferences");
+            if (t != null)
+            {
+                var f = t.GetField("PatchedAOTAssemblyList", BindingFlags.Public | BindingFlags.Static);
+                if (f?.GetValue(null) is System.Collections.IEnumerable rawList)
+                {
+                    foreach (var item in rawList)
+                    {
+                        if (item is string s && !string.IsNullOrWhiteSpace(s))
+                            names.Add(s.Trim());
+                    }
+                }
+            }
+
+            if (names.Count == 0 && hybrid?.aotMetaAssemblies != null)
+            {
+                foreach (var s in hybrid.aotMetaAssemblies)
+                {
+                    if (!string.IsNullOrWhiteSpace(s))
+                        names.Add(s.Trim());
+                }
+            }
+
+            return names;
         }
 
         static string DllLocation(string name)

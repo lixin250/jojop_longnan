@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: JojoP.AOT::JojoP.AOT.AppLauncher
   devDirectPlay: 0
-  channelOverride: 
+  channelOverride: test
 --- !u!224 &1800000003
 RectTransform:
   m_ObjectHideFlags: 0

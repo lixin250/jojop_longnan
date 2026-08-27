@@ -96,12 +96,16 @@ namespace JojoP.AOT.Settings
             "JojoP.HotUpdate.dll"
         };
 
-        [Tooltip("AOT 补充元数据程序集（含 .dll）")]
+        [Tooltip("AOT 补充元数据（含 .dll）。权威源是 AOTGenericReferences.PatchedAOTAssemblyList；出包拷贝会同步到这里。运行时优先读 Generate 列表。")]
         public List<string> aotMetaAssemblies = new List<string>
         {
-            "mscorlib.dll",
-            "System.dll",
-            "System.Core.dll"
+            "Luban.Runtime.dll",
+            "System.Core.dll",
+            "UniTask.dll",
+            "UnityEngine.CoreModule.dll",
+            "UnityEngine.JSONSerializeModule.dll",
+            "YooAsset.dll",
+            "mscorlib.dll"
         };
 
         [Tooltip("主业务热更 DLL（入口仍是 GameApp，在 HotUpdate 内）")]

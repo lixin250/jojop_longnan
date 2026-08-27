@@ -54,5 +54,27 @@ namespace JojoP.Gameplay.Brothers
             cam.transform.position = new Vector3(0f, 0f, -10f);
             BattleCamera.Ensure(cam);
         }
+
+        /// <summary>
+        /// 真机 Shader.Find(URP/Standard) 会被裁掉。工程是 Built-in，用 Always Included 里的 Sprites/Default。
+        /// </summary>
+        public static Material MakeTintMaterial(Color color)
+        {
+            var shader = Shader.Find("Sprites/Default")
+                ?? Shader.Find("UI/Default")
+                ?? Shader.Find("Unlit/Color")
+                ?? Shader.Find("Unlit/Transparent");
+            if (shader == null)
+            {
+                Debug.LogError("[JojoP] 没有可用 shader（Sprites/Default 也被裁了）");
+                return null;
+            }
+
+            var mat = new Material(shader) { hideFlags = HideFlags.HideAndDontSave };
+            if (mat.HasProperty("_Color")) mat.SetColor("_Color", color);
+            if (mat.HasProperty("_BaseColor")) mat.SetColor("_BaseColor", color);
+            if (mat.HasProperty("_TintColor")) mat.SetColor("_TintColor", color);
+            return mat;
+        }
     }
 }

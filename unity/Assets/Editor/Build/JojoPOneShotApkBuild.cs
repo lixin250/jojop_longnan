@@ -1,7 +1,6 @@
 #if UNITY_EDITOR
 using System;
 using System.IO;
-using HybridCLR.Editor;
 using HybridCLR.Editor.Commands;
 using JojoP.AOT.Settings;
 using UnityEditor;
@@ -12,7 +11,7 @@ using YooAsset.Editor;
 namespace JojoP.EditorTools.Build
 {
     /// <summary>
-    /// CompileDll → Yoo Android → R2 → GenerateAll → APK 安装。
+    /// 编译热更 DLL → GenerateAll → APK 安装 → 用这次裁剪目录拷 AOT 元数据 → Yoo → R2。
     /// GenerateAll 若域重载，InitializeOnLoad 会接着打 APK。不要用 MCP 连点 GenerateAll。
     /// </summary>
     [InitializeOnLoad]
@@ -34,7 +33,7 @@ namespace JojoP.EditorTools.Build
             if (!SessionState.GetBool(NeedApkKey, false))
                 return;
             SessionState.SetBool(NeedApkKey, false);
-            EditorApplication.delayCall += FinishApk;
+            EditorApplication.delayCall += FinishApkThenYoo;
         }
 
         [MenuItem("JojoP/一键 HybridCLR+Yoo+APK（安装）")]
@@ -63,7 +62,7 @@ namespace JojoP.EditorTools.Build
             catch (Exception e)
             {
                 SessionState.SetBool(NeedApkKey, false);
-                Debug.LogError("[JojoP] 一键出包失败（Yoo/R2/GenerateAll）\n" + e);
+                Debug.LogError("[JojoP] 一键出包失败（热更 DLL / GenerateAll）\n" + e);
                 ClearLock();
             }
             finally
@@ -78,31 +77,58 @@ namespace JojoP.EditorTools.Build
                 throw new Exception("先退出 Play");
 
             EditorUserBuildSettings.development = true;
+            if (JojoPGlobalSettings.Load() == null)
+                throw new Exception("找不到 JojoPGlobalSettings");
+
+            var target = BuildTarget.Android;
+            EditorUtility.DisplayProgressBar("一键出包", "编译热更 DLL", 0.08f);
+            int hot = JojoPDllBytesCopy.CopyHotUpdateDlls(target);
+            Debug.Log($"[JojoP] 热更 DLL 已拷 {hot} 个（AOT 元数据等 APK 打完再拷）");
+
+            SessionState.SetBool(NeedApkKey, true);
+            EditorUtility.DisplayProgressBar("一键出包", "HybridCLR GenerateAll", 0.35f);
+            PrebuildCommand.GenerateAll();
+            SessionState.SetBool(NeedApkKey, false);
+            FinishApkThenYoo();
+        }
+
+        static void FinishApkThenYoo()
+        {
+            try
+            {
+                EditorUserBuildSettings.development = true;
+                EditorUtility.DisplayProgressBar("一键出包", "打 APK 并安装", 0.55f);
+                JojoPAndroidBuildMenu.RebuildDevelopmentApkAndInstall();
+                Debug.Log("[JojoP] APK 已安装");
+
+                EditorUtility.DisplayProgressBar("一键出包", "拷这次 APK 的 AOT 元数据", 0.72f);
+                int aot = JojoPDllBytesCopy.CopyAotMetaDlls(BuildTarget.Android);
+                Debug.Log($"[JojoP] AOT 元数据已拷 {aot} 个 ← 本次 Android 裁剪目录");
+
+                BuildAndroidYooAndUpload();
+                Debug.Log("[JojoP] 一键出包完成 → Builds/Android/JojoPStack.apk + R2");
+            }
+            catch (Exception e)
+            {
+                Debug.LogError("[JojoP] APK/Yoo 失败\n" + e);
+            }
+            finally
+            {
+                EditorUtility.ClearProgressBar();
+                ClearLock();
+            }
+        }
+
+        static void BuildAndroidYooAndUpload()
+        {
             var settings = JojoPGlobalSettings.Load();
             if (settings == null)
                 throw new Exception("找不到 JojoPGlobalSettings");
-
             string channel = settings.Boot != null && !string.IsNullOrEmpty(settings.Boot.defaultChannel)
                 ? settings.Boot.defaultChannel
                 : "test";
-            var target = BuildTarget.Android;
 
-            EditorUtility.DisplayProgressBar("一键出包", "编译热更 DLL", 0.05f);
-            CompileDllCommand.CompileDll(target);
-            string src = SettingsUtil.GetHotUpdateDllsOutputDirByTarget(target);
-            string dest = Path.Combine(Application.dataPath, "Bundle", "Dll");
-            Directory.CreateDirectory(dest);
-            foreach (var name in new[] { "JojoP.Config.dll", "JojoP.HotUpdate.dll" })
-            {
-                string from = Path.Combine(src, name);
-                if (!File.Exists(from))
-                    throw new Exception("没有热更 DLL: " + from);
-                File.Copy(from, Path.Combine(dest, name + ".bytes"), true);
-            }
-            AssetDatabase.Refresh();
-            Debug.Log("[JojoP] 热更 DLL 已拷到 Bundle/Dll");
-
-            EditorUtility.DisplayProgressBar("一键出包", "构建 YooAsset Android", 0.2f);
+            EditorUtility.DisplayProgressBar("一键出包", "构建 YooAsset Android", 0.82f);
             string version = DateTime.Now.ToString("yyyy-MM-dd-HHmm");
             string pipelineName = BundleBuilderSetting.GetPackageBuildPipeline(PackageName);
             var uniqueBundleName = BundleCollectorSettingData.Setting.UniqueBundleName;
@@ -114,7 +140,7 @@ namespace JojoP.EditorTools.Build
                 BundledFileRoot = BundleBuilderHelper.GetStreamingAssetsRoot(),
                 BuildPipeline = pipelineName,
                 BuildBundleType = (int)EBundleType.AssetBundle,
-                BuildTarget = target,
+                BuildTarget = BuildTarget.Android,
                 PackageName = PackageName,
                 PackageVersion = version,
                 EnableSharePackRule = true,
@@ -132,7 +158,7 @@ namespace JojoP.EditorTools.Build
                 throw new Exception("Yoo 失败: " + yooResult.ErrorInfo);
             Debug.Log("[JojoP] Yoo 成功 " + version + " " + yooResult.OutputPackageDirectory);
 
-            EditorUtility.DisplayProgressBar("一键出包", "上传 R2", 0.45f);
+            EditorUtility.DisplayProgressBar("一键出包", "上传 R2", 0.92f);
             var creds = new JojoPR2Uploader.Credentials
             {
                 AccountId = EditorPrefs.GetString(PrefAccount, DefaultAccount),
@@ -158,32 +184,6 @@ namespace JojoP.EditorTools.Build
             if (up.Failed > 0)
                 throw new Exception($"R2 失败 {up.Failed} 个。上传 {up.Uploaded} 跳过 {up.Skipped}");
             Debug.Log($"[JojoP] R2 {prefix} 上传 {up.Uploaded} 跳过 {up.Skipped}");
-
-            SessionState.SetBool(NeedApkKey, true);
-            EditorUtility.DisplayProgressBar("一键出包", "HybridCLR GenerateAll", 0.6f);
-            PrebuildCommand.GenerateAll();
-            SessionState.SetBool(NeedApkKey, false);
-            FinishApk();
-        }
-
-        static void FinishApk()
-        {
-            try
-            {
-                EditorUserBuildSettings.development = true;
-                EditorUtility.DisplayProgressBar("一键出包", "打 APK 并安装", 0.85f);
-                JojoPAndroidBuildMenu.RebuildDevelopmentApkAndInstall();
-                Debug.Log("[JojoP] 一键出包完成 → Builds/Android/JojoPStack.apk");
-            }
-            catch (Exception e)
-            {
-                Debug.LogError("[JojoP] APK 失败\n" + e);
-            }
-            finally
-            {
-                EditorUtility.ClearProgressBar();
-                ClearLock();
-            }
         }
 
         static void ClearLock()

@@ -28,9 +28,13 @@ MonoBehaviour:
     - JojoP.Config.dll
     - JojoP.HotUpdate.dll
     aotMetaAssemblies:
-    - mscorlib.dll
-    - System.dll
+    - Luban.Runtime.dll
     - System.Core.dll
+    - UniTask.dll
+    - UnityEngine.CoreModule.dll
+    - UnityEngine.JSONSerializeModule.dll
+    - YooAsset.dll
+    - mscorlib.dll
     logicMainDllName: JojoP.HotUpdate.dll
     assemblyTextAssetPath: Assets/Bundle/Dll
     assemblyTextAssetExtension: .bytes

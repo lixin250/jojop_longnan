@@ -131,9 +131,11 @@ namespace JojoP.Gameplay.Brothers
         public static void Polyline(IReadOnlyList<Vector3> points, Color color, float width)
         {
             if (points == null || points.Count < 2) return;
+            var mat = Material;
+            if (mat == null) return;
             var go = new GameObject("AttackTrace");
             var line = go.AddComponent<LineRenderer>();
-            line.sharedMaterial = Material;
+            line.sharedMaterial = mat;
             line.startColor = color;
             line.endColor = color;
             line.startWidth = width;
@@ -161,8 +163,7 @@ namespace JojoP.Gameplay.Brothers
             get
             {
                 if (_material != null) return _material;
-                var shader = Shader.Find("Sprites/Default") ?? Shader.Find("Universal Render Pipeline/Unlit");
-                _material = new Material(shader) { hideFlags = HideFlags.HideAndDontSave };
+                _material = BattleField.MakeTintMaterial(Color.white);
                 return _material;
             }
         }
