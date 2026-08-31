@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using JojoP.Config;
+using UnityEngine;
 
 namespace JojoP.Gameplay.Brothers
 {
@@ -111,9 +112,22 @@ namespace JojoP.Gameplay.Brothers
                           ?? GameTables.FindBrother("player");
             var me = CreateFromDef(starter, meta, recruited: true);
             Squad.Add(me);
+            DumpFirstPull(starter, me, meta);
             meta?.NoteKnownHero(starter.Id);
 
             CurrentSceneId = PickScene();
+        }
+
+        static void DumpFirstPull(BrotherDef def, BrotherRuntime me, MetaProgress meta)
+        {
+            if (def == null || me == null) return;
+            Debug.Log(
+                "[JojoP] 进入战斗 · 个人数据第一次拉取\n" +
+                $"id={me.DefId} name={me.DisplayName}\n" +
+                $"生命 底板={def.BaseHp:0} 进战={me.MaxHp:0.#}  (潜力+{meta?.PotentialHp ?? 0} ×8% → ×{meta?.HpMul ?? 1f:0.##})\n" +
+                $"攻击 底板={def.BaseAtk:0.#} 进战={me.Atk:0.##}  (潜力+{meta?.PotentialAtk ?? 0} ×8% → ×{meta?.AtkMul ?? 1f:0.##})\n" +
+                $"防御 底板={def.BaseDefense:0} 进战={me.Defense:0}  (潜力+{meta?.PotentialDef ?? 0} ×8 → +{meta?.DefBonus ?? 0f:0})\n" +
+                $"移速={me.Move:0.##} 攻速={me.AttackInterval:0.##}s 暴击={me.CritRate:0.##}");
         }
 
         public static BrotherRuntime CreateFromDef(BrotherDef def, MetaProgress meta, bool recruited)
@@ -122,6 +136,7 @@ namespace JojoP.Gameplay.Brothers
 
             float hp = def.BaseHp * (meta?.HpMul ?? 1f);
             float atk = def.BaseAtk * (meta?.AtkMul ?? 1f);
+            float defense = Math.Max(0f, def.BaseDefense) + (meta?.DefBonus ?? 0f);
             return new BrotherRuntime
             {
                 DefId = def.Id,
@@ -130,7 +145,7 @@ namespace JojoP.Gameplay.Brothers
                 Hp = hp,
                 Atk = atk,
                 Move = def.BaseMove,
-                Defense = Math.Max(0f, def.BaseDefense),
+                Defense = defense,
                 CritRate = Math.Max(0f, Math.Min(0.75f, def.CritRate)),
                 CritDamage = Math.Max(1f, def.CritDamage),
                 AttackInterval = Math.Max(0.15f, def.AttackInterval),

@@ -1,0 +1,809 @@
+﻿--------- beginning of main
+08-27 10:32:07.244  7946  8952 I bt_shim_scanner: system/main/shim/le_scanning_manager.cc:228 ScanFilterAdd: in shim layer
+08-27 10:32:07.244  7946  8897 D ScanController: onScanFilterConfig() - clientIf=4, action = 0 status = 0, filterType=0, availableSpace=0
+08-27 10:32:07.244  7946  8897 D ScanManager: callback done for scannerId - 4 status - 0
+08-27 10:32:07.244  7946  8952 D ScanManager: getLowRssiThreshold: client settings is null
+08-27 10:32:07.244  7946  8952 D ScanManager: rssiThresholdLow: -60rssiThresholdHigh: -60
+08-27 10:32:07.244  7946  8952 D ScanManager: configureFilterParameter 500 10000 1 0 -60
+08-27 10:32:07.244  7946  8952 I bt_shim_scanner: system/main/shim/le_scanning_manager.cc:195 ScanFilterParamSetup: in shim layer, clientIf=4
+08-27 10:32:07.244  7946  8897 D ScanController: onScanFilterParamsConfigured() - clientIf=4, status=0, action=0, availableSpace=0
+08-27 10:32:07.244  7946  8897 D ScanManager: callback done for scannerId - 4 status - 0
+08-27 10:32:07.244  7946  8952 D ScanManager: configureRegularScanParams() - queue=3
+08-27 10:32:07.244  7946  8952 D ScanManager: configureRegularScanParams() - queue empty, scan stopped
+08-27 10:32:07.244  7946  8952 D ScanManager: apply scan timeout (300000)to scannerId 4
+08-27 10:32:07.244  7946  8952 I ScanManager: msg.what = MSG_RECORD_CALLER, msg.arg1 = None
+08-27 10:32:07.245  7946  8952 I ScanManager: msg.what = MSG_START_BLE_SCAN, msg.arg1 = None
+08-27 10:32:07.245  7946  8952 D ScanManager: handling starting scan
+08-27 10:32:07.245  7946  8952 W CloudControlUtil:  isAllowGattScanInDeepDoze: false
+08-27 10:32:07.245  7946  8952 D ScanManager: isAptXLowLatencyModeEnabled: false
+08-27 10:32:07.245  7946  8952 D ScanManager: Scan mode update during screen on from SCAN_MODE_LOW_POWER to SCAN_MODE_LOW_POWER
+08-27 10:32:07.245  7946  8952 D ScanManager: processBeforeScanModeChange: Not started yet
+08-27 10:32:07.245  7946  8952 D ScanManager: track LE scan event: callerPackage = [com.xiaomi.bluetooth], scanMode = [0], reportDelayMillis = [0], behavior = [1], scannerId = [5], duration = [0]
+08-27 10:32:07.245  7946  8952 I bt_shim_scanner: system/main/shim/le_scanning_manager.cc:251 ScanFilterEnable: in shim layer
+08-27 10:32:07.245  7946  8290 D BT_OneTrack_I/F: region:CN
+08-27 10:32:07.245  7946  8897 D ScanController: onScanFilterEnableDisabled() - clientIf=5, status=0, action=1
+08-27 10:32:07.245  7946  8897 D ScanManager: callback done for scannerId - 5 status - 0
+08-27 10:32:07.246  7946  8952 D ScanManager: configureScanFilters rssiThreshold: -128, 0
+08-27 10:32:07.246  7946  8952 I bt_shim_scanner: system/main/shim/le_scanning_manager.cc:228 ScanFilterAdd: in shim layer
+08-27 10:32:07.246  7946  8897 D ScanController: onScanFilterConfig() - clientIf=5, action = 0 status = 0, filterType=0, availableSpace=0
+08-27 10:32:07.246  7946  8897 D ScanManager: callback done for scannerId - 5 status - 0
+08-27 10:32:07.246  7946  8952 D ScanManager: getLowRssiThreshold: client settings is null
+08-27 10:32:07.246  7946  8952 D ScanManager: rssiThresholdLow: -128rssiThresholdHigh: -128
+08-27 10:32:07.246  7946  8952 D ScanManager: configureFilterParameter 500 10000 1 0 -128
+08-27 10:32:07.246  7946  8952 I bt_shim_scanner: system/main/shim/le_scanning_manager.cc:195 ScanFilterParamSetup: in shim layer, clientIf=5
+08-27 10:32:07.246  7946  8897 D ScanController: onScanFilterParamsConfigured() - clientIf=5, status=0, action=0, availableSpace=0
+08-27 10:32:07.246  7946  8897 D ScanManager: callback done for scannerId - 5 status - 0
+08-27 10:32:07.246  7946  8952 D ScanManager: configureRegularScanParams() - queue=4
+08-27 10:32:07.246  7946  8952 D ScanManager: configureRegularScanParams() - queue empty, scan stopped
+08-27 10:32:07.246  7946  8952 D ScanManager: apply scan timeout (300000)to scannerId 5
+08-27 10:32:07.257  2956  3017 D JavaheapMonitor: Java heap used=257M max=512M, proc: system_server
+08-27 10:32:07.257  2956  3017 V JavaheapMonitor: Check java heap usage finished! Next check delay: 60000
+08-27 10:32:07.339  2956  9018 I NetworkAccelerateSwitchService: EVENT_RSSI_POLL. mRssiPoll=true
+08-27 10:32:07.339  2956  9018 I NetworkAccelerateSwitchService: checkWifiRssiAndLinkSpeed rssi:50
+08-27 10:32:07.339  2956  9018 I NetworkAccelerateSwitchService: checkWifiRssiAndLinkSpeed mWifiFastFade:false mWifiFastFadeAdjustThreshold:false
+08-27 10:32:07.339  2956  9018 I NetworkAccelerateSwitchService: getAverageWifiRssi:48
+08-27 10:32:07.340  2956  9018 D NetworkAccelerateSwitchService: checkIntervalModeChange mMovementState:false mIntervalMode:0 mIsBadLinkLayerQoE:false mBadLinkLayerQoETimes = 0
+08-27 10:32:07.427  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363167664020895, lux: 380.6
+08-27 10:32:07.430  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363167664020895, sensor=5, temperature(K)=   0.0000
+08-27 10:32:07.430  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:07.597  2956  7206 D WifiStaIfaceHidlImpl: getCachedScanData is not implemented by HIDL
+--------- beginning of system
+08-27 10:32:07.598  3510  3510 I wificond: station_bandwidth: ?
+08-27 10:32:07.599  2956  7206 D MiuiWifiCommonBase: band: 1, compensate: 0
+08-27 10:32:07.608  8081  8137 E PhoneAdapter: get ntnphones failed, exception: java.lang.IllegalStateException: not support satellite!
+08-27 10:32:07.610  2956  7213 D AmlWifiScoreReportInjector: isMobileDataSignalPoor cellNrSignalRsrp = -106
+08-27 10:32:07.610 27655 27655 D ControlCenterHeaderExpandController: onExpansionChanged: progress =  0.0
+08-27 10:32:07.611 27655 27655 D ControlCenterHeaderExpandController: onExpansionChanged: progress =  0.0
+08-27 10:32:07.611 27655 27655 D ControlCenterHeaderExpandController: onExpansionChanged: progress =  0.0
+08-27 10:32:07.626  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363167863860531, lux: 380.6
+08-27 10:32:07.628  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363167863860531, sensor=5, temperature(K)=   0.0000
+08-27 10:32:07.628  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:07.640  2130  2819 I vendor.qti.hardware.display.composer-service: FrameNotifyProcess Sensor: notify citsensorservice to trigger cwb
+08-27 10:32:07.640  3899  5545 I libsensor-parseRGB: request dump start for mRequestDisplayId 0
+08-27 10:32:07.640  3899  5545 D vendor.xiaomi.sensor.citsensorservice@2.0-service: handle id:21 wxh:1280x2400 uwxuh:1080x2400 size: 9216000 fd:17 fd_meta:18 flags:0x228 usage:0x33  format:0x3 layer_count: 1 reserved_size = 0
+08-27 10:32:07.641  2130  2719 W SDM     : HWCSession::GetDisplayIndex: Display index not found for display 1.
+08-27 10:32:07.641  2130  2719 W SDM     : HWCSession::GetDisplayIndex: Display index not found for display 3.
+08-27 10:32:07.641  2130  2719 D SDM     : HWCSession::SetCWBOutputBuffer: CWB config passed by cwb_client : tappoint 1  CWB_ROI : (591.000000 22.000000 717.000000 148.000000). Display 0
+08-27 10:32:07.663  2130  5559 D SDM     : HWCSession::NotifyCWBStatus: Notify the client about buffer status 0. Display: 0
+08-27 10:32:07.664  2130  5559 I SDM     : HWCSession::ProcessCWBStatus: CWB queue is empty. display_index: 0
+08-27 10:32:07.664  3899  5546 D libsensor-parseRGB: the value of RGB [2612.490388 3395.895439 3214.494024]
+08-27 10:32:07.698  8035 11172 D JavaheapMonitor: Java heap used=2M max=256M, proc: com.xiaomi.hypercomm
+08-27 10:32:07.698  8035 11172 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+08-27 10:32:07.826  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363168064022197, lux: 380.6
+08-27 10:32:07.828  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363168064022197, sensor=5, temperature(K)=   0.0000
+08-27 10:32:07.828  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:07.937 21613 21860 V MSF.C.MSFCore[@PS]: [Event] MSFPacketStatistics.cpp(300)::DoCheckRequestTimeout->current rtts:24.079
+08-27 10:32:08.027  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363168264020999, lux: 380.6
+08-27 10:32:08.029  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363168264020999, sensor=5, temperature(K)=   0.0000
+08-27 10:32:08.029  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:08.226  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363168464021312, lux: 380.6
+08-27 10:32:08.229  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363168464021312, sensor=5, temperature(K)=   0.0000
+08-27 10:32:08.229  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:08.258 21733 21933 D JavaheapMonitor: Java heap used=4M max=256M, proc: com.xiaomi.joyose
+08-27 10:32:08.258 21733 21933 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+08-27 10:32:08.408  2021  8502 D vendor.qti.bluetooth@1.1-wake_lock: Release wakelock is released 
+08-27 10:32:08.427  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363168663860114, lux: 380.6
+08-27 10:32:08.428  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363168663860114, sensor=5, temperature(K)=   0.0000
+08-27 10:32:08.428  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:08.492  7962 11171 D JavaheapMonitor: Java heap used=2M max=256M, proc: .dataservices
+08-27 10:32:08.492  7962 11171 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+08-27 10:32:08.565  3755  3755 I cnss-daemon: nl80211 response handler invoked
+08-27 10:32:08.565  3755  3755 I cnss-daemon: nl80211_response_handler: cmd 103, vendorID 4980, subcmd 13  received
+08-27 10:32:08.565  2106  6357 I WifiHAL : event received NL80211_CMD_VENDOR, vendor_id = 0x1374, subcmd = 0xd
+08-27 10:32:08.588 16920 26245 D JavaheapMonitor: Java heap used=3M max=256M, proc: com.android.nfc
+08-27 10:32:08.588 16920 26245 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+08-27 10:32:08.627  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363168864020999, lux: 380.6
+08-27 10:32:08.627  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363168864020999, sensor=5, temperature(K)=   0.0000
+08-27 10:32:08.627  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:08.660 12063 13849 I com.tencent.mm: This is non sticky GC, maxfree is 33554432 minfree is 8388608
+08-27 10:32:08.660 12063 13849 I com.tencent.mm: Explicit concurrent copying GC freed 10MB AllocSpace bytes, 16(508KB) LOS objects, 18% free, 138MB/170MB, paused 513us,619us total 1.744s
+08-27 10:32:08.660 12063 12080 I com.tencent.mm: WaitForGcToComplete blocked Background on Explicit for 1.735s
+08-27 10:32:08.712  7275  9960 D JavaheapMonitor: Java heap used=78M max=512M, proc: com.miui.voiceassist
+08-27 10:32:08.712  7275  9960 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+08-27 10:32:08.827  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363169063852353, lux: 380.6
+08-27 10:32:08.829  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363169063852353, sensor=5, temperature(K)=   0.0000
+08-27 10:32:08.829  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:08.938 21613 21860 V MSF.C.MSFCore[@PS]: [Event] MSFPacketStatistics.cpp(300)::DoCheckRequestTimeout->current rtts:24.079
+08-27 10:32:09.026  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363169263860583, lux: 380.6
+08-27 10:32:09.028  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363169263860583, sensor=5, temperature(K)=   0.0000
+08-27 10:32:09.028  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:09.046  2956  7203 I MiuiNetworkPolicy: bandwidth: 0 KB/s, Max bandwidth: 1163 KB/s
+08-27 10:32:09.227  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363169463857353, lux: 380.6
+08-27 10:32:09.228  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363169463857353, sensor=5, temperature(K)=   0.0000
+08-27 10:32:09.228  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:09.303 21681 21979 E NTKernel: [E] united_config_mgr_mobileqq.cc(131)::operator() [united_config]->load config error. group_id:102431
+08-27 10:32:09.303 21681 21979 I NTKernel: [I] united_config_mgr_mobileqq.cc(151)::operator() [united_config]->group_id:102431, switch:
+08-27 10:32:09.303 21681 21979 I NTKernel: [I] buddy_list_config.cc(80)::operator() [LogConfig]->fetch config suc content size:0
+08-27 10:32:09.426  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363169663844489, lux: 380.6
+08-27 10:32:09.427  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363169663844489, sensor=5, temperature(K)=   0.0000
+08-27 10:32:09.427  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:09.627  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363169863843499, lux: 380.6
+08-27 10:32:09.629  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363169863843499, sensor=5, temperature(K)=   0.0000
+08-27 10:32:09.629  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:09.636  3975  3975 I adbd    : in ShellService: export ANDROID_LOG_TAGS=''; exec logcat '-d' '-t' '200'
+08-27 10:32:09.827  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363170063846312, lux: 380.6
+08-27 10:32:09.829  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363170063846312, sensor=5, temperature(K)=   0.0000
+08-27 10:32:09.829  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:09.832 16925 28102 D JavaheapMonitor: Java heap used=2M max=256M, proc: system
+08-27 10:32:09.832 16925 28102 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+08-27 10:32:09.939 21613 21860 V MSF.C.MSFCore[@PS]: [Event] MSFPacketStatistics.cpp(300)::DoCheckRequestTimeout->current rtts:24.079
+08-27 10:32:09.961 20908 20923 I r:searchService: This is non sticky GC, maxfree is 33554432 minfree is 8388608
+08-27 10:32:09.965 20908 22356 D JavaheapMonitor: Java heap used=4M max=512M, proc: com.xiaomi.aicr:searchService
+08-27 10:32:09.966 20908 22356 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+08-27 10:32:10.026  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363170263844281, lux: 380.6
+08-27 10:32:10.028  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363170263844281, sensor=5, temperature(K)=   0.0000
+08-27 10:32:10.028  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:10.065  2956  7203 I MiuiNetworkPolicy: updateUidState uid = 10089, uidState = 19
+08-27 10:32:10.086  2956  2988 W ActivityManagerServiceImpl: Sending non-protected broadcast com.modemenhance.ACTION_MODEMWIFI_RSSI_POLL from system 8081:com.android.phone/1001 pkg com.android.phone. Callers=
+08-27 10:32:10.087  8081  8081 W m.android.phone: type=1400 audit(0.0:2006751): avc:  denied  { read } for  name="u:object_r:vendor_wlan_eht_prop:s0" dev="tmpfs" ino=660 scontext=u:r:radio:s0 tcontext=u:object_r:vendor_wlan_eht_prop:s0 tclass=file permissive=0
+08-27 10:32:10.090  8081  8081 W libc    : Access denied finding property "persist.vendor.wlan.disable.eht"
+08-27 10:32:10.090  8081  8081 D SlaveWifiManager: getWifiSlaveConnectionInfo
+08-27 10:32:10.129 24043 24159 D JavaheapMonitor: Java heap used=11M max=256M, proc: com.google.android.gms
+08-27 10:32:10.130 24043 24159 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+08-27 10:32:10.226  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363170463843760, lux: 380.6
+08-27 10:32:10.227  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363170463843760, sensor=5, temperature(K)=   0.0000
+08-27 10:32:10.227  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:10.344  2956  9018 I NetworkAccelerateSwitchService: EVENT_RSSI_POLL. mRssiPoll=true
+08-27 10:32:10.344  2956  9018 I NetworkAccelerateSwitchService: checkWifiRssiAndLinkSpeed rssi:48
+08-27 10:32:10.344  2956  9018 I NetworkAccelerateSwitchService: checkWifiRssiAndLinkSpeed mWifiFastFade:false mWifiFastFadeAdjustThreshold:false
+08-27 10:32:10.344  2956  9018 I NetworkAccelerateSwitchService: getAverageWifiRssi:48
+08-27 10:32:10.345  2956  9018 D NetworkAccelerateSwitchService: checkIntervalModeChange mMovementState:false mIntervalMode:0 mIsBadLinkLayerQoE:false mBadLinkLayerQoETimes = 0
+08-27 10:32:10.358 12063 13849 I com.tencent.mm: This is non sticky GC, maxfree is 33554432 minfree is 8388608
+08-27 10:32:10.358 12063 13849 I com.tencent.mm: Explicit concurrent copying GC freed 636KB AllocSpace bytes, 4(80KB) LOS objects, 18% free, 137MB/169MB, paused 517us,521us total 1.697s
+08-27 10:32:10.426  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363170663842562, lux: 380.6
+08-27 10:32:10.428  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363170663842562, sensor=5, temperature(K)=   0.0000
+08-27 10:32:10.428  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:10.464 16889 17583 D JavaheapMonitor: Java heap used=8M max=256M, proc: com.miui.daemon
+08-27 10:32:10.465 16889 17583 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+08-27 10:32:10.569 16845 17260 D JavaheapMonitor: Java heap used=3M max=512M, proc: com.android.providers.media.module
+08-27 10:32:10.569 16845 17260 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+08-27 10:32:10.626  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363170863841728, lux: 380.6
+08-27 10:32:10.628  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363170863841728, sensor=5, temperature(K)=   0.0000
+08-27 10:32:10.628  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:10.782 30898  1254 D JavaheapMonitor: Java heap used=4M max=512M, proc: com.miui.securitycore.remote
+08-27 10:32:10.782 30898  1254 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+08-27 10:32:10.791  2021  8885 D vendor.qti.bluetooth@1.1-wake_lock: Acquire wakelock is acquired 
+08-27 10:32:10.797  7946  8897 D BluetoothRemoteDevices: Update property, device=XX:XX:XX:XX:8B:AB, type: 1
+08-27 10:32:10.797  7946  8897 D BluetoothRemoteDevices: Skip name update for XX:XX:XX:XX:8B:AB
+08-27 10:32:10.797  7946  8897 D BluetoothRemoteDevices: Update property, device=XX:XX:XX:XX:8B:AB, type: 4
+08-27 10:32:10.797  7946  8897 D BluetoothRemoteDevices: Skip class update, device=XX:XX:XX:XX:8B:AB, cod=0x1f00
+08-27 10:32:10.797  7946  8897 D BluetoothRemoteDevices: Update property, device=XX:XX:XX:XX:8B:AB, type: 5
+08-27 10:32:10.797  7946  8897 D BluetoothRemoteDevices:  BT_PROPERTY_TYPE_OF_DEVICE addr:D7:F8:27:68:8B:AB deviceType:2
+08-27 10:32:10.797  7946  8897 D HyperRemoteDevicesAdapter: Update property, device=D7:F8:27:68:8B:AB, type: 1
+08-27 10:32:10.797  7946  8897 D HyperRemoteDevicesAdapter: Remote device name is: myTag type = 2 D7:F8:27:68:8B:AB
+08-27 10:32:10.797  7946  8897 D HyperRemoteDevicesAdapter: update name for XX:XX:XX:XX:8B:AB type = 2 name = myTag 1
+08-27 10:32:10.797  7946  8897 D HyperRemoteDevicesAdapter: Update property, device=D7:F8:27:68:8B:AB, type: 4
+08-27 10:32:10.797  7946  8897 D HyperRemoteDevicesAdapter: Update property, device=D7:F8:27:68:8B:AB, type: 5
+08-27 10:32:10.797  7946  8897 V ScanController: onScanResult() - eventType=0x1b, addressType=0, address=XX:XX:XX:XX:8B:AB, primaryPhy=1, secondaryPhy=0, advertisingSid=0xff, txPower=127, rssi=-58, periodicAdvInt=0x0, originalAddress=D7:F8:27:68:8B:AB
+08-27 10:32:10.798  7946  8897 V ScanController: Skipping client: permission=true matches=false
+08-27 10:32:10.798  7946  8897 V ScanController: Skipping client: permission=true matches=false
+08-27 10:32:10.799  7946  8897 V ScanController: Skipping client: permission=true matches=false
+08-27 10:32:10.827  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363171063841781, lux: 380.6
+08-27 10:32:10.829  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363171063841781, sensor=5, temperature(K)=   0.0000
+08-27 10:32:10.829  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:10.941 21613 21860 V MSF.C.MSFCore[@PS]: [Event] MSFPacketStatistics.cpp(300)::DoCheckRequestTimeout->current rtts:24.079
+08-27 10:32:10.984  2021  8502 D vendor.qti.bluetooth@1.1-wake_lock: Release wakelock is released 
+08-27 10:32:11.027  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363171263841156, lux: 380.6
+08-27 10:32:11.028  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363171263841156, sensor=5, temperature(K)=   0.0000
+08-27 10:32:11.028  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:11.063  2956  7203 I MiuiNetworkPolicy: updateUidState uid = 10125, uidState = 19
+08-27 10:32:11.063  2956  7203 I MiuiNetworkPolicyTrafficLimit: updateWhiteListUidForMobileTraffic uid=10125,add=false
+08-27 10:32:11.064  2956  7203 D MiuiNetworkPolicyTrafficLimit: updateWhiteListUidForMobileTraffic rst=true
+08-27 10:32:11.099 21164 21181 I aomi.finddevice: This is non sticky GC, maxfree is 33554432 minfree is 8388608
+08-27 10:32:11.112 21724 22220 D JavaheapMonitor: Java heap used=16M max=256M, proc: com.miui.powerkeeper
+08-27 10:32:11.112 21724 22220 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+08-27 10:32:11.123 21164 22357 D JavaheapMonitor: Java heap used=3M max=256M, proc: com.xiaomi.finddevice
+08-27 10:32:11.123 21164 22357 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+08-27 10:32:11.147  2956  7854 W NetworkStats: High-frequency openSessionForUsageStats detected (window 30ms):
+08-27 10:32:11.147  2956  7854 W NetworkStats:   pkg=com.tencent.mm, count=13
+08-27 10:32:11.147  2956  7854 W NetworkStats:   pkg=android, count=17
+08-27 10:32:11.227  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363171463842249, lux: 380.6
+08-27 10:32:11.229  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363171463842249, sensor=5, temperature(K)=   0.0000
+08-27 10:32:11.229  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:11.428  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363171663840635, lux: 380.6
+08-27 10:32:11.430  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363171663840635, sensor=5, temperature(K)=   0.0000
+08-27 10:32:11.430  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:11.499  3767  5069 I tencent.mm:push: This is non sticky GC, maxfree is 33554432 minfree is 8388608
+08-27 10:32:11.499  3767  5069 I tencent.mm:push: Explicit concurrent copying GC freed 5645KB AllocSpace bytes, 21(408KB) LOS objects, 50% free, 8393KB/16MB, paused 343us,423us total 459.018ms
+08-27 10:32:11.628  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363171863857353, lux: 380.6
+08-27 10:32:11.629  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363171863857353, sensor=5, temperature(K)=   0.0000
+08-27 10:32:11.629  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:11.778  8923  9421 D MiuiFastConnectService_Plugin: stopBleScan: scanning: true
+08-27 10:32:11.779  8923  9421 D BluetoothAdapter: isLeEnabled(): ON
+08-27 10:32:11.779  8923  9421 D BluetoothAdapter: isLeEnabled(): ON
+08-27 10:32:11.781  7946  7637 D ScanController: stopScan() - queue size =4
+08-27 10:32:11.784  7946  8952 I ScanManager: msg.what = MSG_CHECK_SCAN_STATUS, msg.arg1 = CHECK_BACKGROUND_TIMEOUT
+08-27 10:32:11.785  7946  7637 D ScanController: unregisterScanner() - scannerId=4
+08-27 10:32:11.785  7946  7637 I bt_shim_scanner: system/main/shim/le_scanning_manager.cc:156 Unregister: in shim layer, scannerId=4
+08-27 10:32:11.785  8923  9421 D BluetoothAdapter: isLeEnabled(): ON
+08-27 10:32:11.786  7946  7637 D ScanController: stopScan() - queue size =4
+08-27 10:32:11.787  7946  8952 I ScanManager: msg.what = MSG_STOP_BLE_SCAN, msg.arg1 = None
+08-27 10:32:11.788  7946  8952 D ScanManager: track LE scan event: callerPackage = [com.xiaomi.bluetooth], scanMode = [0], reportDelayMillis = [0], behavior = [2], scannerId = [4], duration = [4551]
+08-27 10:32:11.788   425  4362 D JavaheapMonitor: Java heap used=13M max=512M, proc: com.xiaomi.aicr:cognitionService
+08-27 10:32:11.788  7946  8952 D ScanManager: handling stopping scan  [ScanClient scanModeApp 0 scanModeUsed 0 scannerId 4 [appScanStats android.uid.bluetooth:1002]]
+08-27 10:32:11.788   425  4362 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+08-27 10:32:11.788  7946  8290 D BT_OneTrack_I/F: region:CN
+08-27 10:32:11.789  7946  8952 E BluetoothUtils: isDeepDozeMode? false
+08-27 10:32:11.789  7946  7637 D ScanController: unregisterScanner() - scannerId=5
+08-27 10:32:11.789  7946  8952 I bt_shim_scanner: system/main/shim/le_scanning_manager.cc:195 ScanFilterParamSetup: in shim layer, clientIf=4
+08-27 10:32:11.789  7946  7637 I bt_shim_scanner: system/main/shim/le_scanning_manager.cc:156 Unregister: in shim layer, scannerId=5
+08-27 10:32:11.789  7946  8897 D ScanController: onScanFilterParamsConfigured() - clientIf=4, status=0, action=0, availableSpace=0
+08-27 10:32:11.790  7946  8897 D ScanManager: callback done for scannerId - 4 status - 0
+08-27 10:32:11.790  7946  8952 I bt_shim_scanner: system/main/shim/le_scanning_manager.cc:195 ScanFilterParamSetup: in shim layer, clientIf=4
+08-27 10:32:11.790  7946  8897 D ScanController: onScanFilterParamsConfigured() - clientIf=4, status=0, action=0, availableSpace=0
+08-27 10:32:11.790  7946  8897 D ScanManager: callback done for scannerId - 4 status - 0
+08-27 10:32:11.790  7946  8952 I bt_shim_scanner: system/main/shim/le_scanning_manager.cc:195 ScanFilterParamSetup: in shim layer, clientIf=4
+08-27 10:32:11.790  7946  8897 D ScanController: onScanFilterParamsConfigured() - clientIf=4, status=0, action=0, availableSpace=0
+08-27 10:32:11.790  7946  8897 D ScanManager: callback done for scannerId - 4 status - 0
+08-27 10:32:11.790  7946  8952 I bt_shim_scanner: system/main/shim/le_scanning_manager.cc:195 ScanFilterParamSetup: in shim layer, clientIf=4
+08-27 10:32:11.790  7946  8897 D ScanController: onScanFilterParamsConfigured() - clientIf=4, status=0, action=0, availableSpace=0
+08-27 10:32:11.790  7946  8897 D ScanManager: callback done for scannerId - 4 status - 0
+08-27 10:32:11.791  7946  8952 I bt_shim_scanner: system/main/shim/le_scanning_manager.cc:195 ScanFilterParamSetup: in shim layer, clientIf=4
+08-27 10:32:11.791  2021  2021 D vendor.qti.bluetooth@1.1-wake_lock: Acquire wakelock is acquired 
+08-27 10:32:11.791  7946  8897 D ScanController: onScanFilterParamsConfigured() - clientIf=4, status=0, action=0, availableSpace=0
+08-27 10:32:11.791  7946  8897 D ScanManager: callback done for scannerId - 4 status - 0
+08-27 10:32:11.791  7946  8952 I bt_shim_scanner: system/main/shim/le_scanning_manager.cc:195 ScanFilterParamSetup: in shim layer, clientIf=4
+08-27 10:32:11.792  7946  8897 D ScanController: onScanFilterParamsConfigured() - clientIf=4, status=0, action=0, availableSpace=0
+08-27 10:32:11.792  7946  8897 D ScanManager: callback done for scannerId - 4 status - 0
+08-27 10:32:11.792  7946  8952 I bt_shim_scanner: system/main/shim/le_scanning_manager.cc:195 ScanFilterParamSetup: in shim layer, clientIf=4
+08-27 10:32:11.792  7946  8897 D ScanController: onScanFilterParamsConfigured() - clientIf=4, status=0, action=0, availableSpace=0
+08-27 10:32:11.792  7946  8897 D ScanManager: callback done for scannerId - 4 status - 0
+08-27 10:32:11.792  7946  8952 D ScanManager: configureRegularScanParams() - queue=3
+08-27 10:32:11.792  7946  8952 D ScanManager: configureRegularScanParams() - queue empty, scan stopped
+08-27 10:32:11.792  7946  8952 I ScanManager: msg.what = MSG_STOP_BLE_SCAN, msg.arg1 = None
+08-27 10:32:11.792  7946  8952 D ScanManager: track LE scan event: callerPackage = [com.xiaomi.bluetooth], scanMode = [0], reportDelayMillis = [0], behavior = [2], scannerId = [5], duration = [4548]
+08-27 10:32:11.792  7946  8952 D ScanManager: handling stopping scan  [ScanClient scanModeApp 0 scanModeUsed 0 scannerId 5 [appScanStats android.uid.bluetooth:1002]]
+08-27 10:32:11.793  7946  8952 E BluetoothUtils: isDeepDozeMode? false
+08-27 10:32:11.793  7946  8952 I bt_shim_scanner: system/main/shim/le_scanning_manager.cc:195 ScanFilterParamSetup: in shim layer, clientIf=5
+08-27 10:32:11.793  7946  8897 D ScanController: onScanFilterParamsConfigured() - clientIf=5, status=0, action=0, availableSpace=0
+08-27 10:32:11.793  7946  8897 D ScanManager: callback done for scannerId - 5 status - 0
+08-27 10:32:11.793  7946  8952 D ScanManager: configureRegularScanParams() - queue=2
+08-27 10:32:11.793  7946  8952 D ScanManager: configureRegularScanParams() - queue empty, scan stopped
+08-27 10:32:11.793  7946  8290 D BT_OneTrack_I/F: region:CN
+08-27 10:32:11.827  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363172063841416, lux: 380.6
+08-27 10:32:11.830  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363172063841416, sensor=5, temperature(K)=   0.0000
+08-27 10:32:11.830  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:11.851  8923  9421 D BluetoothAdapter: isLeEnabled(): ON
+08-27 10:32:11.852  8923  9421 D MiuiFastConnectService_Plugin: handleMessage: MSG_START_BLE_SCAN mode: 0
+08-27 10:32:11.853  8923  9421 V BluetoothPluginCloud: queryPluginFeatureSupport: pluginVersion = 1.4_1.53featureId = scan_aux_V
+08-27 10:32:11.858  8923  9421 D BluetoothAdapter: isLeEnabled(): ON
+08-27 10:32:11.859  7946  7637 D ScanController: registerScanner() - UUID=d82d2b4f-03f4-4db0-b041-d434caf93e71
+08-27 10:32:11.860  7946  7637 I bt_shim_scanner: system/main/shim/le_scanning_manager.cc:150 RegisterScanner: in shim layer, UUID=d82d2b4f-03f4-4db0-b041-d434caf93e71
+08-27 10:32:11.860  7946  8897 D ScanController: onScannerRegistered() - UUID=d82d2b4f-03f4-4db0-b041-d434caf93e71, scannerId=4, status=0
+08-27 10:32:11.861  8923 18966 D BluetoothLeScanner: onScannerRegistered() - status=0 scannerId=4 mScannerId=0
+08-27 10:32:11.861  7946  7637 D ScanController: Start scan with filters
+08-27 10:32:11.861  7946  7637 D ScanController: enforcePrivilegedPermissionIfNeeded([BluetoothLeScanFilter [mDeviceName=null, mDeviceAddress=null, mUuid=null, mUuidMask=null, mServiceSolicitationUuid=null, mServiceSolicitationUuidMask=null, mServiceDataUuid=null, mServiceData=null, mServiceDataMask=null, mManufacturerId=911, mManufacturerData=[], mManufacturerDataMask=null, mAdvertisingDataType=-1, mAdvertisingData=null, mAdvertisingDataMask=null, mTransportBlockFilter=null, mGroupBasedFiltering=false], BluetoothLeScanFilter [mDeviceName=null, mDeviceAddress=null, mUuid=null, mUuidMask=null, mServiceSolicitationUuid=null, mServiceSolicitationUuidMask=null, mServiceDataUuid=null, mServiceData=null, mServiceDataMask=null, mManufacturerId=65535, mManufacturerData=[77], mManufacturerDataMask=null, mAdvertisingDataType=-1, mAdvertisingData=null, mAdvertisingDataMask=null, mTransportBlockFilter=null, mGroupBasedFiltering=false], BluetoothLeScanFilter [mDeviceName=null, mDeviceAddress=null, mUuid=null, mUuidMask=null, mServiceSolicitationUuid=null, mServiceSolicitationUuidMask=null, mServiceDataUuid=0000fe95-0000-1000-8000-00805f9b34fb, mServiceData=[], mServiceDataMask=null, mManufacturerId=-1, mManufacturerData=null, mManufacturerDataMask=null, mAdvertisingDataType=-1, mAdvertisingData=null, mAdvertisingDataMask=null, mTransportBlockFilter=null, mGroupBasedFiltering=false], BluetoothLeScanFilter [mDeviceName=null, mDeviceAddress=null, mUuid=null, mUuidMask=null, mServiceSolicitationUuid=null, mServiceSolicitationUuidMask=null, mServiceDataUuid=0000fdaa-0000-1000-8000-00805f9b34fb, mServiceData=[], mServiceDataMask=null, mManufacturerId=-1, mManufacturerData=null, mManufacturerDataMask=null, mAdvertisingDataType=-1, mAdvertisingData=null, mAdvertisingDataMask=null, mTransportBlockFilter=null, mGroupBasedFiltering=false], BluetoothLeScanFilter [mDeviceName=null, mDeviceAddress=null, mUuid=null, mUuidMask=null, mServiceSolicitationUuid=null, mServiceSolicitationUuidMask=null, mServiceDataUuid=0000fdee-0000-1000-8000-00805f9b34fb, mServiceData=[1, 1, 1], mServiceDataMask=null, mManufacturerId=-1, mManufacturerData=null, mManufacturerDataMask=null, mAdvertisingDataType=-1, mAdvertisingData=null, mAdvertisingDataMask=null, mTransportBlockFilter=null, mGroupBasedFiltering=false], BluetoothLeScanFilter [mDeviceName=null, mDeviceAddress=null, mUuid=null, mUuidMask=null, mServiceSolicitationUuid=null, mServiceSolicitationUuidMask=null, mServiceDataUuid=null, mServiceData=null, mServiceDataMask=null, mManufacturerId=76, mManufacturerData=[], mManufacturerDataMask=null, mAdvertisingDataType=-1, mAdvertisingData=null, mAdvertisingDataMask=null, mTransportBlockFilter=null, mGroupBasedFiltering=false], BluetoothLeScanFilter [mDeviceName=null, mDeviceAddress=null, mUuid=null, mUuidMask=null, mServiceSolicitationUuid=null, mServiceSolicitationUuidMask=null, mServiceDataUuid=0000fd2d-0000-1000-8000-00805f9b34fb, mServiceData=[], mServiceDataMask=null, mManufacturerId=-1, mManufacturerData=null, mManufacturerDataMask=null, mAdvertisingDataType=-1, mAdvertisingData=null, mAdvertisingDataMask=null, mTransportBlockFilter=null, mGroupBasedFiltering=false]])
+08-27 10:32:11.863  7946  8952 I ScanManager: msg.what = MSG_RECORD_CALLER, msg.arg1 = None
+08-27 10:32:11.863  2956  3033 W BatteryStatsImpl: noteBluetoothScanStartedLocked deltaScanCount: 54752 uid:1002
+08-27 10:32:11.863  7946  7637 D ScanManager: startScan()  [ScanClient scanModeApp 0 scanModeUsed 0 scannerId 4 [appScanStats android.uid.bluetooth:1002]]
+08-27 10:32:11.863  7946  8952 I ScanManager: msg.what = MSG_START_BLE_SCAN, msg.arg1 = None
+08-27 10:32:11.863  7946  8952 D ScanManager: handling starting scan
+08-27 10:32:11.864  7946  8952 W CloudControlUtil:  isAllowGattScanInDeepDoze: false
+08-27 10:32:11.864  7946  8952 D ScanManager: isAptXLowLatencyModeEnabled: false
+08-27 10:32:11.864  7946  8952 D ScanManager: Scan mode update during screen on from SCAN_MODE_LOW_POWER to SCAN_MODE_LOW_POWER
+08-27 10:32:11.864  7946  8952 D ScanManager: processBeforeScanModeChange: Not started yet
+08-27 10:32:11.864  8923  9421 D MiuiFastConnectService_Plugin: start OfflineFindScan
+08-27 10:32:11.864  7946  8952 D ScanManager: track LE scan event: callerPackage = [com.xiaomi.bluetooth], scanMode = [0], reportDelayMillis = [0], behavior = [1], scannerId = [4], duration = [0]
+08-27 10:32:11.864  8923  9421 D BluetoothAdapter: isLeEnabled(): ON
+08-27 10:32:11.864  7946  8952 I bt_shim_scanner: system/main/shim/le_scanning_manager.cc:251 ScanFilterEnable: in shim layer
+08-27 10:32:11.864  7946  8897 D ScanController: onScanFilterEnableDisabled() - clientIf=4, status=0, action=1
+08-27 10:32:11.864  7946  8897 D ScanManager: callback done for scannerId - 4 status - 0
+08-27 10:32:11.864  7946  8952 D ScanManager: configureScanFilters rssiThreshold: -60, 15
+08-27 10:32:11.864  7946  8952 I bt_shim_scanner: system/main/shim/le_scanning_manager.cc:228 ScanFilterAdd: in shim layer
+08-27 10:32:11.864  7946  8897 D ScanController: onScanFilterConfig() - clientIf=4, action = 0 status = 0, filterType=0, availableSpace=0
+08-27 10:32:11.864  7946  8897 D ScanManager: callback done for scannerId - 4 status - 0
+08-27 10:32:11.864  7946  7637 D ScanController: registerScanner() - UUID=d003b3fc-5b87-4cf4-9d3f-eb4da422a7d2
+08-27 10:32:11.864  7946  8952 D ScanManager: getLowRssiThreshold: client settings is null
+08-27 10:32:11.864  7946  8952 D ScanManager: rssiThresholdLow: -60rssiThresholdHigh: -60
+08-27 10:32:11.864  7946  8952 D ScanManager: configureFilterParameter 500 10000 1 0 -60
+08-27 10:32:11.864  7946  8952 I bt_shim_scanner: system/main/shim/le_scanning_manager.cc:195 ScanFilterParamSetup: in shim layer, clientIf=4
+08-27 10:32:11.864  7946  8897 D ScanController: onScanFilterParamsConfigured() - clientIf=4, status=0, action=0, availableSpace=0
+08-27 10:32:11.864  7946  8897 D ScanManager: callback done for scannerId - 4 status - 0
+08-27 10:32:11.864  7946  7637 I bt_shim_scanner: system/main/shim/le_scanning_manager.cc:150 RegisterScanner: in shim layer, UUID=d003b3fc-5b87-4cf4-9d3f-eb4da422a7d2
+08-27 10:32:11.865  7946  8952 I bt_shim_scanner: system/main/shim/le_scanning_manager.cc:228 ScanFilterAdd: in shim layer
+08-27 10:32:11.865  7946  8897 D ScanController: onScanFilterConfig() - clientIf=4, action = 0 status = 0, filterType=0, availableSpace=0
+08-27 10:32:11.865  7946  8897 D ScanManager: callback done for scannerId - 4 status - 0
+08-27 10:32:11.865  7946  8952 D ScanManager: getLowRssiThreshold: client settings is null
+08-27 10:32:11.865  7946  8952 D ScanManager: rssiThresholdLow: -60rssiThresholdHigh: -60
+08-27 10:32:11.865  7946  8952 D ScanManager: configureFilterParameter 500 10000 1 0 -60
+08-27 10:32:11.865  7946  8897 D ScanController: onScannerRegistered() - UUID=d003b3fc-5b87-4cf4-9d3f-eb4da422a7d2, scannerId=5, status=0
+08-27 10:32:11.865  7946  8952 I bt_shim_scanner: system/main/shim/le_scanning_manager.cc:195 ScanFilterParamSetup: in shim layer, clientIf=4
+08-27 10:32:11.865  7946  8897 D ScanController: onScanFilterParamsConfigured() - clientIf=4, status=0, action=0, availableSpace=0
+08-27 10:32:11.865  7946  8897 D ScanManager: callback done for scannerId - 4 status - 0
+08-27 10:32:11.865  8923 18966 D BluetoothLeScanner: onScannerRegistered() - status=0 scannerId=5 mScannerId=0
+08-27 10:32:11.865  7946  8952 I bt_shim_scanner: system/main/shim/le_scanning_manager.cc:228 ScanFilterAdd: in shim layer
+08-27 10:32:11.865  7946  8290 D BT_OneTrack_I/F: region:CN
+08-27 10:32:11.865  7946  8897 D ScanController: onScanFilterConfig() - clientIf=4, action = 0 status = 0, filterType=0, availableSpace=0
+08-27 10:32:11.865  7946  7637 D ScanController: Start scan with filters
+08-27 10:32:11.865  7946  8897 D ScanManager: callback done for scannerId - 4 status - 0
+08-27 10:32:11.866  7946  8952 D ScanManager: getLowRssiThreshold: client settings is null
+08-27 10:32:11.866  7946  8952 D ScanManager: rssiThresholdLow: -60rssiThresholdHigh: -60
+08-27 10:32:11.866  7946  8952 D ScanManager: configureFilterParameter 500 10000 1 0 -60
+08-27 10:32:11.866  7946  8952 I bt_shim_scanner: system/main/shim/le_scanning_manager.cc:195 ScanFilterParamSetup: in shim layer, clientIf=4
+08-27 10:32:11.866  7946  7637 D ScanController: enforcePrivilegedPermissionIfNeeded([BluetoothLeScanFilter [mDeviceName=null, mDeviceAddress=null, mUuid=null, mUuidMask=null, mServiceSolicitationUuid=null, mServiceSolicitationUuidMask=null, mServiceDataUuid=0000fd2d-0000-1000-8000-00805f9b34fb, mServiceData=[2, 2], mServiceDataMask=[-1, -4], mManufacturerId=-1, mManufacturerData=null, mManufacturerDataMask=null, mAdvertisingDataType=-1, mAdvertisingData=null, mAdvertisingDataMask=null, mTransportBlockFilter=null, mGroupBasedFiltering=false]])
+08-27 10:32:11.866  7946  8897 D ScanController: onScanFilterParamsConfigured() - clientIf=4, status=0, action=0, availableSpace=0
+08-27 10:32:11.866  7946  8897 D ScanManager: callback done for scannerId - 4 status - 0
+08-27 10:32:11.866  7946  8952 I bt_shim_scanner: system/main/shim/le_scanning_manager.cc:228 ScanFilterAdd: in shim layer
+08-27 10:32:11.866  7946  8897 D ScanController: onScanFilterConfig() - clientIf=4, action = 0 status = 0, filterType=0, availableSpace=0
+08-27 10:32:11.866  7946  8897 D ScanManager: callback done for scannerId - 4 status - 0
+08-27 10:32:11.866  7946  8952 D ScanManager: getLowRssiThreshold: client settings is null
+08-27 10:32:11.866  7946  8952 D ScanManager: rssiThresholdLow: -60rssiThresholdHigh: -60
+08-27 10:32:11.866  7946  8952 D ScanManager: configureFilterParameter 500 10000 1 0 -60
+08-27 10:32:11.866  7946  8952 I bt_shim_scanner: system/main/shim/le_scanning_manager.cc:195 ScanFilterParamSetup: in shim layer, clientIf=4
+08-27 10:32:11.867  7946  8897 D ScanController: onScanFilterParamsConfigured() - clientIf=4, status=0, action=0, availableSpace=0
+08-27 10:32:11.868  7946  8897 D ScanManager: callback done for scannerId - 4 status - 0
+08-27 10:32:11.868  7946  7637 D ScanManager: startScan()  [ScanClient scanModeApp 0 scanModeUsed 0 scannerId 5 [appScanStats android.uid.bluetooth:1002]]
+08-27 10:32:11.869  7946  8952 I bt_shim_scanner: system/main/shim/le_scanning_manager.cc:228 ScanFilterAdd: in shim layer
+08-27 10:32:11.869  2956  3021 I ActivityManager: Test idle passed
+08-27 10:32:11.869  7946  8897 D ScanController: onScanFilterConfig() - clientIf=4, action = 0 status = 0, filterType=0, availableSpace=0
+08-27 10:32:11.869  7946  8897 D ScanManager: callback done for scannerId - 4 status - 0
+08-27 10:32:11.869  7946  8952 D ScanManager: getLowRssiThreshold: client settings is null
+08-27 10:32:11.869  7946  8952 D ScanManager: rssiThresholdLow: -60rssiThresholdHigh: -60
+08-27 10:32:11.870  7946  8952 D ScanManager: configureFilterParameter 500 10000 1 0 -60
+08-27 10:32:11.870  7946  8952 I bt_shim_scanner: system/main/shim/le_scanning_manager.cc:195 ScanFilterParamSetup: in shim layer, clientIf=4
+08-27 10:32:11.870  2956  3033 W BatteryStatsImpl: noteBluetoothScanStartedLocked deltaScanCount: 54753 uid:1002
+08-27 10:32:11.870  7946  8897 D ScanController: onScanFilterParamsConfigured() - clientIf=4, status=0, action=0, availableSpace=0
+08-27 10:32:11.870  7946  8897 D ScanManager: callback done for scannerId - 4 status - 0
+08-27 10:32:11.870  7946  8952 I bt_shim_scanner: system/main/shim/le_scanning_manager.cc:228 ScanFilterAdd: in shim layer
+08-27 10:32:11.870  7946  8897 D ScanController: onScanFilterConfig() - clientIf=4, action = 0 status = 0, filterType=0, availableSpace=0
+08-27 10:32:11.870  7946  8897 D ScanManager: callback done for scannerId - 4 status - 0
+08-27 10:32:11.870  7946  8952 D ScanManager: getLowRssiThreshold: client settings is null
+08-27 10:32:11.870  7946  8952 D ScanManager: rssiThresholdLow: -60rssiThresholdHigh: -60
+08-27 10:32:11.870  7946  8952 D ScanManager: configureFilterParameter 500 10000 1 0 -60
+08-27 10:32:11.870  7946  8952 I bt_shim_scanner: system/main/shim/le_scanning_manager.cc:195 ScanFilterParamSetup: in shim layer, clientIf=4
+08-27 10:32:11.871  7946  8897 D ScanController: onScanFilterParamsConfigured() - clientIf=4, status=0, action=0, availableSpace=0
+08-27 10:32:11.871  7946  8897 D ScanManager: callback done for scannerId - 4 status - 0
+08-27 10:32:11.871  7946  8952 I bt_shim_scanner: system/main/shim/le_scanning_manager.cc:228 ScanFilterAdd: in shim layer
+08-27 10:32:11.871  7946  8897 D ScanController: onScanFilterConfig() - clientIf=4, action = 0 status = 0, filterType=0, availableSpace=0
+08-27 10:32:11.871  7946  8897 D ScanManager: callback done for scannerId - 4 status - 0
+08-27 10:32:11.871  7946  8952 D ScanManager: getLowRssiThreshold: client settings is null
+08-27 10:32:11.871  7946  8952 D ScanManager: rssiThresholdLow: -60rssiThresholdHigh: -60
+08-27 10:32:11.871  7946  8952 D ScanManager: configureFilterParameter 500 10000 1 0 -60
+08-27 10:32:11.871  7946  8952 I bt_shim_scanner: system/main/shim/le_scanning_manager.cc:195 ScanFilterParamSetup: in shim layer, clientIf=4
+08-27 10:32:11.871  7946  8897 D ScanController: onScanFilterParamsConfigured() - clientIf=4, status=0, action=0, availableSpace=0
+08-27 10:32:11.871  7946  8897 D ScanManager: callback done for scannerId - 4 status - 0
+08-27 10:32:11.871  7946  8952 D ScanManager: configureRegularScanParams() - queue=3
+08-27 10:32:11.871  7946  8952 D ScanManager: configureRegularScanParams() - queue empty, scan stopped
+08-27 10:32:11.871  7946  8952 D ScanManager: apply scan timeout (300000)to scannerId 4
+08-27 10:32:11.871  7946  8952 I ScanManager: msg.what = MSG_RECORD_CALLER, msg.arg1 = None
+08-27 10:32:11.871  7946  8952 I ScanManager: msg.what = MSG_START_BLE_SCAN, msg.arg1 = None
+08-27 10:32:11.871  7946  8952 D ScanManager: handling starting scan
+08-27 10:32:11.871  7946  8952 W CloudControlUtil:  isAllowGattScanInDeepDoze: false
+08-27 10:32:11.871  7946  8952 D ScanManager: isAptXLowLatencyModeEnabled: false
+08-27 10:32:11.871  7946  8952 D ScanManager: Scan mode update during screen on from SCAN_MODE_LOW_POWER to SCAN_MODE_LOW_POWER
+08-27 10:32:11.872  7946  8952 D ScanManager: processBeforeScanModeChange: Not started yet
+08-27 10:32:11.872  7946  8952 D ScanManager: track LE scan event: callerPackage = [com.xiaomi.bluetooth], scanMode = [0], reportDelayMillis = [0], behavior = [1], scannerId = [5], duration = [0]
+08-27 10:32:11.872  7946  8952 I bt_shim_scanner: system/main/shim/le_scanning_manager.cc:251 ScanFilterEnable: in shim layer
+08-27 10:32:11.872  7946  8290 D BT_OneTrack_I/F: region:CN
+08-27 10:32:11.872  7946  8897 D ScanController: onScanFilterEnableDisabled() - clientIf=5, status=0, action=1
+08-27 10:32:11.872  7946  8897 D ScanManager: callback done for scannerId - 5 status - 0
+08-27 10:32:11.872  7946  8952 D ScanManager: configureScanFilters rssiThreshold: -128, 0
+08-27 10:32:11.872  7946  8952 I bt_shim_scanner: system/main/shim/le_scanning_manager.cc:228 ScanFilterAdd: in shim layer
+08-27 10:32:11.872  7946  8897 D ScanController: onScanFilterConfig() - clientIf=5, action = 0 status = 0, filterType=0, availableSpace=0
+08-27 10:32:11.872  7946  8897 D ScanManager: callback done for scannerId - 5 status - 0
+08-27 10:32:11.872  7946  8952 D ScanManager: getLowRssiThreshold: client settings is null
+08-27 10:32:11.872  7946  8952 D ScanManager: rssiThresholdLow: -128rssiThresholdHigh: -128
+08-27 10:32:11.872  7946  8952 D ScanManager: configureFilterParameter 500 10000 1 0 -128
+08-27 10:32:11.872  7946  8952 I bt_shim_scanner: system/main/shim/le_scanning_manager.cc:195 ScanFilterParamSetup: in shim layer, clientIf=5
+08-27 10:32:11.872  7946  8897 D ScanController: onScanFilterParamsConfigured() - clientIf=5, status=0, action=0, availableSpace=0
+08-27 10:32:11.872  7946  8897 D ScanManager: callback done for scannerId - 5 status - 0
+08-27 10:32:11.872  7946  8952 D ScanManager: configureRegularScanParams() - queue=4
+08-27 10:32:11.872  7946  8952 D ScanManager: configureRegularScanParams() - queue empty, scan stopped
+08-27 10:32:11.872  7946  8952 D ScanManager: apply scan timeout (300000)to scannerId 5
+08-27 10:32:11.943 21613 21860 V MSF.C.MSFCore[@PS]: [Event] MSFPacketStatistics.cpp(300)::DoCheckRequestTimeout->current rtts:24.079
+08-27 10:32:12.000  2956  8635 D FileUtils: Rounded bytes from 11734142976 to 16000000000
+08-27 10:32:12.027  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363172263842197, lux: 380.6
+08-27 10:32:12.028  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363172263842197, sensor=5, temperature(K)=   0.0000
+08-27 10:32:12.028  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:12.049  2956  7203 I MiuiNetworkPolicy: bandwidth: 0 KB/s, Max bandwidth: 1163 KB/s
+08-27 10:32:12.097  2106  6357 I WifiHAL : event received NL80211_CMD_VENDOR, vendor_id = 0x1374, subcmd = 0xd
+08-27 10:32:12.099  2956  7206 D WifiStaIfaceHidlImpl: getCachedScanData is not implemented by HIDL
+08-27 10:32:12.102  3755  3755 I cnss-daemon: nl80211 response handler invoked
+08-27 10:32:12.102  3755  3755 I cnss-daemon: nl80211_response_handler: cmd 103, vendorID 4980, subcmd 13  received
+08-27 10:32:12.103  3510  3510 I wificond: station_bandwidth: ?
+08-27 10:32:12.104  2956  7206 D MiuiWifiCommonBase: band: 1, compensate: 0
+08-27 10:32:12.105  2956 21959 D MiuiNM  : rssi poll interval may changed
+08-27 10:32:12.110  8081  8137 E PhoneAdapter: get ntnphones failed, exception: java.lang.IllegalStateException: not support satellite!
+08-27 10:32:12.111  2956  7213 D AmlWifiScoreReportInjector: isMobileDataSignalPoor cellNrSignalRsrp = -106
+08-27 10:32:12.113 27655 27655 D ControlCenterHeaderExpandController: onExpansionChanged: progress =  0.0
+08-27 10:32:12.114 27655 27655 D ControlCenterHeaderExpandController: onExpansionChanged: progress =  0.0
+08-27 10:32:12.114 27655 27655 D ControlCenterHeaderExpandController: onExpansionChanged: progress =  0.0
+08-27 10:32:12.138  2130  2242 D SDM     : HWDeviceDRM::SetupConcurrentWriteback: Tear down the Concurrent Writeback topology
+08-27 10:32:12.139  2130  2819 I vendor.qti.hardware.display.composer-service: FrameNotifyProcess Sensor: notify citsensorservice to trigger cwb
+08-27 10:32:12.140  3899  5545 I libsensor-parseRGB: request dump start for mRequestDisplayId 0
+08-27 10:32:12.140  3899  5545 D vendor.xiaomi.sensor.citsensorservice@2.0-service: handle id:21 wxh:1280x2400 uwxuh:1080x2400 size: 9216000 fd:17 fd_meta:18 flags:0x228 usage:0x33  format:0x3 layer_count: 1 reserved_size = 0
+08-27 10:32:12.140  2130  2719 W SDM     : HWCSession::GetDisplayIndex: Display index not found for display 1.
+08-27 10:32:12.141  2130  2719 W SDM     : HWCSession::GetDisplayIndex: Display index not found for display 3.
+08-27 10:32:12.141  2130  2719 D SDM     : HWCSession::SetCWBOutputBuffer: CWB config passed by cwb_client : tappoint 1  CWB_ROI : (591.000000 22.000000 717.000000 148.000000). Display 0
+08-27 10:32:12.154  2130  2719 I SDM     : HWEventsDRM::SetEventState: Setup vsync event for CRTC 167, Connector 65
+08-27 10:32:12.168  2130  5559 D SDM     : HWCSession::NotifyCWBStatus: Notify the client about buffer status 0. Display: 0
+08-27 10:32:12.168  2130  5559 I SDM     : HWCSession::ProcessCWBStatus: CWB queue is empty. display_index: 0
+08-27 10:32:12.170  3899  5546 D libsensor-parseRGB: the value of RGB [2612.490388 3395.895439 3214.494024]
+08-27 10:32:12.207  3767  5069 I tencent.mm:push: This is non sticky GC, maxfree is 33554432 minfree is 8388608
+08-27 10:32:12.207  3767  5069 I tencent.mm:push: Explicit concurrent copying GC freed 603KB AllocSpace bytes, 0(0B) LOS objects, 50% free, 8109KB/15MB, paused 489us,136us total 306.957ms
+08-27 10:32:12.207  3767  3775 I tencent.mm:push: WaitForGcToComplete blocked Background on Explicit for 250.854ms
+08-27 10:32:12.213  7987 11170 D JavaheapMonitor: Java heap used=2M max=256M, proc: .qtidataservices
+08-27 10:32:12.213  7987 11170 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+08-27 10:32:12.227  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363172463842822, lux: 380.6
+08-27 10:32:12.228  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363172463842822, sensor=5, temperature(K)=   0.0000
+08-27 10:32:12.228  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:12.228  8065 11145 D JavaheapMonitor: Java heap used=2M max=256M, proc: com.android.se
+08-27 10:32:12.228  8065 11145 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+08-27 10:32:12.259 18892 20440 I lyra-msg-act: ActuatorControl::ActuatorControlProcess:310 monitor queueMap :0
+08-27 10:32:12.264  7946  8466 D JavaheapMonitor: Java heap used=6M max=256M, proc: com.android.bluetooth
+08-27 10:32:12.264  7946  8466 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+08-27 10:32:12.427  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363172663841260, lux: 380.6
+08-27 10:32:12.429  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363172663841260, sensor=5, temperature(K)=   0.0000
+08-27 10:32:12.429  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:12.508  3767  5069 I tencent.mm:push: This is non sticky GC, maxfree is 33554432 minfree is 8388608
+08-27 10:32:12.508  3767  5069 I tencent.mm:push: Explicit concurrent copying GC freed 203KB AllocSpace bytes, 4(80KB) LOS objects, 50% free, 7874KB/15MB, paused 233us,178us total 300.440ms
+08-27 10:32:12.627  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363172863841781, lux: 380.6
+08-27 10:32:12.628  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363172863841781, sensor=5, temperature(K)=   0.0000
+08-27 10:32:12.628  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:12.749 21164 21421 E ##XLogger##: #&^k7nsPYU4vLCJKw1SqSJnW3KA6GtKkF7EgnKWNgnS4oEMnaxBfEsymQkOkZxDwGrhizkMOBC2FWWI+POCE3TjuY5ug20ryYHJ6s/tpPa9A7lA+x2Jq4m13Kh7pw0HI5onK9pJH0Zo4lTHY2E6WaefKnEU7jrJw9TqaTXyb4uIV0o=!!fjA4MHaHNiVSlWSxlPhaTw0PYrwKQqDAmjHhDuE/l2+P2yNOP3dhk1CfEa8OC58zP4J6LHuWHgWMsEsSUw9I2/9foLuz+9wZZ4JHU0RsBLXPG9ZsDeEiPe3Jmyf4o/3bTy/oX8cSeZRtid2Ci1/i4u7MW2m43EL5rPDShl37huQ=^&#
+08-27 10:32:12.754 21164 21421 E ##XLogger##: #&^k7nsPYU4vLCJKw1SqSJnW3KA6GtKkF7EgnKWNgnS4oEMnaxBfEsymQkOkZxDwGrhizkMOBC2FWWI+POCE3TjuY5ug20ryYHJ6s/tpPa9A7lA+x2Jq4m13Kh7pw0HI5onK9pJH0Zo4lTHY2E6WaefKnEU7jrJw9TqaTXyb4uIV0o=!!fjA4MHaHNiVSlWSxlPhaTw0PYrwKQqDAmjHhDuE/l2+P2yNOP3dhk1CfEa8OC58zApRXhYsOE2AJj0WI3jGO68T/vRMm3LyhmJXvM+EzNXxusT76x0itb2eZD99EpxOvnxkLR9PCBYYbUrLkiFxh47Ct3xS3lsX8XeoxUv7lmdEGP+2Lx7wWwgLPKTdJJWSt9kDN+1zdyKoyhPnu4Nofbch2iX4Tfi1uaiq6nPjyyXNV+Xr+wAN1vyGJhwfOM18e^&#
+08-27 10:32:12.755 27655 27655 D ControlCenterHeaderExpandController: onExpansionChanged: progress =  0.0
+08-27 10:32:12.755 21164 21421 E ##XLogger##: #&^k7nsPYU4vLCJKw1SqSJnW3KA6GtKkF7EgnKWNgnS4oEMnaxBfEsymQkOkZxDwGrhizkMOBC2FWWI+POCE3TjuY5ug20ryYHJ6s/tpPa9A7lA+x2Jq4m13Kh7pw0HI5onK9pJH0Zo4lTHY2E6WaefKnEU7jrJw9TqaTXyb4uIV0o=!!fjA4MHaHNiVSlWSxlPhaTw0PYrwKQqDAmjHhDuE/l2+P2yNOP3dhk1CfEa8OC58zMYAm6rbRSzudp+huHffXFUbDTKm6fzmbDQV1jLFjWMZjxQMry70C8QbpNh2EPwPsingPFrTmyrGbM8QK2fM9voD4iUNwGukkP/6pg3Oz7e5rj5cZunhbOgIzgpdkamVh^&#
+08-27 10:32:12.755 21164 21421 E ##XLogger##: #&^k7nsPYU4vLCJKw1SqSJnW3KA6GtKkF7EgnKWNgnS4oEMnaxBfEsymQkOkZxDwGrhizkMOBC2FWWI+POCE3TjuY5ug20ryYHJ6s/tpPa9A7lA+x2Jq4m13Kh7pw0HI5onK9pJH0Zo4lTHY2E6WaefKnEU7jrJw9TqaTXyb4uIV0o=!!fjA4MHaHNiVSlWSxlPhaTw0PYrwKQqDAmjHhDuE/l2+P2yNOP3dhk1CfEa8OC58z9cxFz4lDz2/KviBoweXunaLSKurpDPiBPKF0FuYWfLKYbaju65w9EoD/BTiAg13SF/8LHK4OZw5YjrOqGbhHNrVGZrCITKtfh5m4PfzNdT0=^&#
+08-27 10:32:12.755 21164 21421 E ##XLogger##: #&^k7nsPYU4vLCJKw1SqSJnW3KA6GtKkF7EgnKWNgnS4oEMnaxBfEsymQkOkZxDwGrhizkMOBC2FWWI+POCE3TjuY5ug20ryYHJ6s/tpPa9A7lA+x2Jq4m13Kh7pw0HI5onK9pJH0Zo4lTHY2E6WaefKnEU7jrJw9TqaTXyb4uIV0o=!!fjA4MHaHNiVSlWSxlPhaTw0PYrwKQqDAmjHhDuE/l2/pCwHKvrthpPWfQuszPF/6O8zi2VgsGDsV2frh13sIl1zeVn17i019wsfUCbuO+wQF305xNohixpmmEORgkH83/UyTObKLr35SSMLPgUqV77KKjU9em4in0WNiTPCP8LwxHDd/b5VOXnnnvOZ4A+KGog8IW+XNVJwGm2SwuKkLkdjneivoBPdc8U54mTH20Kn3tGNXqcUvVcDCp2+JLx2YP+rKVSBkXmUMmnJ7H0K/PZ1zHEQO91COOzQ/4CsXIeqCSxdlY1kSWpz87vmGrUqS^&#
+08-27 10:32:12.756 21164 21421 I ##XLogger##: #&^k7nsPYU4vLCJKw1SqSJnW3KA6GtKkF7EgnKWNgnS4oEMnaxBfEsymQkOkZxDwGrhizkMOBC2FWWI+POCE3TjuY5ug20ryYHJ6s/tpPa9A7lA+x2Jq4m13Kh7pw0HI5onK9pJH0Zo4lTHY2E6WaefKnEU7jrJw9TqaTXyb4uIV0o=!!fjA4MHaHNiVSlWSxlPhaTw0PYrwKQqDAmjHhDuE/l29nvIINdAu5HWrw4nlS5dkar2VvaPHNeEYr27qrmK8PnwV6qkSffjWsNHLfVdDil4sO5CrZYZCle30W9yoLJT2yRe6dm6BFt+SpbOkF7ny+LZJdZIMbp3RJ/qao7usbJ5BkY+la0vFnDIv9y/AL/CrZltXcd81J1thdgJJseNVZcA==^&#
+08-27 10:32:12.756 21164 21421 I ##XLogger##: #&^k7nsPYU4vLCJKw1SqSJnW3KA6GtKkF7EgnKWNgnS4oEMnaxBfEsymQkOkZxDwGrhizkMOBC2FWWI+POCE3TjuY5ug20ryYHJ6s/tpPa9A7lA+x2Jq4m13Kh7pw0HI5onK9pJH0Zo4lTHY2E6WaefKnEU7jrJw9TqaTXyb4uIV0o=!!fjA4MHaHNiVSlWSxlPhaTw0PYrwKQqDAmjHhDuE/l29nvIINdAu5HWrw4nlS5dkanXWkzCJQcaWKnbcIpw/2s/xru6JRq4fOpErM8A6TIIuCxK6KcsdnlArAnTAC1cA8EjnU/iCubgUMGvRSywjtXvzTN68tZf4lHkxPzqPtfqoY1zOIRCtbtHUxFRTNm7yKorYOQv2W+b8wJD2XkwK0qYArjzBPdK5QGtN+dAfpM5w=^&#
+08-27 10:32:12.756 27655 27655 D ControlCenterHeaderExpandController: onExpansionChanged: progress =  0.0
+08-27 10:32:12.756 27655 27655 D ControlCenterHeaderExpandController: onExpansionChanged: progress =  0.0
+08-27 10:32:12.756 21164 21421 I ##XLogger##: #&^k7nsPYU4vLCJKw1SqSJnW3KA6GtKkF7EgnKWNgnS4oEMnaxBfEsymQkOkZxDwGrhizkMOBC2FWWI+POCE3TjuY5ug20ryYHJ6s/tpPa9A7lA+x2Jq4m13Kh7pw0HI5onK9pJH0Zo4lTHY2E6WaefKnEU7jrJw9TqaTXyb4uIV0o=!!fjA4MHaHNiVSlWSxlPhaTw0PYrwKQqDAmjHhDuE/l29nvIINdAu5HWrw4nlS5dkanXWkzCJQcaWKnbcIpw/2s/xru6JRq4fOpErM8A6TIItn3DjfyfmobHTpF0Bwai0JznkWc0B3hiEsvqixrV2UEV4a7as8g/XvIpd/0uLWvfU=^&#
+08-27 10:32:12.781  2130  2242 D SDM     : HWDeviceDRM::SetupConcurrentWriteback: Tear down the Concurrent Writeback topology
+08-27 10:32:12.781  2130  2819 I vendor.qti.hardware.display.composer-service: FrameNotifyProcess Sensor: notify citsensorservice to trigger cwb
+08-27 10:32:12.781  3899  5545 I libsensor-parseRGB: request dump start for mRequestDisplayId 0
+08-27 10:32:12.782  3899  5545 D vendor.xiaomi.sensor.citsensorservice@2.0-service: handle id:21 wxh:1280x2400 uwxuh:1080x2400 size: 9216000 fd:17 fd_meta:18 flags:0x228 usage:0x33  format:0x3 layer_count: 1 reserved_size = 0
+08-27 10:32:12.782  2130  2719 W SDM     : HWCSession::GetDisplayIndex: Display index not found for display 1.
+08-27 10:32:12.782  2130  2719 W SDM     : HWCSession::GetDisplayIndex: Display index not found for display 3.
+08-27 10:32:12.782  2130  2719 D SDM     : HWCSession::SetCWBOutputBuffer: CWB config passed by cwb_client : tappoint 1  CWB_ROI : (591.000000 22.000000 717.000000 148.000000). Display 0
+08-27 10:32:12.789  2130  2719 I SDM     : HWEventsDRM::SetEventState: Setup vsync event for CRTC 167, Connector 65
+08-27 10:32:12.800 12063 13849 I com.tencent.mm: This is non sticky GC, maxfree is 33554432 minfree is 8388608
+08-27 10:32:12.800 12063 13849 I com.tencent.mm: Explicit concurrent copying GC freed 788KB AllocSpace bytes, 1(20KB) LOS objects, 18% free, 139MB/171MB, paused 699us,576us total 1.729s
+08-27 10:32:12.812  2130  5559 D SDM     : HWCSession::NotifyCWBStatus: Notify the client about buffer status 0. Display: 0
+08-27 10:32:12.813  2130  5559 I SDM     : HWCSession::ProcessCWBStatus: CWB queue is empty. display_index: 0
+08-27 10:32:12.814  3899  5546 D libsensor-parseRGB: the value of RGB [2612.490388 3395.895439 3214.494024]
+08-27 10:32:12.826  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363173063842770, lux: 380.6
+08-27 10:32:12.827  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363173063842770, sensor=5, temperature(K)=   0.0000
+08-27 10:32:12.828  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:12.928 24990 27569 D JavaheapMonitor: Java heap used=4M max=256M, proc: android.ext.services
+08-27 10:32:12.929 24990 27569 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+08-27 10:32:12.944 21613 21860 V MSF.C.MSFCore[@PS]: [Event] MSFPacketStatistics.cpp(300)::DoCheckRequestTimeout->current rtts:24.079
+08-27 10:32:12.969 16924 26081 D JavaheapMonitor: Java heap used=2M max=256M, proc: com.xiaomi.touchservice
+08-27 10:32:12.969 16924 26081 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+08-27 10:32:13.027  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363173263842770, lux: 380.6
+08-27 10:32:13.028  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363173263842770, sensor=5, temperature(K)=   0.0000
+08-27 10:32:13.028  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:13.035  2021  8502 D vendor.qti.bluetooth@1.1-wake_lock: Release wakelock is released 
+08-27 10:32:13.081 19028 26650 D JavaheapMonitor: Java heap used=4M max=256M, proc: com.miui.voicetrigger
+08-27 10:32:13.081 19028 26650 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+08-27 10:32:13.114  2956  8635 D FileUtils: Rounded bytes from 11734142976 to 16000000000
+08-27 10:32:13.142  2956  8635 W ActivityManagerServiceImpl: Sending non-protected broadcast com.modemenhance.ACTION_MODEMWIFI_RSSI_POLL from system 8081:com.android.phone/1001 pkg com.android.phone. Callers=
+08-27 10:32:13.147  8081  8081 W m.android.phone: type=1400 audit(0.0:2006752): avc:  denied  { read } for  name="u:object_r:vendor_wlan_eht_prop:s0" dev="tmpfs" ino=660 scontext=u:r:radio:s0 tcontext=u:object_r:vendor_wlan_eht_prop:s0 tclass=file permissive=0
+08-27 10:32:13.149  8081  8081 W libc    : Access denied finding property "persist.vendor.wlan.disable.eht"
+08-27 10:32:13.149  8081  8081 D SlaveWifiManager: getWifiSlaveConnectionInfo
+08-27 10:32:13.189  8008 11125 D JavaheapMonitor: Java heap used=1M max=256M, proc: com.st.android.nfc_extensions_16
+08-27 10:32:13.190  8008 11125 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+08-27 10:32:13.227  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363173463843187, lux: 380.6
+08-27 10:32:13.228  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363173463843187, sensor=5, temperature(K)=   0.0000
+08-27 10:32:13.228  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:13.260 15292 16228 D JavaheapMonitor: Java heap used=1M max=256M, proc: com.miui.audiomonitor
+08-27 10:32:13.261 15292 16228 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+08-27 10:32:13.346  2956  9018 I NetworkAccelerateSwitchService: EVENT_RSSI_POLL. mRssiPoll=true
+08-27 10:32:13.346  2956  9018 I NetworkAccelerateSwitchService: checkWifiRssiAndLinkSpeed rssi:49
+08-27 10:32:13.346  2956  9018 I NetworkAccelerateSwitchService: checkWifiRssiAndLinkSpeed mWifiFastFade:false mWifiFastFadeAdjustThreshold:false
+08-27 10:32:13.347  2956  9018 I NetworkAccelerateSwitchService: getAverageWifiRssi:48
+08-27 10:32:13.348  2956  9018 D NetworkAccelerateSwitchService: checkIntervalModeChange mMovementState:false mIntervalMode:0 mIsBadLinkLayerQoE:false mBadLinkLayerQoETimes = 0
+08-27 10:32:13.427  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363173663843291, lux: 380.6
+08-27 10:32:13.429  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363173663843291, sensor=5, temperature(K)=   0.0000
+08-27 10:32:13.429  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:13.627  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363173863842041, lux: 380.6
+08-27 10:32:13.629  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363173863842041, sensor=5, temperature(K)=   0.0000
+08-27 10:32:13.629  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:13.674  3066  4642 D JavaheapMonitor: Java heap used=5M max=256M, proc: com.miui.systemAdSolution
+08-27 10:32:13.674  3066  4642 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+08-27 10:32:13.758 21164 21164 I ##XLogger##: #&^k7nsPYU4vLCJKw1SqSJnW3KA6GtKkF7EgnKWNgnS4oEMnaxBfEsymQkOkZxDwGrhizkMOBC2FWWI+POCE3TjuY5ug20ryYHJ6s/tpPa9A7lA+x2Jq4m13Kh7pw0HI5onK9pJH0Zo4lTHY2E6WaefKnEU7jrJw9TqaTXyb4uIV0o=!!fjA4MHaHNiVSlWSxlPhaTw0PYrwKQqDAmjHhDuE/l29nvIINdAu5HWrw4nlS5dkaEcpmfYrPa05EN5rx5WYwbMzELGCD2fejYlU4//V7POEx7Z4BqhOipzrkBjc8u0f2k4+sQ8dY1HPWZcAA3C2fDzSONU4AwkV1EOWfWTGlqBz4Z1lfnFwRx4Z26ztgeE5RD8zE6GkyMDmcUHanxXNnVw==^&#
+08-27 10:32:13.761 21164 21164 I ##XLogger##: #&^k7nsPYU4vLCJKw1SqSJnW3KA6GtKkF7EgnKWNgnS4oEMnaxBfEsymQkOkZxDwGrhizkMOBC2FWWI+POCE3TjuY5ug20ryYHJ6s/tpPa9A7lA+x2Jq4m13Kh7pw0HI5onK9pJH0Zo4lTHY2E6WaefKnEU7jrJw9TqaTXyb4uIV0o=!!fjA4MHaHNiVSlWSxlPhaTw0PYrwKQqDAmjHhDuE/l29nvIINdAu5HWrw4nlS5dka8JxqzAx1FwIXPkFChqkVEC5OhqtqFo6CCbRdvL8N0RyWhVoXEsTCLiwnQ7vbVI+moeLldEUDsLq41lgSR1XkkEoouToaV9USNNnIS7WCxIQ=^&#
+08-27 10:32:13.767 21164 21164 I ##XLogger##: #&^k7nsPYU4vLCJKw1SqSJnW3KA6GtKkF7EgnKWNgnS4oEMnaxBfEsymQkOkZxDwGrhizkMOBC2FWWI+POCE3TjuY5ug20ryYHJ6s/tpPa9A7lA+x2Jq4m13Kh7pw0HI5onK9pJH0Zo4lTHY2E6WaefKnEU7jrJw9TqaTXyb4uIV0o=!!fjA4MHaHNiVSlWSxlPhaTw0PYrwKQqDAmjHhDuE/l2/6EEebupZI+TYF9R0vtyy4PxHFJ4r6c3Ubr+qQOJEjimCag8kzw2WOwn3DckCUkl2dfHzs8XkcIBKAN6Dr1qm/GdyF9xQtQv3PesdGiqcrlxmSlCxEK9SXMVTlB/WWE6lN1k8r1QszT35Mg9prFa5TVG3hloHy8lptJXTVDnwhHlVbai9RRSp2N8TmpIL3mWE=^&#
+08-27 10:32:13.767 21164 21164 I ##XLogger##: #&^k7nsPYU4vLCJKw1SqSJnW3KA6GtKkF7EgnKWNgnS4oEMnaxBfEsymQkOkZxDwGrhizkMOBC2FWWI+POCE3TjuY5ug20ryYHJ6s/tpPa9A7lA+x2Jq4m13Kh7pw0HI5onK9pJH0Zo4lTHY2E6WaefKnEU7jrJw9TqaTXyb4uIV0o=!!KHaTyjoyaujiaeyCrZuPZha6CU6kvNKojUMHnGrJCF4694Ms6IRCCQsQi7eNqKsoq8hQOWFDo3rdr7rblU/5zShr4LmwSBf12/fJEuWhkfDVrubHAXWFsZBkbMQHlvIt83PP1yYF+8KRs+BECs1K0g==^&#
+08-27 10:32:13.771 21164 21164 I ##XLogger##: #&^k7nsPYU4vLCJKw1SqSJnW3KA6GtKkF7EgnKWNgnS4oEMnaxBfEsymQkOkZxDwGrhizkMOBC2FWWI+POCE3TjuY5ug20ryYHJ6s/tpPa9A7lA+x2Jq4m13Kh7pw0HI5onK9pJH0Zo4lTHY2E6WaefKnEU7jrJw9TqaTXyb4uIV0o=!!fjA4MHaHNiVSlWSxlPhaTw0PYrwKQqDAmjHhDuE/l2/6EEebupZI+TYF9R0vtyy4jMUkFihIjrG7bXBeMOt+3WIQG/0UbyOVdq6pE8MWMaDpxtYS3T8YQ6OGhZzJ/qBS7beLxVc9WYv1xaumgo+VqTzuuuHJTzRmkcaJHgKgBcM=^&#
+08-27 10:32:13.776  2956  7203 I MiuiNetworkPolicy: updateUidState uid = 6110, uidState = 19
+08-27 10:32:13.827  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363174063841676, lux: 380.6
+08-27 10:32:13.829  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363174063841676, sensor=5, temperature(K)=   0.0000
+08-27 10:32:13.829  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:13.944 21613 21860 V MSF.C.MSFCore[@PS]: [Event] MSFPacketStatistics.cpp(300)::DoCheckRequestTimeout->current rtts:24.079
+08-27 10:32:14.027  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363174263840739, lux: 380.6
+08-27 10:32:14.028  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363174263840739, sensor=5, temperature(K)=   0.0000
+08-27 10:32:14.028  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:14.094 21481 21579 W System.err: ts5.b: mCoreAccount not initialized!
+08-27 10:32:14.094 21481 21579 W System.err: 	at ts5.a.h(Unknown Source:10)
+08-27 10:32:14.094 21481 21579 W System.err: 	at ts5.a.g(Unknown Source:3)
+08-27 10:32:14.094 21481 21579 W System.err: 	at ts5.a.d(Unknown Source:5)
+08-27 10:32:14.094 21481 21579 W System.err: 	at yj0.j1.b(Unknown Source:8)
+08-27 10:32:14.094 21481 21579 W System.err: 	at com.tencent.mars.smc.SmcManagerCallbackWithPush.onSelfMonitorOpLogReady(Unknown Source:2)
+08-27 10:32:14.095 21481 21579 W mars::jniexception: ts5.b: mCoreAccount not initialized!
+08-27 10:32:14.095 21481 21579 W mars::jniexception: 	at ts5.a.h(Unknown Source:10)
+08-27 10:32:14.095 21481 21579 W mars::jniexception: 	at ts5.a.g(Unknown Source:3)
+08-27 10:32:14.095 21481 21579 W mars::jniexception: 	at ts5.a.d(Unknown Source:5)
+08-27 10:32:14.095 21481 21579 W mars::jniexception: 	at yj0.j1.b(Unknown Source:8)
+08-27 10:32:14.095 21481 21579 W mars::jniexception: 	at com.tencent.mars.smc.SmcManagerCallbackWithPush.onSelfMonitorOpLogReady(Unknown Source:2)
+08-27 10:32:14.196  6470  6586 D JavaheapMonitor: Java heap used=18M max=256M, proc: com.miui.securitycenter.remote
+08-27 10:32:14.199  6470  6586 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+08-27 10:32:14.208 22068 25770 D JavaheapMonitor: Java heap used=17M max=512M, proc: com.sohu.inputmethod.sogou.xiaomi
+08-27 10:32:14.209 22068 25770 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+08-27 10:32:14.227  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363174463842406, lux: 380.6
+08-27 10:32:14.229  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363174463842406, sensor=5, temperature(K)=   0.0000
+08-27 10:32:14.229  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:14.305 21681 21979 E NTKernel: [E] united_config_mgr_mobileqq.cc(131)::operator() [united_config]->load config error. group_id:102431
+08-27 10:32:14.305 21681 21979 I NTKernel: [I] united_config_mgr_mobileqq.cc(151)::operator() [united_config]->group_id:102431, switch:
+08-27 10:32:14.305 21681 21979 I NTKernel: [I] buddy_list_config.cc(80)::operator() [LogConfig]->fetch config suc content size:0
+08-27 10:32:14.305 21681 21979 I NTKernel: [I] buddy_list_config.cc(84)::operator() [LogConfig]->fetch config retry count:6
+08-27 10:32:14.367 28261 28418 D JavaheapMonitor: Java heap used=7M max=512M, proc: com.android.camera
+08-27 10:32:14.367 28261 28418 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+08-27 10:32:14.427  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363174663841885, lux: 380.6
+08-27 10:32:14.428  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363174663841885, sensor=5, temperature(K)=   0.0000
+08-27 10:32:14.429  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:14.507 12063 13849 I com.tencent.mm: This is non sticky GC, maxfree is 33554432 minfree is 8388608
+08-27 10:32:14.507 12063 13849 I com.tencent.mm: Explicit concurrent copying GC freed 1178KB AllocSpace bytes, 38(820KB) LOS objects, 18% free, 137MB/169MB, paused 541us,507us total 1.701s
+08-27 10:32:14.507 12063 12080 I com.tencent.mm: WaitForGcToComplete blocked HeapTrim on Explicit for 847.080ms
+08-27 10:32:14.575 21613 22360 D UnusedCodeCheck: checkInvalidModel brandKey:Xiaomi_36 romKey:V816_36
+08-27 10:32:14.576 21613 22360 D UnusedCodeCheck: checkInvalidModel invalidModel:V417IR
+08-27 10:32:14.576 21613 22360 D UnusedCodeCheck: checkInvalidModel invalidModel:caas-user
+08-27 10:32:14.576 21613 22360 D UnusedCodeCheck: checkInvalidModel invalidModel:V816_34
+08-27 10:32:14.578 21613 22360 D UnusedCodeCheck: read config:UnusedCodeCheckConfigBean(isOpen=true, isInvalidModel=false, fileBufferSize=20480, lookupCountLimit=500, loadRateLimit=0.32, allowLookupFailCount=3, delayTimeMainProcess=600000, delayTimeOtherProcess=300000, delayTimeMsfProcess=1500000, checkTimeIntervalMainProcess=600000, checkTimeIntervalOtherProcess=300000, checkTimeIntervalMsfProcess=1500000, cpuUsageLimit=10.0, loadRateLimitLastVersion=0.2, grayVersionLoadRate=0.2, grayVersionIsOpen=true)
+08-27 10:32:14.626  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363174863841103, lux: 380.6
+08-27 10:32:14.628  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363174863841103, sensor=5, temperature(K)=   0.0000
+08-27 10:32:14.628  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:14.692  2956  3078 D AurogonBandwidthController: skinTemperature:34.673
+08-27 10:32:14.694  2956  3078 D AurogonBandwidthController: skinTemperature:34.673
+08-27 10:32:14.694 20866 21279 I dist:vtcamera:PhoneTemperatureReader: onEvent: null
+08-27 10:32:14.695 20866 22815 I dist:vtcamera:PhoneTemperatureReader: read-temp:34673
+08-27 10:32:14.696 20866 22815 D dist:vtcamera:PhoneTemperatureNotifier: tempV=34673, highTemperature state=false
+08-27 10:32:14.809  2956  8816 D SLM-SRV-SLAService: checktemp temperature = 34673 temperature_average = 34566 isPerformanceMode = false thermal_enable_slm = true
+08-27 10:32:14.828  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363175063842562, lux: 380.6
+08-27 10:32:14.829  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363175063842562, sensor=5, temperature(K)=   0.0000
+08-27 10:32:14.829  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:14.945 21613 21860 V MSF.C.MSFCore[@PS]: [Event] MSFPacketStatistics.cpp(300)::DoCheckRequestTimeout->current rtts:24.079
+08-27 10:32:14.986  2956 18082 D FileUtils: Rounded bytes from 11734142976 to 16000000000
+08-27 10:32:15.002  2956  7203 D MiuiNetworkPolicy: updateLimit mLimitEnabled=true,enabled=false,mNetworkPriorityMode=1,mThermalForceMode=0
+08-27 10:32:15.011  2956  7203 I MiuiNetworkPolicy: getDisableLimitTimeout when thermal mode is:0
+08-27 10:32:15.018 21613 21686 D PandoraEx.RuntimeMonitor: pre exec :[/system/bin/sh, -c, type su]
+08-27 10:32:15.027  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363175263841989, lux: 380.6
+08-27 10:32:15.028  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363175263841989, sensor=5, temperature(K)=   0.0000
+08-27 10:32:15.028  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:15.050  2956  7203 I MiuiNetworkPolicy: bandwidth: 0 KB/s, Max bandwidth: 1163 KB/s
+08-27 10:32:15.069  2956  7271 D ActionExecute: setPkgData uid = 99910300 time=8000
+08-27 10:32:15.163 21481 21634 I tencent.mm:push: This is non sticky GC, maxfree is 33554432 minfree is 8388608
+08-27 10:32:15.163 21481 21634 I tencent.mm:push: Explicit concurrent copying GC freed 6113KB AllocSpace bytes, 18(360KB) LOS objects, 51% free, 7702KB/15MB, paused 216us,155us total 273.599ms
+08-27 10:32:15.227  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363175463841833, lux: 380.6
+08-27 10:32:15.228  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363175463841833, sensor=5, temperature(K)=   0.0000
+08-27 10:32:15.228  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:15.427  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363175663842926, lux: 380.6
+08-27 10:32:15.428  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363175663842926, sensor=5, temperature(K)=   0.0000
+08-27 10:32:15.428  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:15.481 21481 21634 I tencent.mm:push: This is non sticky GC, maxfree is 33554432 minfree is 8388608
+08-27 10:32:15.482 21481 21634 I tencent.mm:push: Explicit concurrent copying GC freed 491KB AllocSpace bytes, 4(80KB) LOS objects, 50% free, 7918KB/15MB, paused 166us,305us total 269.055ms
+08-27 10:32:15.606 16974 25903 D JavaheapMonitor: Java heap used=2M max=256M, proc: com.tencent.soter.soterserver
+08-27 10:32:15.606 16974 25903 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+08-27 10:32:15.618  3755  3755 I cnss-daemon: nl80211 response handler invoked
+08-27 10:32:15.618  3755  3755 I cnss-daemon: nl80211_response_handler: cmd 103, vendorID 4980, subcmd 13  received
+08-27 10:32:15.621  2956  7206 D WifiStaIfaceHidlImpl: getCachedScanData is not implemented by HIDL
+08-27 10:32:15.623  3510  3510 I wificond: station_bandwidth: ?
+08-27 10:32:15.623  2106  6357 I WifiHAL : event received NL80211_CMD_VENDOR, vendor_id = 0x1374, subcmd = 0xd
+08-27 10:32:15.624  2956  7206 D MiuiWifiCommonBase: band: 1, compensate: 0
+08-27 10:32:15.627  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363175863842822, lux: 380.6
+08-27 10:32:15.628  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363175863842822, sensor=5, temperature(K)=   0.0000
+08-27 10:32:15.628  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:15.632  8081  8137 E PhoneAdapter: get ntnphones failed, exception: java.lang.IllegalStateException: not support satellite!
+08-27 10:32:15.635  2956  7213 D AmlWifiScoreReportInjector: isMobileDataSignalPoor cellNrSignalRsrp = -106
+08-27 10:32:15.636 27655 27655 D ControlCenterHeaderExpandController: onExpansionChanged: progress =  0.0
+08-27 10:32:15.637 27655 27655 D ControlCenterHeaderExpandController: onExpansionChanged: progress =  0.0
+08-27 10:32:15.637 27655 27655 D ControlCenterHeaderExpandController: onExpansionChanged: progress =  0.0
+08-27 10:32:15.675  2130  2242 D SDM     : HWDeviceDRM::SetupConcurrentWriteback: Tear down the Concurrent Writeback topology
+08-27 10:32:15.675  2130  2819 I vendor.qti.hardware.display.composer-service: FrameNotifyProcess Sensor: notify citsensorservice to trigger cwb
+08-27 10:32:15.677  3899  5545 I libsensor-parseRGB: request dump start for mRequestDisplayId 0
+08-27 10:32:15.677  3899  5545 D vendor.xiaomi.sensor.citsensorservice@2.0-service: handle id:21 wxh:1280x2400 uwxuh:1080x2400 size: 9216000 fd:17 fd_meta:18 flags:0x228 usage:0x33  format:0x3 layer_count: 1 reserved_size = 0
+08-27 10:32:15.678  2130  2719 W SDM     : HWCSession::GetDisplayIndex: Display index not found for display 1.
+08-27 10:32:15.678  2130  2719 W SDM     : HWCSession::GetDisplayIndex: Display index not found for display 3.
+08-27 10:32:15.678  2130  2719 D SDM     : HWCSession::SetCWBOutputBuffer: CWB config passed by cwb_client : tappoint 1  CWB_ROI : (591.000000 22.000000 717.000000 148.000000). Display 0
+08-27 10:32:15.705  2130  5559 D SDM     : HWCSession::NotifyCWBStatus: Notify the client about buffer status 0. Display: 0
+08-27 10:32:15.706  2130  5559 I SDM     : HWCSession::ProcessCWBStatus: CWB queue is empty. display_index: 0
+08-27 10:32:15.708  3899  5546 D libsensor-parseRGB: the value of RGB [2612.490388 3395.895439 3214.494024]
+08-27 10:32:15.796  9355 13396 D JavaheapMonitor: Java heap used=2M max=256M, proc: com.xiaomi.aiasst.service
+08-27 10:32:15.796  9355 13396 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+08-27 10:32:15.828  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363176063842978, lux: 380.6
+08-27 10:32:15.830  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363176063842978, sensor=5, temperature(K)=   0.0000
+08-27 10:32:15.830  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:15.946 21613 21860 V MSF.C.MSFCore[@PS]: [Event] MSFPacketStatistics.cpp(300)::DoCheckRequestTimeout->current rtts:24.079
+08-27 10:32:16.028  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363176263843083, lux: 380.6
+08-27 10:32:16.029  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363176263843083, sensor=5, temperature(K)=   0.0000
+08-27 10:32:16.029  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:16.100 21724 25464 D powerkeeper.dfsobserve: board ready to handle temperature change
+08-27 10:32:16.100 21724  1011 D powerkeeper.dfscpucol: handleTemperatureChange: temp=34673
+08-27 10:32:16.201  2956  7854 W ActivityManagerServiceImpl: Sending non-protected broadcast com.modemenhance.ACTION_MODEMWIFI_RSSI_POLL from system 8081:com.android.phone/1001 pkg com.android.phone. Callers=
+08-27 10:32:16.207  8081  8081 W m.android.phone: type=1400 audit(0.0:2006753): avc:  denied  { read } for  name="u:object_r:vendor_wlan_eht_prop:s0" dev="tmpfs" ino=660 scontext=u:r:radio:s0 tcontext=u:object_r:vendor_wlan_eht_prop:s0 tclass=file permissive=0
+08-27 10:32:16.208  8081  8081 W libc    : Access denied finding property "persist.vendor.wlan.disable.eht"
+08-27 10:32:16.208  8081  8081 D SlaveWifiManager: getWifiSlaveConnectionInfo
+08-27 10:32:16.227  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363176463843135, lux: 380.6
+08-27 10:32:16.229  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363176463843135, sensor=5, temperature(K)=   0.0000
+08-27 10:32:16.229  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:16.351  2956  9018 I NetworkAccelerateSwitchService: EVENT_RSSI_POLL. mRssiPoll=true
+08-27 10:32:16.351  2956  9018 I NetworkAccelerateSwitchService: checkWifiRssiAndLinkSpeed rssi:49
+08-27 10:32:16.351  2956  9018 I NetworkAccelerateSwitchService: checkWifiRssiAndLinkSpeed mWifiFastFade:false mWifiFastFadeAdjustThreshold:false
+08-27 10:32:16.351  2956  9018 I NetworkAccelerateSwitchService: getAverageWifiRssi:48
+08-27 10:32:16.353  2956  9018 D NetworkAccelerateSwitchService: checkIntervalModeChange mMovementState:false mIntervalMode:0 mIsBadLinkLayerQoE:false mBadLinkLayerQoETimes = 0
+08-27 10:32:16.428  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363176663842249, lux: 380.6
+08-27 10:32:16.429  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363176663842249, sensor=5, temperature(K)=   0.0000
+08-27 10:32:16.429  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:16.630  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363176863840583, lux: 380.6
+08-27 10:32:16.632  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363176863840583, sensor=5, temperature(K)=   0.0000
+08-27 10:32:16.632  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:16.786 27655 27655 D ControlCenterHeaderExpandController: onExpansionChanged: progress =  0.0
+08-27 10:32:16.788 27655 27655 D ControlCenterHeaderExpandController: onExpansionChanged: progress =  0.0
+08-27 10:32:16.788 27655 27655 D ControlCenterHeaderExpandController: onExpansionChanged: progress =  0.0
+08-27 10:32:16.826  2130  2242 D SDM     : HWDeviceDRM::SetupConcurrentWriteback: Tear down the Concurrent Writeback topology
+08-27 10:32:16.827  2130  2819 I vendor.qti.hardware.display.composer-service: FrameNotifyProcess Sensor: notify citsensorservice to trigger cwb
+08-27 10:32:16.828  3899  5545 I libsensor-parseRGB: request dump start for mRequestDisplayId 0
+08-27 10:32:16.829  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363177063859124, lux: 380.6
+08-27 10:32:16.830  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363177063859124, sensor=5, temperature(K)=   0.0000
+08-27 10:32:16.830  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:16.830  3899  5545 D vendor.xiaomi.sensor.citsensorservice@2.0-service: handle id:21 wxh:1280x2400 uwxuh:1080x2400 size: 9216000 fd:17 fd_meta:18 flags:0x228 usage:0x33  format:0x3 layer_count: 1 reserved_size = 0
+08-27 10:32:16.831  2130  2719 W SDM     : HWCSession::GetDisplayIndex: Display index not found for display 1.
+08-27 10:32:16.831  2130  2719 W SDM     : HWCSession::GetDisplayIndex: Display index not found for display 3.
+08-27 10:32:16.831  2130  2719 D SDM     : HWCSession::SetCWBOutputBuffer: CWB config passed by cwb_client : tappoint 1  CWB_ROI : (591.000000 22.000000 717.000000 148.000000). Display 0
+08-27 10:32:16.834 18418 22684 D JavaheapMonitor: Java heap used=3M max=256M, proc: com.lbe.security.miui
+08-27 10:32:16.835 18418 22684 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+08-27 10:32:16.854  2130  5559 D SDM     : HWCSession::NotifyCWBStatus: Notify the client about buffer status 0. Display: 0
+08-27 10:32:16.855  2130  5559 I SDM     : HWCSession::ProcessCWBStatus: CWB queue is empty. display_index: 0
+08-27 10:32:16.857  3899  5546 D libsensor-parseRGB: the value of RGB [2612.490388 3395.895439 3214.494024]
+08-27 10:32:16.871  2956  3021 I ActivityManager: Test idle passed
+08-27 10:32:16.912  8105 11128 D JavaheapMonitor: Java heap used=1M max=256M, proc: vendor.qti.bluetooth.xpan
+08-27 10:32:16.912  8105 11128 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+08-27 10:32:16.928  3440  3460 I ocessService0:0: This is non sticky GC, maxfree is 33554432 minfree is 8388608
+08-27 10:32:16.928  3440  3460 W ocessService0:0: Reducing the number of considered missed Gc histogram windows from 179 to 100
+08-27 10:32:16.949 21613 21860 V MSF.C.MSFCore[@PS]: [Event] MSFPacketStatistics.cpp(300)::DoCheckRequestTimeout->current rtts:24.079
+08-27 10:32:17.028  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363177263857926, lux: 380.6
+08-27 10:32:17.030  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363177263857926, sensor=5, temperature(K)=   0.0000
+08-27 10:32:17.030  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:17.033  2956  7271 D ActionExecute: setPkgData uid = 10295 time=8000
+08-27 10:32:17.035  2956 18082 D Aurogon :  packageName = com.tencent.mm isAllowWakeUpList 
+08-27 10:32:17.050  2956  7203 I MiuiNetworkPolicy: updateUidState uid = 10295, uidState = 10
+08-27 10:32:17.055  2956  2991 D GnssSsruImpl: onLocationPermissionsChanged provider:passive packageName:com.tencent.mm
+08-27 10:32:17.055  2956  2991 D GnssSsruImpl: onLocationPermissionsChanged provider:network packageName:com.tencent.mm
+08-27 10:32:17.059  2956  7203 I MiuiNetworkPolicy: updateUidState uid = 10295, uidState = 10
+08-27 10:32:17.093  2956 18082 D Aurogon :  packageName = com.tencent.mm isAllowWakeUpList 
+08-27 10:32:17.120  7195 11101 D JavaheapMonitor: Java heap used=3M max=256M, proc: com.miui.analytics
+08-27 10:32:17.121  7195 11101 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+08-27 10:32:17.143  2956 18082 D Aurogon :  packageName = com.tencent.mm isAllowWakeUpList 
+08-27 10:32:17.148 27655 27655 D FocusPlugin: NotifLifetime: onNotificationRemoved, key: 0|com.tencent.mm|-1040079326|null|10295, needExtendLifetime: false, reason: 8
+08-27 10:32:17.148 27655 27655 I FocusPlugin: onNotificationRemoved 0|com.tencent.mm|-1040079326|null|10295, content: null
+08-27 10:32:17.148 27655 27655 I FocusPlugin: removeByKey 0|com.tencent.mm|-1040079326|null|10295
+08-27 10:32:17.148 27655 27655 D HideDeletedFocusController: onNotificationRemoved 8 0|com.tencent.mm|-1040079326|null|10295
+08-27 10:32:17.148 27655 27655 D AlarmScheduler-FOCUS_NOTIFICATION_DELETE_TIMEOUT: cancelAlarm, key=0|com.tencent.mm|-1040079326|null|10295, currentKey=0|com.jingdong.app.mall|-1898214545|null|10329
+08-27 10:32:17.148 27655 27655 D DynamicIslandLifetimeController: maybeExtendLifetime: 0|com.tencent.mm|-1040079326|null|10295, null
+08-27 10:32:17.148 27655 27655 D AlarmScheduler-fold: cancelAlarm, key=0|com.tencent.mm|-1040079326|null|10295, currentKey=0|tv.danmaku.bili|-1985281631|null|10252
+08-27 10:32:17.149 27655 27655 D AlarmScheduler-TIMEOUT: cancelAlarm, key=0|com.tencent.mm|-1040079326|null|10295, currentKey=0|com.xiaomi.smarthome|1877659817|null|10272
+08-27 10:32:17.149 27655 27655 D MiuiBubbleManager: onEntryRemoved: com.android.systemui.statusbar.notification.collection.NotificationEntry@bc899fd
+08-27 10:32:17.151  2956  5363 W ActivityManagerServiceImpl: Sending non-protected broadcast android.intent.action.APPLICATION_MESSAGE_UPDATE from system 27655:com.android.systemui/1000 pkg com.android.systemui. Callers=
+08-27 10:32:17.153  8139  8348 I Launcher.ApplicationsMessage: onReceive true
+08-27 10:32:17.153  8139  8348 I Launcher.ApplicationsMessage: update com.tencent.mm/ to null
+08-27 10:32:17.153  8139  8139 D ShortcutIcon: setMessage textnull
+08-27 10:32:17.153  8139  8139 D ShortcutsAdapter: buildSortingMap map size:4
+08-27 10:32:17.153  8139  8139 D ItemIcon: setMessage text2
+08-27 10:32:17.153  8139  8139 D FolderIcon: createOrRemoveView diffCount:0
+08-27 10:32:17.153  8139  8139 W PreviewDisappear: 2x2 set icon for: com.tencent.wework preview drawable: android.graphics.drawable.BitmapDrawable@b167ef4
+08-27 10:32:17.153  8139  8139 W PreviewDisappear: 2x2 image view alpha: 1.0
+08-27 10:32:17.153  8139  8139 W PreviewDisappear: 2x2 set icon for: com.tencent.mm preview drawable: com.miui.home.common.drawable.LayerAdaptiveIconDrawable@2cb78b5
+08-27 10:32:17.153  8139  8139 W PreviewDisappear: 2x2 image view alpha: 1.0
+08-27 10:32:17.154  8139  8139 W PreviewDisappear: 2x2 set icon for: com.eg.android.AlipayGphone preview drawable: com.miui.home.common.drawable.LayerAdaptiveIconDrawable@8ff62e8
+08-27 10:32:17.154  8139  8139 W PreviewDisappear: 2x2 image view alpha: 1.0
+08-27 10:32:17.154  8139  8139 W PreviewDisappear: 2x2 set icon for: com.tencent.mobileqq preview drawable: android.graphics.drawable.BitmapDrawable@6b861b7
+08-27 10:32:17.154  8139  8139 W PreviewDisappear: 2x2 image view alpha: 1.0
+08-27 10:32:17.154  8139  8139 D ItemIcon: setMessage text2
+08-27 10:32:17.157  2956  5363 D Aurogon :  packageName = com.tencent.mm isAllowWakeUpList 
+08-27 10:32:17.164 27655 27655 D NotificationIconContainerInject: remove: start remove notification animation
+08-27 10:32:17.165 27655 27655 D backgroundBlur: setSelfBlurRadius radius(3) com.android.systemui.statusbar.StatusBarIconView hashcode 84345167
+08-27 10:32:17.165 27655 27655 D backgroundBlur: setSelfColorModes has setted com.android.systemui.statusbar.StatusBarIconView hashcode 84345167
+08-27 10:32:17.165  2956 18082 D Aurogon :  packageName = com.tencent.mm isAllowWakeUpList 
+08-27 10:32:17.166 27655 27655 D NotificationHeaderExpandController: onExpansionChanged: progress =  0.0
+08-27 10:32:17.170  2956  5363 E AlarmManager: not align this alarm: Alarm{3efddce type 2 origWhen 2363387411 whenElapsed 2363387411 com.tencent.mm}, reason=0
+08-27 10:32:17.170  3767  5270 I mars::stn: [longlink_connect_monitor.cc:530, OnHeartbeatAlarmSet]:longlink_progress on_heartbeat_set, time: 2363177414, time interval:210000
+08-27 10:32:17.184 27655 27655 D backgroundBlur: setSelfColorModes has setted com.android.systemui.statusbar.StatusBarIconView hashcode 84345167
+08-27 10:32:17.188  2130  2242 D SDM     : HWDeviceDRM::SetupConcurrentWriteback: Tear down the Concurrent Writeback topology
+08-27 10:32:17.189  2130  2819 I vendor.qti.hardware.display.composer-service: FrameNotifyProcess Sensor: notify citsensorservice to trigger cwb
+08-27 10:32:17.189  3899  5545 I libsensor-parseRGB: request dump start for mRequestDisplayId 0
+08-27 10:32:17.189  3899  5545 D vendor.xiaomi.sensor.citsensorservice@2.0-service: handle id:21 wxh:1280x2400 uwxuh:1080x2400 size: 9216000 fd:17 fd_meta:18 flags:0x228 usage:0x33  format:0x3 layer_count: 1 reserved_size = 0
+08-27 10:32:17.190  2130  2719 W SDM     : HWCSession::GetDisplayIndex: Display index not found for display 1.
+08-27 10:32:17.190  2130  2719 W SDM     : HWCSession::GetDisplayIndex: Display index not found for display 3.
+08-27 10:32:17.190  2130  2719 D SDM     : HWCSession::SetCWBOutputBuffer: CWB config passed by cwb_client : tappoint 1  CWB_ROI : (591.000000 22.000000 717.000000 148.000000). Display 0
+08-27 10:32:17.190 27655 27655 D backgroundBlur: setSelfColorModes has setted com.android.systemui.statusbar.StatusBarIconView hashcode 84345167
+08-27 10:32:17.196 27655 27655 D backgroundBlur: setSelfColorModes has setted com.android.systemui.statusbar.StatusBarIconView hashcode 84345167
+08-27 10:32:17.196  2130  2719 I SDM     : HWEventsDRM::SetEventState: Setup vsync event for CRTC 167, Connector 65
+08-27 10:32:17.204  2130  2242 D SDM     : HWDeviceDRM::SetupConcurrentWriteback: Tear down the Concurrent Writeback topology
+08-27 10:32:17.204 27655 27655 D backgroundBlur: setSelfColorModes has setted com.android.systemui.statusbar.StatusBarIconView hashcode 84345167
+08-27 10:32:17.210  2130  5559 D SDM     : HWCSession::NotifyCWBStatus: Notify the client about buffer status 0. Display: 0
+08-27 10:32:17.210  2130  5559 I SDM     : HWCSession::ProcessCWBStatus: CWB queue is empty. display_index: 0
+08-27 10:32:17.212 27655 27655 D backgroundBlur: setSelfColorModes has setted com.android.systemui.statusbar.StatusBarIconView hashcode 84345167
+08-27 10:32:17.213  3899  5546 D libsensor-parseRGB: the value of RGB [2612.490388 3395.895439 3214.494024]
+08-27 10:32:17.221 27655 27655 D backgroundBlur: setSelfColorModes has setted com.android.systemui.statusbar.StatusBarIconView hashcode 84345167
+08-27 10:32:17.226  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363177463841937, lux: 380.6
+08-27 10:32:17.229  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363177463841937, sensor=5, temperature(K)=   0.0000
+08-27 10:32:17.229  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:17.230 27655 27655 D backgroundBlur: setSelfColorModes has setted com.android.systemui.statusbar.StatusBarIconView hashcode 84345167
+08-27 10:32:17.238 27655 27655 D backgroundBlur: setSelfColorModes has setted com.android.systemui.statusbar.StatusBarIconView hashcode 84345167
+08-27 10:32:17.247 27655 27655 D backgroundBlur: setSelfColorModes has setted com.android.systemui.statusbar.StatusBarIconView hashcode 84345167
+08-27 10:32:17.254 27655 27655 D backgroundBlur: setSelfColorModes has setted com.android.systemui.statusbar.StatusBarIconView hashcode 84345167
+08-27 10:32:17.263 27655 27655 D backgroundBlur: setSelfColorModes has setted com.android.systemui.statusbar.StatusBarIconView hashcode 84345167
+08-27 10:32:17.278 27655 27655 D backgroundBlur: setSelfColorModes has setted com.android.systemui.statusbar.StatusBarIconView hashcode 84345167
+08-27 10:32:17.296 27655 27655 D backgroundBlur: setSelfColorModes has setted com.android.systemui.statusbar.StatusBarIconView hashcode 84345167
+08-27 10:32:17.379 27655 27655 D NotificationIconContainerInject: remove: finish remove notification animation for cancel = false
+08-27 10:32:17.394  2130  2819 I vendor.qti.hardware.display.composer-service: FrameNotifyProcess Sensor: notify citsensorservice to trigger cwb
+08-27 10:32:17.394  3899  5545 I libsensor-parseRGB: request dump start for mRequestDisplayId 0
+08-27 10:32:17.394  3899  5545 D vendor.xiaomi.sensor.citsensorservice@2.0-service: handle id:21 wxh:1280x2400 uwxuh:1080x2400 size: 9216000 fd:17 fd_meta:18 flags:0x228 usage:0x33  format:0x3 layer_count: 1 reserved_size = 0
+08-27 10:32:17.395  2130  2719 W SDM     : HWCSession::GetDisplayIndex: Display index not found for display 1.
+08-27 10:32:17.395  2130  2719 W SDM     : HWCSession::GetDisplayIndex: Display index not found for display 3.
+08-27 10:32:17.395  2130  2719 D SDM     : HWCSession::SetCWBOutputBuffer: CWB config passed by cwb_client : tappoint 1  CWB_ROI : (591.000000 22.000000 717.000000 148.000000). Display 0
+08-27 10:32:17.410  2130  2242 D SDM     : HWDeviceDRM::SetupConcurrentWriteback: Tear down the Concurrent Writeback topology
+08-27 10:32:17.416  2130  5559 D SDM     : HWCSession::NotifyCWBStatus: Notify the client about buffer status 0. Display: 0
+08-27 10:32:17.417  2130  5559 I SDM     : HWCSession::ProcessCWBStatus: CWB queue is empty. display_index: 0
+08-27 10:32:17.417  3899  5546 D libsensor-parseRGB: the value of RGB [2612.490388 3395.895439 3214.494024]
+08-27 10:32:17.427  2089 21793 I sensors-hal: handle_sns_std_sensor_event:65, light_event: ts=2363177663841937, lux: 380.6
+08-27 10:32:17.429  2165  2165 D SRE     : sensorCallback mDisplayId = 0 dataCallback value=< 380.6250,   0.0000,   0.0000>,time=2363177663841937, sensor=5, temperature(K)=   0.0000
+08-27 10:32:17.429  2165  2165 D SRE     : setSREStrength mDisplayId = 0, mLastLux = 380, lux = 380, mSREEnabled = 1, mLastFreezeStatus = 0, freeze = 0
+08-27 10:32:17.448 12063 12063 V AudioManager: direct return isWiredHeadsetOn from audioservice/audiodeviceinventory, get directly to avoid waiting too long.
+08-27 10:32:17.493 12063 12063 D HWUI    : ImageDecoder_nDecodeBitmap: width = 65, height = 65, encodedFormat = 4
+08-27 10:32:17.495 12063 12063 W HWUI    : Image decoding logging dropped!
+08-27 10:32:17.515  2956  2956 W NotificationHistory: Attempted to add notif for locked/gone/disabled user 0
+08-27 10:32:17.522 27655 27655 D FocusPlugin: 0|com.tencent.mm|-1400124418|null|10295 is not focus notification, isMedia: false
+08-27 10:32:17.523 27655 27655 D AlarmScheduler-fold: addAlarm, key=0|com.tencent.mm|-1400124418|null|10295, triggerTime=2967977767
+08-27 10:32:17.524 27655 27655 D AlarmScheduler-TIMEOUT: addAlarm, key=0|com.tencent.mm|-1400124418|null|10295, triggerTime=2622377767
+08-27 10:32:17.524 27655 27655 D MiuiBubbleManager: onEntryAdded: com.android.systemui.statusbar.notification.collection.NotificationEntry@b3d15d7
+08-27 10:32:17.525  2956 18082 W ActivityManagerServiceImpl: Sending non-protected broadcast android.intent.action.APPLICATION_MESSAGE_UPDATE from system 27655:com.android.systemui/1000 pkg com.android.systemui. Callers=
+08-27 10:32:17.525 27655 27655 I MiuiBubbleSettings: com.tencent.mm 0isAppEnableBubbleNotification: false
+08-27 10:32:17.527 27655 27865 D NotificationProvider: call method=updateNotificationUsageInfo extras=Bundle[{packageName=com.tencent.mm}]
+08-27 10:32:17.527  8139  8348 I Launcher.ApplicationsMessage: onReceive true
+08-27 10:32:17.527  8139  8348 I Launcher.ApplicationsMessage: update com.tencent.mm/ to 7
+08-27 10:32:17.528  8139  8139 D ShortcutIcon: setMessage text7
+08-27 10:32:17.530  8139  8139 D ShortcutsAdapter: buildSortingMap map size:4
+08-27 10:32:17.530  8139  8139 D ItemIcon: setMessage text9
+08-27 10:32:17.531  8139  8139 D FolderIcon: createOrRemoveView diffCount:0
+08-27 10:32:17.532  8139  8139 W PreviewDisappear: 2x2 set icon for: com.tencent.wework preview drawable: android.graphics.drawable.BitmapDrawable@b167ef4
+08-27 10:32:17.532  8139  8139 W PreviewDisappear: 2x2 image view alpha: 1.0
+08-27 10:32:17.532  8139  8139 W PreviewDisappear: 2x2 set icon for: com.tencent.mm preview drawable: com.miui.home.common.drawable.LayerAdaptiveIconDrawable@2cb78b5
+08-27 10:32:17.532  8139  8139 W PreviewDisappear: 2x2 image view alpha: 1.0
+08-27 10:32:17.532  8139  8139 W PreviewDisappear: 2x2 set icon for: com.eg.android.AlipayGphone preview drawable: com.miui.home.common.drawable.LayerAdaptiveIconDrawable@8ff62e8
+08-27 10:32:17.532  8139  8139 W PreviewDisappear: 2x2 image view alpha: 1.0
+08-27 10:32:17.532  8139  8139 W PreviewDisappear: 2x2 set icon for: com.tencent.mobileqq preview drawable: android.graphics.drawable.BitmapDrawable@6b861b7
+08-27 10:32:17.532  8139  8139 W PreviewDisappear: 2x2 image view alpha: 1.0
+08-27 10:32:17.532  8139  8139 D ItemIcon: setMessage text9
+08-27 10:32:17.546 27655 27655 D HWUI    : setMiShadow closed
+08-27 10:32:17.546 27655 27655 D EmptyNotif: setContractedChild:   null
+08-27 10:32:17.547 27655 27655 D NotificationRowContentBinderInjectorImpl: changeToFullAodContext: not need change full aod style
+08-27 10:32:17.550  2370  2370 D MI-SF   : isTpIdleScene ,mAverageFrameRate is 132, 0 
+08-27 10:32:17.550  2370  2370 D MI-SF   : modeGroup0 mIsSupportAutomodeForMaxFpsSetting is 0(0), getCurrentBrightness() = 1487(1810), mIsKeepAutoMode 0 isAutoModeAllowed() 1
+08-27 10:32:17.550  2370  2370 D RefreshRateSelector: fixedMode_group: 0, isFindModeGroup 0
+08-27 10:32:17.550  2370  2370 D RefreshRateSelector: find max refresh rate:120, mode Group:0
+08-27 10:32:17.553 27655 27655 W BitmapDrawable: BitmapDrawable created with null Bitmap
+08-27 10:32:17.553 27655 27655 W BitmapDrawable: BitmapDrawable created with null Bitmap
+08-27 10:32:17.557 27655 27655 W BitmapDrawable: BitmapDrawable created with null Bitmap
+08-27 10:32:17.557 27655 27655 W BitmapDrawable: BitmapDrawable created with null Bitmap
+08-27 10:32:17.558 27655 27655 D EmptyNotif: setContractedChild:   android.widget.FrameLayout{116ed4a V.E...... ......I. 0,0-0,0 #7f0b0b70 app:id/status_bar_latest_event_content}
+08-27 10:32:17.559 27655 27655 D HWUI    : setMiShadow closed
+08-27 10:32:17.559 27655 27655 D HWUI    : setMiShadow parameter is same
+08-27 10:32:17.559 27655 27655 D AlertCoordinator: onViewBound, buzzBeep for 0|com.tencent.mm|-1400124418|null|10295
+08-27 10:32:17.593 27655 27655 D NotificationHeaderExpandController: onExpansionChanged: progress =  0.0
+08-27 10:32:17.594 27655 27655 D backgroundBlur: setSelfBlurRadius radius(30) com.android.systemui.statusbar.StatusBarIconView hashcode 35684057
+08-27 10:32:17.594 27655 27655 D backgroundBlur: setSelfColorModes has setted com.android.systemui.statusbar.StatusBarIconView hashcode 35684057
+08-27 10:32:17.605  3975  3975 I adbd    : in ShellService: export ANDROID_LOG_TAGS=''; exec logcat '-d' '-t' '800'
+08-27 10:32:17.611  2130  2819 I vendor.qti.hardware.display.composer-service: FrameNotifyProcess Sensor: notify citsensorservice to trigger cwb
+08-27 10:32:17.611  3899  5545 I libsensor-parseRGB: request dump start for mRequestDisplayId 0
+08-27 10:32:17.611  3899  5545 D vendor.xiaomi.sensor.citsensorservice@2.0-service: handle id:21 wxh:1280x2400 uwxuh:1080x2400 size: 9216000 fd:17 fd_meta:18 flags:0x228 usage:0x33  format:0x3 layer_count: 1 reserved_size = 0
+08-27 10:32:17.612  2130  2719 W SDM     : HWCSession::GetDisplayIndex: Display index not found for display 1.
+08-27 10:32:17.612  2130  2719 W SDM     : HWCSession::GetDisplayIndex: Display index not found for display 3.
+08-27 10:32:17.612  2130  2719 D SDM     : HWCSession::SetCWBOutputBuffer: CWB config passed by cwb_client : tappoint 1  CWB_ROI : (591.000000 22.000000 717.000000 148.000000). Display 0
+08-27 10:32:17.612 16879 28368 D JavaheapMonitor: Java heap used=2M max=512M, proc: com.miui.voiceassist:core
+08-27 10:32:17.612 16879 28368 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+08-27 10:32:17.621  2106  6357 I WifiHAL : event received NL80211_CMD_VENDOR, vendor_id = 0x1374, subcmd = 0xd
+08-27 10:32:17.621  3755  3755 I cnss-daemon: nl80211 response handler invoked
+08-27 10:32:17.621  3755  3755 I cnss-daemon: nl80211_response_handler: cmd 103, vendorID 4980, subcmd 13  received

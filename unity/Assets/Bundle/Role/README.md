@@ -12,7 +12,9 @@ Assets/Bundle/Role/{id}/
   poster.png
   banner.png
   battle/
-    idle.png  walk.png  atk.png  hurt.png  dead.png  taunt.png  fallback.png
+    idle_1.png idle_2.png  walk_1.png  atk_1.png atk_2.png
+    hurt_1.png  dead_1.png  skill_1.png  fallback.png
+    （旧单帧 idle.png / walk.png 仍可读）
 ```
 
 表字段仍是 `role_lixin_avatar` / `role_lixin_battle`。运行时从 loc 解析 `{id}`。

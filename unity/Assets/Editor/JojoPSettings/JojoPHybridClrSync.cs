@@ -38,6 +38,12 @@ namespace JojoP.EditorTools.Settings
                     .Select(n => n.EndsWith(".dll") ? n : n + ".dll")
                     .ToList();
             }
+            else
+            {
+                var generated = JojoP.EditorTools.Build.JojoPDllBytesCopy.ReadPatchedAotAssemblyList();
+                if (generated.Count > 0)
+                    mirror.aotMetaAssemblies = generated;
+            }
 
             EditorUtility.SetDirty(settings);
             AssetDatabase.SaveAssets();

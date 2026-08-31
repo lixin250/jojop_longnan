@@ -16,6 +16,7 @@ namespace JojoP.Gameplay.Brothers
         public int unlockedChapter = 1;
         public int potentialHp;
         public int potentialAtk;
+        public int potentialDef;
         public int healTier;
         public int highestGrade;
         public string selectedHero = RoleCatalog.StarterId;
@@ -64,6 +65,21 @@ namespace JojoP.Gameplay.Brothers
             {
                 Debug.LogWarning("[JojoP] 本地存档写入失败: " + e.Message);
             }
+        }
+
+        public static void Dump(string reason)
+        {
+            string body;
+            try
+            {
+                body = File.Exists(FilePath) ? File.ReadAllText(FilePath) : "(文件不存在)";
+            }
+            catch (Exception e)
+            {
+                body = "(读失败) " + e.Message;
+            }
+
+            Debug.Log($"[JojoP] 本地存档 · {reason}\npath={FilePath}\n{body}");
         }
     }
 }

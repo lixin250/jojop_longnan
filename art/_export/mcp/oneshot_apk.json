@@ -1,0 +1,6 @@
+{
+  "className": "Kick",
+  "methodName": "Run",
+  "isMethodBody": false,
+  "csharpCode": "using JojoP.EditorTools.Build;\npublic static class Kick {\n  public static string Run() {\n    return JojoPOneShotApkBuild.Queue();\n  }\n}\n"
+}

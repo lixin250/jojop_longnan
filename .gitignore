@@ -48,7 +48,10 @@ Thumbs.db
 *.log
 unity-create.log
 
-# MiniMax voice pipeline
+# MiniMax voice / pose pipeline
 art/voice/secrets.env
 art/voice/.cache/
 art/voice/tts-kit/
+art/pose/.cache/
+unity/.utmp/
+unity/HybridCLRData/

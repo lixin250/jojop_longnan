@@ -1,0 +1,1 @@
+{"csharpCode":"using UnityEditor;\npublic static class JojoPOpenBuild {\n  public static string Run() {\n    return EditorApplication.ExecuteMenuItem(\"JojoP/构建与热更\") ? \"opened\" : \"menu-missing\";\n  }\n}\n","className":"JojoPOpenBuild","methodName":"Run","isMethodBody":false}

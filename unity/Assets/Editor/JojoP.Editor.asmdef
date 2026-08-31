@@ -6,8 +6,10 @@
         "JojoP.HotUpdate",
         "JojoP.Config",
         "Luban.Runtime",
+        "YooAsset",
         "YooAsset.Editor",
-        "HybridCLR.Editor"
+        "HybridCLR.Editor",
+        "UniTask"
     ],
     "includePlatforms": [
         "Editor"

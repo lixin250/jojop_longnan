@@ -4,7 +4,8 @@
     "references": [
         "YooAsset",
         "UniTask",
-        "UnityEngine.UI"
+        "UnityEngine.UI",
+        "HybridCLR.Runtime"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

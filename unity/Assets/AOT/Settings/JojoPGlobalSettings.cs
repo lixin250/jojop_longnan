@@ -8,7 +8,7 @@ namespace JojoP.AOT.Settings
     [Serializable]
     public class JojoPBootSettings
     {
-        [Tooltip("默认渠道。打包脚本也可覆盖 AppLauncher.channelOverride")]
+        [Tooltip("默认渠道。Bootstrap 上 channelOverride 为空时用这里；出包窗口可临时覆盖场景字段")]
         public string defaultChannel = "gp";
 
         [Tooltip("YooAsset 默认包名")]
@@ -17,35 +17,67 @@ namespace JojoP.AOT.Settings
         [Tooltip("闪屏秒数。0=跳过，预留公司 logo")]
         public float splashSeconds = 0f;
 
-        [Tooltip("主场景名")]
+        [Tooltip("主场景 Yoo 地址（AddressByFileName，一般是 Main）")]
         public string mainSceneName = "Main";
     }
 
-    /// <summary>热更 / CDN / 轻后端地址。按渠道拼路径时用 host + channel。</summary>
+    public enum JojoPCdnSource
+    {
+        [Tooltip("StreamingAssets / 离线包，不拉远端")]
+        Local = 0,
+        [Tooltip("从 Cloudflare R2 公开地址拉差量")]
+        CloudflareR2 = 1
+    }
+
+    /// <summary>热更 CDN + 轻后端。Yoo 文件走 R2，Worker 只做 /config /save。</summary>
     [Serializable]
     public class JojoPHostSettings
     {
-        [Tooltip("主 CDN / Host（YooAsset Host 模式）")]
-        public string hostServerUrl = "http://127.0.0.1:8081";
+        [Tooltip("Local=只用首包；CloudflareR2=Loading 去 R2 公开 URL 拉差量")]
+        public JojoPCdnSource cdnSource = JojoPCdnSource.Local;
 
-        [Tooltip("备用 CDN")]
-        public string fallbackHostServerUrl = "http://127.0.0.1:8081";
+        [Tooltip("R2 公开根（r2.dev 或自定义域），不要末尾斜杠。例 https://pub-xxx.r2.dev")]
+        public string hostServerUrl = "https://pub-781168dca86c49c3826ace7d12450b5a.r2.dev";
 
-        [Tooltip("Cloudflare Worker（业务 /config、/save），不要末尾斜杠")]
+        [Tooltip("备用 CDN，一般与主地址相同")]
+        public string fallbackHostServerUrl = "https://pub-781168dca86c49c3826ace7d12450b5a.r2.dev";
+
+        [Tooltip("Cloudflare Worker 游戏接口（/config、/save），不是热更文件站")]
         public string workerBaseUrl = "http://127.0.0.1:8787";
 
-        [Tooltip("是否启用版本/更新检查（关闭则 Loading 只走本地）")]
+        [Tooltip("是否启用版本/更新检查（Local 模式下忽略）")]
         public bool enableUpdateCheck = true;
 
-        public string windowsUpdateDataUrl = "http://127.0.0.1:8081";
-        public string androidUpdateDataUrl = "http://127.0.0.1:8081";
-        public string iosUpdateDataUrl = "http://127.0.0.1:8081";
-        public string webglUpdateDataUrl = "http://127.0.0.1:8081";
-
-        /// <summary>示例：{host}/{channel}/{platform}/</summary>
-        public string BuildChannelCdnRoot(string channel, string platform)
+        /// <summary>Yoo 资源目录名，必须和 Editor 构建/上传的 BuildTarget 文件夹一致。</summary>
+        public static string YooPlatformFolder()
         {
-            string host = (hostServerUrl ?? string.Empty).TrimEnd('/');
+            switch (Application.platform)
+            {
+                case RuntimePlatform.Android:
+                    return "Android";
+                case RuntimePlatform.IPhonePlayer:
+                    return "iOS";
+                case RuntimePlatform.WindowsPlayer:
+                case RuntimePlatform.WindowsEditor:
+                    return "StandaloneWindows64";
+                case RuntimePlatform.OSXPlayer:
+                case RuntimePlatform.OSXEditor:
+                    return "StandaloneOSX";
+                default:
+                    return "StandaloneWindows64";
+            }
+        }
+
+        public bool UseRemoteCdn =>
+            cdnSource == JojoPCdnSource.CloudflareR2 && enableUpdateCheck;
+
+        /// <summary>示例：{r2Public}/{channel}/{platform}。Local 返回空。</summary>
+        public string BuildChannelCdnRoot(string channel, string platform, bool fallback = false)
+        {
+            if (!UseRemoteCdn) return string.Empty;
+            string raw = fallback ? fallbackHostServerUrl : hostServerUrl;
+            string host = (raw ?? string.Empty).TrimEnd('/');
+            if (string.IsNullOrEmpty(host)) return string.Empty;
             return $"{host}/{channel}/{platform}";
         }
     }
@@ -64,12 +96,16 @@ namespace JojoP.AOT.Settings
             "JojoP.HotUpdate.dll"
         };
 
-        [Tooltip("AOT 补充元数据程序集（含 .dll）")]
+        [Tooltip("AOT 补充元数据（含 .dll）。权威源是 AOTGenericReferences.PatchedAOTAssemblyList；出包拷贝会同步到这里。运行时优先读 Generate 列表。")]
         public List<string> aotMetaAssemblies = new List<string>
         {
-            "mscorlib.dll",
-            "System.dll",
-            "System.Core.dll"
+            "Luban.Runtime.dll",
+            "System.Core.dll",
+            "UniTask.dll",
+            "UnityEngine.CoreModule.dll",
+            "UnityEngine.JSONSerializeModule.dll",
+            "YooAsset.dll",
+            "mscorlib.dll"
         };
 
         [Tooltip("主业务热更 DLL（入口仍是 GameApp，在 HotUpdate 内）")]

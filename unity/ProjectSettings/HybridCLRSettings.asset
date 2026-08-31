@@ -16,15 +16,22 @@ MonoBehaviour:
   useGlobalIl2cpp: 0
   hybridclrRepoURL: https://gitee.com/focus-creative-games/hybridclr
   il2cppPlusRepoURL: https://gitee.com/focus-creative-games/il2cpp_plus
-  hotUpdateAssemblyDefinitions:
-  - {fileID: 11500000, guid: fcbaa4783e9565944aefc218223e6967, type: 3}
-  - {fileID: 11500000, guid: 49f31da23e55a0e4887dbd8650800aff, type: 3}
-  hotUpdateAssemblies: []
+  hotUpdateAssemblyDefinitions: []
+  hotUpdateAssemblies:
+  - JojoP.Config
+  - JojoP.HotUpdate
   preserveHotUpdateAssemblies: []
   hotUpdateDllCompileOutputRootDir: HybridCLRData/HotUpdateDlls
   externalHotUpdateAssembliyDirs: []
   strippedAOTDllOutputRootDir: HybridCLRData/AssembliesPostIl2CppStrip
-  patchAOTAssemblies: []
+  patchAOTAssemblies:
+  - Luban.Runtime
+  - System.Core
+  - UniTask
+  - UnityEngine.CoreModule
+  - UnityEngine.JSONSerializeModule
+  - YooAsset
+  - mscorlib
   outputLinkFile: HybridCLRGenerate/link.xml
   outputAOTGenericReferenceFile: HybridCLRGenerate/AOTGenericReferences.cs
   maxGenericReferenceIteration: 10

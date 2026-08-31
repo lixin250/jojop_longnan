@@ -1,0 +1,377 @@
+# 2D割草游戏统一美术风格锁
+
+请严格锁定以下美术方向。**只参考提供图片的艺术风格、绘画语言和视觉质感，不要复制参考图中的角色、服装、场景、武器或具体构图。角色、职业、故事、武器和技能均按照我的文字描述重新设计。**
+
+> 本仓库：出**新角色设定总图**时，把上面这句话 + 下文全文交给 GPT-image-2。出**已有角色的战斗帧**时，身份跟锁图（`pose/locks/{who}_ref.png`），画风跟文末 `API_DIGEST`，动作跟文字；不要把第十节设定稿拼贴再画一遍。
+
+## 一、核心艺术风格
+
+**Chunky Painterly Gouache / Hand-painted Low-poly Chibi Game Art**
+
+整体为：
+
+* 厚重、块面化的手绘水粉 / Gouache 质感
+* 明显可见的块状笔触、干湿变化和手工绘画痕迹
+* 不是平滑数字插画，而是有明显“刷子画出来”的感觉
+* 2D游戏角色，但具有 **2.5D～3D的体积感**
+* 低多边形（Low-poly）式的面部和身体结构
+* 用大色块和切面表现体积，而不是依靠细腻渐变
+* Chibi人物比例，大约 **2.5～3头身**
+* 人物整体圆润、敦实、略微夸张
+* 五官简单，眼睛偏小的圆点/黑色块状眼睛
+* 脸部有明显的粉嫩、红润腮红
+* 表情夸张、容易读懂，适合游戏小尺寸显示
+* 人物边缘略微不规则、稍微“歪”和“手工”，不要过度完美
+* 保留一点玩具感、黏土感、低多边形感，但**不要真的变成3D渲染**
+* 画面整体可爱、幽默、有一点荒诞感，但角色仍然具有鲜明职业特征
+
+## 二、人物造型
+
+人物必须具有统一的：
+
+* 2.5～3头身比例
+* 大头、小身体
+* 手脚略粗、四肢简单
+* 脸部圆润
+* 鼻子、嘴巴高度概括
+* 简洁的卡通五官
+* 明显腮红
+* 黑色或深色块面头发
+* 头发采用几何块面+笔刷塑形
+* 服装使用大面积色块表现
+* 衣服有明显材质区分，但不要画过多细碎纹理
+* 武器、工具、职业道具要适当夸张，方便游戏中识别
+* 人物必须具有**一眼能认出的职业/人物标签**
+
+人物设计优先级：
+
+**人物性格 > 职业特征 > 武器/道具 > 细节装饰**
+
+不要为了“好看”而加入大量无关装饰。
+
+## 三、颜色
+
+整体采用：
+
+**dusty / muted / warm game palette**
+
+背景：
+
+* 灰黄色
+* 沙土色
+* 暗米色
+* 羊皮纸色
+* 土黄色
+* 浅棕
+* 灰绿色
+
+角色：
+
+* 可以使用较高饱和度的服装颜色
+* 但仍然保持统一的手绘水粉质感
+* 红、蓝、绿、紫、橙等颜色可以作为角色识别色
+* 不要使用纯数字插画式的高饱和荧光色
+* 技能特效可以比人物更加鲜艳，用于增强战斗识别
+
+整体感觉：
+
+**暖、旧、软、哑光、手绘、游戏感。**
+
+## 四、光影与材质
+
+光线：
+
+**Soft light from top-right**
+
+* 柔和的右上方主光
+* 阴影柔软
+* 不要强烈写实光影
+* 不要电影级HDR
+* 不要强烈轮廓光
+
+材质：
+
+**Matte / No Specular**
+
+* 所有角色和物体以哑光材质为主
+* 不要镜面高光
+* 不要塑料CG感
+* 不要真实皮肤质感
+* 不要金属写实反射
+* 金属物体也应该使用水粉色块表现
+
+## 五、笔触和边缘
+
+必须保留：
+
+* chunky brush strokes
+* visible blocky brush
+* painterly edges
+* faceted shapes
+* handmade imperfections
+* slightly wonky edges
+
+也就是说：
+
+**看起来像一个优秀的美术师用厚水粉快速画出来的游戏角色，而不是AI生成的光滑数字插画。**
+
+边缘不要过度锐利、规整。
+
+不要：
+
+* clean vector edges
+* 完美几何线条
+* 漫画式黑色描边
+* 超细线稿
+* 光滑渐变
+* 真实摄影纹理
+
+## 六、人物表情
+
+表情要简单但非常有戏：
+
+* 生气
+* 得意
+* 懵逼
+* 嘲讽
+* 开心
+* 紧张
+* 痛苦
+* 社恐
+* 欠揍
+* 一本正经
+
+都可以通过：
+
+**眉毛 + 眼睛 + 嘴巴 + 腮红 + 身体姿态**
+
+快速表达。
+
+不要使用复杂写实五官。
+
+## 七、游戏内角色表现
+
+角色设计必须同时考虑：
+
+**战斗Sprite / 游戏内小人 / 角色立绘 / UI头像**
+
+所以人物即使缩小到很小，也必须能够通过：
+
+* 发型
+* 脸型
+* 服装主色
+* 武器
+* 职业道具
+* 特殊姿势
+
+快速辨认。
+
+角色动作要夸张、清楚、具有游戏动画感：
+
+* Idle待机
+* Move移动
+* Attack攻击
+* Skill技能
+* Hit受击
+* Stun眩晕
+* Down倒地
+* Victory胜利
+
+## 八、技能特效
+
+技能特效同样采用手绘水粉+低多边形风格。
+
+不要：
+
+* 写实粒子
+* Unreal/Unity特效质感
+* 复杂光效
+* 真实火焰模拟
+* 赛博朋克霓虹光
+* 过度发光
+
+应该使用：
+
+* 大色块
+* 简化粒子
+* 几何形状
+* 手绘速度线
+* 水粉状能量
+* 块状爆炸
+* 简洁的AOE范围表现
+
+技能特效需要**远看就能识别技能类型**。
+
+## 九、背景
+
+背景不要抢角色。
+
+采用：
+
+* parchment
+* dusty ochre
+* tan
+* muted brown
+* desaturated green
+* warm beige
+
+场景可以具有：
+
+* 中国传统建筑
+* 城市
+* 乡村
+* 废墟
+* 风力发电设备
+* 医馆
+* 学校
+* 工作场所
+* 游戏世界中的荒诞元素
+
+但都必须统一成：
+
+**低饱和、手绘、水粉、块面化、低多边形。**
+
+## 十、角色设定图 / Character Sheet
+
+如果要求制作角色设定图，不要只画一个人物。
+
+优先采用类似“游戏角色设计稿 / Concept Sheet”的形式：
+
+### 第一部分
+
+角色主立绘 + 三视图：
+
+* 正面
+* 侧面
+* 背面
+
+### 第二部分
+
+游戏内动作：
+
+* Idle
+* Move
+* Attack
+* Skill
+* Hit
+* Stun
+* Down
+
+### 第三部分
+
+武器 / 道具：
+
+用独立小图展示角色专属装备。
+
+### 第四部分
+
+技能图标：
+
+每个技能制作独立的方形技能图标，并体现技能核心机制。
+
+### 第五部分
+
+角色头像：
+
+**256×256**
+
+适合：
+
+* 游戏角色头像
+* UI头像
+* 任务头像
+* 对话头像
+
+### 第六部分
+
+半身像：
+
+**256×256**
+
+至少制作：
+
+* 正常状态
+* 战斗状态
+* 技能状态
+
+### 第七部分
+
+全身竖版海报：
+
+用于：
+
+* 角色选择
+* 角色宣传
+* 游戏内角色介绍
+* loading画面
+
+### 第八部分
+
+横版全身海报：
+
+角色与其职业场景、武器、技能、敌人共同出现。
+
+用于：
+
+* 宣传图
+* 游戏首页
+* 活动海报
+* 角色介绍页
+
+## 十一、最终视觉目标
+
+最终效果应该接近：
+
+**“一款高品质、手绘水粉、低多边形、Q版2D割草游戏的角色美术设定集。”**
+
+关键词：
+
+**Chunky Painterly Gouache
+Hand-painted
+Low-poly 2.5D
+Chibi 2.5–3 heads
+Faceted volumes
+Matte materials
+Soft top-right lighting
+Visible blocky brush strokes
+Slightly wonky handmade edges
+Simple dot eyes
+Rosy cheeks
+Saturated costume colors
+Dusty ochre background
+Parchment UI
+Warm muted palette
+Readable game silhouettes
+Playful exaggerated expressions**
+
+## 十二、严格禁止
+
+**No photorealism
+No clean vector art
+No anime thin lineart
+No manga line drawing
+No realistic anatomy
+No realistic skin texture
+No glossy materials
+No specular highlights
+No cinematic HDR
+No Unreal Engine look
+No Unity 3D render look
+No realistic 3D character
+No smooth plastic CGI
+No excessive gradients
+No hyper-detailed textures
+No black comic outlines
+No neon cyberpunk aesthetic
+No unnecessary text
+No watermark**
+
+**最重要的一条：**
+
+> **不要改变已经锁定的艺术语言。即使角色职业、时代、服装、武器、场景完全不同，也必须像来自同一款游戏、同一套美术团队、同一本角色设定集。**
+
+---
+
+## API_DIGEST
+
+Chunky Painterly Gouache, hand-painted low-poly chibi 2.5-3 heads, stout round body, simple cartoon face, small block/dot eyes, strong rosy cheeks, faceted volumes, visible chunky gouache brush, dry-wet handmade marks, slightly wonky edges, NOT smooth digital illustration. Soft top-right light, matte no specular, no plastic CGI, no realistic skin. Dusty muted warm palette, parchment dusty ochre tan background. Costume colors saturated for identity but still gouache. VFX: blocky painted shapes, no realistic particles, no neon, no UE look. ONE full-body combat sprite frame, same camera and scale. No photorealism, no clean vector, no anime thin lineart, no manga outlines, no HDR, no watermark, no studio logo, no Chinese labels, no collage, no character-sheet layout.

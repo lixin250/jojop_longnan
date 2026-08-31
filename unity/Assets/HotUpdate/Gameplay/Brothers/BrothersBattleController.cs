@@ -78,6 +78,7 @@ namespace JojoP.Gameplay.Brothers
 
         public void StartWave(RunState run, MetaProgress meta, int enemyCount, float difficulty)
         {
+            BattleAssetHub.Ensure(transform);
             ClearField();
             _ended = false;
             _running = true;
@@ -130,6 +131,7 @@ namespace JojoP.Gameplay.Brothers
             _running = false;
             BattleFeel.Reset();
             ClearField();
+            BattleAssetHub.Release();
         }
 
         void Update()
@@ -505,13 +507,6 @@ namespace JojoP.Gameplay.Brothers
             lightGo.transform.rotation = Quaternion.Euler(50f, -30f, 0f);
         }
 
-        static Material CreateMat(Color color)
-        {
-            var shader = Shader.Find("Universal Render Pipeline/Lit") ?? Shader.Find("Standard");
-            var mat = new Material(shader);
-            if (mat.HasProperty("_BaseColor")) mat.SetColor("_BaseColor", color);
-            if (mat.HasProperty("_Color")) mat.SetColor("_Color", color);
-            return mat;
-        }
+        static Material CreateMat(Color color) => BattleField.MakeTintMaterial(color);
     }
 }

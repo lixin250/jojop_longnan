@@ -43,7 +43,7 @@ const comments = [
   "普通话文本，TTS 只读这一列",
   "默认加载地址，Yoo：lixin/voice/lixin_battle_skill",
   "龙南话自录音地址，有文件则优先；空则用 langPath",
-  "合成情绪，仅生成用",
+  "合成情绪，MiniMax 原值，仅生成用",
 ];
 
 const voiceWb = new ExcelJS.Workbook();

@@ -132,6 +132,8 @@ namespace JojoP.Gameplay.Brothers
                 enemies = 6 + Run.WaveInNode;
 
             SetFlow(BrothersFlow.Battling);
+            if (Run.WaveInNode <= 1)
+                LocalSaveStore.Dump("进入战斗");
             _battle.StartWave(Run, Meta, enemies, diff);
             BattleHudChanged?.Invoke();
         }
@@ -373,7 +375,10 @@ namespace JojoP.Gameplay.Brothers
         void OnDestroy()
         {
             if (_battle != null)
+            {
+                _battle.Stop();
                 Destroy(_battle.gameObject);
+            }
         }
     }
 }

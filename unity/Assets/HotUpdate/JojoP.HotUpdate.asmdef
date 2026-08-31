@@ -2,7 +2,6 @@
     "name": "JojoP.HotUpdate",
     "rootNamespace": "JojoP",
     "references": [
-        "JojoP.AOT",
         "JojoP.Config",
         "UnityEngine.UI",
         "Unity.TextMeshPro",

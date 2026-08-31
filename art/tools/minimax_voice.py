@@ -93,7 +93,7 @@ def load_lines() -> list[dict[str, str]]:
         rec["langPath"] = rec.get("langPath") or f"{who}/voice/{rec['id']}"
         rec["langPath_ln"] = rec.get("langPath_ln") or ""
         rec["text_zh"] = rec.get("text_zh") or ""
-        rec["emotion"] = rec.get("emotion") or "neutral"
+        rec["emotion"] = rec.get("emotion") or "calm"
         out.append(rec)
     return out
 
@@ -215,7 +215,7 @@ def t2a(key: str, group: str, base: str, model: str, voice_id: str, text: str, e
             "speed": 1,
             "vol": 1,
             "pitch": 0,
-            "emotion": emotion or "neutral",
+            "emotion": {"neutral": "calm"}.get(emotion, emotion) or "calm",
         },
         "audio_setting": {
             "sample_rate": 32000,
@@ -346,7 +346,7 @@ def cmd_ping(_: argparse.Namespace) -> None:
     for voice in SYSTEM_VOICES:
         try:
             print("try voice", voice)
-            raw = t2a(key, group, base, model, voice, "来了来了，开机干活。", "neutral")
+            raw = t2a(key, group, base, model, voice, "来了来了，开机干活。", "calm")
             out = CACHE / "ping.mp3"
             out.write_bytes(raw)
             to_ogg(out, CACHE / "ping.ogg")

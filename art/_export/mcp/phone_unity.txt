@@ -1,0 +1,1131 @@
+﻿--------- beginning of main
+08-27 11:56:18.649  5177  5177 E Zygote  : process_name_ptr:5177 com.jojop.stack
+08-27 11:56:18.649  5177  5177 E Zygote  : SetMemoryProtected process_name_ptr:5177 com.jojop.stack
+08-27 11:56:18.666  5177  5177 I com.jojop.stack: Late-enabling -Xcheck:jni
+08-27 11:56:18.701  5177  5177 I com.jojop.stack: Using CollectorTypeCC GC.
+08-27 11:56:18.743  5177  5177 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+--------- beginning of system
+08-27 11:56:18.756  5177  5177 I ActivityThread: Current dynamic renderEngine type=0
+08-27 11:56:18.878  5177  5206 D MiuiDownscaleImpl: set override inverted scale : 1.0
+08-27 11:56:18.881  5177  5177 I RENDER_TURBO: onActivityThreadCreate not in white list, pkg=com.jojop.stack, type=fuxi
+08-27 11:56:18.886  5177  5206 D AppScoutStateMachine: 5177-ScoutStateMachinecreated
+08-27 11:56:18.893  5177  5177 D ActivityThread: setEmbeddedParam packageName=com.jojop.stack processName=com.jojop.stack isEmbedded=false isIsolated=false
+08-27 11:56:18.941  5177  5177 D nativeloader: Configuring clns-10 for other apk /data/app/~~JcY_BcBhduR07_YUf3bptw==/com.jojop.stack-RXgAoFJD_BNhetzx9Ee31g==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~JcY_BcBhduR07_YUf3bptw==/com.jojop.stack-RXgAoFJD_BNhetzx9Ee31g==/lib/arm64:/data/app/~~JcY_BcBhduR07_YUf3bptw==/com.jojop.stack-RXgAoFJD_BNhetzx9Ee31g==/base.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand:/data/user/0/com.jojop.stack
+08-27 11:56:18.945  5177  5177 I com.jojop.stack: AssetManager2(0xb400007748f1e658) locale list changing from [] to [zh-CN]
+08-27 11:56:18.947  5177  5177 D HWUI    : [HWUI] Flag vulkan_enhance_pipeline_cache enabled
+08-27 11:56:18.947  5177  5177 D HWUI    : [HWUI] EnhanceVkPipelineCache is disabled
+08-27 11:56:18.947  5177  5177 D HWUI    : [HWUI] Flag ddre enabled
+08-27 11:56:18.948  5177  5177 V GraphicsEnvironment: Currently set values for:
+08-27 11:56:18.948  5177  5177 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+08-27 11:56:18.948  5177  5177 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+08-27 11:56:18.948  5177  5177 V GraphicsEnvironment: com.jojop.stack is not listed in per-application setting
+08-27 11:56:18.948  5177  5177 V GraphicsEnvironment: ANGLE allowlist from config: 
+08-27 11:56:18.948  5177  5177 V GraphicsEnvironment: com.jojop.stack is not listed in ANGLE allowlist or settings, returning default
+08-27 11:56:18.948  5177  5177 V GraphicsEnvironment: Updatable production driver is not supported on the device.
+08-27 11:56:18.952  5177  5177 D ResMonitorStub: The current process type is: third_party_app, process name is: com.jojop.stack
+08-27 11:56:18.958  5177  5269 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.
+08-27 11:56:19.023  5177  5246 D MiuiMonitorThread: Shared singleton Thread for stability monitor start
+08-27 11:56:19.033  5177  5246 I Perf    : Connecting to perf service.
+08-27 11:56:19.042  5177  5246 I ActivityThread: TrafficStats init done
+08-27 11:56:19.043  5177  5246 I ForceDarkHelperStubImpl: initialize for com.jojop.stack , ForceDarkOrigin
+08-27 11:56:19.044  5177  5246 D nativeloader: Load libforcedarkimpl.so using system ns (caller=/system_ext/framework/miui-framework.jar): ok
+08-27 11:56:19.044  5177  5246 D HWUI    : JNI_OnLoad success
+08-27 11:56:19.045  5177  5246 I MiuiForceDarkConfig: setConfig density:2.750000, mainRule:0, secondaryRule:0, tertiaryRule:0
+08-27 11:56:19.050  5177  5246 I ActivityThread: Miui Feature Init done
+08-27 11:56:19.062  5177  5177 I com.jojop.stack: AssetManager2(0xb400007748f1ec98) locale list changing from [] to [zh-CN]
+08-27 11:56:19.067  5177  5177 D nativeloader: Load /data/app/~~JcY_BcBhduR07_YUf3bptw==/com.jojop.stack-RXgAoFJD_BNhetzx9Ee31g==/lib/arm64/libgame.so using class loader ns clns-10 (caller=/data/app/~~JcY_BcBhduR07_YUf3bptw==/com.jojop.stack-RXgAoFJD_BNhetzx9Ee31g==/base.apk!classes2.dex): ok
+08-27 11:56:19.075  5177  5177 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+08-27 11:56:19.075  5177  5177 I com.jojop.stack: AssetManager2(0xb400007748f1f5f8) locale list changing from [] to [zh-CN]
+08-27 11:56:19.084  5177  5177 D com.jojop.stack: blurUtils, initBackgroundBlurMinInterval processName(com.jojop.stack), inWhiteLists(0)
+08-27 11:56:19.089  5177  5177 D MiuiMultiWindowUtils: freeform resolution args raw data:{  "wide_default":{    "freeform_args": {        "vertical_portrait":{"aspect_ratio":0.626, "original_ratio":0.5643,"original_scale":0.74,"top_margin":0.168,"left_margin":0.484},        "horizontal_portrait":{"aspect_ratio":0.626, "original_ratio":0.5643,"original_scale":0.74,"top_margin":0.1222,"left_margin":0.59745},        "vertical_landscape":{"aspect_ratio":1.6, "original_ratio":0.6992,"original_scale":0.604,"top_margin":0.2596,"left_margin":0.2624},        "horizontal_landscape":{"aspect_ratio":1.6, "original_ratio":0.6992,"original_scale":0.604,"top_margin":0.213,"left_margin":0.3758}    },    "mini_freeform_args":{        "vertical_portrait":{"original_ratio":0.147},        "horizontal_portrait":{"original_ratio":0.147},        "vertical_landscape":{"original_ratio":0.165},        "horizontal_landscape":{"original_ratio":0.165}    }  },  "narrow_default": {    "freeform_args": {        "vertical_portrait":{"aspect_ratio":0.626, "original_ratio":1,"original_scale":0.74,"top_margin":0.0753,"left_margin":-1},        "horizontal_portrait":{"aspect_ratio":0.626, "original_ratio":1,"original_scale":0.5756,"top_margin":-1,"left_margin":0.0753},        "vertical_landscape":{"aspect_ratio":1.6, "original_ratio":1,"original_scale":0.587,"top_margin":0.0753,"left_margin":-1},        "horizontal_landscape":{"aspect_ratio":1.6, "original_ratio":1,"original_scale":0.587,"top_margin":-1,"left_margin":0.0753}    },    "mini_freeform_args":{        "vertical_portrait":{"original_ratio":0.26},        "horizontal_portrait":{"original_ratio":0.26},        "vertical_landscape":{"original_ratio":0.293},        "horizontal_landscape":{"original_ratio":0.293}    }  },  "regular_default": {    "freeform_args": {      "vertical_portrait":{"aspect_ratio":0.625, "original_ratio":1,"original_scale":0.7,"top_margin":0.109,"left_margin":-1},      "horizontal_portrait":{"aspect_ratio":0.6667, "original_ratio":1,"original_scale":0.6102,"top_margin":-1,"left_margin":0.026},      "vertical_landscape":{"aspect_ratio":1.6, "original_ratio":1,"original_scale":0.5899,"top_margin":0.109,"left_margin":-1},      "horizontal_landscape":{"aspect_ratio":1.6, "original_ratio":1,"original_scale":0.5899,"top_margin":-1,"left_margin":0.026}    },    "mini_freeform_args":{      "vertical_portrait":{"original_ratio":0.25},      "horizontal_portrait":{"original_ratio":0.25},      "vertical_landscape":{"original_ratio":0.25},      "horizontal_landscape":{"original_ratio":0.25}    }  },  "pad_default": {    "freeform_args": {      "vertical_portrait":{"aspect_ratio":0.5625, "original_ratio":0.375,"original_scale":0.835,"top_margin":0.049,"left_margin":0.2775},      "horizontal_portrait":{"aspect_ratio":0.5625, "original_ratio":0.375,"original_scale":0.835,"top_margin":-1,"left_margin":0.6525},      "vertical_landscape":{"aspect_ratio":-1, "original_ratio":1,"original_scale":0.468,"top_margin":0.049,"left_margin":-1},      "horizontal_landscape":{"aspect_ratio":-1, "original_ratio":1,"original_scale":0.468,"top_margin":-1,"left_margin":0.4976}    },    "mini_freeform_args":{      "vertical_portrait":{"original_ratio":0.144},      "horizontal_portrait":{"original_ratio":0.144},      "vertical_landscape":{"original_ratio":0.2},      "horizontal_landscape":{"original_ratio":0.2}    }  }}
+08-27 11:56:19.091  5177  5177 D MiuiMultiWindowUtils: initFreeFormResolutionArgs failed, device is fuxi
+08-27 11:56:19.095  5177  5177 D gti.InputConnection: InputConnection created
+08-27 11:56:19.099  5177  5177 D CompatChangeReporter: Compat change id reported: 377864165; UID 10405; state: ENABLED
+08-27 11:56:19.100  5177  5177 D DesktopModeFlags: Toggle override initialized to: OVERRIDE_UNSET
+08-27 11:56:19.105  5177  5177 D DecorView: updateFreeformOutlineFromActivity, inFreeform=false,inFreeformWindowMode=false
+08-27 11:56:19.110  5177  5177 I com.jojop.stack: hiddenapi: Accessing hidden method Landroid/view/View;->computeFitSystemWindows(Landroid/graphics/Rect;Landroid/graphics/Rect;)Z (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/appcompat/widget/ViewUtils; (domain=app) using reflection: allowed
+08-27 11:56:19.110  5177  5177 I com.jojop.stack: hiddenapi: Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/appcompat/widget/ViewUtils; (domain=app) using reflection: allowed
+08-27 11:56:19.114  5177  5177 I Unity   : applyWindowUIChanges fullScreen = true, renderOutsideSafeArea = true
+08-27 11:56:19.116  5177  5177 D nativeloader: Load /data/app/~~JcY_BcBhduR07_YUf3bptw==/com.jojop.stack-RXgAoFJD_BNhetzx9Ee31g==/lib/arm64/libmain.so using class loader ns clns-10 (caller=/data/app/~~JcY_BcBhduR07_YUf3bptw==/com.jojop.stack-RXgAoFJD_BNhetzx9Ee31g==/base.apk): ok
+08-27 11:56:19.148  5177  5177 I IL2CPP  : JNI_OnLoad
+08-27 11:56:19.148  5177  5177 V Unity   : Context Type: GameActivity
+08-27 11:56:19.148  5177  5177 D Unity   : CommandLine:  
+08-27 11:56:19.157  5177  5177 D AudioSystem: onNewService: media.audio_policy service obtained 0xb400007888f8a2f0
+08-27 11:56:19.157  5177  5177 D AudioSystem: getService: checking for service media.audio_policy: 0xb400007888f8a2f0
+08-27 11:56:19.186  5177  5177 I GameActivity: Looking for library libgame.so
+08-27 11:56:19.186  5177  5177 I GameActivity: Found library libgame.so. Loading...
+08-27 11:56:19.187  5177  5177 D GameActivity: GameActivity_register
+08-27 11:56:19.187  5177  5177 D GameActivity: SDK version: 36
+08-27 11:56:19.188  5177  5390 I Unity   : UnityApplication::CreateInstance
+08-27 11:56:19.188  5177  5390 I Unity   : GameActivity Package Version '3.0.5'
+08-27 11:56:19.188  5177  5390 I Unity   : Starting Game Loop
+08-27 11:56:19.198  5177  5394 I com.jojop.stack: AssetManager2(0xb400007748f240f8) locale list changing from [] to [zh-CN]
+08-27 11:56:19.200  5177  5394 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/org.apache.http.legacy.jar
+08-27 11:56:19.204  5177  5394 D nativeloader: InitLlndkLibrariesProduct: libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libRS.so:libandroid_net.so:libapexsupport.so:libavf.so:libbinder_ndk.so:libc.so:libcgrouprc.so:libclang_rt.asan-aarch64-android.so:libclang_rt.asan-arm-android.so:libclang_rt.hwasan-aarch64-android.so:libcom.android.tethering.connectivity_native.so:libdl.so:libft2.so:liblog.so:libm.so:libmediandk.so:libnativewindow.so:libneuralnetworks.so:libselinux.so:libsync.so:libvendorsupport.so:libvndksupport.so:libvulkan.so
+08-27 11:56:19.204  5177  5394 D nativeloader: Configuring product-clns-11 for unbundled product apk /product/app/ContentCatcherOS3_1/ContentCatcherOS3_1.apk. target_sdk_version=35, uses_libraries=, library_path=/product/app/ContentCatcherOS3_1/lib/arm64:/product/app/ContentCatcherOS3_1/ContentCatcherOS3_1.apk!/lib/arm64-v8a:/product/lib64:/system/product/lib64, permitted_path=/data:/mnt/expand:/product/lib64:/system/product/lib64
+08-27 11:56:19.204  5177  5394 D nativeloader: InitVndkspLibrariesProduct: VNDK is deprecated with product
+08-27 11:56:19.208  5177  5394 D ViewContentFactory: initViewContentFetcherClass
+08-27 11:56:19.208  5177  5394 D ViewContentFactory: getInterceptorPackageInfo
+08-27 11:56:19.208  5177  5394 D ViewContentFactory: getInitialApplication took 0ms
+08-27 11:56:19.208  5177  5394 D ViewContentFactory: packageInfo.packageName: com.miui.contentcatcher
+08-27 11:56:19.209  5177  5394 D ViewContentFactory: initViewContentFetcherClass took 1ms
+08-27 11:56:19.209  5177  5394 I ContentCatcher: ViewContentFetcher : ViewContentFetcher
+08-27 11:56:19.209  5177  5394 D ViewContentFactory: createInterceptor took 1ms
+08-27 11:56:19.211  5177  5394 E ContentCatcherManager: failed to get ContentCatcherService.
+08-27 11:56:19.211  5177  5394 E ContentCatcherManager: failed to get ContentCatcherService.
+08-27 11:56:19.214  5177  5390 I Unity   : Handle cmd APP_CMD_START(11)
+08-27 11:56:19.215  5177  5177 D Activity: Activity = ActivityInfo{fc92d24 com.unity3d.player.UnityPlayerGameActivity}, Resume onConfigurationChanged = {0.9 460mcc2mnc [zh_CN] ldltr sw393dp w393dp h873dp 440dpi nrml long hdr widecg port uimode=12 finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 1080, 2400) mAppBounds=Rect(0, 0 - 1080, 2400) mMaxBounds=Rect(0, 0 - 1080, 2400) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=standard mAlwaysOnTop=undefined mRotation=ROTATION_0 mInSplitScreen=false letterBoxed=false foScaled=false isSpecificEmbedded=false embeddingScale=1.0} s.2 fontWeightAdjustment=0/d/0 themeChanged=0 themeChangedFlags=0 display=0 extraData = Bundle[{}] screenType=0/0}
+08-27 11:56:19.215  5177  5177 I Unity   : onResume
+08-27 11:56:19.229  5177  5390 I Unity   : Handle cmd APP_CMD_RESUME(12)
+08-27 11:56:19.231  5177  5394 I ContentCatcher: SettingTrigger : register screen QA status observer com.unity3d.player.UnityPlayerGameActivity
+08-27 11:56:19.234  5177  5394 I ContentCatcher: SettingTrigger : register global collect status observer com.unity3d.player.UnityPlayerGameActivity
+08-27 11:56:19.238  5177  5394 I ContentCatcher: SettingTrigger : registerUIAgentListener com.unity3d.player.UnityPlayerGameActivity, uid:10405
+08-27 11:56:19.240  5177  5177 D FramePredict: FramePredict init: false
+08-27 11:56:19.240  5177  5177 D FramePredict: init success
+08-27 11:56:19.241  5177  5177 W libc    : Access denied finding property "vendor.boostfwk.frameprefetcher"
+08-27 11:56:19.242  5177  5177 D com.jojop.stack: MiuiProcessManagerServiceStub setSchedFifo
+08-27 11:56:19.242  5177  5177 I MiuiProcessManagerImpl: setSchedFifo pid:5177, mode:3
+08-27 11:56:19.243  5177  5177 D FirstFrameSpeedUp: bls: [com.xcj.hm.kangfuyixue]
+08-27 11:56:19.243  5177  5177 I ViewRootImpl: com.jojop.stack/com.unity3d.player.UnityPlayerGameActivity use first frame acceleration
+08-27 11:56:19.244  5177  5177 D InsetsController: com.jojop.stack/com.unity3d.player.UnityPlayerGameActivity hide: statusBars navigationBars android.view.InsetsController@642754 android.view.InsetsController.applyAnimation:2241 android.view.InsetsController.applyAnimation:2212 android.view.InsetsController.hide:1439 android.view.InsetsController.hide:1349 android.view.PendingInsetsController$HideRequest.replay:277 android.view.PendingInsetsController.replayAndAttach:192 
+08-27 11:56:19.244  5177  5177 D InsetsController: Setting requestedVisibleTypes to -12 (was -9)
+08-27 11:56:19.246  5177  5177 D InsetsController: com.jojop.stack/com.unity3d.player.UnityPlayerGameActivity hide: captionBar android.view.InsetsController@642754 android.view.InsetsController.applyAnimation:2241 android.view.InsetsController.applyAnimation:2212 android.view.InsetsController.hide:1439 android.view.InsetsController.hide:1349 android.view.ViewRootImpl.controlInsetsForCompatibility:4456 android.view.ViewRootImpl.setView:2438 
+08-27 11:56:19.246  5177  5177 D InsetsController: Setting requestedVisibleTypes to -16 (was -12)
+08-27 11:56:19.247  5177  5447 E FramePredict: registerContentObserver fail
+08-27 11:56:19.254  5177  5177 D DecorViewImmersiveImpl: onAttachedToWindow. pkg: com.jojop.stack
+08-27 11:56:19.254  5177  5177 I ComputilityLevel: getComputilityLevel(): 5
+08-27 11:56:19.254  5177  5177 D DecorViewImmersiveImpl: com.unity3d.player.UnityPlayerGameActivity@cadae7 already set forced E2E by app
+08-27 11:56:19.258  5177  5177 D gti.InputConnection: onApplyWindowInsetsfalse
+08-27 11:56:19.258  5177  5177 V GameActivity: onImeInsetsChanged from Text Listener
+08-27 11:56:19.258  5177  5390 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-27 11:56:19.266  5177  5177 W InsetsSource: Has no intersection or mTmpFrame.height(), return Insets.NONE mTmpFrame.height() =0 hasIntersection =false
+08-27 11:56:19.269  5177  5177 W libc    : Access denied finding property "vendor.display.enable_optimal_refresh_rate"
+08-27 11:56:19.270  5177  5462 D AChoreographer: Attaching thread to JVM for AChoreographer
+08-27 11:56:19.270  5177  5462 I DisplayManager: Choreographer implicitly registered for the refresh rate.
+08-27 11:56:19.271  5177  5177 W libc    : Access denied finding property "vendor.display.enable_optimal_refresh_rate"
+08-27 11:56:19.272  5177  5177 D gti.InputConnection: onApplyWindowInsetsfalse
+08-27 11:56:19.272  5177  5177 V GameActivity: onImeInsetsChanged from Text Listener
+08-27 11:56:19.272  5177  5390 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-27 11:56:19.274  5177  5177 D gti.InputConnection: onApplyWindowInsetsfalse
+08-27 11:56:19.274  5177  5177 V GameActivity: onImeInsetsChanged from Text Listener
+08-27 11:56:19.274  5177  5177 D gti.InputConnection: onApplyWindowInsetsfalse
+08-27 11:56:19.274  5177  5177 V GameActivity: onImeInsetsChanged from Text Listener
+08-27 11:56:19.274  5177  5390 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-27 11:56:19.274  5177  5390 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-27 11:56:19.274  5177  5390 I Unity   : Handle cmd APP_CMD_CONTENT_RECT_CHANGED(5)
+08-27 11:56:19.274  5177  5177 D SurfaceView: UPDATE null, mIsCastMode = false
+08-27 11:56:19.275  5177  5177 D ViewRootImplStubImpl: onSurfaceViewAttached:
+08-27 11:56:19.275  5177  5177 D ViewRootImplStubImpl: , vri:android.view.ViewRootImpl@516e93e, com.jojop.stack/com.unity3d.player.UnityPlayerGameActivity
+08-27 11:56:19.275  5177  5177 D ViewRootImplStubImpl: , vri size:1080x2400
+08-27 11:56:19.275  5177  5177 D ViewRootImplStubImpl: , surfaceView:com.unity3d.player.UnityPlayerGameActivity$GameActivitySurfaceView{86b95f9 V.E...... ......ID 0,0-1080,2400 #7f080125 app:id/unitySurfaceView}, SurfaceView[com.jojop.stack/com.unity3d.player.UnityPlayerGameActivity]
+08-27 11:56:19.275  5177  5177 D ViewRootImplStubImpl: , surfaceView size:1080x2400
+08-27 11:56:19.275  5177  5177 D ViewRootImplStubImpl: , surfaceControl:Surface(name=86b95f9 SurfaceView[com.jojop.stack/com.unity3d.player.UnityPlayerGameActivity](BLAST)#372861)/@0x9c6639f
+08-27 11:56:19.276  5177  5177 W libc    : Access denied finding property "vendor.display.enable_optimal_refresh_rate"
+08-27 11:56:19.280  5177  5243 D BLASTBufferQueue: onGameOptimizeParameter: new GameOptimizeInfo game: no valid app, VsyncBuffergame: no valid app, mOptimizeEnable: 0, mSuperTouchEnable: 0,mVsyncBufferEnable: 0,mPendingBufferEnable 0,mNeedDynamicDropBuffer: 0, mNeedFirstFrameDropBuffer: 0
+08-27 11:56:19.280  5177  5243 D BLASTBufferQueue: 
+08-27 11:56:19.281  5177  5177 W libc    : Access denied finding property "vendor.display.enable_optimal_refresh_rate"
+08-27 11:56:19.281  5177  5390 I Unity   : Handle cmd APP_CMD_INIT_WINDOW(1)
+08-27 11:56:19.282  5177  5177 D VRI[UnityPlayerGameActivity]: vri.Setup new sync=wmsSync-VRI[UnityPlayerGameActivity]#1
+08-27 11:56:19.293  5177  5390 I Unity   : MemoryManager: Using 'Dynamic Heap' Allocator.
+08-27 11:56:19.294  5177  5390 D Unity   : [UnityMemory] Configuration Parameters - Can be set up in boot.config
+08-27 11:56:19.294  5177  5390 D Unity   :     "memorysetup-temp-allocator-size-audio-worker=65536"
+08-27 11:56:19.294  5177  5390 D Unity   :     "memorysetup-temp-allocator-size-background-worker=32768"
+08-27 11:56:19.294  5177  5390 D Unity   :     "memorysetup-temp-allocator-size-job-worker=262144"
+08-27 11:56:19.294  5177  5390 D Unity   :     "memorysetup-allocator-temp-initial-block-size-main=262144"
+08-27 11:56:19.294  5177  5390 D Unity   :     "memorysetup-allocator-temp-initial-block-size-worker=262144"
+08-27 11:56:19.294  5177  5390 D Unity   :     "memorysetup-temp-allocator-size-preload-manager=262144"
+08-27 11:56:19.294  5177  5390 D Unity   :     "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+08-27 11:56:19.294  5177  5390 D Unity   :     "memorysetup-temp-allocator-size-cloud-worker=32768"
+08-27 11:56:19.294  5177  5390 D Unity   :     "memorysetup-temp-allocator-size-gfx=262144"
+08-27 11:56:19.294  5177  5390 D Unity   :     "memorysetup-bucket-allocator-granularity=16"
+08-27 11:56:19.294  5177  5390 D Unity   :     "memorysetup-bucket-allocator-bucket-count=8"
+08-27 11:56:19.294  5177  5390 D Unity   :     "memorysetup-bucket-allocator-block-size=4194304"
+08-27 11:56:19.294  5177  5390 D Unity   :     "memorysetup-bucket-allocator-block-count=1"
+08-27 11:56:19.294  5177  5390 D Unity   :     "memorysetup-main-allocator-block-size=16777216"
+08-27 11:56:19.294  5177  5390 D Unity   :     "memorysetup-thread-allocator-block-size=16777216"
+08-27 11:56:19.294  5177  5390 D Unity   :     "memorysetup-gfx-main-allocator-block-size=16777216"
+08-27 11:56:19.294  5177  5390 D Unity   :     "memorysetup-gfx-thread-allocator-block-size=16777216"
+08-27 11:56:19.294  5177  5390 D Unity   :     "memorysetup-cache-allocator-block-size=4194304"
+08-27 11:56:19.294  5177  5390 D Unity   :     "memorysetup-typetree-allocator-block-size=2097152"
+08-27 11:56:19.294  5177  5390 D Unity   :     "memorysetup-profiler-bucket-allocator-granularity=16"
+08-27 11:56:19.294  5177  5390 D Unity   :     "memorysetup-profiler-bucket-allocator-bucket-count=8"
+08-27 11:56:19.294  5177  5390 D Unity   :     "memorysetup-profiler-bucket-allocator-block-size=4194304"
+08-27 11:56:19.294  5177  5390 D Unity   :     "memorysetup-profiler-bucket-allocator-block-count=1"
+08-27 11:56:19.294  5177  5390 D Unity   :     "memorysetup-profiler-allocator-block-size=16777216"
+08-27 11:56:19.294  5177  5390 D Unity   :     "memorysetup-profiler-editor-allocator-block-size=1048576"
+08-27 11:56:19.294  5177  5390 D Unity   :     "memorysetup-temp-allocator-size-main=4194304"
+08-27 11:56:19.294  5177  5390 D Unity   :     "memorysetup-job-temp-allocator-block-size=2097152"
+08-27 11:56:19.294  5177  5390 D Unity   :     "memorysetup-job-temp-allocator-block-size-background=1048576"
+08-27 11:56:19.294  5177  5390 D Unity   :     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+08-27 11:56:19.306  5177  5177 D VRI[UnityPlayerGameActivity]: vri.reportDrawFinished 0 0 Rect(0, 0 - 1080, 2400)
+08-27 11:56:19.306  5177  5177 I NativeTurboSchedManager: Load libmiui_runtime
+08-27 11:56:19.307  5177  5177 I Choreographer: first vsync insert message into MessageQueue Head
+08-27 11:56:19.308  5177  5177 D gti.InputConnection: onApplyWindowInsetsfalse
+08-27 11:56:19.308  5177  5177 V GameActivity: onImeInsetsChanged from Text Listener
+08-27 11:56:19.308  5177  5177 D gti.InputConnection: onApplyWindowInsetsfalse
+08-27 11:56:19.308  5177  5177 V GameActivity: onImeInsetsChanged from Text Listener
+08-27 11:56:19.308  5177  5177 D SurfaceView: UPDATE Surface(name=86b95f9 SurfaceView[com.jojop.stack/com.unity3d.player.UnityPlayerGameActivity]#372860)/@0x7cd0cec, mIsProjectionMode = false
+08-27 11:56:19.316  5177  5177 W InsetsSource: Has no intersection or mTmpFrame.height(), return Insets.NONE mTmpFrame.height() =0 hasIntersection =false
+08-27 11:56:19.317  5177  5177 D InsetsController: com.jojop.stack/com.unity3d.player.UnityPlayerGameActivity hide: statusBars android.view.InsetsController@642754 android.view.InsetsController.applyAnimation:2241 android.view.InsetsController.applyAnimation:2212 android.view.InsetsController.onControlsChanged:1155 android.view.ViewRootImpl.onActiveControlsChanged:3360 android.view.ViewRootImpl.handleInsetsControlChanged:3314 android.view.ViewRootImpl$W.insetsControlChanged:13894 
+08-27 11:56:19.325  5177  5177 D gti.InputConnection: onApplyWindowInsetsfalse
+08-27 11:56:19.325  5177  5177 V GameActivity: onImeInsetsChanged from Text Listener
+08-27 11:56:19.325  5177  5177 D gti.InputConnection: onApplyWindowInsetsfalse
+08-27 11:56:19.325  5177  5177 V GameActivity: onImeInsetsChanged from Text Listener
+08-27 11:56:19.325  5177  5177 D VRI[UnityPlayerGameActivity]: vri.Setup new sync=wmsSync-VRI[UnityPlayerGameActivity]#3
+08-27 11:56:19.332  5177  5177 D VRI[UnityPlayerGameActivity]: vri.reportDrawFinished 0 0 Rect(0, 0 - 1080, 2400)
+08-27 11:56:19.337  5177  5390 D Unity   : Enabling Unity systrace
+08-27 11:56:19.338  5177  5177 I Unity   : windowFocusChanged: true
+08-27 11:56:19.338  5177  5177 I Unity   : resumeUnity
+08-27 11:56:19.338  5177  5177 I HandWritingStubImpl: refreshLastKeyboardType: 1
+08-27 11:56:19.339  5177  5177 I HandWritingStubImpl: getCurrentKeyboardType: 1
+08-27 11:56:19.350  5177  5486 D InsetsController: default animation onReady types: 1 controller=android.view.InsetsAnimationControlImpl@415728f
+08-27 11:56:19.350  5177  5486 D ViewRootImplStubImpl: requestedTypes: 1
+08-27 11:56:19.351  5177  5486 D ViewRootImplStubImpl: notifyImeAnimEvent: isForShow = false, isAnimStart = true, has context = true, has AutofillManager = true, isMiuiAnim = false
+08-27 11:56:19.353  5177  5177 D InsetsController: hide(ime(), fromIme=false)
+08-27 11:56:19.353  5177  5177 I ImeTracker: com.jojop.stack:3c16c875: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+08-27 11:56:19.360  5177  5177 I HandWritingStubImpl: getCurrentKeyboardType: 1
+08-27 11:56:19.374  5177  5390 I Unity   : SetGameState: isLoading: true, mode: UNKNOWN, label: -2, quality: -1
+08-27 11:56:19.376  5177  5177 W InsetsSource: Has no intersection or mTmpFrame.height(), return Insets.NONE mTmpFrame.height() =0 hasIntersection =false
+08-27 11:56:19.383  5177  5390 D Unity   : [VFS] Mount /data/app/~~JcY_BcBhduR07_YUf3bptw==/com.jojop.stack-RXgAoFJD_BNhetzx9Ee31g==/base.apk
+08-27 11:56:19.395  5177  5177 W InsetsSource: Has no intersection or mTmpFrame.height(), return Insets.NONE mTmpFrame.height() =0 hasIntersection =false
+08-27 11:56:19.396  5177  5177 D gti.InputConnection: onApplyWindowInsetsfalse
+08-27 11:56:19.396  5177  5177 V GameActivity: onImeInsetsChanged from Text Listener
+08-27 11:56:19.396  5177  5177 D gti.InputConnection: onApplyWindowInsetsfalse
+08-27 11:56:19.396  5177  5177 V GameActivity: onImeInsetsChanged from Text Listener
+08-27 11:56:19.403  5177  5177 I Unity   : applyWindowUIChanges fullScreen = true, renderOutsideSafeArea = true
+08-27 11:56:19.403  5177  5390 I Unity   : SystemInfo CPU = ARM64 FP ASIMD AES, Cores = 8, Memory = 11190mb
+08-27 11:56:19.403  5177  5390 I Unity   : SystemInfo ARM big.LITTLE configuration: 5 big (mask: 0xf8), 3 little (mask: 0x7)
+08-27 11:56:19.403  5177  5390 I Unity   : ApplicationInfo 'com.jojop.stack', Version '0.1.0', Min API Level '25', Target API Level '36'
+08-27 11:56:19.403  5177  5390 I Unity   : Built from '6000.4/staging' branch, Version '6000.4.0f1 (8cf496087c8f)', Build type 'Development', Scripting Backend 'il2cpp', CPU 'arm64-v8a', Stripping 'Enabled'
+08-27 11:56:19.403  5177  5390 I Unity   : Device Model 'Xiaomi 2211133C', OS 'Android OS 16 (API 36)'
+08-27 11:56:19.405  5177  5390 D Unity   : Determine if il2cpp resources need to extracted:
+08-27 11:56:19.410  5177  5390 D Unity   :     Guid in '/storage/emulated/0/Android/data/com.jojop.stack/files/il2cpp/unity.ver' is invalid, expected 'ab6a02d5-3a06-4090-ad89-a3f047d46816' was '8b408016-2510-417a-a98d-7ec01f7ccc25'
+08-27 11:56:19.410  5177  5390 D Unity   :     Extracting il2cpp resources
+08-27 11:56:19.492  5177  5390 D Unity   : Unable to find library path for 'il2cpp.usym'.
+08-27 11:56:19.498  5177  5390 D Unity   : Starting managed debugger on port 56403
+08-27 11:56:19.710  5177  5486 D InsetsAnimationCtrlImpl: notifyFinished shown: false, currentAlpha: 1.000000, currentInsets: Insets{left=0, top=0, right=0, bottom=0}
+08-27 11:56:19.711  5177  5486 D InsetsAnimationCtrlImpl: Animation finished abruptly.
+08-27 11:56:19.711  5177  5177 D InsetsController: cancelAnimation of types:1 animType:1 host:com.jojop.stack/com.unity3d.player.UnityPlayerGameActivity invokeCallback=false
+08-27 11:56:19.711  5177  5486 D InsetsController: onAnimationFinish showOnFinish: false
+08-27 11:56:19.711  5177  5177 D InsetsController: notifyFinished. shown: false runner=android.view.InsetsAnimationThreadControlRunner@9b29595
+08-27 11:56:19.715  5177  5486 W InteractionJankMonitor: Initializing without READ_DEVICE_CONFIG permission. enabled=false, interval=1, missedFrameThreshold=3, frameTimeThreshold=64, package=com.jojop.stack
+08-27 11:56:19.715  5177  5486 D ViewRootImplStubImpl: notifyImeAnimEvent: isForShow = false, isAnimStart = false, has context = true, has AutofillManager = true, isMiuiAnim = false
+08-27 11:56:20.126  5177  5193 I com.jojop.stack: Compiler allocated 6765KB to compile void android.view.ViewRootImpl.performTraversals()
+08-27 11:56:20.395  5177  5390 D Unity   : CodeReloadManager initialized
+08-27 11:56:20.395  5177  5390 D Unity   : [EGL] Attaching window :0xb4000078b8f313b0
+08-27 11:56:20.395  5177  5390 D Unity   : InitializeScriptEngine OK (0x79acff1fc0)
+08-27 11:56:20.396  5177  5390 D Unity   : Found 2 interfaces on host :
+08-27 11:56:20.396  5177  5390 D Unity   :  0) 192.168.1.56
+08-27 11:56:20.396  5177  5390 D Unity   :  1) 10.18.114.239
+08-27 11:56:20.396  5177  5390 D Unity   : 
+08-27 11:56:20.397  5177  5390 D Unity   : Player connection [511271027712]  Target information:
+08-27 11:56:20.397  5177  5390 D Unity   : 
+08-27 11:56:20.397  5177  5390 D Unity   : Player connection [511271027712]  * "[IP] 192.168.1.56 [Port] 55000 [Flags] 2 [Guid] 2438583403 [EditorId] 1862729859 [Version] 1048832 [Id] AndroidPlayer(11,Xiaomi_2211133C@192.168.1.56) [Debug] 1 [PackageName] AndroidPlayer [ProjectName] JojoP Stack" 
+08-27 11:56:20.397  5177  5390 D Unity   : 
+08-27 11:56:20.397  5177  5390 D Unity   : Player connection [511271027712]  * "[IP] 10.18.114.239 [Port] 55000 [Flags] 2 [Guid] 2438583403 [EditorId] 1862729859 [Version] 1048832 [Id] AndroidPlayer(11,Xiaomi_2211133C@192.168.1.56) [Debug] 1 [PackageName] AndroidPlayer [ProjectName] JojoP Stack" 
+08-27 11:56:20.397  5177  5390 D Unity   : 
+08-27 11:56:20.397  5177  5390 D Unity   : Player connection [511271027712] Started UDP target info broadcast (1) on [225.0.0.222:54997].
+08-27 11:56:20.397  5177  5390 D Unity   : 
+08-27 11:56:20.408  5177  5390 D Unity   : [Physics::Module] Initialized fallback backend.
+08-27 11:56:20.408  5177  5390 D Unity   : [Physics::Module] Id: 0xdecafbad
+08-27 11:56:20.410  5177  5390 D Unity   : PlayerInitEngineNoGraphics OK
+08-27 11:56:20.410  5177  5390 I Unity   : Company Name: JojoP
+08-27 11:56:20.410  5177  5390 I Unity   : Product Name: JojoP Stack
+08-27 11:56:20.410  5177  5390 D Unity   : AndroidGraphics::Startup window =  0xb4000078b8f313b0
+08-27 11:56:20.410  5177  5390 D Unity   : [EGL] Attaching window :0xb4000078b8f313b0
+08-27 11:56:20.415  5177  5177 D gti.InputConnection: onApplyWindowInsetsfalse
+08-27 11:56:20.415  5177  5177 V GameActivity: onImeInsetsChanged from Text Listener
+08-27 11:56:20.415  5177  5177 I Unity   : applyWindowUIChanges fullScreen = true, renderOutsideSafeArea = true
+08-27 11:56:20.455  5177  5390 W libc    : Access denied finding property "vendor.mivk.log.debug"
+08-27 11:56:20.455  5177  5390 D vulkan  : searching for layers in '/data/app/~~JcY_BcBhduR07_YUf3bptw==/com.jojop.stack-RXgAoFJD_BNhetzx9Ee31g==/lib/arm64'
+08-27 11:56:20.456  5177  5390 D vulkan  : searching for layers in '/data/app/~~JcY_BcBhduR07_YUf3bptw==/com.jojop.stack-RXgAoFJD_BNhetzx9Ee31g==/base.apk!/lib/arm64-v8a'
+08-27 11:56:20.456  5177  5390 D Unity   : [Vulkan init] extensions: count=14
+08-27 11:56:20.456  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_debug_report [enabled=0, external=0]
+08-27 11:56:20.456  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_debug_utils [enabled=1, external=0]
+08-27 11:56:20.456  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_surface_maintenance1 [enabled=0, external=0]
+08-27 11:56:20.456  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_swapchain_colorspace [enabled=1, external=0]
+08-27 11:56:20.456  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_GOOGLE_surfaceless_query [enabled=0, external=0]
+08-27 11:56:20.456  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_android_surface [enabled=1, external=0]
+08-27 11:56:20.456  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_device_group_creation [enabled=0, external=0]
+08-27 11:56:20.456  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_external_fence_capabilities [enabled=1, external=0]
+08-27 11:56:20.456  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_external_memory_capabilities [enabled=1, external=0]
+08-27 11:56:20.456  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_external_semaphore_capabilities [enabled=1, external=0]
+08-27 11:56:20.456  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_get_physical_device_properties2 [enabled=1, external=0]
+08-27 11:56:20.456  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_get_surface_capabilities2 [enabled=0, external=0]
+08-27 11:56:20.456  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_surface [enabled=1, external=0]
+08-27 11:56:20.456  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_surface_protected_capabilities [enabled=0, external=0]
+08-27 11:56:20.466  5177  5390 I AdrenoVK-0: ===== BEGIN DUMP OF OVERRIDDEN SETTINGS =====
+08-27 11:56:20.466  5177  5390 I AdrenoVK-0: ===== END DUMP OF OVERRIDDEN SETTINGS =====
+08-27 11:56:20.467  5177  5390 I AdrenoVK-0: QUALCOMM build          : bad34dcf83, I1064ae0a1f
+08-27 11:56:20.467  5177  5390 I AdrenoVK-0: Build Date              : 11/28/25
+08-27 11:56:20.467  5177  5390 I AdrenoVK-0: Shader Compiler Version : E031.41.03.64
+08-27 11:56:20.467  5177  5390 I AdrenoVK-0: Local Branch            : 
+08-27 11:56:20.467  5177  5390 I AdrenoVK-0: Remote Branch           : refs/tags/AU_LINUX_ANDROID_LA.VENDOR.13.2.0.11.00.00.856.062
+08-27 11:56:20.467  5177  5390 I AdrenoVK-0: Remote Branch           : NONE
+08-27 11:56:20.467  5177  5390 I AdrenoVK-0: Reconstruct Branch      : NOTHING
+08-27 11:56:20.467  5177  5390 I AdrenoVK-0: Build Config            : S P 14.1.4 AArch64
+08-27 11:56:20.467  5177  5390 I AdrenoVK-0: Driver Path             : /vendor/lib64/hw/vulkan.adreno.so
+08-27 11:56:20.467  5177  5390 I AdrenoVK-0: Driver Version          : 0676.76.1
+08-27 11:56:20.467  5177  5390 I AdrenoVK-0: PFP                     : 0x01740181
+08-27 11:56:20.467  5177  5390 I AdrenoVK-0: ME                      : 0x00000000
+08-27 11:56:20.467  5177  5390 I AdrenoVK-0: Application Name    : JojoP Stack
+08-27 11:56:20.467  5177  5390 I AdrenoVK-0: Application Version : 0x00000001
+08-27 11:56:20.467  5177  5390 I AdrenoVK-0: Engine Name         : Unity
+08-27 11:56:20.467  5177  5390 I AdrenoVK-0: Engine Version      : 0x00000001
+08-27 11:56:20.467  5177  5390 I AdrenoVK-0: Api Version         : 0x00401000
+08-27 11:56:20.467  5177  5390 D Unity   : [Vulkan init] SelectPhysicalDevice requestedDeviceIndex=-1 xrDevice=0x0
+08-27 11:56:20.467  5177  5390 D Unity   : [Vulkan init] Physical Device 0xb4000077b8f42570 [0]: "Adreno (TM) 740" deviceType=1 vendorID=5143 deviceID=43050a01
+08-27 11:56:20.468  5177  5390 D Unity   : [VULKAN] Android Device Info:
+08-27 11:56:20.468  5177  5390 D Unity   : {"Vendor": "Qualcomm","Device Name": "Adreno (TM) 740","Brand": "Xiaomi","Product Name": "fuxi","Android OS Version": "16","Vulkan API Version": "Variant: 0 major.minor.patch:1.3.128","Driver Version": "2150252545"}
+08-27 11:56:20.468  5177  5390 D Unity   : Vulkan detection: 2
+08-27 11:56:20.468  5177  5390 D Unity   : GfxDevice: creating device client; kGfxThreadingModeThreaded
+08-27 11:56:20.468  5177  5390 D Unity   : [Vulkan init] extensions: count=14
+08-27 11:56:20.468  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_debug_report [enabled=0, external=0]
+08-27 11:56:20.468  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_debug_utils [enabled=1, external=0]
+08-27 11:56:20.468  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_surface_maintenance1 [enabled=0, external=0]
+08-27 11:56:20.468  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_swapchain_colorspace [enabled=1, external=0]
+08-27 11:56:20.468  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_GOOGLE_surfaceless_query [enabled=0, external=0]
+08-27 11:56:20.468  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_android_surface [enabled=1, external=0]
+08-27 11:56:20.468  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_device_group_creation [enabled=0, external=0]
+08-27 11:56:20.468  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_external_fence_capabilities [enabled=1, external=0]
+08-27 11:56:20.468  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_external_memory_capabilities [enabled=1, external=0]
+08-27 11:56:20.468  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_external_semaphore_capabilities [enabled=1, external=0]
+08-27 11:56:20.468  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_get_physical_device_properties2 [enabled=1, external=0]
+08-27 11:56:20.468  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_get_surface_capabilities2 [enabled=0, external=0]
+08-27 11:56:20.468  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_surface [enabled=1, external=0]
+08-27 11:56:20.468  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_surface_protected_capabilities [enabled=0, external=0]
+08-27 11:56:20.470  5177  5390 I AdrenoVK-0: QUALCOMM build          : bad34dcf83, I1064ae0a1f
+08-27 11:56:20.470  5177  5390 I AdrenoVK-0: Build Date              : 11/28/25
+08-27 11:56:20.470  5177  5390 I AdrenoVK-0: Shader Compiler Version : E031.41.03.64
+08-27 11:56:20.470  5177  5390 I AdrenoVK-0: Local Branch            : 
+08-27 11:56:20.470  5177  5390 I AdrenoVK-0: Remote Branch           : refs/tags/AU_LINUX_ANDROID_LA.VENDOR.13.2.0.11.00.00.856.062
+08-27 11:56:20.470  5177  5390 I AdrenoVK-0: Remote Branch           : NONE
+08-27 11:56:20.470  5177  5390 I AdrenoVK-0: Reconstruct Branch      : NOTHING
+08-27 11:56:20.470  5177  5390 I AdrenoVK-0: Build Config            : S P 14.1.4 AArch64
+08-27 11:56:20.470  5177  5390 I AdrenoVK-0: Driver Path             : /vendor/lib64/hw/vulkan.adreno.so
+08-27 11:56:20.470  5177  5390 I AdrenoVK-0: Driver Version          : 0676.76.1
+08-27 11:56:20.470  5177  5390 I AdrenoVK-0: PFP                     : 0x01740181
+08-27 11:56:20.470  5177  5390 I AdrenoVK-0: ME                      : 0x00000000
+08-27 11:56:20.470  5177  5390 I AdrenoVK-0: Application Name    : JojoP Stack
+08-27 11:56:20.470  5177  5390 I AdrenoVK-0: Application Version : 0x00000001
+08-27 11:56:20.470  5177  5390 I AdrenoVK-0: Engine Name         : Unity
+08-27 11:56:20.470  5177  5390 I AdrenoVK-0: Engine Version      : 0x00000001
+08-27 11:56:20.470  5177  5390 I AdrenoVK-0: Api Version         : 0x00401000
+08-27 11:56:20.471  5177  5390 D Unity   : [Vulkan init] SelectPhysicalDevice requestedDeviceIndex=-1 xrDevice=0x0
+08-27 11:56:20.471  5177  5390 D Unity   : [Vulkan init] Physical Device 0xb4000077b8f42570 [0]: "Adreno (TM) 740" deviceType=1 vendorID=5143 deviceID=43050a01
+08-27 11:56:20.471  5177  5390 D Unity   : [Vulkan init] Selected physical device 0xb4000077b8f42570
+08-27 11:56:20.471  5177  5390 D Unity   : [Vulkan init] Graphics queue count=1
+08-27 11:56:20.471  5177  5390 I AdrenoVK-0: Unknown struct with type 0x3b9ff250 provided to vkGetPhysicalDeviceFeatures2
+08-27 11:56:20.471  5177  5390 I AdrenoVK-0: Unknown struct with type 0x3ba17508 provided to vkGetPhysicalDeviceFeatures2
+08-27 11:56:20.471  5177  5390 I AdrenoVK-0: Unknown struct with type 0x3b9ff250 provided to vkGetPhysicalDeviceFeatures2
+08-27 11:56:20.471  5177  5390 I AdrenoVK-0: Unknown struct with type 0x3ba17508 provided to vkGetPhysicalDeviceFeatures2
+08-27 11:56:20.471  5177  5390 I AdrenoVK-0: Unknown struct with type 0x3b9ff250 provided to vkGetPhysicalDeviceFeatures2
+08-27 11:56:20.471  5177  5390 I AdrenoVK-0: Unknown struct with type 0x3ba17508 provided to vkGetPhysicalDeviceFeatures2
+08-27 11:56:20.471  5177  5390 I AdrenoVK-0: Unknown struct with type 0x3b9ff250 provided to vkGetPhysicalDeviceFeatures2
+08-27 11:56:20.471  5177  5390 I AdrenoVK-0: Unknown struct with type 0x3ba17508 provided to vkGetPhysicalDeviceFeatures2
+08-27 11:56:20.472  5177  5390 D nativeloader: Load liblibswappywrapper.so using class loader ns clns-10 (caller=/data/app/~~JcY_BcBhduR07_YUf3bptw==/com.jojop.stack-RXgAoFJD_BNhetzx9Ee31g==/base.apk): dlopen failed: library "liblibswappywrapper.so" not found
+08-27 11:56:20.473  5177  5390 D nativeloader: Load /data/app/~~JcY_BcBhduR07_YUf3bptw==/com.jojop.stack-RXgAoFJD_BNhetzx9Ee31g==/lib/arm64/libswappywrapper.so using class loader ns clns-10 (caller=/data/app/~~JcY_BcBhduR07_YUf3bptw==/com.jojop.stack-RXgAoFJD_BNhetzx9Ee31g==/base.apk): ok
+08-27 11:56:20.473  5177  5390 I SwappyWrapper: SwappyWrapperInit() succeeded. Build: Wed Aug 26 19:10:49 2026
+08-27 11:56:20.473  5177  5390 D Unity   : SwappyWrapper: InitSwappyWrapper() succeeded.
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: count=115
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_ANDROID_external_memory_android_hardware_buffer [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_4444_formats [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_astc_decode_mode [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_blend_operation_advanced [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_color_write_enable [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_conservative_rasterization [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_custom_border_color [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_depth_clip_control [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_depth_clip_enable [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_descriptor_indexing [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_device_memory_report [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_extended_dynamic_state [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_extended_dynamic_state2 [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_filter_cubic [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_fragment_density_map [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_fragment_density_map2 [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_global_priority [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_global_priority_query [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_hdr_metadata [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_host_query_reset [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_image_robustness [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_image_view_min_lod [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_index_type_uint8 [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_line_rasterization [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_load_store_op_none [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_pipeline_creation_cache_control [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_pipeline_creation_feedback [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_primitive_topology_list_restart [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_private_data [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_provoking_vertex [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_queue_family_foreign [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_robustness2 [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_sample_locations [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_sampler_filter_minmax [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_scalar_block_layout [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_separate_stencil_usage [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_shader_atomic_float [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_shader_demote_to_helper_invocation [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_shader_stencil_export [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_subgroup_size_control [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_swapchain_maintenance1 [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_texel_buffer_alignment [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_texture_compression_astc_hdr [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_tooling_info [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_transform_feedback [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_vertex_attribute_divisor [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_EXT_vertex_input_dynamic_state [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_GOOGLE_display_timing [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_IMG_filter_cubic [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_16bit_storage [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_8bit_storage [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_acceleration_structure [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_bind_memory2 [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_buffer_device_address [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_copy_commands2 [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_create_renderpass2 [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_dedicated_allocation [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_deferred_host_operations [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_depth_stencil_resolve [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_descriptor_update_template [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_device_group [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_draw_indirect_count [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_driver_properties [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_dynamic_rendering [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_external_fence [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_external_fence_fd [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_external_memory [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_external_memory_fd [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_external_semaphore [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_external_semaphore_fd [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_format_feature_flags2 [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_fragment_shading_rate [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_get_memory_requirements2 [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_global_priority [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_image_format_list [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_imageless_framebuffer [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_incremental_present [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_maintenance1 [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_maintenance2 [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_maintenance3 [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_maintenance4 [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_multiview [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_pipeline_executable_properties [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_push_descriptor [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_ray_query [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_relaxed_block_layout [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_sampler_mirror_clamp_to_edge [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_sampler_ycbcr_conversion [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_separate_depth_stencil_layouts [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_shader_draw_parameters [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_shader_float16_int8 [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_shader_float_controls [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_shader_integer_dot_product [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_shader_non_semantic_info [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_shader_subgroup_extended_types [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_shader_subgroup_uniform_control_flow [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_shader_terminate_invocation [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_shared_presentable_image [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_spirv_1_4 [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_storage_buffer_storage_class [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_swapchain [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_swapchain_mutable_format [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_synchronization2 [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_timeline_semaphore [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_uniform_buffer_standard_layout [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_variable_pointers [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_vulkan_memory_model [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_KHR_zero_initialize_workgroup_memory [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_QCOM_fragment_density_map_offset [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_QCOM_image_processing [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_QCOM_render_pass_shader_resolve [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_QCOM_render_pass_store_ops [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_QCOM_render_pass_transform [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_QCOM_rotated_copy_commands [enabled=0, external=0]
+08-27 11:56:20.474  5177  5390 D Unity   : [Vulkan init] extensions: name=VK_QCOM_tile_properties [enabled=1, external=0]
+08-27 11:56:20.474  5177  5390 I AdrenoVK-0: Unknown struct with type 0x3b9ff250 provided to vkGetPhysicalDeviceFeatures2
+08-27 11:56:20.474  5177  5390 I AdrenoVK-0: Unknown struct with type 0x3ba17508 provided to vkGetPhysicalDeviceFeatures2
+08-27 11:56:20.474  5177  5390 I AdrenoVK-0: Unknown struct with type 0x3b9ff250 provided to vkGetPhysicalDeviceFeatures2
+08-27 11:56:20.474  5177  5390 I AdrenoVK-0: Unknown struct with type 0x3ba17508 provided to vkGetPhysicalDeviceFeatures2
+08-27 11:56:20.474  5177  5390 I AdrenoVK-0: Unknown struct with type 0x3b9ff250 provided to vkGetPhysicalDeviceFeatures2
+08-27 11:56:20.474  5177  5390 I AdrenoVK-0: Unknown struct with type 0x3ba17508 provided to vkGetPhysicalDeviceFeatures2
+08-27 11:56:20.474  5177  5390 I AdrenoVK-0: Unknown struct with type 0x3b9ff250 provided to vkGetPhysicalDeviceFeatures2
+08-27 11:56:20.474  5177  5390 I AdrenoVK-0: Unknown struct with type 0x3ba17508 provided to vkGetPhysicalDeviceFeatures2
+08-27 11:56:20.476  5177  5390 D Unity   : Vulkan API version 1.1.0 (1.3.128 supported by driver, 1.1.0 requested)
+08-27 11:56:20.476  5177  5390 D Unity   : Vulkan vendor=[Qualcomm] id=[5143]
+08-27 11:56:20.476  5177  5390 D Unity   : Vulkan renderer=[Adreno (TM) 740] id=[43050a01]
+08-27 11:56:20.476  5177  5390 D Unity   : Vulkan device type 1
+08-27 11:56:20.476  5177  5390 D Unity   : Vulkan driverversion=[512.676.1 (0x802a4001)] uint=[-2144714751]
+08-27 11:56:20.476  5177  5390 D Unity   : Vulkan driverLibraryString=[Qualcomm Technologies Inc. Adreno Vulkan Driver (8), Driver Build: bad34dcf83, I1064ae0a1f, 1764326394
+08-27 11:56:20.476  5177  5390 D Unity   : Date: 11/28/25
+08-27 11:56:20.476  5177  5390 D Unity   : Compiler Version: E031.41.03.64
+08-27 11:56:20.476  5177  5390 D Unity   : Driver Branch: 
+08-27 11:56:20.476  5177  5390 D Unity   : ]
+08-27 11:56:20.476  5177  5390 D Unity   : VK use pretransform: 0
+08-27 11:56:20.483  5177  5390 D Unity   : Vulkan PSO: Cache data successfully loaded [size=47427,path=/storage/emulated/0/Android/data/com.jojop.stack/cache/vulkan_pso_cache.bin]
+08-27 11:56:20.484  5177  5390 D Unity   : [EGL] Attaching window :0x0
+08-27 11:56:20.484  5177  5390 D Unity   : AndroidDisplayManagerVulkan::AttachWindow(0xb4000078b8f313b0, 0)
+08-27 11:56:20.485  5177  5390 D Unity   : InitializeOrResetSwapChain 1080x2400 hdr=0 samples=0
+08-27 11:56:20.486  5177  5390 I AdrenoUtils: <ReadGpuID:407>: Reading chip ID through GSL
+08-27 11:56:20.487  5177  5390 E qdgralloc: GetSize: Unrecognized pixel format: 0x3b
+08-27 11:56:20.487  5177  5390 W qdgralloc: gralloc failed to allocate buffer for size 0 format 59 AWxAH 1x1 usage 2816
+08-27 11:56:20.487  5177  5390 E Gralloc4: isSupported(1, 1, 59, 1, ...) failed with 7
+08-27 11:56:20.487  5177  5390 E GraphicBufferAllocator: Failed to allocate (4 x 4) layerCount 1 format 59 usage b00: 7
+08-27 11:56:20.487  5177  5390 E AHardwareBuffer: GraphicBuffer(w=4, h=4, lc=1) failed (Unknown error -7), handle=0x0
+08-27 11:56:20.487  5177  5390 E qdgralloc: GetSize: Unrecognized pixel format: 0x3b
+08-27 11:56:20.487  5177  5390 W qdgralloc: gralloc failed to allocate buffer for size 0 format 59 AWxAH 1x1 usage 2816
+08-27 11:56:20.487  5177  5390 E Gralloc4: isSupported(1, 1, 59, 1, ...) failed with 7
+08-27 11:56:20.487  5177  5390 E GraphicBufferAllocator: Failed to allocate (4 x 4) layerCount 1 format 59 usage b00: 7
+08-27 11:56:20.487  5177  5390 E AHardwareBuffer: GraphicBuffer(w=4, h=4, lc=1) failed (Unknown error -7), handle=0x0
+08-27 11:56:20.488  5177  5390 W qdgralloc: getInterlacedFlag: getMetaData returned 3, defaulting to interlaced_flag = 0
+08-27 11:56:20.489  5177  5390 W qdgralloc: getInterlacedFlag: getMetaData returned 3, defaulting to interlaced_flag = 0
+08-27 11:56:20.490  5177  5390 W qdgralloc: getInterlacedFlag: getMetaData returned 3, defaulting to interlaced_flag = 0
+08-27 11:56:20.491  5177  5390 W qdgralloc: getInterlacedFlag: getMetaData returned 3, defaulting to interlaced_flag = 0
+08-27 11:56:20.498  5177  5390 E SwappyDisplayManager: dalvik.system.InMemoryDexClassLoader[DexPathList[[dex file "InMemoryDexFile[cookie=[-5476376632409246448, -5476376633751985424]]"],nativeLibraryDirectories=[/system/lib64, /system_ext/lib64]]] couldn't find "libgame.so"
+08-27 11:56:20.499  5177  5673 I SwappyDisplayManager: Starting looper thread
+08-27 11:56:20.512  5177  5390 V MediaRouter: Audio routes updated: AudioRoutesInfo{ type=SPEAKER, bluetoothName=Xiaomi 寮€鏀惧紡鑰虫満 Pro }, a2dp=true
+08-27 11:56:20.512  5177  5390 V MediaRouter: Selecting route: RouteInfo{ name=Xiaomi 寮€鏀惧紡鑰虫満 Pro, description=钃濈墮闊抽, status=null, category=RouteCategory{ name=绯荤粺 types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO , presentationDisplay=null }
+08-27 11:56:20.512  5177  5390 I MediaRouter: Skip setBluetoothA2dpOn(): types=1, isPlaybackActive()=false, BT route=RouteInfo{ name=Xiaomi 寮€鏀惧紡鑰虫満 Pro, description=钃濈墮闊抽, status=null, category=RouteCategory{ name=绯荤粺 types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO , presentationDisplay=null }
+08-27 11:56:20.515  5177  5390 D Unity   : AndroidDisplayManagerVulkan::AttachWindow(0xb4000078b8f313b0, 0)
+08-27 11:56:20.515  5177  5390 D Unity   : Initialize engine version: 6000.4.0f1 (8cf496087c8f)
+08-27 11:56:20.520  5177  5390 D AudioSystem: onNewServiceWithAdapter: media.audio_flinger service obtained 0xb4000078691915c0
+08-27 11:56:20.545  5177  5390 D AudioSystem: getService: checking for service media.audio_flinger: 0xb400007888ff5dc0
+08-27 11:56:20.548  5177  5390 I AAudio  : AAudioStreamBuilder_openStream() called ----------------------------------------
+08-27 11:56:20.548  5177  5390 I AudioStreamBuilder: rate   =  24000, channels  = 2, channelMask = 0x80000003, format   = 5, sharing = SH, dir = OUTPUT
+08-27 11:56:20.548  5177  5390 I AudioStreamBuilder: device = AUDIO_PORT_HANDLE_NONE, sessionId = 0, perfMode = 12, callback: ON with frames = 512, error callback: ON
+08-27 11:56:20.548  5177  5390 I AudioStreamBuilder: usage  =      0, contentType = 0, inputPreset = 0, allowedCapturePolicy = 0
+08-27 11:56:20.548  5177  5390 I AudioStreamBuilder: privacy sensitive = false, opPackageName = (null), attributionTag = (null)
+08-27 11:56:20.548  5177  5390 D AudioStreamBuilder: build() uid=10405 clientName=com.jojop.stack
+08-27 11:56:20.548  5177  5390 D AudioStreamBuilder: build, global mmap policy is 0
+08-27 11:56:20.551  5177  5390 D AudioStreamBuilder: build, system mmap policy is 2
+08-27 11:56:20.551  5177  5390 D AudioStreamBuilder: UseAAudioApp mClientName :com.jojop.stack()
+08-27 11:56:20.551  5177  5390 D AudioStreamBuilder: build, final mmap policy is 1
+08-27 11:56:20.551  5177  5390 D AudioStreamBuilder: build, system mmap exclusive policy is 2
+08-27 11:56:20.551  5177  5390 D AudioStreamBuilder: build, final mmap exclusive policy is 2
+08-27 11:56:20.551  5177  5390 D AudioStreamBuilder: build() MMAP not used because sessionId specified.
+08-27 11:56:20.551  5177  5390 D com.jojop.stack: PlayerBase::PlayerBase()
+08-27 11:56:20.552  5177  5390 D AudioStreamTrack: open(), request notificationFrames = 0, frameCount = 8192
+08-27 11:56:20.552  5177  5390 E AudioTrack: Failed to load XML file: /odm/etc/audio/audio_lowpower_app_list.xml
+08-27 11:56:20.559  5177  5390 I AudioTrackImpl: initAudioTrackImpl()
+08-27 11:56:20.559  5177  5390 D AudioTrackImpl: binder call: getPackageName com.jojop.stack for uid 10405
+08-27 11:56:20.559  5177  5390 D AudioTrack: set(): (sessionId=0), mcallback is 1, streamType -1, sampleRate 24000, format 0x5, channelMask 0x3, frameCount 8192, flags 0x4, notificationFrames 0,transferType 1, mClientAttributionSource AttributionSourceState{pid: -1, uid: -1, deviceId: 0, packageName: com.jojop.stack, attributionTag: (null), token: (null), renouncedPermissions: (null), next: []}
+08-27 11:56:20.569  5177  5390 V xlog_client: xlog_check_permission event name audio_track_message level 0
+08-27 11:56:20.569  5177  5390 V xlog_client: xlog_check_permission event name audio_repeat_start_stop level 0
+08-27 11:56:20.569  5177  5390 V xlog_client: xlog_check_permission event name audio_zero_data level 0
+08-27 11:56:20.569  5177  5390 I AudioTrackImpl: before scaleVolumeForVideo L:1.000000 R:1.000000 and the pakage is com.jojop.stack
+08-27 11:56:20.569  5177  5390 D AudioTrack: AudioTrack::setVolume L:1.000000 R:1.000000 sessionid=87297
+08-27 11:56:20.570  5177  5390 D AudioStreamTrack: open() flags changed from 0x00000004 to 0x00000000
+08-27 11:56:20.570  5177  5390 D AudioStreamTrack: open() perfMode changed from 12 to 10
+08-27 11:56:20.570  5177  5390 D AAudioStream: setState(s#1) from 0 to 2
+08-27 11:56:20.571  5177  5238 D com.jojop.stack: PlayerBase::setVolume() from IPlayer
+08-27 11:56:20.571  5177  5238 D AAudioStream: setDuckAndMuteVolume() to 1.000000
+08-27 11:56:20.571  5177  5390 I AAudio  : AAudioStreamBuilder_openStream() returns 0 = AAUDIO_OK for s#1 ----------------
+08-27 11:56:20.571  5177  5238 I AudioTrackImpl: before scaleVolumeForVideo L:1.000000 R:1.000000 and the pakage is com.jojop.stack
+08-27 11:56:20.571  5177  5238 D AudioTrack: AudioTrack::setVolume L:1.000000 R:1.000000 sessionid=87297
+08-27 11:56:20.572  5177  5390 D AAudio  : AAudioStream_requestStart(s#1) called --------------
+08-27 11:56:20.572  5177  5390 D AAudioStream: setState(s#1) from 2 to 3
+08-27 11:56:20.572  5177  5390 I AudioTrack: start(16307): prior state:STATE_STOPPED packageName: com.jojop.stack
+08-27 11:56:20.617  5177  5390 D AudioRepeatStartCheck: [AudioRepeatStartStopCheck], enter: uid = 10405, session = 87297, uidnowTime = 0
+08-27 11:56:20.617  5177  5390 D AudioRepeatStartCheck: [AudioRepeatStartStopCheck] isAnomaly = 0
+08-27 11:56:20.617  5177  5390 D AAudio  : AAudioStream_requestStart(s#1) returned 0 ---------
+08-27 11:56:20.619  5177  5479 D com.jojop.stack: PlayerBase::setVolume() from IPlayer
+08-27 11:56:20.619  5177  5479 D AAudioStream: setDuckAndMuteVolume() to 1.000000
+08-27 11:56:20.619  5177  5479 I AudioTrackImpl: before scaleVolumeForVideo L:1.000000 R:1.000000 and the pakage is com.jojop.stack
+08-27 11:56:20.619  5177  5479 D AudioTrack: AudioTrack::setVolume L:1.000000 R:1.000000 sessionid=87297
+08-27 11:56:20.620  5177  5177 D MediaRouter: onRestoreRoute() : route=RouteInfo{ name=Xiaomi 寮€鏀惧紡鑰虫満 Pro, description=钃濈墮闊抽, status=null, category=RouteCategory{ name=绯荤粺 types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO , presentationDisplay=null }
+08-27 11:56:20.620  5177  5177 V MediaRouter: Selecting route: RouteInfo{ name=Xiaomi 寮€鏀惧紡鑰虫満 Pro, description=钃濈墮闊抽, status=null, category=RouteCategory{ name=绯荤粺 types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO , presentationDisplay=null }
+08-27 11:56:20.623  5177  5238 D AudioStreamLegacy: onAudioDeviceUpdate() devices 16259 => 16259
+08-27 11:56:20.623  5177  5238 D AudioTrack: onAudioDeviceUpdate AudioPortDebug[ID:00003F83] deviceType:AUDIO_DEVICE_OUT_BLUETOOTH_A2DP(00000080)
+08-27 11:56:20.623  5177  5238 D BatteryNotifier: Batteryhandler init with status: 0
+08-27 11:56:20.623  5177  5238 D BatteryNotifier: batteryHandler::send audio device update msg! 10405, 5177, 87297, 128
+08-27 11:56:20.623  5177  5679 D BatteryNotifier: BatteryNotifier::update device to power insight! 10405, 5177, 87297, 128
+08-27 11:56:20.744  5177  5390 D Unity   : [Physics::Module] Selected backend.
+08-27 11:56:20.744  5177  5390 D Unity   : [Physics::Module] Name: PhysX
+08-27 11:56:20.744  5177  5390 D Unity   : [Physics::Module] Id: 0xf2b8ea05
+08-27 11:56:20.744  5177  5390 D Unity   : [Physics::Module] SDK Version: 4.1.2
+08-27 11:56:20.744  5177  5390 D Unity   : [Physics::Module] Integration Version: 1.0.0
+08-27 11:56:20.744  5177  5390 D Unity   : [Physics::Module] Threading Mode: Multi-Threaded
+08-27 11:56:20.763  5177  5390 D Unity   : PlayerInitEngineGraphics OK
+08-27 11:56:20.769  5177  5390 D Unity   : Found 75 native sensors
+08-27 11:56:20.770  5177  5390 D Unity   : Sensor :        Accelerometer ( 1) ; 0.004786 / 0.00s ; bmi26x Accelerometer Non-wakeup / BOSCH 
+08-27 11:56:20.772  5177  5390 D Unity   : Sensor :        Accelerometer ( 1) ; 0.004786 / 0.00s ; bmi26x Accelerometer Non-wakeup / BOSCH 
+08-27 11:56:20.772  5177  5390 D Unity   : enabled Accelerometer sensor
+08-27 11:56:20.775  5177  5390 I Unity   : SetGameState: isLoading: false, mode: UNKNOWN, label: -1, quality: 2
+08-27 11:56:20.776  5177  5390 I Unity   :     HasWindow = 1, HasFocus = 0
+08-27 11:56:20.776  5177  5390 I Unity   : Handle cmd APP_CMD_WINDOW_RESIZED(3)
+08-27 11:56:20.776  5177  5390 D Unity   : NativeWindow resized 1080x2400
+08-27 11:56:20.776  5177  5390 I Unity   : Handle cmd APP_CMD_WINDOW_REDRAW_NEEDED(4)
+08-27 11:56:20.776  5177  5390 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-27 11:56:20.776  5177  5390 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-27 11:56:20.776  5177  5390 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-27 11:56:20.776  5177  5390 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-27 11:56:20.776  5177  5390 I Unity   : Handle cmd APP_CMD_GAINED_FOCUS(7)
+08-27 11:56:20.776  5177  5390 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-27 11:56:20.776  5177  5390 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-27 11:56:20.776  5177  5390 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-27 11:56:20.777  5177  5390 D Unity   : InitializeOrResetSwapChain 1080x2400 hdr=0 samples=0
+08-27 11:56:20.778  5177  5673 I SwappyDisplayManager: Terminating looper thread
+08-27 11:56:20.779  5177  5390 D BufferQueueProducer: [86b95f9 SurfaceView[com.jojop.stack/com.unity3d.player.UnityPlayerGameActivity]#1(BLAST Consumer)1](id:143900000001,api:1,p:5177,c:5177) disconnect: api 1 (caller=5177)
+08-27 11:56:20.779  5177  5390 W com.jojop.stack: Binder 0xb400007838f84b80 destroyed after setInheritRt before being parceled.
+08-27 11:56:20.779  5177  5390 E qdgralloc: GetSize: Unrecognized pixel format: 0x3b
+08-27 11:56:20.779  5177  5390 W qdgralloc: gralloc failed to allocate buffer for size 0 format 59 AWxAH 1x1 usage 2816
+08-27 11:56:20.779  5177  5390 E Gralloc4: isSupported(1, 1, 59, 1, ...) failed with 7
+08-27 11:56:20.779  5177  5390 E GraphicBufferAllocator: Failed to allocate (4 x 4) layerCount 1 format 59 usage b00: 7
+08-27 11:56:20.779  5177  5390 E AHardwareBuffer: GraphicBuffer(w=4, h=4, lc=1) failed (Unknown error -7), handle=0x0
+08-27 11:56:20.779  5177  5390 E qdgralloc: GetSize: Unrecognized pixel format: 0x3b
+08-27 11:56:20.779  5177  5390 W qdgralloc: gralloc failed to allocate buffer for size 0 format 59 AWxAH 1x1 usage 2816
+08-27 11:56:20.779  5177  5390 E Gralloc4: isSupported(1, 1, 59, 1, ...) failed with 7
+08-27 11:56:20.779  5177  5390 E GraphicBufferAllocator: Failed to allocate (4 x 4) layerCount 1 format 59 usage b00: 7
+08-27 11:56:20.779  5177  5390 E AHardwareBuffer: GraphicBuffer(w=4, h=4, lc=1) failed (Unknown error -7), handle=0x0
+08-27 11:56:20.781  5177  5390 W qdgralloc: getInterlacedFlag: getMetaData returned 3, defaulting to interlaced_flag = 0
+08-27 11:56:20.782  5177  5390 W qdgralloc: getInterlacedFlag: getMetaData returned 3, defaulting to interlaced_flag = 0
+08-27 11:56:20.784  5177  5390 W qdgralloc: getInterlacedFlag: getMetaData returned 3, defaulting to interlaced_flag = 0
+08-27 11:56:20.785  5177  5390 W qdgralloc: getInterlacedFlag: getMetaData returned 3, defaulting to interlaced_flag = 0
+08-27 11:56:20.789  5177  5390 E SwappyDisplayManager: dalvik.system.InMemoryDexClassLoader[DexPathList[[dex file "InMemoryDexFile[cookie=[-5476376632409882160, -5476376633751838256]]"],nativeLibraryDirectories=[/system/lib64, /system_ext/lib64]]] couldn't find "libgame.so"
+08-27 11:56:20.789  5177  5685 I SwappyDisplayManager: Starting looper thread
+08-27 11:56:20.817  5177  5390 I Unity   : SetGameState: isLoading: true, mode: UNKNOWN, label: 0, quality: 2
+08-27 11:56:20.928  5177  5177 D gti.InputConnection: onApplyWindowInsetsfalse
+08-27 11:56:20.928  5177  5177 V GameActivity: onImeInsetsChanged from Text Listener
+08-27 11:56:20.928  5177  5177 D gti.InputConnection: onApplyWindowInsetsfalse
+08-27 11:56:20.928  5177  5177 V GameActivity: onImeInsetsChanged from Text Listener
+08-27 11:56:20.946  5177  5390 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-27 11:56:20.947  5177  5390 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-27 11:56:21.317  5177  5675 D AAudioStream: setState(s#1) from 3 to 4
+08-27 11:56:21.625  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 1s(f:0 m:0 s:0 k:0 z:1005) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:22.336  5177  5669 I com.jojop.stack: DynamicFPS DF top: com.jojop.stack : 0.000000
+08-27 11:56:22.336  5177  5669 I com.jojop.stack: DF com.jojop.stack Support DynamicFPS.
+08-27 11:56:22.625  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 2s(f:0 m:0 s:0 k:0 z:2005) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:22.869  5177  5177 D GameActivity: ************** mainWorkCallback *********
+08-27 11:56:22.872  5177  5390 D Unity   : UnloadTime: 3.362761 ms
+08-27 11:56:22.873  5177  5177 I ImeTracker: com.jojop.stack:c71b77f7: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+08-27 11:56:22.874  5177  5177 D InsetsController: hide(ime(), fromIme=false)
+08-27 11:56:22.874  5177  5177 I ImeTracker: com.jojop.stack:c71b77f7: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+08-27 11:56:22.875  5177  5177 D CompatChangeReporter: Compat change id reported: 395521150; UID 10405; state: ENABLED
+08-27 11:56:22.878  5177  5390 I Unity   : SetGameState: isLoading: false, mode: UNKNOWN, label: 0, quality: 2
+08-27 11:56:22.887  5177  5177 W InsetsSource: Has no intersection or mTmpFrame.height(), return Insets.NONE mTmpFrame.height() =0 hasIntersection =false
+08-27 11:56:22.889  5177  5177 D gti.InputConnection: onApplyWindowInsetsfalse
+08-27 11:56:22.889  5177  5177 V GameActivity: onImeInsetsChanged from Text Listener
+08-27 11:56:22.889  5177  5177 D gti.InputConnection: onApplyWindowInsetsfalse
+08-27 11:56:22.889  5177  5177 V GameActivity: onImeInsetsChanged from Text Listener
+08-27 11:56:22.897  5177  5390 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-27 11:56:22.897  5177  5390 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-27 11:56:22.902  5177  5390 D Unity   : Sensor :        Accelerometer ( 1) ; 0.004786 / 0.00s ; bmi26x Accelerometer Non-wakeup / BOSCH 
+08-27 11:56:22.902  5177  5390 D Unity   : Using NDK Choreographer.
+08-27 11:56:22.992  5177  5390 I IL2CPP  : Locale zh-CN
+08-27 11:56:23.003  5177  5390 I Unity   : Package 'DefaultPackage' created file system: 'YooAsset.SandboxFileSystem'.
+08-27 11:56:23.003  5177  5390 I Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+08-27 11:56:23.003  5177  5390 I Unity   : UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+08-27 11:56:23.003  5177  5390 I Unity   : UnityEngine.Logger:Log(LogType, Object)
+08-27 11:56:23.003  5177  5390 I Unity   : UnityEngine.Debug:Log(Object)
+08-27 11:56:23.003  5177  5390 I Unity   : YooAsset.YooLogger:Log(String) (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\Utility\YooLogger.cs:53)
+08-27 11:56:23.003  5177  5390 I Unity   : YooAsset.FileSystemParameters:CreateFileSystem(String) (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\FileSystem\FileSystemParameters.cs:64)
+08-27 11:56:23.003  5177  5390 I Unity   : YooAsset.InitializeFileSystemOperation:InternalUpdate() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\ResourcePackage\Operations\Internal\InitializeFileSystemOperation.cs:77)
+08-27 11:56:23.003  5177  5390 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\AsyncOperation\AsyncOperationBase.cs:238)
+08-27 11:56:23.003  5177  5390 I Unity   : YooAsset.InitializePackageOperation:InternalUpdate() (at .\Library\PackageCa
+08-27 11:56:23.005  5177  5390 I Unity   : YooAssetSettings not found, using default configuration.
+08-27 11:56:23.005  5177  5390 I Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+08-27 11:56:23.005  5177  5390 I Unity   : UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+08-27 11:56:23.005  5177  5390 I Unity   : UnityEngine.Logger:Log(LogType, Object)
+08-27 11:56:23.005  5177  5390 I Unity   : UnityEngine.Debug:Log(Object)
+08-27 11:56:23.005  5177  5390 I Unity   : YooAsset.YooLogger:Log(String) (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\Utility\YooLogger.cs:53)
+08-27 11:56:23.005  5177  5390 I Unity   : YooAsset.YooAssetConfiguration:GetSettings() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\Settings\YooAssetConfiguration.cs:39)
+08-27 11:56:23.005  5177  5390 I Unity   : YooAsset.YooAssetConfiguration:GetMobileCacheRoot() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\Settings\YooAssetConfiguration.cs:203)
+08-27 11:56:23.005  5177  5390 I Unity   : YooAsset.YooAssetConfiguration:GetDefaultCacheRoot() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\Settings\YooAssetConfiguration.cs:225)
+08-27 11:56:23.005  5177  5390 I Unity   : YooAsset.YooAssetConfiguration:GetDefaultCacheRoot(String) (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\Settings\Y
+08-27 11:56:23.012  5177  5390 W Unity   : No action required on overwrite installation.
+08-27 11:56:23.012  5177  5390 W Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+08-27 11:56:23.012  5177  5390 W Unity   : UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+08-27 11:56:23.012  5177  5390 W Unity   : UnityEngine.Logger:Log(LogType, Object)
+08-27 11:56:23.012  5177  5390 W Unity   : UnityEngine.Debug:LogWarning(Object)
+08-27 11:56:23.012  5177  5390 W Unity   : YooAsset.YooLogger:LogWarning(String) (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\Utility\YooLogger.cs:68)
+08-27 11:56:23.012  5177  5390 W Unity   : YooAsset.SFSInitializeOperation:InternalUpdate() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\FileSystem\Services\SandboxFileSystem\Operations\SFSInitializeOperation.cs:71)
+08-27 11:56:23.012  5177  5390 W Unity   : YooAsset.AsyncOperationBase:UpdateOperation() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\AsyncOperation\AsyncOperationBase.cs:238)
+08-27 11:56:23.012  5177  5390 W Unity   : YooAsset.InitializeFileSystemOperation:InternalUpdate() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\ResourcePackage\Operations\Internal\InitializeFileSystemOperation.cs:95)
+08-27 11:56:23.012  5177  5390 W Unity   : YooAsset.AsyncOperationBase:UpdateOperation() (at .\Librar
+08-27 11:56:23.013  5177  5390 I Unity   : Saved application footprint: '3d0b90f5fee7498499edf20d48e67333'.
+08-27 11:56:23.013  5177  5390 I Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+08-27 11:56:23.013  5177  5390 I Unity   : UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+08-27 11:56:23.013  5177  5390 I Unity   : UnityEngine.Logger:Log(LogType, Object)
+08-27 11:56:23.013  5177  5390 I Unity   : UnityEngine.Debug:Log(Object)
+08-27 11:56:23.013  5177  5390 I Unity   : YooAsset.YooLogger:Log(String) (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\Utility\YooLogger.cs:53)
+08-27 11:56:23.013  5177  5390 I Unity   : YooAsset.ApplicationFootprint:Overwrite(String) (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\FileSystem\Services\SandboxFileSystem\ApplicationFootprint.cs:63)
+08-27 11:56:23.013  5177  5390 I Unity   : YooAsset.SFSInitializeOperation:InternalUpdate() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\FileSystem\Services\SandboxFileSystem\Operations\SFSInitializeOperation.cs:95)
+08-27 11:56:23.013  5177  5390 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\AsyncOperation\AsyncOperationBase.cs:238)
+08-27 11:56:23.013  5177  5390 I Unity   : YooAsset.InitializeFileSystemOperation:InternalUpdate() (at .\Librar
+08-27 11:56:23.050  5177  5390 I Unity   : Cache file search completed in 0.0 seconds. Found 218 cache files.
+08-27 11:56:23.050  5177  5390 I Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+08-27 11:56:23.050  5177  5390 I Unity   : UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+08-27 11:56:23.050  5177  5390 I Unity   : UnityEngine.Logger:Log(LogType, Object)
+08-27 11:56:23.050  5177  5390 I Unity   : UnityEngine.Debug:Log(Object)
+08-27 11:56:23.050  5177  5390 I Unity   : YooAsset.YooLogger:Log(String) (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\Utility\YooLogger.cs:53)
+08-27 11:56:23.050  5177  5390 I Unity   : YooAsset.SearchCacheFilesOperation:InternalUpdate() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\BundleCache\Services\SandboxBundleCache\Operations\Internal\SearchCacheFilesOperation.cs:75)
+08-27 11:56:23.050  5177  5390 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\AsyncOperation\AsyncOperationBase.cs:238)
+08-27 11:56:23.050  5177  5390 I Unity   : YooAsset.SBCInitializeOperation:InternalUpdate() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\BundleCache\Services\SandboxBundleCache\Operations\SBCInitializeOperation.cs:48)
+08-27 11:56:23.050  5177  5390 I Unity   : YooAsset.AsyncOperationBase:Updat
+08-27 11:56:23.050  5177  5390 I Unity   : Maximum verify concurrency is 8.
+08-27 11:56:23.050  5177  5390 I Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+08-27 11:56:23.050  5177  5390 I Unity   : UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+08-27 11:56:23.050  5177  5390 I Unity   : UnityEngine.Logger:Log(LogType, Object)
+08-27 11:56:23.050  5177  5390 I Unity   : UnityEngine.Debug:Log(Object)
+08-27 11:56:23.050  5177  5390 I Unity   : YooAsset.YooLogger:Log(String) (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\Utility\YooLogger.cs:53)
+08-27 11:56:23.050  5177  5390 I Unity   : YooAsset.VerifyCacheFilesOperation:InternalUpdate() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\BundleCache\Services\SandboxBundleCache\Operations\Internal\VerifyCacheFilesOperation.cs:64)
+08-27 11:56:23.050  5177  5390 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\AsyncOperation\AsyncOperationBase.cs:238)
+08-27 11:56:23.050  5177  5390 I Unity   : YooAsset.SBCInitializeOperation:InternalUpdate() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\BundleCache\Services\SandboxBundleCache\Operations\SBCInitializeOperation.cs:73)
+08-27 11:56:23.050  5177  5390 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation() (at .\Library\Package
+08-27 11:56:23.476  5177  5669 E LB      : fail to open node: No such file or directory
+08-27 11:56:23.475  5177  5177 W UnityGfxDeviceW: type=1400 audit(0.0:2007343): avc:  denied  { getattr } for  path="/sys/module/metis/parameters/minor_window_app" dev="sysfs" ino=78746 scontext=u:r:untrusted_app:s0:c149,c257,c512,c768 tcontext=u:object_r:sysfs_migt:s0 tclass=file permissive=0 app=com.jojop.stack
+08-27 11:56:23.625  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 3s(f:0 m:0 s:0 k:0 z:3005) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:23.636  5177  5390 I Unity   : Cache file verification completed in 0.6 seconds.
+08-27 11:56:23.636  5177  5390 I Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+08-27 11:56:23.636  5177  5390 I Unity   : UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+08-27 11:56:23.636  5177  5390 I Unity   : UnityEngine.Logger:Log(LogType, Object)
+08-27 11:56:23.636  5177  5390 I Unity   : UnityEngine.Debug:Log(Object)
+08-27 11:56:23.636  5177  5390 I Unity   : YooAsset.YooLogger:Log(String) (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\Utility\YooLogger.cs:53)
+08-27 11:56:23.636  5177  5390 I Unity   : YooAsset.VerifyCacheFilesOperation:InternalUpdate() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\BundleCache\Services\SandboxBundleCache\Operations\Internal\VerifyCacheFilesOperation.cs:102)
+08-27 11:56:23.636  5177  5390 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\AsyncOperation\AsyncOperationBase.cs:238)
+08-27 11:56:23.636  5177  5390 I Unity   : YooAsset.SBCInitializeOperation:InternalUpdate() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\BundleCache\Services\SandboxBundleCache\Operations\SBCInitializeOperation.cs:73)
+08-27 11:56:23.636  5177  5390 I Unity   : YooAsset.AsyncOperationBase:UpdateOperation() (at
+08-27 11:56:23.676  5177  5390 I Unity   : SetGameState: isLoading: true, mode: UNKNOWN, label: -4, quality: 2
+08-27 11:56:24.625  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 4s(f:0 m:0 s:0 k:0 z:4005) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:24.990  5177  5390 I Unity   : SetGameState: isLoading: false, mode: UNKNOWN, label: 0, quality: 2
+08-27 11:56:25.009  5177  5390 I Unity   : SetGameState: isLoading: true, mode: UNKNOWN, label: -4, quality: 2
+08-27 11:56:25.568  5177  5390 I Unity   : SetGameState: isLoading: false, mode: UNKNOWN, label: 0, quality: 2
+08-27 11:56:25.571  5177  5390 I Unity   : SetGameState: isLoading: true, mode: UNKNOWN, label: -4, quality: 2
+08-27 11:56:25.625  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 5s(f:0 m:0 s:0 k:0 z:5005) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:26.312  5177  5390 I Unity   : SetGameState: isLoading: false, mode: UNKNOWN, label: 0, quality: 2
+08-27 11:56:26.329  5177  5390 I Unity   : No tags specified, downloading all required bundles.
+08-27 11:56:26.329  5177  5390 I Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+08-27 11:56:26.329  5177  5390 I Unity   : UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+08-27 11:56:26.329  5177  5390 I Unity   : UnityEngine.Logger:Log(LogType, Object)
+08-27 11:56:26.329  5177  5390 I Unity   : UnityEngine.Debug:Log(Object)
+08-27 11:56:26.329  5177  5390 I Unity   : YooAsset.YooLogger:Log(String) (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\Utility\YooLogger.cs:53)
+08-27 11:56:26.329  5177  5390 I Unity   : YooAsset.FileSystemHost:CreateResourceDownloader(PackageManifest, ResourceDownloaderOptions) (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\ResourcePackage\FileSystemHost.cs:288)
+08-27 11:56:26.329  5177  5390 I Unity   : YooAsset.FileSystemHost:CreateResourceDownloader(ResourceDownloaderOptions) (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\ResourcePackage\FileSystemHost.cs:274)
+08-27 11:56:26.329  5177  5390 I Unity   : YooAsset.ResourcePackage:CreateResourceDownloader(ResourceDownloaderOptions) (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\ResourcePackage\ResourcePackage.cs:928)
+08-27 11:56:26.329  5177  5390 I Unity   : JojoP.AOT.Boot.<DownloadDiffAsync>d__15:MoveNe
+08-27 11:56:26.330  5177  5390 I Unity   : Beginning download of 1 files (2305763 bytes).
+08-27 11:56:26.330  5177  5390 I Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+08-27 11:56:26.330  5177  5390 I Unity   : UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+08-27 11:56:26.330  5177  5390 I Unity   : UnityEngine.Logger:Log(LogType, Object)
+08-27 11:56:26.330  5177  5390 I Unity   : UnityEngine.Debug:Log(Object)
+08-27 11:56:26.330  5177  5390 I Unity   : YooAsset.YooLogger:Log(String) (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\Utility\YooLogger.cs:53)
+08-27 11:56:26.330  5177  5390 I Unity   : YooAsset.DownloaderOperation:InternalStart() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\ResourcePackage\Operations\DownloaderOperation.cs:105)
+08-27 11:56:26.330  5177  5390 I Unity   : YooAsset.AsyncOperationBase:StartOperation() (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\AsyncOperation\AsyncOperationBase.cs:204)
+08-27 11:56:26.330  5177  5390 I Unity   : YooAsset.AsyncOperationScheduler:StartOperation(AsyncOperationBase) (at .\Library\PackageCache\com.tuyoogame.yooasset@c3cef440534e\Runtime\AsyncOperation\AsyncOperationScheduler.cs:71)
+08-27 11:56:26.330  5177  5390 I Unity   : YooAsset.AsyncOperationSystem:StartOperation(String, AsyncOperationBase) (at .\Library\PackageCache\com.tuyoogame.y
+08-27 11:56:26.379  5177  5390 I Unity   : SetGameState: isLoading: true, mode: UNKNOWN, label: -4, quality: 2
+08-27 11:56:26.625  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 6s(f:0 m:0 s:0 k:0 z:6005) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:27.625  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 7s(f:0 m:0 s:0 k:0 z:7005) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:28.625  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 8s(f:0 m:0 s:0 k:0 z:8005) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:28.856  5177  5390 I Unity   : SetGameState: isLoading: false, mode: UNKNOWN, label: 0, quality: 2
+08-27 11:56:28.942  5177  5390 I Unity   : [JojoP.AOT] LoadMetadataForAOTAssembly:Luban.Runtime.dll ret:OK
+08-27 11:56:28.942  5177  5390 I Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+08-27 11:56:28.942  5177  5390 I Unity   : UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+08-27 11:56:28.942  5177  5390 I Unity   : UnityEngine.Logger:Log(LogType, Object)
+08-27 11:56:28.942  5177  5390 I Unity   : UnityEngine.Debug:Log(Object)
+08-27 11:56:28.942  5177  5390 I Unity   : JojoP.AOT.Boot.<LoadHybridClrAndAotMetaAsync>d__16:MoveNext() (at E:\Project\JojoP\unity\Assets\AOT\Boot\BootPatchPipeline.cs:260)
+08-27 11:56:28.942  5177  5390 I Unity   : Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask`1:Run() (at .\Library\PackageCache\com.cysharp.unitask@dc216dc4183d\Runtime\CompilerServices\StateMachineRunner.cs:189)
+08-27 11:56:28.942  5177  5390 I Unity   : Cysharp.Threading.Tasks.AwaiterActions:Continuation(Object) (at .\Library\PackageCache\com.cysharp.unitask@dc216dc4183d\Runtime\UniTask.cs:25)
+08-27 11:56:28.942  5177  5390 I Unity   : Cysharp.Threading.Tasks.UniTaskCompletionSourceCore`1:TrySetResult(Byte[]) (at .\Library\PackageCache\com.cysharp.unitask@dc216dc4183d\Runtime\UniTaskCompletionSource.cs:139)
+08-27 11:56:28.942  5177  5390 I Unity   : Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask`2:SetResult(Byte[]) (at .\Library\PackageCache\com.cysharp.uni
+08-27 11:56:28.983  5177  5390 I Unity   : [JojoP.AOT] LoadMetadataForAOTAssembly:System.Core.dll ret:OK
+08-27 11:56:28.983  5177  5390 I Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+08-27 11:56:28.983  5177  5390 I Unity   : UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+08-27 11:56:28.983  5177  5390 I Unity   : UnityEngine.Logger:Log(LogType, Object)
+08-27 11:56:28.983  5177  5390 I Unity   : UnityEngine.Debug:Log(Object)
+08-27 11:56:28.983  5177  5390 I Unity   : JojoP.AOT.Boot.<LoadHybridClrAndAotMetaAsync>d__16:MoveNext() (at E:\Project\JojoP\unity\Assets\AOT\Boot\BootPatchPipeline.cs:260)
+08-27 11:56:28.983  5177  5390 I Unity   : Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask`1:Run() (at .\Library\PackageCache\com.cysharp.unitask@dc216dc4183d\Runtime\CompilerServices\StateMachineRunner.cs:189)
+08-27 11:56:28.983  5177  5390 I Unity   : Cysharp.Threading.Tasks.AwaiterActions:Continuation(Object) (at .\Library\PackageCache\com.cysharp.unitask@dc216dc4183d\Runtime\UniTask.cs:25)
+08-27 11:56:28.983  5177  5390 I Unity   : Cysharp.Threading.Tasks.UniTaskCompletionSourceCore`1:TrySetResult(Byte[]) (at .\Library\PackageCache\com.cysharp.unitask@dc216dc4183d\Runtime\UniTaskCompletionSource.cs:139)
+08-27 11:56:28.983  5177  5390 I Unity   : Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask`2:SetResult(Byte[]) (at .\Library\PackageCache\com.cysharp.unita
+08-27 11:56:29.036  5177  5390 I Unity   : [JojoP.AOT] LoadMetadataForAOTAssembly:UniTask.dll ret:OK
+08-27 11:56:29.036  5177  5390 I Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+08-27 11:56:29.036  5177  5390 I Unity   : UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+08-27 11:56:29.036  5177  5390 I Unity   : UnityEngine.Logger:Log(LogType, Object)
+08-27 11:56:29.036  5177  5390 I Unity   : UnityEngine.Debug:Log(Object)
+08-27 11:56:29.036  5177  5390 I Unity   : JojoP.AOT.Boot.<LoadHybridClrAndAotMetaAsync>d__16:MoveNext() (at E:\Project\JojoP\unity\Assets\AOT\Boot\BootPatchPipeline.cs:260)
+08-27 11:56:29.036  5177  5390 I Unity   : Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask`1:Run() (at .\Library\PackageCache\com.cysharp.unitask@dc216dc4183d\Runtime\CompilerServices\StateMachineRunner.cs:189)
+08-27 11:56:29.036  5177  5390 I Unity   : Cysharp.Threading.Tasks.AwaiterActions:Continuation(Object) (at .\Library\PackageCache\com.cysharp.unitask@dc216dc4183d\Runtime\UniTask.cs:25)
+08-27 11:56:29.036  5177  5390 I Unity   : Cysharp.Threading.Tasks.UniTaskCompletionSourceCore`1:TrySetResult(Byte[]) (at .\Library\PackageCache\com.cysharp.unitask@dc216dc4183d\Runtime\UniTaskCompletionSource.cs:139)
+08-27 11:56:29.036  5177  5390 I Unity   : Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask`2:SetResult(Byte[]) (at .\Library\PackageCache\com.cysharp.unitask@d
+08-27 11:56:29.074  5177  5238 I com.jojop.stack: ProcessProfilingInfo new_methods=0 is saved saved_to_disk=0
+08-27 11:56:29.075  5177  5390 I Unity   : [JojoP.AOT] LoadMetadataForAOTAssembly:UnityEngine.CoreModule.dll ret:OK
+08-27 11:56:29.075  5177  5390 I Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+08-27 11:56:29.075  5177  5390 I Unity   : UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+08-27 11:56:29.075  5177  5390 I Unity   : UnityEngine.Logger:Log(LogType, Object)
+08-27 11:56:29.075  5177  5390 I Unity   : UnityEngine.Debug:Log(Object)
+08-27 11:56:29.075  5177  5390 I Unity   : JojoP.AOT.Boot.<LoadHybridClrAndAotMetaAsync>d__16:MoveNext() (at E:\Project\JojoP\unity\Assets\AOT\Boot\BootPatchPipeline.cs:260)
+08-27 11:56:29.075  5177  5390 I Unity   : Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask`1:Run() (at .\Library\PackageCache\com.cysharp.unitask@dc216dc4183d\Runtime\CompilerServices\StateMachineRunner.cs:189)
+08-27 11:56:29.075  5177  5390 I Unity   : Cysharp.Threading.Tasks.AwaiterActions:Continuation(Object) (at .\Library\PackageCache\com.cysharp.unitask@dc216dc4183d\Runtime\UniTask.cs:25)
+08-27 11:56:29.075  5177  5390 I Unity   : Cysharp.Threading.Tasks.UniTaskCompletionSourceCore`1:TrySetResult(Byte[]) (at .\Library\PackageCache\com.cysharp.unitask@dc216dc4183d\Runtime\UniTaskCompletionSource.cs:139)
+08-27 11:56:29.075  5177  5390 I Unity   : Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask`2:SetResult(Byte[]) (at .\Library\PackageCache\com.cy
+08-27 11:56:29.088  5177  5390 I Unity   : [JojoP.AOT] LoadMetadataForAOTAssembly:UnityEngine.JSONSerializeModule.dll ret:OK
+08-27 11:56:29.088  5177  5390 I Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+08-27 11:56:29.088  5177  5390 I Unity   : UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+08-27 11:56:29.088  5177  5390 I Unity   : UnityEngine.Logger:Log(LogType, Object)
+08-27 11:56:29.088  5177  5390 I Unity   : UnityEngine.Debug:Log(Object)
+08-27 11:56:29.088  5177  5390 I Unity   : JojoP.AOT.Boot.<LoadHybridClrAndAotMetaAsync>d__16:MoveNext() (at E:\Project\JojoP\unity\Assets\AOT\Boot\BootPatchPipeline.cs:260)
+08-27 11:56:29.088  5177  5390 I Unity   : Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask`1:Run() (at .\Library\PackageCache\com.cysharp.unitask@dc216dc4183d\Runtime\CompilerServices\StateMachineRunner.cs:189)
+08-27 11:56:29.088  5177  5390 I Unity   : Cysharp.Threading.Tasks.AwaiterActions:Continuation(Object) (at .\Library\PackageCache\com.cysharp.unitask@dc216dc4183d\Runtime\UniTask.cs:25)
+08-27 11:56:29.088  5177  5390 I Unity   : Cysharp.Threading.Tasks.UniTaskCompletionSourceCore`1:TrySetResult(Byte[]) (at .\Library\PackageCache\com.cysharp.unitask@dc216dc4183d\Runtime\UniTaskCompletionSource.cs:139)
+08-27 11:56:29.088  5177  5390 I Unity   : Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask`2:SetResult(Byte[]) (at .\Library\PackageCac
+08-27 11:56:29.124  5177  5390 I Unity   : [JojoP.AOT] LoadMetadataForAOTAssembly:YooAsset.dll ret:OK
+08-27 11:56:29.124  5177  5390 I Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+08-27 11:56:29.124  5177  5390 I Unity   : UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+08-27 11:56:29.124  5177  5390 I Unity   : UnityEngine.Logger:Log(LogType, Object)
+08-27 11:56:29.124  5177  5390 I Unity   : UnityEngine.Debug:Log(Object)
+08-27 11:56:29.124  5177  5390 I Unity   : JojoP.AOT.Boot.<LoadHybridClrAndAotMetaAsync>d__16:MoveNext() (at E:\Project\JojoP\unity\Assets\AOT\Boot\BootPatchPipeline.cs:260)
+08-27 11:56:29.124  5177  5390 I Unity   : Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask`1:Run() (at .\Library\PackageCache\com.cysharp.unitask@dc216dc4183d\Runtime\CompilerServices\StateMachineRunner.cs:189)
+08-27 11:56:29.124  5177  5390 I Unity   : Cysharp.Threading.Tasks.AwaiterActions:Continuation(Object) (at .\Library\PackageCache\com.cysharp.unitask@dc216dc4183d\Runtime\UniTask.cs:25)
+08-27 11:56:29.124  5177  5390 I Unity   : Cysharp.Threading.Tasks.UniTaskCompletionSourceCore`1:TrySetResult(Byte[]) (at .\Library\PackageCache\com.cysharp.unitask@dc216dc4183d\Runtime\UniTaskCompletionSource.cs:139)
+08-27 11:56:29.124  5177  5390 I Unity   : Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask`2:SetResult(Byte[]) (at .\Library\PackageCache\com.cysharp.unitask@
+08-27 11:56:29.181  5177  5390 I Unity   : [JojoP.AOT] LoadMetadataForAOTAssembly:mscorlib.dll ret:OK
+08-27 11:56:29.181  5177  5390 I Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+08-27 11:56:29.181  5177  5390 I Unity   : UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+08-27 11:56:29.181  5177  5390 I Unity   : UnityEngine.Logger:Log(LogType, Object)
+08-27 11:56:29.181  5177  5390 I Unity   : UnityEngine.Debug:Log(Object)
+08-27 11:56:29.181  5177  5390 I Unity   : JojoP.AOT.Boot.<LoadHybridClrAndAotMetaAsync>d__16:MoveNext() (at E:\Project\JojoP\unity\Assets\AOT\Boot\BootPatchPipeline.cs:260)
+08-27 11:56:29.181  5177  5390 I Unity   : Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask`1:Run() (at .\Library\PackageCache\com.cysharp.unitask@dc216dc4183d\Runtime\CompilerServices\StateMachineRunner.cs:189)
+08-27 11:56:29.181  5177  5390 I Unity   : Cysharp.Threading.Tasks.AwaiterActions:Continuation(Object) (at .\Library\PackageCache\com.cysharp.unitask@dc216dc4183d\Runtime\UniTask.cs:25)
+08-27 11:56:29.181  5177  5390 I Unity   : Cysharp.Threading.Tasks.UniTaskCompletionSourceCore`1:TrySetResult(Byte[]) (at .\Library\PackageCache\com.cysharp.unitask@dc216dc4183d\Runtime\UniTaskCompletionSource.cs:139)
+08-27 11:56:29.181  5177  5390 I Unity   : Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask`2:SetResult(Byte[]) (at .\Library\PackageCache\com.cysharp.unitask@
+08-27 11:56:29.467  5177  5390 I Unity   : SetGameState: isLoading: true, mode: UNKNOWN, label: -1, quality: 2
+08-27 11:56:29.476  5177  5686 D Unity   : Unloading 5 Unused Serialized files (Serialized files now loaded: 6)
+08-27 11:56:29.533  5177  5177 D GameActivity: ************** mainWorkCallback *********
+08-27 11:56:29.534  5177  5177 I ImeTracker: com.jojop.stack:fd3392ac: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+08-27 11:56:29.534  5177  5177 D InsetsController: hide(ime(), fromIme=false)
+08-27 11:56:29.534  5177  5177 I ImeTracker: com.jojop.stack:fd3392ac: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+08-27 11:56:29.535  5177  5390 D Unity   : UnloadTime: 0.216303 ms
+08-27 11:56:29.537  5177  5390 I Unity   : SetGameState: isLoading: false, mode: UNKNOWN, label: -1, quality: 2
+08-27 11:56:29.541  5177  5390 D Unity   : UUID: 1cb241f86626e09a => c1f2527663bb5750883a1e1d28aa7605
+08-27 11:56:29.548  5177  5390 I Unity   : [JojoP.Ads] Mock 骞垮憡宸插垵濮嬪寲
+08-27 11:56:29.548  5177  5390 I Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+08-27 11:56:29.548  5177  5390 I Unity   : UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+08-27 11:56:29.548  5177  5390 I Unity   : UnityEngine.Logger:Log(LogType, Object)
+08-27 11:56:29.548  5177  5390 I Unity   : UnityEngine.Debug:Log(Object)
+08-27 11:56:29.548  5177  5390 I Unity   : System.Runtime.CompilerServices.AsyncTaskMethodBuilder:Start(<AfterConsentAsync>d__17&)
+08-27 11:56:29.548  5177  5390 I Unity   : System.Runtime.CompilerServices.AsyncVoidMethodBuilder:Start(<Start>d__16&)
+08-27 11:56:29.548  5177  5390 I Unity   : 
+08-27 11:56:29.567  5177  5390 D Unity   : Unloading 6 unused Assets / (39.1 KB). Loaded Objects now: 1208.
+08-27 11:56:29.567  5177  5390 D Unity   : Memory consumption went from 146.0 MB to 145.9 MB.
+08-27 11:56:29.567  5177  5390 D Unity   : Total: 3.313593 ms (FindLiveObjects: 0.073542 ms CreateObjectMapping: 0.022552 ms MarkObjects: 3.110365 ms  DeleteObjects: 0.106302 ms)
+08-27 11:56:29.567  5177  5390 D Unity   : 
+08-27 11:56:29.567  5177  5390 I Unity   : [JojoP.AOT] 宸蹭粠 Yoo 杩涘叆 Main锛坈hannel=test锛?
+08-27 11:56:29.567  5177  5390 I Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+08-27 11:56:29.567  5177  5390 I Unity   : UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+08-27 11:56:29.567  5177  5390 I Unity   : UnityEngine.Logger:Log(LogType, Object)
+08-27 11:56:29.567  5177  5390 I Unity   : UnityEngine.Debug:Log(Object)
+08-27 11:56:29.567  5177  5390 I Unity   : JojoP.AOT.<EnterMainAsync>d__17:MoveNext() (at E:\Project\JojoP\unity\Assets\AOT\AppLauncher.cs:179)
+08-27 11:56:29.567  5177  5390 I Unity   : Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask`1:Run() (at .\Library\PackageCache\com.cysharp.unitask@dc216dc4183d\Runtime\CompilerServices\StateMachineRunner.cs:189)
+08-27 11:56:29.567  5177  5390 I Unity   : Cysharp.Threading.Tasks.Internal.ContinuationQueue:RunCore() (at .\Library\PackageCache\com.cysharp.unitask@dc216dc4183d\Runtime\Internal\ContinuationQueue.cs:194)
+08-27 11:56:29.567  5177  5390 I Unity   : Cysharp.Threading.Tasks.Internal.ContinuationQueue:Update() (at .\Library\PackageCache\com.cysharp.unitask@dc216dc4183d\Runtime\Internal\ContinuationQueue.cs:159)
+08-27 11:56:29.567  5177  5390 I Unity   : Cysharp.Threading.Tasks.Internal.ContinuationQueue:Run() (at .\Library\PackageCache\com.cysharp.unitask@dc216dc4183d\Runtime\Internal\ContinuationQu
+08-27 11:56:29.625  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 9s(f:0 m:0 s:0 k:0 z:9005) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:30.625  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 10s(f:0 m:0 s:0 k:0 z:10005) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:31.625  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 11s(f:0 m:0 s:0 k:0 z:11005) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:32.625  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 12s(f:0 m:0 s:0 k:0 z:12005) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:33.582  5177  5177 I MIUIInput: [MotionEvent] ViewRootImpl windowName 'com.jojop.stack/com.unity3d.player.UnityPlayerGameActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=1246262380, downTime=1246262380, phoneEventTime=1787802993572 } moveCount:0
+08-27 11:56:33.585  5177  5177 D VRI[UnityPlayerGameActivity]: getMiuiFreeformStackInfo mTmpFrames.miuiFreeFormStackInfo: null
+08-27 11:56:33.625  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 13s(f:0 m:0 s:0 k:0 z:13005) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:33.662  5177  5177 I MIUIInput: [MotionEvent] ViewRootImpl windowName 'com.jojop.stack/com.unity3d.player.UnityPlayerGameActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=1246262468, downTime=1246262380, phoneEventTime=1787802993660 } moveCount:0
+08-27 11:56:33.714  5177  5390 I Unity   : [JojoP] CfgTables OK roles=19 skills=36 voices=7 via=Yoo鈫扙ditorFile鈫扲esources
+08-27 11:56:33.714  5177  5390 I Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+08-27 11:56:33.714  5177  5390 I Unity   : UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+08-27 11:56:33.714  5177  5390 I Unity   : UnityEngine.Logger:Log(LogType, Object)
+08-27 11:56:33.714  5177  5390 I Unity   : UnityEngine.Debug:Log(Object)
+08-27 11:56:33.714  5177  5390 I Unity   : UnityEngine.Events.InvokableCall:Invoke() (at \home\bokken\build\output\unity\unity\Runtime\Export\UnityEvent\UnityEvent.cs:178)
+08-27 11:56:33.714  5177  5390 I Unity   : UnityEngine.Events.UnityEvent:Invoke() (at \home\bokken\build\output\unity\unity\artifacts\generated\UnityEvent\UnityEvent_0.cs:57)
+08-27 11:56:33.714  5177  5390 I Unity   : UnityEngine.UI.Button:Press() (at .\Library\PackageCache\com.unity.ugui@3dd2fbd8c1f1\Runtime\UGUI\UI\Core\Button.cs:71)
+08-27 11:56:33.714  5177  5390 I Unity   : UnityEngine.UI.Button:OnPointerClick(PointerEventData) (at .\Library\PackageCache\com.unity.ugui@3dd2fbd8c1f1\Runtime\UGUI\UI\Core\Button.cs:115)
+08-27 11:56:33.714  5177  5390 I Unity   : UnityEngine.EventSystems.ExecuteEvents:Execute(IPointerClickHandler, BaseEventData) (at .\Library\PackageCache\com.unity.ugui@3dd2fbd8c1f1\Runtime\UGUI\EventSystem\ExecuteEvents.cs:57)
+08-27 11:56:33.714  5177  5390 I Unity   : UnityEngi
+08-27 11:56:33.719  5177  5390 I Unity   : [JojoP] 鏈湴瀛樻。 路 涓汉鏁版嵁绗竴娆℃媺鍙?
+08-27 11:56:33.719  5177  5390 I Unity   : path=/storage/emulated/0/Android/data/com.jojop.stack/files/jojop/meta.json
+08-27 11:56:33.719  5177  5390 I Unity   : {
+08-27 11:56:33.719  5177  5390 I Unity   :     "stamina": 10,
+08-27 11:56:33.719  5177  5390 I Unity   :     "staminaDay": 20260827,
+08-27 11:56:33.719  5177  5390 I Unity   :     "train": 0,
+08-27 11:56:33.719  5177  5390 I Unity   :     "favor": 0,
+08-27 11:56:33.719  5177  5390 I Unity   :     "renown": 0,
+08-27 11:56:33.719  5177  5390 I Unity   :     "unlockedChapter": 1,
+08-27 11:56:33.719  5177  5390 I Unity   :     "potentialHp": 0,
+08-27 11:56:33.719  5177  5390 I Unity   :     "potentialAtk": 0,
+08-27 11:56:33.719  5177  5390 I Unity   :     "potentialDef": 0,
+08-27 11:56:33.719  5177  5390 I Unity   :     "healTier": 0,
+08-27 11:56:33.719  5177  5390 I Unity   :     "highestGrade": 0,
+08-27 11:56:33.719  5177  5390 I Unity   :     "selectedHero": "CS_lixin",
+08-27 11:56:33.719  5177  5390 I Unity   :     "trainSpent": 0,
+08-27 11:56:33.719  5177  5390 I Unity   :     "kills": 0,
+08-27 11:56:33.719  5177  5390 I Unity   :     "archive": "CS_lixin",
+08-27 11:56:33.719  5177  5390 I Unity   :     "bonds": "",
+08-27 11:56:33.719  5177  5390 I Unity   :     "version": 1
+08-27 11:56:33.719  5177  5390 I Unity   : }
+08-27 11:56:33.719  5177  5390 I Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+08-27 11:56:33.719  5177  5390 I Unity   : UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+08-27 11:56:33.719  5177  5390 I Unity   : UnityEngine.Logger:Log(LogType, Object)
+08-27 11:56:33.719  5177  5390 I Unity   : UnityEngine.Debug:Log(Object)
+08-27 11:56:33.719  5177  5390 I Unity   : UnityEngine.Events.InvokableCall:Invoke() (at \home\bokken\build\output\unity\unity\Runtime\Export\UnityEvent\UnityEvent.cs:178)
+08-27 11:56:33.719  5177  5390 I Unity   : UnityEngine.Events.UnityEvent:Invoke() (at \home\bokken\build\output\unity\unity\artifacts\generated\UnityEvent\UnityEvent_0.cs:57)
+08-27 11:56:33.719  5177  5390 I Unity   : UnityEngine.UI.Button:Press() (at .\Library\Pack
+08-27 11:56:33.903  5177  5390 E Unity   : ArgumentNullException: Value cannot be null.
+08-27 11:56:33.903  5177  5390 E Unity   : Parameter name: shader
+08-27 11:56:33.903  5177  5390 E Unity   :   at UnityEngine.Bindings.ThrowHelper.ThrowArgumentNullException (System.Object obj, System.String parameterName) [0x00012] in \home\bokken\build\output\unity\unity\Runtime\Export\Scripting\BindingsHelpers.cs:54 
+08-27 11:56:33.903  5177  5390 E Unity   :   at UnityEngine.Material.CreateWithShader (UnityEngine.Material self, UnityEngine.Shader shader) [0x00000] in <00000000000000000000000000000000>:0 
+08-27 11:56:33.903  5177  5390 E Unity   :   at UnityEngine.Material..ctor (UnityEngine.Shader shader) [0x00008] in \home\bokken\build\output\unity\unity\Runtime\Export\Shaders\Material.bindings.cs:17 
+08-27 11:56:33.903  5177  5390 E Unity   :   at UnityEngine.Events.InvokableCall.Invoke () [0x00013] in \home\bokken\build\output\unity\unity\Runtime\Export\UnityEvent\UnityEvent.cs:178 
+08-27 11:56:33.903  5177  5390 E Unity   :   at UnityEngine.Events.UnityEvent.Invoke () [0x0001c] in \home\bokken\build\output\unity\unity\artifacts\generated\UnityEvent\UnityEvent_0.cs:57 
+08-27 11:56:33.903  5177  5390 E Unity   :   at UnityEngine.UI.Button.Press () [0x0002d] in .\Library\PackageCache\com.unity.ugui@3dd2fbd8c1f1\Runtime\UGUI\UI\Core\Button.cs:71 
+08-27 11:56:33.903  5177  5390 E Unity   :   at Uni
+08-27 11:56:34.625  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 14s(f:0 m:0 s:0 k:0 z:14005) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:35.625  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 15s(f:0 m:0 s:0 k:0 z:15005) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:36.625  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 16s(f:0 m:0 s:0 k:0 z:16005) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:37.625  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 17s(f:0 m:0 s:0 k:0 z:17005) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:38.625  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 18s(f:0 m:0 s:0 k:0 z:18005) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:39.628  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 19s(f:0 m:0 s:0 k:0 z:19008) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:40.631  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 20s(f:0 m:0 s:0 k:0 z:20008) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:41.628  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 21s(f:0 m:0 s:0 k:0 z:21008) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:42.128  5177  5177 I MIUIInput: [MotionEvent] ViewRootImpl windowName 'com.jojop.stack/com.unity3d.player.UnityPlayerGameActivity', { action=ACTION_DOWN, id[0]=0, pointerCount=1, eventTime=1246270932, downTime=1246270932, phoneEventTime=1787803002124 } moveCount:0
+08-27 11:56:42.129  5177  5177 D VRI[UnityPlayerGameActivity]: getMiuiFreeformStackInfo mTmpFrames.miuiFreeFormStackInfo: null
+08-27 11:56:42.527  5177  5177 I MIUIInput: [MotionEvent] ViewRootImpl windowName 'com.jojop.stack/com.unity3d.player.UnityPlayerGameActivity', { action=ACTION_UP, id[0]=0, pointerCount=1, eventTime=1246271331, downTime=1246270932, phoneEventTime=1787803002523 } moveCount:28
+08-27 11:56:42.628  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 22s(f:0 m:0 s:0 k:0 z:22008) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:43.097  5177  5177 W InsetsSource: Has no intersection or mTmpFrame.height(), return Insets.NONE mTmpFrame.height() =0 hasIntersection =false
+08-27 11:56:43.114  5177  5177 D gti.InputConnection: onApplyWindowInsetsfalse
+08-27 11:56:43.114  5177  5177 V GameActivity: onImeInsetsChanged from Text Listener
+08-27 11:56:43.114  5177  5177 D gti.InputConnection: onApplyWindowInsetsfalse
+08-27 11:56:43.114  5177  5177 V GameActivity: onImeInsetsChanged from Text Listener
+08-27 11:56:43.115  5177  5177 D gti.InputConnection: onApplyWindowInsetsfalse
+08-27 11:56:43.115  5177  5177 V GameActivity: onImeInsetsChanged from Text Listener
+08-27 11:56:43.115  5177  5390 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-27 11:56:43.116  5177  5390 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-27 11:56:43.116  5177  5390 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-27 11:56:43.125  5177  5177 I Unity   : windowFocusChanged: false
+08-27 11:56:43.130  5177  5390 I Unity   : Handle cmd APP_CMD_LOST_FOCUS(8)
+08-27 11:56:43.346  5177  5312 D CompatChangeReporter: Compat change id reported: 351566728; UID 10405; state: ENABLED
+08-27 11:56:43.628  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 23s(f:0 m:0 s:0 k:0 z:23007) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:43.772  5177  5177 I Unity   : onPause
+08-27 11:56:43.773  5177  5177 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=com.unity3d.player.a.e@eb9a643
+08-27 11:56:43.774  5177  5177 I Unity   : pauseUnity
+08-27 11:56:43.774  5177  5394 I ContentCatcher: SettingTrigger : unregister status observer com.unity3d.player.UnityPlayerGameActivity
+08-27 11:56:43.775  5177  5394 I ContentCatcher: SettingTrigger : unregisterUIAgentListener com.unity3d.player.UnityPlayerGameActivity, uid:10405
+08-27 11:56:43.776  5177  5390 I Unity   : Handle cmd APP_CMD_PAUSE(14)
+08-27 11:56:43.802  5177  5390 D Unity   : Vulkan PSO: Pipeline cache has not changed skipping save handle[8f4c0d0]
+08-27 11:56:43.805  5177  5924 D Unity   : ChoreographerNDK: Ignoring event, since Choreographer is disabled
+08-27 11:56:43.805  5177  5390 D AAudio  : AAudioStream_requestStop(s#1) called
+08-27 11:56:43.805  5177  5390 D AAudioStream: setState(s#1) from 4 to 9
+08-27 11:56:43.805  5177  5390 I AudioTrack: stop(sessionID=87297), packageName: com.jojop.stack
+08-27 11:56:43.805  5177  5390 D AudioTrack: stop(16307): prior state:STATE_ACTIVE
+08-27 11:56:43.805  5177  5390 D AudioTrack: stop(16307): called with 541440 frames delivered
+08-27 11:56:43.808  5177  5390 D AAudioStream: setState(s#1) from 9 to 10
+08-27 11:56:43.815  5177  5390 D Unity   : Sensor :        Accelerometer ( 1) ; 0.004786 / 0.00s ; bmi26x Accelerometer Non-wakeup / BOSCH 
+08-27 11:56:43.815  5177  5390 I Unity   : SetGameState: isLoading: false, mode: CONTENT, label: -6, quality: 2
+08-27 11:56:43.816  5177  5390 I Unity   : Handle cmd APP_CMD_TERM_WINDOW(2)
+08-27 11:56:43.816  5177  5390 D Unity   : AndroidDisplayManagerVulkan::AttachWindow(0x0, 0)
+08-27 11:56:43.816  5177  5177 D Unity   : PersistentUnitySurface.preserveContent: com.unity3d.player.UnityPlayerGameActivity$GameActivitySurfaceView{86b95f9 V.E...... ......I. 0,0-1080,2400 #7f080125 app:id/unitySurfaceView}
+08-27 11:56:43.817  5177  5177 D Unity   : PersistentUnitySurface.PlaceholderView.Copy: com.unity3d.player.UnityPlayerGameActivity$GameActivitySurfaceView{86b95f9 V.E...... ......I. 0,0-1080,2400 #7f080125 app:id/unitySurfaceView} Width 1080  Height 2400
+08-27 11:56:43.820  5177  5177 D HWUI    : [HWUI] Flag vulkan_enhance_pipeline_cache enabled
+08-27 11:56:43.820  5177  5177 D HWUI    : [HWUI] EnhanceVkPipelineCache is disabled
+08-27 11:56:43.820  5177  5177 D HWUI    : [HWUI] Flag ddre enabled
+08-27 11:56:43.832  5177  6296 W libc    : Access denied finding property "vendor.migl.debug"
+08-27 11:56:43.833  5177  6296 I libMiGL : EnableDR: 0
+08-27 11:56:43.833  5177  6296 D libMiGL : mDFIInterval: -1
+08-27 11:56:43.837  5177  6296 I AdrenoGLES-0: QUALCOMM build                   : bad34dcf83, I1064ae0a1f
+08-27 11:56:43.837  5177  6296 I AdrenoGLES-0: Build Date                       : 11/28/25
+08-27 11:56:43.837  5177  6296 I AdrenoGLES-0: OpenGL ES Shader Compiler Version: E031.41.03.64
+08-27 11:56:43.837  5177  6296 I AdrenoGLES-0: Local Branch                     : 
+08-27 11:56:43.837  5177  6296 I AdrenoGLES-0: Remote Branch                    : refs/tags/AU_LINUX_ANDROID_LA.VENDOR.13.2.0.11.00.00.856.062
+08-27 11:56:43.837  5177  6296 I AdrenoGLES-0: Remote Branch                    : NONE
+08-27 11:56:43.837  5177  6296 I AdrenoGLES-0: Reconstruct Branch               : NOTHING
+08-27 11:56:43.837  5177  6296 I AdrenoGLES-0: Build Config                     : S P 14.1.4 AArch64
+08-27 11:56:43.837  5177  6296 I AdrenoGLES-0: Driver Path                      : /vendor/lib64/egl/libGLESv2_adreno.so
+08-27 11:56:43.837  5177  6296 I AdrenoGLES-0: Driver Version                   : 0676.76.1
+08-27 11:56:43.841  5177  6296 I AdrenoGLES-0: PFP: 0x01740181, ME: 0x00000000
+08-27 11:56:43.867  5177  6296 I libEGL  : shader cache num entries: 2
+08-27 11:56:43.868  5177  6296 D HWUI    : [HWUI] Flag vulkan_enhance_pipeline_cache enabled
+08-27 11:56:43.868  5177  6296 D HWUI    : [HWUI] EnhanceVkPipelineCache is disabled
+08-27 11:56:43.868  5177  6296 D HWUI    : [HWUI] Flag ddre enabled
+08-27 11:56:43.868  5177  6296 D SKIA    : [Skia] Flag vulkan_enhance_pipeline_cache enabled
+08-27 11:56:43.868  5177  6296 D SKIA    : [Skia] EnhanceVkPipelineCache is false
+08-27 11:56:43.868  5177  6296 D HWUI    : MiShaderPrecompile handle com.jojop.stack, isSksl: 0, isAppInPreCacheList: 0, isGpuVersionChanged: 0, isSkslChanged: 0
+08-27 11:56:43.903  5177  6295 D Unity   : PixelCopy finished: 0
+08-27 11:56:43.904  5177  5177 D BufferQueueProducer: [86b95f9 SurfaceView[com.jojop.stack/com.unity3d.player.UnityPlayerGameActivity]#1(BLAST Consumer)1](id:143900000001,api:1,p:5177,c:5177) disconnect: api -1 (caller=5177)
+08-27 11:56:43.905  5177  5177 D BufferQueueConsumer: [86b95f9 SurfaceView[com.jojop.stack/com.unity3d.player.UnityPlayerGameActivity]#1(BLAST Consumer)1](id:143900000001,api:0,p:-1,c:5177) disconnect: caller 5177
+08-27 11:56:43.906  5177  5177 D ViewRootImplStubImpl: onSurfaceViewDetached:
+08-27 11:56:43.906  5177  5177 D ViewRootImplStubImpl: , vri:android.view.ViewRootImpl@516e93e, com.jojop.stack/com.unity3d.player.UnityPlayerGameActivity
+08-27 11:56:43.906  5177  5177 D ViewRootImplStubImpl: , vri size:1080x2400
+08-27 11:56:43.906  5177  5177 D ViewRootImplStubImpl: , surfaceView:com.unity3d.player.UnityPlayerGameActivity$GameActivitySurfaceView{86b95f9 V.E...... ......I. 0,0-1080,2400 #7f080125 app:id/unitySurfaceView}, SurfaceView[com.jojop.stack/com.unity3d.player.UnityPlayerGameActivity]
+08-27 11:56:43.906  5177  5177 D ViewRootImplStubImpl: , surfaceView size:1080x2400
+08-27 11:56:43.906  5177  5177 D ViewRootImplStubImpl: , surfaceControl:Surface(name=86b95f9 SurfaceView[com.jojop.stack/com.unity3d.player.UnityPlayerGameActivity](BLAST)#372861)/@0x9c6639f
+08-27 11:56:43.909  5177  5177 D BufferQueueProducer: [VRI[UnityPlayerGameActivity]#0(BLAST Consumer)0](id:143900000000,api:2,p:5177,c:5177) disconnect: api 2 (caller=5177)
+08-27 11:56:43.909  5177  5177 W com.jojop.stack: Binder 0xb400007838f303a0 destroyed after setInheritRt before being parceled.
+08-27 11:56:43.911  5177  5177 D BufferQueueConsumer: [VRI[UnityPlayerGameActivity]#0(BLAST Consumer)0](id:143900000000,api:0,p:-1,c:5177) disconnect: caller 5177
+08-27 11:56:43.911  5177  5177 D ViewRootImpl: Skipping stats log for color mode
+08-27 11:56:43.914  5177  5390 I Unity   : Handle cmd APP_CMD_STOP(15)
+08-27 11:56:43.915  5177  5390 I Unity   : Handle cmd APP_CMD_SAVE_STATE(13)
+08-27 11:56:43.922  5177  5177 W InsetsSource: Has no intersection or mTmpFrame.height(), return Insets.NONE mTmpFrame.height() =0 hasIntersection =false
+08-27 11:56:43.924  5177  5390 I Unity   : Handle cmd APP_CMD_LOW_MEMORY(10)
+08-27 11:56:45.162  5177  5177 D ViewRootImpl: Skipping stats log for color mode
+08-27 11:56:45.165  5177  5390 I Unity   : Handle cmd APP_CMD_START(11)
+08-27 11:56:45.166  5177  5177 D Activity: Activity = ActivityInfo{fc92d24 com.unity3d.player.UnityPlayerGameActivity}, Resume onConfigurationChanged = {0.9 460mcc2mnc [zh_CN] ldltr sw393dp w393dp h873dp 440dpi nrml long hdr widecg port uimode=12 finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 1080, 2400) mAppBounds=Rect(0, 0 - 1080, 2400) mMaxBounds=Rect(0, 0 - 1080, 2400) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=standard mAlwaysOnTop=undefined mRotation=ROTATION_0 mInSplitScreen=false letterBoxed=false foScaled=false isSpecificEmbedded=false embeddingScale=1.0} s.2 fontWeightAdjustment=0/d/0 themeChanged=0 themeChangedFlags=0 display=0 extraData = Bundle[{}] screenType=0/0}
+08-27 11:56:45.166  5177  5177 I Unity   : onResume
+08-27 11:56:45.170  5177  5390 I Unity   : Handle cmd APP_CMD_RESUME(12)
+08-27 11:56:45.176  5177  5177 W InsetsSource: Has no intersection or mTmpFrame.height(), return Insets.NONE mTmpFrame.height() =0 hasIntersection =false
+08-27 11:56:45.176  5177  5177 W libc    : Access denied finding property "vendor.display.enable_optimal_refresh_rate"
+08-27 11:56:45.178  5177  5177 W libc    : Access denied finding property "vendor.display.enable_optimal_refresh_rate"
+08-27 11:56:45.178  5177  5674 D BLASTBufferQueue: onGameOptimizeParameter: new GameOptimizeInfo game: no valid app, VsyncBuffergame: no valid app, mOptimizeEnable: 0, mSuperTouchEnable: 0,mVsyncBufferEnable: 0,mPendingBufferEnable 0,mNeedDynamicDropBuffer: 0, mNeedFirstFrameDropBuffer: 0
+08-27 11:56:45.178  5177  5674 D BLASTBufferQueue: 
+08-27 11:56:45.179  5177  5177 D gti.InputConnection: onApplyWindowInsetsfalse
+08-27 11:56:45.179  5177  5177 V GameActivity: onImeInsetsChanged from Text Listener
+08-27 11:56:45.179  5177  5390 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-27 11:56:45.180  5177  5177 D ViewRootImplStubImpl: onSurfaceViewAttached:
+08-27 11:56:45.180  5177  5177 D ViewRootImplStubImpl: , vri:android.view.ViewRootImpl@516e93e, com.jojop.stack/com.unity3d.player.UnityPlayerGameActivity
+08-27 11:56:45.180  5177  5177 D ViewRootImplStubImpl: , vri size:1080x2400
+08-27 11:56:45.180  5177  5177 D ViewRootImplStubImpl: , surfaceView:com.unity3d.player.UnityPlayerGameActivity$GameActivitySurfaceView{86b95f9 V.E...... ......I. 0,0-1080,2400 #7f080125 app:id/unitySurfaceView}, SurfaceView[com.jojop.stack/com.unity3d.player.UnityPlayerGameActivity]
+08-27 11:56:45.180  5177  5177 D ViewRootImplStubImpl: , surfaceView size:1080x2400
+08-27 11:56:45.180  5177  5177 D ViewRootImplStubImpl: , surfaceControl:Surface(name=86b95f9 SurfaceView[com.jojop.stack/com.unity3d.player.UnityPlayerGameActivity](BLAST)#372893)/@0x85523e6
+08-27 11:56:45.180  5177  5177 W libc    : Access denied finding property "vendor.display.enable_optimal_refresh_rate"
+08-27 11:56:45.180  5177  5238 D BLASTBufferQueue: onGameOptimizeParameter: new GameOptimizeInfo game: no valid app, VsyncBuffergame: no valid app, mOptimizeEnable: 0, mSuperTouchEnable: 0,mVsyncBufferEnable: 0,mPendingBufferEnable 0,mNeedDynamicDropBuffer: 0, mNeedFirstFrameDropBuffer: 0
+08-27 11:56:45.180  5177  5238 D BLASTBufferQueue: 
+08-27 11:56:45.181  5177  5177 W libc    : Access denied finding property "vendor.display.enable_optimal_refresh_rate"
+08-27 11:56:45.181  5177  5390 I Unity   : Handle cmd APP_CMD_INIT_WINDOW(1)
+08-27 11:56:45.182  5177  5390 D Unity   : AndroidDisplayManagerVulkan::AttachWindow(0xb4000078b8f2f9f0, 0)
+08-27 11:56:45.182  5177  5390 D Unity   : InitializeOrResetSwapChain 1080x2400 hdr=0 samples=0
+08-27 11:56:45.182  5177  5177 D gti.InputConnection: onApplyWindowInsetsfalse
+08-27 11:56:45.182  5177  5177 V GameActivity: onImeInsetsChanged from Text Listener
+08-27 11:56:45.182  5177  5177 D gti.InputConnection: onApplyWindowInsetsfalse
+08-27 11:56:45.182  5177  5177 V GameActivity: onImeInsetsChanged from Text Listener
+08-27 11:56:45.183  5177  5177 D SurfaceView: UPDATE Surface(name=86b95f9 SurfaceView[com.jojop.stack/com.unity3d.player.UnityPlayerGameActivity]#372892)/@0x7148d27, mIsProjectionMode = false
+08-27 11:56:45.183  5177  5177 D VRI[UnityPlayerGameActivity]: vri.Setup new sync=wmsSync-VRI[UnityPlayerGameActivity]#6
+08-27 11:56:45.190  5177  5177 D VRI[UnityPlayerGameActivity]: vri.reportDrawFinished 0 0 Rect(0, 0 - 1080, 2400)
+08-27 11:56:45.191  5177  5177 D gti.InputConnection: onApplyWindowInsetsfalse
+08-27 11:56:45.191  5177  5177 V GameActivity: onImeInsetsChanged from Text Listener
+08-27 11:56:45.191  5177  5177 D gti.InputConnection: onApplyWindowInsetsfalse
+08-27 11:56:45.191  5177  5177 V GameActivity: onImeInsetsChanged from Text Listener
+08-27 11:56:45.201  5177  5177 W InsetsSource: Has no intersection or mTmpFrame.height(), return Insets.NONE mTmpFrame.height() =0 hasIntersection =false
+08-27 11:56:45.202  5177  5177 D InsetsController: com.jojop.stack/com.unity3d.player.UnityPlayerGameActivity hide: statusBars android.view.InsetsController@642754 android.view.InsetsController.applyAnimation:2241 android.view.InsetsController.applyAnimation:2212 android.view.InsetsController.onControlsChanged:1155 android.view.ViewRootImpl.onActiveControlsChanged:3360 android.view.ViewRootImpl.handleInsetsControlChanged:3314 android.view.ViewRootImpl$W.insetsControlChanged:13894 
+08-27 11:56:45.203  5177  5486 D InsetsController: default animation onReady types: 1 controller=android.view.InsetsAnimationControlImpl@163fa1f
+08-27 11:56:45.203  5177  5486 D ViewRootImplStubImpl: requestedTypes: 1
+08-27 11:56:45.204  5177  5486 D ViewRootImplStubImpl: notifyImeAnimEvent: isForShow = false, isAnimStart = true, has context = true, has AutofillManager = true, isMiuiAnim = false
+08-27 11:56:45.207  5177  5394 I ContentCatcher: SettingTrigger : register screen QA status observer com.unity3d.player.UnityPlayerGameActivity
+08-27 11:56:45.209  5177  5394 I ContentCatcher: SettingTrigger : register global collect status observer com.unity3d.player.UnityPlayerGameActivity
+08-27 11:56:45.209  5177  5177 D gti.InputConnection: onApplyWindowInsetsfalse
+08-27 11:56:45.209  5177  5177 V GameActivity: onImeInsetsChanged from Text Listener
+08-27 11:56:45.210  5177  5177 D gti.InputConnection: onApplyWindowInsetsfalse
+08-27 11:56:45.210  5177  5177 V GameActivity: onImeInsetsChanged from Text Listener
+08-27 11:56:45.210  5177  5177 D VRI[UnityPlayerGameActivity]: vri.Setup new sync=wmsSync-VRI[UnityPlayerGameActivity]#8
+08-27 11:56:45.210  5177  5394 I ContentCatcher: SettingTrigger : registerUIAgentListener com.unity3d.player.UnityPlayerGameActivity, uid:10405
+08-27 11:56:45.214  5177  5685 I SwappyDisplayManager: Terminating looper thread
+08-27 11:56:45.218  5177  5390 D BufferQueueProducer: [86b95f9 SurfaceView[com.jojop.stack/com.unity3d.player.UnityPlayerGameActivity]#1(BLAST Consumer)1](id:143900000001,api:0,p:-1,c:5177) disconnect: api 1 (caller=5177)
+08-27 11:56:45.219  5177  5390 E qdgralloc: GetSize: Unrecognized pixel format: 0x3b
+08-27 11:56:45.219  5177  5390 W qdgralloc: gralloc failed to allocate buffer for size 0 format 59 AWxAH 1x1 usage 2816
+08-27 11:56:45.219  5177  5390 E Gralloc4: isSupported(1, 1, 59, 1, ...) failed with 7
+08-27 11:56:45.221  5177  5390 E GraphicBufferAllocator: Failed to allocate (4 x 4) layerCount 1 format 59 usage b00: 7
+08-27 11:56:45.221  5177  5390 E AHardwareBuffer: GraphicBuffer(w=4, h=4, lc=1) failed (Unknown error -7), handle=0x0
+08-27 11:56:45.221  5177  5390 E qdgralloc: GetSize: Unrecognized pixel format: 0x3b
+08-27 11:56:45.221  5177  5390 W qdgralloc: gralloc failed to allocate buffer for size 0 format 59 AWxAH 1x1 usage 2816
+08-27 11:56:45.221  5177  5390 E Gralloc4: isSupported(1, 1, 59, 1, ...) failed with 7
+08-27 11:56:45.222  5177  5390 E GraphicBufferAllocator: Failed to allocate (4 x 4) layerCount 1 format 59 usage b00: 7
+08-27 11:56:45.222  5177  5390 E AHardwareBuffer: GraphicBuffer(w=4, h=4, lc=1) failed (Unknown error -7), handle=0x0
+08-27 11:56:45.229  5177  5390 W qdgralloc: getInterlacedFlag: getMetaData returned 3, defaulting to interlaced_flag = 0
+08-27 11:56:45.230  5177  5390 W qdgralloc: getInterlacedFlag: getMetaData returned 3, defaulting to interlaced_flag = 0
+08-27 11:56:45.231  5177  5177 D VRI[UnityPlayerGameActivity]: vri.reportDrawFinished 0 0 Rect(0, 0 - 1080, 2400)
+08-27 11:56:45.232  5177  5177 I Unity   : windowFocusChanged: true
+08-27 11:56:45.232  5177  5177 I Unity   : resumeUnity
+08-27 11:56:45.232  5177  5177 I HandWritingStubImpl: refreshLastKeyboardType: 1
+08-27 11:56:45.232  5177  5177 I HandWritingStubImpl: getCurrentKeyboardType: 1
+08-27 11:56:45.232  5177  5390 W qdgralloc: getInterlacedFlag: getMetaData returned 3, defaulting to interlaced_flag = 0
+08-27 11:56:45.237  5177  5177 D InsetsController: hide(ime(), fromIme=false)
+08-27 11:56:45.237  5177  5177 I ImeTracker: com.jojop.stack:f240b46c: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+08-27 11:56:45.239  5177  5390 W qdgralloc: getInterlacedFlag: getMetaData returned 3, defaulting to interlaced_flag = 0
+08-27 11:56:45.262  5177  5177 W InsetsSource: Has no intersection or mTmpFrame.height(), return Insets.NONE mTmpFrame.height() =0 hasIntersection =false
+08-27 11:56:45.263  5177  5390 E SwappyDisplayManager: dalvik.system.InMemoryDexClassLoader[DexPathList[[dex file "InMemoryDexFile[cookie=[-5476376632410068528, -5476376633752038736]]"],nativeLibraryDirectories=[/system/lib64, /system_ext/lib64]]] couldn't find "libgame.so"
+08-27 11:56:45.263  5177  6333 I SwappyDisplayManager: Starting looper thread
+08-27 11:56:45.266  5177  5390 I Unity   :     HasWindow = 1, HasFocus = 0
+08-27 11:56:45.266  5177  5390 I Unity   : Handle cmd APP_CMD_WINDOW_REDRAW_NEEDED(4)
+08-27 11:56:45.266  5177  5390 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-27 11:56:45.267  5177  5390 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-27 11:56:45.267  5177  5390 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-27 11:56:45.267  5177  5390 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-27 11:56:45.267  5177  5390 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-27 11:56:45.270  5177  5390 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-27 11:56:45.270  5177  5390 I Unity   : Handle cmd APP_CMD_GAINED_FOCUS(7)
+08-27 11:56:45.282  5177  5390 D Unity   : Sensor :        Accelerometer ( 1) ; 0.004786 / 0.00s ; bmi26x Accelerometer Non-wakeup / BOSCH 
+08-27 11:56:45.282  5177  5390 D Unity   : Found 2 interfaces on host Xiaomi_2211133C@192.168.1.56:
+08-27 11:56:45.282  5177  5390 D Unity   :  0) 192.168.1.56
+08-27 11:56:45.282  5177  5390 D Unity   :  1) 10.18.114.239
+08-27 11:56:45.282  5177  5390 D Unity   : 
+08-27 11:56:45.294  5177  5390 D Unity   : Player connection [511271027712]  Target information:
+08-27 11:56:45.294  5177  5390 D Unity   : 
+08-27 11:56:45.294  5177  5390 D Unity   : Player connection [511271027712]  * "[IP] 192.168.1.56 [Port] 55000 [Flags] 2 [Guid] 2438583403 [EditorId] 1862729859 [Version] 1048832 [Id] AndroidPlayer(11,Xiaomi_2211133C@192.168.1.56) [Debug] 1 [PackageName] AndroidPlayer [ProjectName] JojoP Stack" 
+08-27 11:56:45.294  5177  5390 D Unity   : 
+08-27 11:56:45.294  5177  5390 D Unity   : Player connection [511271027712]  * "[IP] 10.18.114.239 [Port] 55000 [Flags] 2 [Guid] 2438583403 [EditorId] 1862729859 [Version] 1048832 [Id] AndroidPlayer(11,Xiaomi_2211133C@192.168.1.56) [Debug] 1 [PackageName] AndroidPlayer [ProjectName] JojoP Stack" 
+08-27 11:56:45.294  5177  5390 D Unity   : 
+08-27 11:56:45.295  5177  5390 D Unity   : Player connection [511271027712] Started UDP target info broadcast (1) on [225.0.0.222:54997].
+08-27 11:56:45.295  5177  5390 D Unity   : 
+08-27 11:56:45.295  5177  5390 D Unity   : Player connection [511271027712] Started UDP target info broadcast (1) on [225.0.0.222:54997].
+08-27 11:56:45.295  5177  5390 D Unity   : 
+08-27 11:56:45.295  5177  5390 I Unity   : SetGameState: isLoading: false, mode: UNKNOWN, label: -1, quality: 2
+08-27 11:56:45.298  5177  5390 D AAudio  : AAudioStream_requestStart(s#1) called --------------
+08-27 11:56:45.298  5177  5390 D AAudioStream: setState(s#1) from 10 to 3
+08-27 11:56:45.298  5177  5390 I AudioTrack: start(16307): prior state:STATE_STOPPED packageName: com.jojop.stack
+08-27 11:56:45.380  5177  5390 D AudioRepeatStartCheck: [AudioRepeatStartStopCheck], enter: uid = 10405, session = 87297, uidnowTime = 1787802980
+08-27 11:56:45.380  5177  5390 D AudioRepeatStartCheck: [AudioRepeatStartStopCheck] isAnomaly = 0
+08-27 11:56:45.380  5177  5390 D AAudio  : AAudioStream_requestStart(s#1) returned 0 ---------
+08-27 11:56:45.380  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 24s(f:0 m:0 s:0 k:0 z:24760) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:45.381  5177  5238 D AudioStreamLegacy: onAudioDeviceUpdate() devices 16259 => 16259
+08-27 11:56:45.381  5177  5238 D AudioTrack: onAudioDeviceUpdate AudioPortDebug[ID:00003F83] deviceType:AUDIO_DEVICE_OUT_BLUETOOTH_A2DP(00000080)
+08-27 11:56:45.382  5177  5238 D BatteryNotifier: batteryHandler::send audio device update msg! 10405, 5177, 87297, 128
+08-27 11:56:45.383  5177  5679 D BatteryNotifier: BatteryNotifier::update device to power insight! 10405, 5177, 87297, 128
+08-27 11:56:45.385  5177  5238 D com.jojop.stack: PlayerBase::setVolume() from IPlayer
+08-27 11:56:45.385  5177  5238 D AAudioStream: setDuckAndMuteVolume() to 1.000000
+08-27 11:56:45.385  5177  5238 I AudioTrackImpl: before scaleVolumeForVideo L:1.000000 R:1.000000 and the pakage is com.jojop.stack
+08-27 11:56:45.385  5177  5238 D AudioTrack: AudioTrack::setVolume L:1.000000 R:1.000000 sessionid=87297
+08-27 11:56:45.388  5177  5177 D MediaRouter: onRestoreRoute() : route=RouteInfo{ name=Xiaomi 寮€鏀惧紡鑰虫満 Pro, description=钃濈墮闊抽, status=null, category=RouteCategory{ name=绯荤粺 types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO , presentationDisplay=null }
+08-27 11:56:45.388  5177  5177 V MediaRouter: Selecting route: RouteInfo{ name=Xiaomi 寮€鏀惧紡鑰虫満 Pro, description=钃濈墮闊抽, status=null, category=RouteCategory{ name=绯荤粺 types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO , presentationDisplay=null }
+08-27 11:56:45.485  5177  5669 I com.jojop.stack: DynamicFPS DF top: com.jojop.stack : 0.000000
+08-27 11:56:45.556  5177  5486 D InsetsAnimationCtrlImpl: notifyFinished shown: false, currentAlpha: 1.000000, currentInsets: Insets{left=0, top=0, right=0, bottom=0}
+08-27 11:56:45.557  5177  5486 D InsetsAnimationCtrlImpl: Animation finished abruptly.
+08-27 11:56:45.557  5177  5486 D InsetsController: onAnimationFinish showOnFinish: false
+08-27 11:56:45.557  5177  5486 D ViewRootImplStubImpl: notifyImeAnimEvent: isForShow = false, isAnimStart = false, has context = true, has AutofillManager = true, isMiuiAnim = false
+08-27 11:56:45.557  5177  5177 D InsetsController: cancelAnimation of types:1 animType:1 host:com.jojop.stack/com.unity3d.player.UnityPlayerGameActivity invokeCallback=false
+08-27 11:56:45.558  5177  5177 D InsetsController: notifyFinished. shown: false runner=android.view.InsetsAnimationThreadControlRunner@601edb1
+08-27 11:56:45.566  5177  5177 D gti.InputConnection: onApplyWindowInsetsfalse
+08-27 11:56:45.567  5177  5177 V GameActivity: onImeInsetsChanged from Text Listener
+08-27 11:56:45.567  5177  5177 D gti.InputConnection: onApplyWindowInsetsfalse
+08-27 11:56:45.567  5177  5177 V GameActivity: onImeInsetsChanged from Text Listener
+08-27 11:56:45.576  5177  5390 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-27 11:56:45.576  5177  5390 I Unity   : Handle cmd APP_CMD_WINDOW_INSETS_CHANGED(17)
+08-27 11:56:45.628  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 25s(f:0 m:0 s:0 k:0 z:25007) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:45.668  5177  5675 D AAudioStream: setState(s#1) from 3 to 4
+08-27 11:56:46.628  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 26s(f:0 m:0 s:0 k:0 z:26008) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:47.628  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 27s(f:0 m:0 s:0 k:0 z:27008) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:48.628  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 28s(f:0 m:0 s:0 k:0 z:28007) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:49.628  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 29s(f:0 m:0 s:0 k:0 z:29008) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:50.628  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 30s(f:0 m:0 s:0 k:0 z:30007) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:51.628  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 31s(f:0 m:0 s:0 k:0 z:31008) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:52.628  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 32s(f:0 m:0 s:0 k:0 z:32008) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:53.628  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 33s(f:0 m:0 s:0 k:0 z:33008) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:54.628  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 34s(f:0 m:0 s:0 k:0 z:34007) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:55.628  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 35s(f:0 m:0 s:0 k:0 z:35008) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:56.628  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 36s(f:0 m:0 s:0 k:0 z:36007) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:57.628  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 37s(f:0 m:0 s:0 k:0 z:37008) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:58.297  5177  5194 I com.jojop.stack: This is non sticky GC, maxfree is 33554432 minfree is 8388608
+08-27 11:56:58.297  5177  5194 I com.jojop.stack: Background concurrent copying GC freed 6258KB AllocSpace bytes, 4(100KB) LOS objects, 87% free, 3491KB/27MB, paused 115us,23us total 165.738ms
+08-27 11:56:58.628  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 38s(f:0 m:0 s:0 k:0 z:38008) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:56:59.628  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 39s(f:0 m:0 s:0 k:0 z:39007) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:57:00.628  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 40s(f:0 m:0 s:0 k:0 z:40008) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:57:01.628  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 41s(f:0 m:0 s:0 k:0 z:41007) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:57:02.628  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 42s(f:0 m:0 s:0 k:0 z:42007) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:57:03.628  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 43s(f:0 m:0 s:0 k:0 z:43008) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:57:04.628  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 44s(f:0 m:0 s:0 k:0 z:44008) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:57:05.627  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 45s(f:0 m:0 s:0 k:0 z:45007) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:57:06.628  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 46s(f:0 m:0 s:0 k:0 z:46007) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:57:07.628  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 47s(f:0 m:0 s:0 k:0 z:47007) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:57:08.628  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 48s(f:0 m:0 s:0 k:0 z:48007) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:57:09.627  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 49s(f:0 m:0 s:0 k:0 z:49007) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:57:10.627  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 50s(f:0 m:0 s:0 k:0 z:50007) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:57:11.628  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 51s(f:0 m:0 s:0 k:0 z:51008) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:57:12.628  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 52s(f:0 m:0 s:0 k:0 z:52007) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:57:13.627  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 53s(f:0 m:0 s:0 k:0 z:53007) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:57:14.627  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 54s(f:0 m:0 s:0 k:0 z:54007) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:57:15.628  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 55s(f:0 m:0 s:0 k:0 z:55008) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5
+08-27 11:57:16.628  5177  5675 D AudioTrackImpl: [audioTrackData][zero] 56s(f:0 m:0 s:0 k:0 z:56008) : pid 5177 uid 10405 sessionId 87297 sr 24000 ch 2 fmt 5

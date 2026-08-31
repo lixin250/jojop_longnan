@@ -13,27 +13,28 @@ MonoBehaviour:
   m_Name: JojoPGlobalSettings
   m_EditorClassIdentifier: JojoP.AOT::JojoP.AOT.Settings.JojoPGlobalSettings
   boot:
-    defaultChannel: gp
+    defaultChannel: test
     defaultPackageName: DefaultPackage
     splashSeconds: 0
     mainSceneName: Main
   host:
-    hostServerUrl: http://127.0.0.1:8081
-    fallbackHostServerUrl: http://127.0.0.1:8081
+    cdnSource: 1
+    hostServerUrl: https://pub-781168dca86c49c3826ace7d12450b5a.r2.dev
+    fallbackHostServerUrl: https://pub-781168dca86c49c3826ace7d12450b5a.r2.dev
     workerBaseUrl: http://127.0.0.1:8787
     enableUpdateCheck: 1
-    windowsUpdateDataUrl: http://127.0.0.1:8081
-    androidUpdateDataUrl: http://127.0.0.1:8081
-    iosUpdateDataUrl: http://127.0.0.1:8081
-    webglUpdateDataUrl: http://127.0.0.1:8081
   hybridClr:
     hotUpdateAssemblies:
     - JojoP.Config.dll
     - JojoP.HotUpdate.dll
     aotMetaAssemblies:
-    - mscorlib.dll
-    - System.dll
+    - Luban.Runtime.dll
     - System.Core.dll
+    - UniTask.dll
+    - UnityEngine.CoreModule.dll
+    - UnityEngine.JSONSerializeModule.dll
+    - YooAsset.dll
+    - mscorlib.dll
     logicMainDllName: JojoP.HotUpdate.dll
     assemblyTextAssetPath: Assets/Bundle/Dll
     assemblyTextAssetExtension: .bytes

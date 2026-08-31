@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8a9992f0ed6d8d43b61175dc5dc8785, type: 3}
   m_Name: AdsConfig
-  m_EditorClassIdentifier: Assembly-CSharp::JojoP.Ads.AdsConfig
+  m_EditorClassIdentifier: JojoP.HotUpdate::JojoP.Ads.AdsConfig
   provider: 0
   androidAppId: ca-app-pub-3940256099942544~3347511713
   androidRewardedUnitId: ca-app-pub-3940256099942544/5224354917
