@@ -2,7 +2,7 @@
   "comment": "口播稿和游戏台词见 文案.txt。稿A=samples/{who}.mp3；稿B={who}_prompt.mp3 须与 prompt_text 一字不差。",
   "prompt_text": "先听我说完。这单今晚要交，搞快点也要稳。",
   "voices": [
-    { "who": "lixin", "sample": "samples/lixin.mp3", "prompt": "samples/lixin_prompt.mp3" },
+    { "who": "lixin", "sample": "samples/lixin.m4a", "prompt": "samples/lixin_prompt.m4a" },
     { "who": "xiebo", "sample": "samples/xiebo.mp3", "prompt": "samples/xiebo_prompt.mp3" },
     { "who": "oban", "sample": "samples/oban.mp3", "prompt": "samples/oban_prompt.mp3" }
   ]

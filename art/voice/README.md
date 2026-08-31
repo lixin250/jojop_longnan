@@ -47,3 +47,7 @@ python art/tools/minimax_voice.py import
 ```
 
 `secrets.env` 已 gitignore。克隆后 7 天内至少 synth 一次才会留住 `voice_id`。
+
+## 便携文生音（可整夹拷走）
+
+`tts-kit/`：txt + job 配置 → mp3，保留已克隆声纹，做有声小说或别的项目。见 [tts-kit/README.md](tts-kit/README.md)。

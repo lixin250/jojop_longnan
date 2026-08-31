@@ -26,4 +26,4 @@ Unity 端已装好：`com.ivanmurzak.unity.mcp` 0.88.0。
 
 ## 端口
 
-本地 MCP Server 默认 `http://localhost:21852`。若 Unity 窗口里端口变了，同步改根目录 `.cursor/mcp.json` 的 url。
+本地 MCP Server 地址以 Unity 窗口 / `AI-Game-Developer-Config.json` 为准。端口变了就同步改根目录 `.cursor/mcp.json` 的 url。

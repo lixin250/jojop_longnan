@@ -123,8 +123,25 @@ def load_voice_specs() -> dict[str, dict]:
     return specs
 
 
+def resolve_sample(who: str, rel: str | None, *, prompt: bool = False) -> Path | None:
+    """配置路径不存在时，按 SAMPLE_EXTS 在 samples/ 里找 {who} 或 {who}_prompt。"""
+    if rel:
+        path = VOICE_DIR / rel
+        if path.is_file():
+            return path
+    stem = f"{who}_prompt" if prompt else who
+    for ext in SAMPLE_EXTS:
+        hit = VOICE_DIR / "samples" / f"{stem}{ext}"
+        if hit.is_file():
+            return hit
+    return VOICE_DIR / rel if rel else None
+
+
 def sample_path(spec: dict) -> Path:
-    return VOICE_DIR / spec["sample"]
+    path = resolve_sample(spec["who"], spec.get("sample"))
+    if path is None or not path.is_file():
+        raise SystemExit(f"找不到录音: {spec.get('sample')}  （每人一段 samples/{{who}}.mp3/.m4a/.wav）")
+    return path
 
 
 def upload(key: str, group: str, base: str, path: Path, purpose: str) -> int:
@@ -161,8 +178,8 @@ def clone_one(key: str, group: str, base: str, model: str, spec: dict) -> None:
     }
     prompt_rel = spec.get("prompt")
     if prompt_rel:
-        prompt_path = VOICE_DIR / prompt_rel
-        if prompt_path.is_file():
+        prompt_path = resolve_sample(spec["who"], prompt_rel, prompt=True)
+        if prompt_path is not None and prompt_path.is_file():
             prompt_id = upload(key, group, base, prompt_path, "prompt_audio")
             payload["clone_prompt"] = {
                 "prompt_audio": prompt_id,
@@ -232,9 +249,10 @@ def to_ogg(src: Path, dst: Path) -> Path:
         )
         return dst
     alt = dst.with_suffix(".mp3")
-    shutil.copy2(src, alt)
-    print("  无 ffmpeg，留下", alt.name)
-    return alt
+    if alt.resolve() != src.resolve():
+        shutil.copy2(src, alt)
+    print("  无 ffmpeg，留下", src.name)
+    return src
 
 
 def bundle_file(lang_path: str, ext: str) -> Path:
@@ -246,9 +264,9 @@ def cmd_clone(_: argparse.Namespace) -> None:
     specs = load_voice_specs()
     n = 0
     for who, spec in specs.items():
-        path = sample_path(spec)
-        if not path.is_file():
-            print("skip 无样本", who, path.as_posix())
+        path = resolve_sample(who, spec.get("sample"))
+        if path is None or not path.is_file():
+            print("skip 无样本", who)
             continue
         print("clone", who)
         clone_one(key, group, base, model, spec)
@@ -260,6 +278,10 @@ def cmd_clone(_: argparse.Namespace) -> None:
 def cmd_synth(_: argparse.Namespace) -> None:
     key, group, base, model = cfg()
     specs = load_voice_specs()
+    cloned = set()
+    state_path = CACHE / "cloned.json"
+    if state_path.is_file():
+        cloned = set(json.loads(state_path.read_text(encoding="utf-8")).keys())
     out_dir = CACHE / "synth"
     out_dir.mkdir(parents=True, exist_ok=True)
     for row in load_lines():
@@ -270,6 +292,9 @@ def cmd_synth(_: argparse.Namespace) -> None:
         spec = specs.get(row["who"])
         if spec is None:
             print("skip 无音色", row["id"])
+            continue
+        if row["who"] not in cloned:
+            print("skip 未克隆", row["id"])
             continue
         stem = row["id"]
         mp3 = out_dir / f"{stem}.mp3"
